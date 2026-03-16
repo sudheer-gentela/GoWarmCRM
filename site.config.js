@@ -163,15 +163,18 @@ const config = {
   // ── Slug → filename mapping ─────────────────────────────────────────────────
   // Maps the new SEO slugs back to the original HTML filenames
   // so you can rename files without breaking the build.
+  // fileMap: maps each page config key to the ACTUAL filename in your repo.
+  // These are the filenames as they exist on disk — build.js edits them in place.
+  // If you rename a file, update it here.
   fileMap: {
-    "index":                       "index.html",
-    "is-your-crm-a-crud-app":      "article-1.html",
-    "are-your-sales-playbooks-working": "article-2.html",
-    "crm-rebuild-or-recommit":     "article-3.html",
-    "crm-integration-complexity":  "article-4.html",
-    "revops-stack-crm-foundation":  "article-5.html",
-    "contact":                     "contact.html",
-    "crm-diagnostic":              "diagnostic.html",
+    "index":                            "index.html",
+    "is-your-crm-a-crud-app":           "is-your-crm-a-crud-app.html",
+    "are-your-sales-playbooks-working":  "are-your-sales-playbooks-working.html",
+    "crm-rebuild-or-recommit":          "crm-rebuild-or-recommit.html",
+    "crm-integration-complexity":       "crm-integration-complexity.html",
+    "revops-stack-crm-foundation":      "revops-stack-crm-foundation.html",
+    "contact":                          "contact.html",
+    "crm-diagnostic":                   "diagnostic.html",
   },
 
 };

@@ -1,46 +1,45 @@
 // build.js
 // Run with: node build.js
-// Reads site.config.js and injects SEO/AEO meta tags, canonical URLs,
-// Open Graph tags, Twitter cards, JSON-LD schema, and renames files
-// to SEO-friendly slugs.
 //
-// Output: ./dist/ folder ready to deploy to Vercel.
+// What this does:
+//   - Reads each HTML file IN PLACE (no dist/ folder, no renaming)
+//   - Injects/updates SEO meta, canonical URL, Open Graph, Twitter Card,
+//     JSON-LD Article schema, FAQ schema (AEO), robots, and SITE_URL references
+//   - Generates sitemap.xml and robots.txt alongside the HTML files
+//   - Writes changes back to the same file
+//
+// To change domain: edit SITE_URL in site.config.js, run node build.js again.
+// Safe to run multiple times — existing SEO blocks are replaced, not duplicated.
 
 "use strict";
 
-const fs   = require("fs");
-const path = require("path");
+const fs     = require("fs");
+const path   = require("path");
 const config = require("./site.config.js");
+const ROOT   = __dirname;
 
-const SRC  = __dirname;
-const DIST = path.join(__dirname, "dist");
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function ensureDir(dir) {
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-}
-
-function fullUrl(slug) {
+// ── URL helper ────────────────────────────────────────────────────────────────
+function pageUrl(pageKey) {
+  const slug = config.pages[pageKey].slug;
   if (slug === "index") return config.SITE_URL + "/";
   return `${config.SITE_URL}/${slug}`;
 }
 
+// ── Build the SEO block to inject ─────────────────────────────────────────────
 function buildSeoBlock(pageKey) {
   const page = config.pages[pageKey];
   if (!page) return "";
 
-  const url        = fullUrl(page.slug);
-  const title      = page.title;
-  const desc       = page.description;
-  const ogImage    = config.SITE_URL + config.OG_IMAGE;
-  const twitterTag = config.TWITTER_HANDLE
-    ? `  <meta name="twitter:site" content="${config.TWITTER_HANDLE}" />\n`
+  const url      = pageUrl(pageKey);
+  const title    = page.title;
+  const desc     = page.description;
+  const ogImage  = config.SITE_URL + config.OG_IMAGE;
+  const twHandle = config.TWITTER_HANDLE
+    ? `  <meta name="twitter:site"        content="${config.TWITTER_HANDLE}" />\n`
     : "";
 
-  // ── Standard meta ──
   let block = `
-  <!-- SEO -->
+  <!-- ═══ SEO / AEO — injected by build.js (safe to re-run) ═══ -->
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="${url}" />
 
@@ -54,14 +53,15 @@ function buildSeoBlock(pageKey) {
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-${twitterTag}  <meta name="twitter:title"       content="${title}" />
+${twHandle}  <meta name="twitter:title"       content="${title}" />
   <meta name="twitter:description" content="${desc}" />
   <meta name="twitter:image"       content="${ogImage}" />
+  <!-- ═══ end SEO block ═══ -->
 `;
 
-  // ── JSON-LD Schema ──
+  // Article JSON-LD
   if (page.schema === "Article") {
-    const articleSchema = {
+    const schema = {
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": title,
@@ -74,11 +74,12 @@ ${twitterTag}  <meta name="twitter:title"       content="${title}" />
       },
       "mainEntityOfPage": { "@type": "WebPage", "@id": url },
     };
-    block += `\n  <script type="application/ld+json">\n  ${JSON.stringify(articleSchema, null, 2).replace(/\n/g, "\n  ")}\n  </script>\n`;
+    block += `\n  <!-- Article schema -->\n  <script type="application/ld+json">\n  ${JSON.stringify(schema, null, 2).replace(/\n/g, "\n  ")}\n  </script>\n`;
   }
 
+  // WebPage JSON-LD
   if (page.schema === "WebPage") {
-    const webSchema = {
+    const schema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": title,
@@ -90,155 +91,122 @@ ${twitterTag}  <meta name="twitter:title"       content="${title}" />
         "url": config.SITE_URL,
       },
     };
-    block += `\n  <script type="application/ld+json">\n  ${JSON.stringify(webSchema, null, 2).replace(/\n/g, "\n  ")}\n  </script>\n`;
+    block += `\n  <!-- WebPage schema -->\n  <script type="application/ld+json">\n  ${JSON.stringify(schema, null, 2).replace(/\n/g, "\n  ")}\n  </script>\n`;
   }
 
-  // ── FAQ Schema (AEO) ──
+  // FAQ schema (AEO — targets Google People Also Ask / AI answer boxes)
   if (page.faqs && page.faqs.length > 0) {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": page.faqs.map(faq => ({
+      "mainEntity": page.faqs.map(f => ({
         "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a,
-        },
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
       })),
     };
-    block += `\n  <script type="application/ld+json">\n  ${JSON.stringify(faqSchema, null, 2).replace(/\n/g, "\n  ")}\n  </script>\n`;
+    block += `\n  <!-- FAQ schema (AEO) -->\n  <script type="application/ld+json">\n  ${JSON.stringify(faqSchema, null, 2).replace(/\n/g, "\n  ")}\n  </script>\n`;
   }
 
   return block;
 }
 
-function buildSitemapEntry(pageKey) {
+// ── Process a single HTML file in-place ───────────────────────────────────────
+function processFile(filename, pageKey) {
+  const filepath = path.join(ROOT, filename);
+  if (!fs.existsSync(filepath)) {
+    console.warn(`  SKIP (not found): ${filename}`);
+    return false;
+  }
+
+  let html = fs.readFileSync(filepath, "utf8");
   const page = config.pages[pageKey];
-  const url  = fullUrl(page.slug);
-  return `  <url>\n    <loc>${url}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>${pageKey === "index" ? "1.0" : "0.8"}</priority>\n  </url>`;
-}
 
-// ── Process HTML ──────────────────────────────────────────────────────────────
+  // 1. Remove any previously injected SEO block (safe re-run)
+  html = html.replace(
+    /\n  <!-- ═══ SEO \/ AEO[\s\S]*?end SEO block ═══ -->\n/g,
+    ""
+  );
+  // Also remove any previously injected schema script tags
+  html = html.replace(
+    /\n  <!-- (?:Article|WebPage|FAQ) schema -->[\s\S]*?<\/script>\n/g,
+    ""
+  );
 
-function processHtml(srcFile, pageKey) {
-  let html = fs.readFileSync(srcFile, "utf8");
-  const page = config.pages[pageKey];
-
-  // 1. Replace <title>
+  // 2. Update <title>
   html = html.replace(/<title>.*?<\/title>/, `<title>${page.title}</title>`);
 
-  // 2. Replace meta description
+  // 3. Update meta description
   html = html.replace(
     /<meta name="description"[^>]*\/>/,
     `<meta name="description" content="${page.description}" />`
   );
 
-  // 3. Inject SEO block before </head>
-  const seoBlock = buildSeoBlock(pageKey);
-  html = html.replace("</head>", seoBlock + "\n</head>");
+  // 4. Inject fresh SEO block before </head>
+  html = html.replace("</head>", buildSeoBlock(pageKey) + "</head>");
 
-  // 4. Inject SITE_URL into any /api/submit fetch calls and article href links
-  //    so auto-reply emails use the right domain
-  html = html.replace(
-    /https:\/\/your-site\.vercel\.app/g,
-    config.SITE_URL
+  // 5. Fix any SITE_URL fallback placeholder in submit.js references
+  html = html.replace(/https:\/\/your-site\.vercel\.app/g, config.SITE_URL);
+
+  fs.writeFileSync(filepath, html);
+  return true;
+}
+
+// ── Generate sitemap.xml ──────────────────────────────────────────────────────
+function buildSitemap() {
+  const entries = Object.keys(config.pages).map(pageKey => {
+    const url = pageUrl(pageKey);
+    const priority = pageKey === "index" ? "1.0" : "0.8";
+    return `  <url>\n    <loc>${url}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+  });
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>`;
+  fs.writeFileSync(path.join(ROOT, "sitemap.xml"), xml);
+  console.log("  ✓ sitemap.xml");
+}
+
+// ── Generate robots.txt ───────────────────────────────────────────────────────
+function buildRobots() {
+  const txt = `User-agent: *\nAllow: /\nSitemap: ${config.SITE_URL}/sitemap.xml\n`;
+  fs.writeFileSync(path.join(ROOT, "robots.txt"), txt);
+  console.log("  ✓ robots.txt");
+}
+
+// ── Patch api/submit.js SITE_URL fallback ─────────────────────────────────────
+function patchSubmitJs() {
+  const submitPath = path.join(ROOT, "api", "submit.js");
+  if (!fs.existsSync(submitPath)) return;
+
+  let src = fs.readFileSync(submitPath, "utf8");
+  // Replace any hardcoded fallback URL with current SITE_URL from config
+  src = src.replace(
+    /process\.env\.SITE_URL \|\| "https?:\/\/[^"]+"/g,
+    `process.env.SITE_URL || "${config.SITE_URL}"`
   );
-
-  // 5. Update internal links to use new SEO slugs
-  Object.entries(config.fileMap).forEach(([slug, filename]) => {
-    if (filename === "index.html") return; // index.html stays as index.html
-    // Replace href="article-X.html" with href="/slug" style links
-    const escapedFilename = filename.replace(".", "\\.");
-    const re = new RegExp(`href="${escapedFilename}"`, "g");
-    html = html.replace(re, `href="${slug}"`);
-  });
-
-  return html;
+  fs.writeFileSync(submitPath, src);
+  console.log("  ✓ api/submit.js SITE_URL patched");
 }
 
-// ── Build ─────────────────────────────────────────────────────────────────────
+// ── Main ──────────────────────────────────────────────────────────────────────
+function run() {
+  console.log(`\nBuilding in-place for: ${config.SITE_URL}\n`);
 
-function build() {
-  ensureDir(DIST);
-  ensureDir(path.join(DIST, "api"));
-
-  const processedPages = [];
-
-  // Process each HTML page
+  let ok = 0;
+  // fileMap: pageKey → actual filename in repo
   Object.entries(config.fileMap).forEach(([pageKey, filename]) => {
-    const srcFile = path.join(SRC, filename);
-    if (!fs.existsSync(srcFile)) {
-      console.warn(`  SKIP (not found): ${filename}`);
-      return;
-    }
-
-    const html     = processHtml(srcFile, pageKey);
-    // Output as SEO slug filename (index stays index.html)
-    const outName  = pageKey === "index" ? "index.html" : `${pageKey}.html`;
-    const outFile  = path.join(DIST, outName);
-    fs.writeFileSync(outFile, html);
-    console.log(`  ✓ ${filename} → ${outName}`);
-    processedPages.push(pageKey);
-  });
-
-  // Copy non-HTML assets
-  ["style.css", "og-image.png"].forEach(asset => {
-    const src = path.join(SRC, asset);
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, path.join(DIST, asset));
-      console.log(`  ✓ Copied ${asset}`);
+    const updated = processFile(filename, pageKey);
+    if (updated) {
+      console.log(`  ✓ ${filename}`);
+      ok++;
     }
   });
 
-  // Copy api/ folder
-  const apiSrc = path.join(SRC, "api");
-  if (fs.existsSync(apiSrc)) {
-    ensureDir(path.join(DIST, "api"));
-    fs.readdirSync(apiSrc).forEach(f => {
-      fs.copyFileSync(path.join(apiSrc, f), path.join(DIST, "api", f));
-      console.log(`  ✓ Copied api/${f}`);
-    });
-  }
+  buildSitemap();
+  buildRobots();
+  patchSubmitJs();
 
-  // Write submit.js env var injection (SITE_URL → process.env.SITE_URL)
-  const submitSrc = path.join(SRC, "api", "submit.js");
-  if (fs.existsSync(submitSrc)) {
-    let submitJs = fs.readFileSync(submitSrc, "utf8");
-    // Ensure SITE_URL falls back to config value if env var missing
-    submitJs = submitJs.replace(
-      `process.env.SITE_URL || "https://your-site.vercel.app"`,
-      `process.env.SITE_URL || "${config.SITE_URL}"`
-    );
-    fs.writeFileSync(path.join(DIST, "api", "submit.js"), submitJs);
-    console.log("  ✓ api/submit.js patched with SITE_URL fallback");
-  }
-
-  // Copy package.json and vercel.json
-  ["package.json", "vercel.json"].forEach(f => {
-    const src = path.join(SRC, f);
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, path.join(DIST, f));
-      console.log(`  ✓ Copied ${f}`);
-    }
-  });
-
-  // Generate sitemap.xml
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${processedPages.map(buildSitemapEntry).join("\n")}
-</urlset>`;
-  fs.writeFileSync(path.join(DIST, "sitemap.xml"), sitemap);
-  console.log("  ✓ sitemap.xml generated");
-
-  // Generate robots.txt
-  const robots = `User-agent: *\nAllow: /\nSitemap: ${config.SITE_URL}/sitemap.xml\n`;
-  fs.writeFileSync(path.join(DIST, "robots.txt"), robots);
-  console.log("  ✓ robots.txt generated");
-
-  console.log(`\nBuild complete → ./dist/`);
-  console.log(`Site URL: ${config.SITE_URL}`);
-  console.log(`\nTo change domain: edit SITE_URL in site.config.js and run node build.js again.\n`);
+  console.log(`\nDone — ${ok} files updated in place.`);
+  console.log(`To change domain: edit SITE_URL in site.config.js and run node build.js again.\n`);
 }
 
-build();
+run();

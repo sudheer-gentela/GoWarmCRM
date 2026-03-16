@@ -254,7 +254,7 @@
     }
   </style>
 
-  <!-- SEO -->
+  <!-- ═══ SEO / AEO — injected by build.js (safe to re-run) ═══ -->
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://go-warm-crm.vercel.app/" />
 
@@ -268,11 +268,13 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
   <meta name="twitter:title"       content="CRM Intelligence for B2B Sales Leaders | GoWarm Insights" />
   <meta name="twitter:description" content="Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking." />
   <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <!-- ═══ end SEO block ═══ -->
 
+  <!-- WebPage schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -287,7 +289,6 @@
     }
   }
   </script>
-
 </head>
 <body>
 
@@ -298,9 +299,9 @@
       <nav role="navigation" aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="index.html#articles">Articles</a></li>
-          <li><a href="crm-diagnostic">CRM Diagnostic</a></li>
-          <li><a href="contact">Work With Us</a></li>
-          <li><a href="contact" class="nav-cta">Get a Free Audit</a></li>
+          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
+          <li><a href="contact.html">Work With Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
         </ul>
       </nav>
       <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
@@ -318,7 +319,7 @@
           <h1 class="hero-title">Is your CRM working for you — or against you?</h1>
           <p class="hero-subtitle">Practical intelligence for B2B sales leaders who want more from their systems than pipeline visibility and quarterly reports.</p>
           <div class="hero-cta-row">
-            <a href="crm-diagnostic" class="btn btn-primary">Take the CRM Diagnostic</a>
+            <a href="diagnostic.html" class="btn btn-primary">Take the CRM Diagnostic</a>
             <a href="index.html#articles" class="btn btn-outline">Read the Articles</a>
           </div>
         </div>
@@ -347,7 +348,7 @@
           <h3>Not sure if you have a CRM problem?</h3>
           <p>Answer 5 questions and find out exactly where your sales system is leaking value.</p>
         </div>
-        <a href="crm-diagnostic" class="btn btn-dark">Take the 5-Question Diagnostic →</a>
+        <a href="diagnostic.html" class="btn btn-dark">Take the 5-Question Diagnostic →</a>
       </div>
     </div>
   </section>
@@ -361,7 +362,7 @@
             <span class="featured-tag">Featured · Self-Diagnostic</span>
             <h2 class="featured-title">Are You Using Salesforce as a CRUD App?</h2>
             <p class="featured-excerpt">You're spending $150k/year on a system your reps use to log calls after the fact and fill in fields before the pipeline review. Here are five specific patterns that reveal the gap — and what good actually looks like.</p>
-            <a href="is-your-crm-a-crud-app" class="btn btn-primary">Read the Article</a>
+            <a href="is-your-crm-a-crud-app.html" class="btn btn-primary">Read the Article</a>
           </div>
           <div class="featured-visual">
             <div style="font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 16px;">The 5 Warning Signals</div>
@@ -400,35 +401,35 @@
       </div>
       <div class="articles-grid">
 
-        <a href="is-your-crm-a-crud-app" class="article-card">
+        <a href="is-your-crm-a-crud-app.html" class="article-card">
           <span class="tag">Self-Diagnostic</span>
           <div class="card-title">Are You Using Salesforce as a CRUD App?</div>
           <div class="card-excerpt">Five patterns that reveal you're paying $150k/year for a glorified spreadsheet — and what good actually looks like.</div>
           <div class="card-meta">8 min read <span class="dot"></span> VP Sales</div>
         </a>
 
-        <a href="are-your-sales-playbooks-working" class="article-card">
+        <a href="are-your-sales-playbooks-working.html" class="article-card">
           <span class="tag">Playbooks</span>
           <div class="card-title">The Playbook Question: Are Yours Working or Just Sitting There?</div>
           <div class="card-excerpt">A playbook nobody executes is worse than no playbook at all. Here's how to tell the difference — and fix it.</div>
           <div class="card-meta">7 min read <span class="dot"></span> RevOps · Enablement</div>
         </a>
 
-        <a href="crm-rebuild-or-recommit" class="article-card">
+        <a href="crm-rebuild-or-recommit.html" class="article-card">
           <span class="tag">Decision Framework</span>
           <div class="card-title">Should You Rebuild or Recommit? The Honest CRM Decision Framework</div>
           <div class="card-excerpt">Not a vendor pitch. A real decision framework for whether to stay, switch, or build — and how to avoid the status quo trap.</div>
           <div class="card-meta">10 min read <span class="dot"></span> CTO · VP Sales</div>
         </a>
 
-        <a href="crm-integration-complexity" class="article-card">
+        <a href="crm-integration-complexity.html" class="article-card">
           <span class="tag">Integration Strategy</span>
           <div class="card-title">The Integration Trap: When CRM Complexity Becomes an Excuse</div>
           <div class="card-excerpt">You have 12 integrations and a working system. Here's how to separate legitimate switching costs from integration inertia — and what to do about either.</div>
           <div class="card-meta">9 min read <span class="dot"></span> VP Sales · RevOps · CTO</div>
         </a>
 
-        <a href="revops-stack-crm-foundation" class="article-card">
+        <a href="revops-stack-crm-foundation.html" class="article-card">
           <span class="tag">RevOps Stack</span>
           <div class="card-title">Your RevOps Stack Is Only as Good as the CRM Underneath It</div>
           <div class="card-excerpt">Gong, Clari, Outreach — great tools. But intelligence layers built on broken CRM data amplify noise, not signal. Here's the honest diagnostic.</div>
@@ -448,7 +449,7 @@
           <p>Book a free 30-minute CRM diagnostic. We'll review your current setup and tell you exactly what's working, what isn't, and what to fix first. No pitch, just clarity.</p>
         </div>
         <div class="cta-band-actions">
-          <a href="contact" class="btn btn-primary">Request a Consultation</a>
+          <a href="contact.html" class="btn btn-primary">Request a Consultation</a>
           <span class="cta-caption">Free · 30 min · No obligation</span>
         </div>
       </div>
@@ -481,18 +482,18 @@
         <div class="footer-col">
           <h4>Articles</h4>
           <ul>
-            <li><a href="is-your-crm-a-crud-app">Are you using Salesforce as a CRUD app?</a></li>
-            <li><a href="are-your-sales-playbooks-working">Are your playbooks working?</a></li>
-            <li><a href="crm-rebuild-or-recommit">Rebuild or recommit?</a></li>
-            <li><a href="crm-integration-complexity">The integration trap</a></li>
-            <li><a href="revops-stack-crm-foundation">Do your RevOps tools actually help?</a></li>
+            <li><a href="is-your-crm-a-crud-app.html">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="are-your-sales-playbooks-working.html">Are your playbooks working?</a></li>
+            <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
+            <li><a href="crm-integration-complexity.html">The integration trap</a></li>
+            <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get Help</h4>
           <ul>
-            <li><a href="crm-diagnostic">Free CRM Diagnostic</a></li>
-            <li><a href="contact">Request a Consultation</a></li>
+            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
+            <li><a href="contact.html">Request a Consultation</a></li>
             <li><a href="https://gowarm.ai" target="_blank" rel="noopener">GoWarm CRM →</a></li>
           </ul>
         </div>

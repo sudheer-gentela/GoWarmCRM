@@ -21,46 +21,46 @@
     .article-nav a:hover { color: var(--rust); }
     .cost-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
     @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } }
+
+    .share-bar {
+      max-width: 720px;
+      margin: 40px auto 0;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--ink-2);
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
   </style>
 
-  <!-- SEO -->
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://go-warm-crm.vercel.app/crm-rebuild-or-recommit" />
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://go-warm-crm.vercel.app/crm-rebuild-or-recommit" />
-  <meta property="og:title"       content="Salesforce vs Switch vs Build Custom: The Honest CRM Decision Framework | GoWarm Insights" />
-  <meta property="og:description" content="Should you stay on Salesforce, move to a lighter CRM, or build custom? A real evaluation framework covering true switching costs, when custom makes sense, and how to avoid spending 6 months evaluating and returning to the status quo." />
-  <meta property="og:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
-  <meta property="og:site_name"   content="GoWarm Insights" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site" content="@gowarmcrm" />
-  <meta name="twitter:title"       content="Salesforce vs Switch vs Build Custom: The Honest CRM Decision Framework | GoWarm Insights" />
-  <meta name="twitter:description" content="Should you stay on Salesforce, move to a lighter CRM, or build custom? A real evaluation framework covering true switching costs, when custom makes sense, and how to avoid spending 6 months evaluating and returning to the status quo." />
-  <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Salesforce vs Switch vs Build Custom: The Honest CRM Decision Framework | GoWarm Insights",
-    "description": "Should you stay on Salesforce, move to a lighter CRM, or build custom? A real evaluation framework covering true switching costs, when custom makes sense, and how to avoid spending 6 months evaluating and returning to the status quo.",
-    "url": "https://go-warm-crm.vercel.app/crm-rebuild-or-recommit",
-    "publisher": {
-      "@type": "Organization",
-      "name": "GoWarm Insights",
-      "url": "https://go-warm-crm.vercel.app"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://go-warm-crm.vercel.app/crm-rebuild-or-recommit"
-    }
-  }
-  </script>
-
+  <!-- FAQ schema (AEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -102,6 +102,129 @@
   }
   </script>
 
+  <!-- FAQ schema (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I know if Salesforce is the right CRM for my company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salesforce is the right fit if you have a genuinely complex sales process (multi-stakeholder, long-cycle enterprise), dedicated Salesforce admin capacity, a team of 50+ reps, and existing data and integrations that would be expensive to rebuild. If none of these apply, you may be over-CRMed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the true cost of switching CRM systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The true cost includes data migration (typically 2-3x the vendor's estimate), rep retraining and 60-90 days of reduced productivity, process redesign, and integration rebuilds. All of these must be quantified honestly before evaluating alternatives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When does building a custom CRM make sense?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom CRM makes sense when your sales process has genuinely idiosyncratic requirements no commercial platform addresses, the business logic is core IP, and you can commit to owning the system for 3+ years including ongoing maintenance. It is a trap when driven by frustration with existing platforms rather than a specific capability gap."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the worst outcome of a CRM evaluation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Spending six months evaluating, building organizational energy around change, and returning to the status quo with nothing changed. This depletes political capital, signals to reps that nothing will change, and validates learned helplessness. Setting a hard decision date at the start of any evaluation prevents this."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ SEO / AEO — injected by build.js (safe to re-run) ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://go-warm-crm.vercel.app/crm-rebuild-or-recommit" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://go-warm-crm.vercel.app/crm-rebuild-or-recommit" />
+  <meta property="og:title"       content="Salesforce vs Switch vs Build Custom: The Honest CRM Decision Framework | GoWarm Insights" />
+  <meta property="og:description" content="Should you stay on Salesforce, move to a lighter CRM, or build custom? A real evaluation framework covering true switching costs, when custom makes sense, and how to avoid spending 6 months evaluating and returning to the status quo." />
+  <meta property="og:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="Salesforce vs Switch vs Build Custom: The Honest CRM Decision Framework | GoWarm Insights" />
+  <meta name="twitter:description" content="Should you stay on Salesforce, move to a lighter CRM, or build custom? A real evaluation framework covering true switching costs, when custom makes sense, and how to avoid spending 6 months evaluating and returning to the status quo." />
+  <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <!-- ═══ end SEO block ═══ -->
+
+  <!-- Article schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Salesforce vs Switch vs Build Custom: The Honest CRM Decision Framework | GoWarm Insights",
+    "description": "Should you stay on Salesforce, move to a lighter CRM, or build custom? A real evaluation framework covering true switching costs, when custom makes sense, and how to avoid spending 6 months evaluating and returning to the status quo.",
+    "url": "https://go-warm-crm.vercel.app/crm-rebuild-or-recommit",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GoWarm Insights",
+      "url": "https://go-warm-crm.vercel.app"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://go-warm-crm.vercel.app/crm-rebuild-or-recommit"
+    }
+  }
+  </script>
+
+  <!-- FAQ schema (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I know if Salesforce is the right CRM for my company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salesforce is the right fit if you have a genuinely complex sales process (multi-stakeholder, long-cycle enterprise), dedicated Salesforce admin capacity, a team of 50+ reps, and existing data and integrations that would be expensive to rebuild. If none of these apply, you may be over-CRMed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the true cost of switching CRM systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The true cost includes data migration (typically 2-3x the vendor's estimate), rep retraining and 60-90 days of reduced productivity, process redesign, and integration rebuilds. All of these must be quantified honestly before evaluating alternatives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When does building a custom CRM make sense?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom CRM makes sense when your sales process has genuinely idiosyncratic requirements no commercial platform addresses, the business logic is core IP, and you can commit to owning the system for 3+ years including ongoing maintenance. It is a trap when driven by frustration with existing platforms rather than a specific capability gap."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the worst outcome of a CRM evaluation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Spending six months evaluating, building organizational energy around change, and returning to the status quo with nothing changed. This depletes political capital, signals to reps that nothing will change, and validates learned helplessness. Setting a hard decision date at the start of any evaluation prevents this."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -111,9 +234,9 @@
       <nav>
         <ul class="nav-links">
           <li><a href="index.html#articles">Articles</a></li>
-          <li><a href="crm-diagnostic">CRM Diagnostic</a></li>
-          <li><a href="contact">Work With Us</a></li>
-          <li><a href="contact" class="nav-cta">Get a Free Audit</a></li>
+          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
+          <li><a href="contact.html">Work With Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
         </ul>
       </nav>
       <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
@@ -226,13 +349,30 @@
 
         </div>
 
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
         <div class="author-bio-box">
-          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm CRM</a> — an AI-native CRM built for sales teams ready to move past pipeline tracking and into action generation. Working through a CRM evaluation? <a href="contact" style="color:var(--rust)">We're happy to be a sounding board — no strings attached.</a>
+          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm CRM</a> — an AI-native CRM built for sales teams ready to move past pipeline tracking and into action generation. Working through a CRM evaluation? <a href="contact.html" style="color:var(--rust)">We're happy to be a sounding board — no strings attached.</a>
         </div>
 
         <div class="article-nav">
-          <a href="are-your-sales-playbooks-working">← Previous: Are Your Playbooks Working?</a>
-          <a href="contact">Ready to talk? Request a consultation →</a>
+          <a href="are-your-sales-playbooks-working.html">← Previous: Are Your Playbooks Working?</a>
+          <a href="contact.html">Ready to talk? Request a consultation →</a>
         </div>
       </div>
     </div>
@@ -248,18 +388,18 @@
         <div class="footer-col">
           <h4>Articles</h4>
           <ul>
-            <li><a href="is-your-crm-a-crud-app">Are you using Salesforce as a CRUD app?</a></li>
-            <li><a href="are-your-sales-playbooks-working">Are your playbooks working?</a></li>
-            <li><a href="crm-rebuild-or-recommit">Rebuild or recommit?</a></li>
-            <li><a href="crm-integration-complexity">The integration trap</a></li>
-            <li><a href="revops-stack-crm-foundation">Do your RevOps tools actually help?</a></li>
+            <li><a href="is-your-crm-a-crud-app.html">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="are-your-sales-playbooks-working.html">Are your playbooks working?</a></li>
+            <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
+            <li><a href="crm-integration-complexity.html">The integration trap</a></li>
+            <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get Help</h4>
           <ul>
-            <li><a href="crm-diagnostic">Free CRM Diagnostic</a></li>
-            <li><a href="contact">Request a Consultation</a></li>
+            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
+            <li><a href="contact.html">Request a Consultation</a></li>
             <li><a href="https://gowarm.ai" target="_blank" rel="noopener">GoWarm CRM →</a></li>
           </ul>
         </div>
@@ -277,6 +417,22 @@
       links.style.display = isVisible ? 'none' : 'flex';
       if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
     }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+
   </script>
 </body>
 </html>
