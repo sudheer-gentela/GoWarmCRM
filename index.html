@@ -207,40 +207,6 @@
     .cta-band .btn-primary { white-space: nowrap; padding: 14px 28px; }
     .cta-caption { font-size: 12px; color: rgba(255,255,255,0.3); }
 
-    /* ── Email Subscribe ── */
-    .subscribe-section { padding: 64px 0; border-top: 1px solid var(--border); }
-    .subscribe-inner {
-      max-width: 560px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .subscribe-inner h2 {
-      font-family: var(--serif);
-      font-size: 30px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-    .subscribe-inner p {
-      font-family: var(--body-serif);
-      font-size: 16px;
-      color: var(--ink-3);
-      font-weight: 300;
-      margin-bottom: 28px;
-    }
-    .subscribe-form { display: flex; gap: 10px; }
-    .subscribe-form input {
-      flex: 1;
-      padding: 11px 16px;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      font-family: var(--sans);
-      font-size: 14px;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-    .subscribe-form input:focus { border-color: var(--rust); }
-    .subscribe-note { font-size: 12px; color: var(--ink-4); margin-top: 12px; }
 
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -254,6 +220,7 @@
     }
   </style>
 
+  
   
   
   
@@ -295,7 +262,7 @@
     </div>
   </header>
   <!-- ═══ NAV:END ═══ -->
-          
+            
   <!-- NAV -->
   
 
@@ -459,20 +426,6 @@
     </div>
   </section>
 
-  <!-- EMAIL SUBSCRIBE -->
-  <section class="subscribe-section">
-    <div class="container">
-      <div class="subscribe-inner">
-        <h2>Get new articles in your inbox</h2>
-        <p>Practical CRM and sales process intelligence — no fluff, no vendor spin. Written for people who actually run sales teams.</p>
-        <form class="subscribe-form" onsubmit="handleSubscribe(event)">
-          <input type="email" id="sub-email" placeholder="your@company.com" required />
-          <button type="submit" class="btn btn-dark">Subscribe</button>
-        </form>
-        <p class="subscribe-note" id="sub-msg"></p>
-      </div>
-    </div>
-  </section>
 
   <!-- FOOTER -->
   
@@ -491,33 +444,9 @@
       links.style.borderBottom = '1px solid var(--border)';
       links.style.zIndex = '99';
     }
-    async function handleSubscribe(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button');
-      const msg = document.getElementById('sub-msg');
-      btn.textContent = 'Subscribing…';
-      btn.disabled = true;
-      const email = document.getElementById('sub-email').value.trim();
-      try {
-        const res = await fetch('/api/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ formType: 'subscribe', email }),
-        });
-        if (!res.ok) throw new Error();
-        msg.textContent = "You're in. New articles will come straight to your inbox.";
-        msg.style.color = 'var(--ink-3)';
-        document.getElementById('sub-email').value = '';
-        btn.textContent = 'Subscribed ✓';
-      } catch {
-        btn.textContent = 'Subscribe';
-        btn.disabled = false;
-        msg.textContent = 'Something went wrong — please try again.';
-        msg.style.color = 'var(--rust)';
-      }
-    }
+
   </script>
-            <!-- ═══ FOOTER:START ═══ -->
+              <!-- ═══ FOOTER:START ═══ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
