@@ -53,6 +53,62 @@ async function appendToSheet(data) {
   }
 }
 
+
+// ─── Google Sheets — Diagnostic Results ──────────────────────────────────────
+async function appendDiagnosticToSheet(data) {
+  const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+  const privateKey  = process.env.GOOGLE_PRIVATE_KEY;
+  const sheetId     = process.env.GOOGLE_SHEET_ID;
+
+  if (!clientEmail || !privateKey || !sheetId) {
+    console.warn("[Sheets-Diag] Missing env vars — skipping");
+    return false;
+  }
+
+  try {
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: clientEmail,
+        private_key: privateKey.replace(/\\n/g, "\n"),
+      },
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+    });
+
+    const sheets = google.sheets({ version: "v4", auth });
+
+    // Parse answers from JSON string if needed
+    let answers = data.diagnosticAnswers || {};
+    if (typeof answers === "string") {
+      try { answers = JSON.parse(answers); } catch(e) { answers = {}; }
+    }
+
+    const row = [
+      new Date().toISOString(),
+      data.email          || "",
+      data.diagnosticScore !== undefined ? data.diagnosticScore : "",
+      data.diagnosticLabel || "",
+      answers.q1 || "", // Call logging behaviour
+      answers.q2 || "", // Stage automation
+      answers.q3 || "", // Pipeline review style
+      answers.q4 || "", // Playbook location
+      answers.q5 || "", // Forecast method
+    ];
+
+    const result = await sheets.spreadsheets.values.append({
+      spreadsheetId: sheetId,
+      range: "Diagnostics!A:I",
+      valueInputOption: "USER_ENTERED",
+      requestBody: { values: [row] },
+    });
+
+    console.log("[Sheets-Diag] Diagnostic row appended:", result.data.updates?.updatedRange);
+    return true;
+  } catch (e) {
+    console.error("[Sheets-Diag] Error:", e.message);
+    return false;
+  }
+}
+
 // ─── Teams Webhook ────────────────────────────────────────────────────────────
 async function notifyTeams(data) {
   const webhookUrl = process.env.TEAMS_WEBHOOK_URL;
@@ -232,10 +288,14 @@ module.exports = async function handler(req, res) {
 
   console.log("[Handler] Submission — type:", data.formType, "| email:", data.email);
 
-  const results = { sheet: false, email: false, autoReply: false, teams: false };
+  const results = { sheet: false, diagnostic: false, email: false, autoReply: false, teams: false };
+  const isDiagnostic = data.formType === "diagnostic";
 
   const settled = await Promise.allSettled([
-    appendToSheet(data).then(ok => { results.sheet     = !!ok; }),
+    (isDiagnostic
+      ? appendDiagnosticToSheet(data)
+      : appendToSheet(data)
+    ).then(ok => { isDiagnostic ? (results.diagnostic = !!ok) : (results.sheet = !!ok); }),
     sendTeamEmail(data).then(ok => { results.email     = !!ok; }),
     sendAutoReply(data).then(ok => { results.autoReply = !!ok; }),
     notifyTeams(data).then(ok   => { results.teams     = !!ok; }),
