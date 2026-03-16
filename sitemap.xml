@@ -31,6 +31,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://go-warm-crm.vercel.app/crm-implementation-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://go-warm-crm.vercel.app/lead-generation-discovery-meetings</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://go-warm-crm.vercel.app/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Improve Lead Generation and Book More Discovery Meetings | GoWarm Insights</title>
+  <meta name="description" content="Most lead gen underperformance is a definition problem, not a volume problem. Before hiring more SDRs or buying another sequencing tool, get alignment on ICP, lead qualification, and the metrics that actually show where your funnel is breaking." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .metric-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    .motion-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--rust); letter-spacing: 1px; margin-bottom: 4px; display: block; }
+    .icp-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 1.5em 0 2em; }
+    .icp-table th { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding: 8px 12px; border-bottom: 2px solid var(--border); text-align: left; }
+    .icp-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: top; font-family: var(--body-serif); font-weight: 300; color: var(--ink-2); line-height: 1.5; font-size: 14px; }
+    .icp-table tr:last-child td { border-bottom: none; }
+    .icp-table td:first-child { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 13px; }
+    .share-bar { max-width: 720px; margin: 40px auto 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
+    @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } .icp-table { font-size: 13px; } }
+  </style>
+
+  <!-- ═══ SEO / AEO — injected by build.js (safe to re-run) ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://go-warm-crm.vercel.app/lead-generation-discovery-meetings" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://go-warm-crm.vercel.app/lead-generation-discovery-meetings" />
+  <meta property="og:title"       content="How to Improve Lead Generation and Book More Discovery Meetings | GoWarm Insights" />
+  <meta property="og:description" content="Most lead gen underperformance is a definition problem, not a volume problem. Before hiring more SDRs or buying another sequencing tool, get alignment on ICP, lead qualification, and the metrics that actually show where your funnel is breaking." />
+  <meta property="og:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="How to Improve Lead Generation and Book More Discovery Meetings | GoWarm Insights" />
+  <meta name="twitter:description" content="Most lead gen underperformance is a definition problem, not a volume problem. Before hiring more SDRs or buying another sequencing tool, get alignment on ICP, lead qualification, and the metrics that actually show where your funnel is breaking." />
+  <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <!-- ═══ end SEO block ═══ -->
+
+  <!-- Article schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Improve Lead Generation and Book More Discovery Meetings | GoWarm Insights",
+    "description": "Most lead gen underperformance is a definition problem, not a volume problem. Before hiring more SDRs or buying another sequencing tool, get alignment on ICP, lead qualification, and the metrics that actually show where your funnel is breaking.",
+    "url": "https://go-warm-crm.vercel.app/lead-generation-discovery-meetings",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GoWarm Insights",
+      "url": "https://go-warm-crm.vercel.app"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://go-warm-crm.vercel.app/lead-generation-discovery-meetings"
+    }
+  }
+  </script>
+
+  <!-- FAQ schema (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you improve B2B lead generation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start by diagnosing where the funnel is breaking before changing volume or tooling. Measure contact-to-meeting rate, meeting show rate, and discovery-to-opportunity rate. If contact-to-meeting is below 5% for cold outbound, the problem is messaging or targeting. If show rate is below 70%, the problem is qualification — meetings are being booked before genuine interest is established. Fix the conversion rate before scaling volume."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an ideal customer profile (ICP) and how do you define one?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A usable ICP has four components: a firmographic profile (company size, industry, revenue range), a situational trigger (what has to be happening at the company for them to be a real prospect now), a buyer persona (who experiences the problem and has authority to buy), and a disqualifying signal (what makes a company definitively not your customer). The fastest way to build it is to analyse your last 10-15 closed won deals and identify what they had in common that other prospects didn't."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good discovery meeting show rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A healthy meeting show rate is 70% or above. Below that level, meetings are being booked before genuine interest is established — prospects agreed to get off the phone, not because they were curious. The fix is better qualification before booking, not better reminder sequences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between MQL, SAL, and SQL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An MQL (marketing qualified lead) meets firmographic criteria and has shown intent signals. An SAL (sales accepted lead) is an MQL that sales has reviewed and agreed meets the ICP — this is the handoff point. An SQL (sales qualified lead) has been contacted, responded, and meets qualification criteria like budget, authority, need, and timeline. The SAL stage is commonly skipped, causing marketing to pass unreviewed leads directly into outreach sequences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should you hire SDRs to improve lead generation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add SDR volume when your ICP is tight, your messaging is working (contact-to-meeting rate above 8%), your show rate is healthy, and your discovery-to-opportunity rate is strong. If those conditions aren't met, adding SDRs generates more noise and burns through your best prospects before you've figured out what to say to them."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#articles">Articles</a></li>
+          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
+          <li><a href="contact.html">Work With Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">Lead Generation</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For VP Sales · Head of Growth · RevOps</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">10 min read</span>
+          </div>
+          <h1 class="article-title">Mandated to Improve Lead Generation? Start Here Before You Touch the Tooling.</h1>
+          <p class="article-deck">Most lead gen underperformance isn't a volume problem — it's a definition problem. Before you hire more SDRs or buy another sequencing tool, you need alignment on who you're actually trying to talk to and what a good meeting looks like.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+        <div class="article-body">
+
+          <p>The mandate lands and it feels like a volume problem. You're not booking enough discovery calls. The pipeline is thin. The ask is clear: fix the top of funnel.</p>
+
+          <p>The instinctive response is equally clear: more outreach. More sequences. More SDRs. A better tool. A new agency. Turn up the volume until the meetings appear.</p>
+
+          <p>This works occasionally and fails most of the time. It works when you already have clarity on who you're targeting, what you're offering, and why someone should take the call. When those conditions aren't in place — and they're absent more often than sales leaders admit — increasing volume just means generating more noise faster, booking more wrong meetings, and burning through prospects in your best segments before you've figured out what to say to them.</p>
+
+          <p>The honest starting point is almost always the same: before you change anything about how you generate leads or book meetings, you need to answer three questions with specific, agreed answers.</p>
+
+          <h2>Question 1: Who Is Your ICP and Can You Describe Them in One Sentence?</h2>
+
+          <p>ICP — ideal customer profile — is one of the most used and least useful concepts in B2B sales, usually because it exists as a three-page document that nobody reads rather than a shared definition that drives daily decisions.</p>
+
+          <p>A usable ICP has four components: a firmographic profile (company size, industry, geography, revenue range), a situational trigger (what has to be happening at the company for them to be a real prospect right now), a title or persona (who experiences the problem you solve and has the authority to buy), and a disqualifying signal (what makes a company definitively not your customer, regardless of other factors).</p>
+
+          <p>If your sales and marketing teams can't agree on all four components, you don't have an ICP — you have an aspiration. And aspiration-driven outreach produces inconsistent results, because different reps are effectively selling to different buyers.</p>
+
+          <p>The fastest way to sharpen your ICP is to look backwards at your last ten to fifteen closed won deals. Not the ones you hoped to win. The ones you actually won, where the customer saw value quickly, onboarded smoothly, and didn't churn. What did they have in common that your other prospects didn't? That pattern is your ICP.</p>
+
+          <h2>The Lead Qualification Framework: MQL, SQL, and the Handoff Problem</h2>
+
+          <p>Once you know who you're targeting, you need shared definitions for what a lead is at each stage of its journey from unknown to qualified. Most organisations have these in theory. Most of them are broken in practice.</p>
+
+          <table class="icp-table">
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>Definition</th>
+                <th>Who owns it</th>
+                <th>Common failure mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MQL</td>
+                <td>A contact who meets firmographic criteria and has shown intent signals (content download, webinar attendance, ad click) sufficient to warrant sales attention</td>
+                <td>Marketing</td>
+                <td>Intent signals are too shallow — a single page view triggers MQL status, flooding sales with people who weren't actually interested</td>
+              </tr>
+              <tr>
+                <td>SAL</td>
+                <td>Sales-accepted lead — an MQL that sales has reviewed and agreed meets the ICP. The formal handoff point.</td>
+                <td>Sales (SDR or AE)</td>
+                <td>This stage doesn't exist. Marketing passes MQLs directly to sequences with no human review, burning contacts who weren't ready</td>
+              </tr>
+              <tr>
+                <td>SQL</td>
+                <td>A lead that has been contacted, has responded, and meets BANT or equivalent qualification criteria — budget, authority, need, timeline are confirmed or credibly estimated</td>
+                <td>SDR or AE</td>
+                <td>Qualification criteria are too loose — SQLs are created based on "they replied" rather than confirmed fit, producing discovery meetings that go nowhere</td>
+              </tr>
+              <tr>
+                <td>Discovery booked</td>
+                <td>A qualified contact who has agreed to a scheduled conversation with an AE</td>
+                <td>SDR</td>
+                <td>Show rate is low because meetings were booked before genuine interest was established — the contact said yes to get off the phone</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>The handoff between marketing and sales is where most lead gen programmes break down. Marketing optimises for MQL volume because that's what they're measured on. Sales ignores MQLs because they're rarely qualified enough to be worth the time. Each side blames the other. The leads sit untouched in the CRM.</p>
+
+          <p>The fix is a shared SLA: marketing commits to MQL quality standards (firmographic match plus minimum intent threshold), sales commits to follow-up within a defined window, and both teams review the conversion rates at the handoff weekly. Not quarterly. Weekly, until the rates stabilise.</p>
+
+          <h2>Which Sales Motion Do You Actually Have?</h2>
+
+          <p>Lead generation strategy needs to match your sales motion. This sounds obvious. It's regularly ignored, usually because the strategy was built for a motion that no longer reflects how the company sells.</p>
+
+          <p><span class="motion-label">Founder-led sales</span>The founder or a senior leader is the primary seller. Outbound volume is low but conversion is high because trust and credibility are built in. The right lead gen approach is highly targeted — a small number of precisely identified accounts, personalised outreach from the founder, and events or content that establish authority. Adding SDRs at this stage usually destroys the quality signal without adding volume that converts.</p>
+
+          <p><span class="motion-label">SDR-led outbound</span>A dedicated prospecting function that books meetings for AEs. This model works when ICP is tight, messaging is proven, and the product can be demonstrated clearly in a discovery call. It fails when ICP is fuzzy, messaging is generic, or the product requires a lot of context to be compelling. SDRs running broad sequences with weak messaging produce a lot of activity and very few qualified opportunities.</p>
+
+          <p><span class="motion-label">AE-owned full cycle</span>Each AE manages their own pipeline from prospecting through close. Common in mid-market and specialist sales. The lead gen problem here is usually prioritisation — AEs deprioritise prospecting when they have deals to close, creating pipeline boom-bust cycles. The CRM's job is to make this visible and trigger prospecting activity before the pipeline drops below threshold.</p>
+
+          <p><span class="motion-label">Inbound-driven</span>Marketing generates demand through content, SEO, or paid channels. Sales qualifies and converts. This model requires genuine content investment to work — surface-level content produces low-intent leads. The CRM's role is to score leads based on engagement depth and route the highest-intent ones to fast follow-up, because inbound leads decay quickly.</p>
+
+          <h2>The Metrics That Actually Tell You What's Broken</h2>
+
+          <p>Most lead gen dashboards measure the wrong things. High-level numbers — leads generated, meetings booked — hide where the real problem is. These are the metrics that actually diagnose the issue:</p>
+
+          <p><span class="metric-label">Lead-to-SAL conversion rate</span>What percentage of MQLs get accepted by sales? Below 40% and your MQL definition is too loose — you're generating leads that sales correctly identifies as not worth pursuing. Above 80% and either your MQL threshold is too high (leaving value on the table) or sales is accepting everything uncritically.</p>
+
+          <p><span class="metric-label">Contact-to-meeting rate</span>Of the leads that get contacted, what percentage book a discovery call? This is your messaging and targeting signal. A low rate (under 5% for cold outbound) means either you're reaching the wrong people or your messaging doesn't resonate. Optimise this before increasing volume.</p>
+
+          <p><span class="metric-label">Meeting show rate</span>Of booked discovery calls, what percentage actually happen? Below 70% is a signal that meetings are being booked before genuine interest is established. The prospect said yes to end the conversation, not because they were genuinely curious. The fix is qualification, not reminders.</p>
+
+          <p><span class="metric-label">Discovery-to-opportunity rate</span>What percentage of discovery calls convert to active opportunities? Below 30% means either your ICP is wrong (you're talking to people who can't buy), your qualification is weak (you're booking meetings with people who don't have the problem), or your discovery call isn't establishing value. Each cause has a different fix.</p>
+
+          <p><span class="metric-label">Time to first contact</span>How quickly does a rep contact an inbound lead? Speed matters enormously here — research consistently shows conversion rates drop significantly after the first hour. If your CRM isn't surfacing high-intent inbound leads for immediate follow-up, you're leaving qualified pipeline on the table.</p>
+
+          <h2>Where the CRM Fits In</h2>
+
+          <p>Lead generation is often treated as a marketing and outreach problem, with the CRM as a passive record-keeping system. That's the wrong model. The CRM is the infrastructure that makes lead gen measurable and improvable.</p>
+
+          <p>Specifically, the CRM should be doing three things in the lead gen process that most aren't: surfacing high-intent leads for fast follow-up rather than putting them in a queue, tracking lead source to closed won so you know which channels are producing real revenue rather than just volume, and flagging leads that have gone cold in the qualification process so nothing falls through. If your CRM is doing none of these things, your lead gen metrics are incomplete regardless of how good your outreach is.</p>
+
+          <div class="diagnostic-box">
+            <div class="box-label">◆ Lead Generation Diagnostic</div>
+            <p><strong>Q1:</strong> Write your ICP in one sentence — firmographic profile, situational trigger, and buyer persona. Can your marketing and SDR teams produce the same sentence independently? If not, that's your first fix, before anything else changes.</p>
+            <p><strong>Q2:</strong> Pull your contact-to-meeting rate and your meeting show rate for the last quarter. If contact-to-meeting is below 5% for cold outbound, your messaging or targeting is the problem. If show rate is below 70%, your qualification is the problem. Fix the right thing.</p>
+            <p><strong>Q3:</strong> Look at your last ten discovery calls that didn't convert to opportunities. What did those prospects have in common? The pattern is usually a disqualifying signal you're not catching earlier in the process — and catching it earlier means you spend less time on meetings that were never going to close.</p>
+          </div>
+
+          <h2>The Uncomfortable Truth About Volume</h2>
+
+          <p>More outreach is the solution to a lead gen problem in one specific scenario: when your ICP is right, your messaging is working (contact-to-meeting above 8%), your show rate is healthy, and your discovery-to-opportunity rate is strong. If all of those conditions are met and you just need more at the top of the funnel, then yes — add volume. Hire the SDR. Increase the ad budget. Expand the sequence.</p>
+
+          <p>If those conditions aren't met, adding volume makes the problem harder to fix. You're generating more data, more noise, and more frustrated prospects — all of which obscure the signal you need to identify what's actually broken.</p>
+
+          <p>Diagnose first. Fix the conversion rate. Then scale what's working.</p>
+
+          <div class="cta-inline">
+            Before your next SDR hire or tooling investment, answer this: what is your current contact-to-meeting rate, and what would it need to be for additional volume to produce the pipeline you need? That calculation tells you whether you have a volume problem or a conversion problem — and they require completely different interventions.
+          </div>
+
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm CRM</a> — an AI-native CRM built for sales teams that want their system to surface the right leads at the right time. Want to understand where your lead gen process is losing value? <a href="contact.html" style="color:var(--rust)">Request a free 30-minute diagnostic.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="crm-implementation-guide.html">← Previous: How to Implement a CRM</a>
+          <a href="index.html">← All Articles</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales leaders at companies doing $5M–$500M in revenue. Published by the team at GoWarm CRM.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Articles</h4>
+          <ul>
+            <li><a href="is-your-crm-a-crud-app.html">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="are-your-sales-playbooks-working.html">Are your playbooks working?</a></li>
+            <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
+            <li><a href="crm-integration-complexity.html">The integration trap</a></li>
+            <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
+            <li><a href="crm-implementation-guide.html">How to implement a CRM</a></li>
+            <li><a href="lead-generation-discovery-meetings.html">Improving lead generation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
+            <li><a href="contact.html">Request a Consultation</a></li>
+            <li><a href="https://gowarm.ai" target="_blank" rel="noopener">GoWarm CRM →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 GoWarm CRM. All rights reserved.</span>
+        <span>gowarm.ai</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

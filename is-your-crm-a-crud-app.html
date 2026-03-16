@@ -177,6 +177,48 @@
   }
   </script>
 
+  <!-- FAQ schema (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I know if my team is using Salesforce properly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Key signals of poor CRM adoption include: reps logging calls after the fact, no automated next steps after stage changes, pipeline reviews that rely on rep memory rather than system data, playbooks stored in external documents nobody reads, and forecasts based on gut feel rather than system-calculated probability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average cost of Salesforce for a mid-market company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you include licenses, admin overhead, and integrations, the average mid-market company spends between $80,000 and $200,000 per year on Salesforce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a system of action versus a system of record in CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A system of record stores what happened — calls logged, deals tracked, contacts managed. A system of action drives what should happen next — automated tasks, triggered workflows, next-step recommendations. Most CRM implementations function as systems of record when they should be systems of action."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do sales reps avoid updating the CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reps avoid CRM updates when the system gives them nothing useful in return. If logging a call doesn't surface next steps, trigger automations, or make their job easier, it becomes pure compliance work. The fix is a CRM configured to reward good behavior, not just record it."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- ═══ SEO / AEO — injected by build.js (safe to re-run) ═══ -->
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://go-warm-crm.vercel.app/is-your-crm-a-crud-app" />
@@ -406,6 +448,8 @@
             <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
             <li><a href="crm-integration-complexity.html">The integration trap</a></li>
             <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
+            <li><a href="crm-implementation-guide.html">How to implement a CRM</a></li>
+            <li><a href="lead-generation-discovery-meetings.html">Improving lead generation</a></li>
           </ul>
         </div>
         <div class="footer-col">

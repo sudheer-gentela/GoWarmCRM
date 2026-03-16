@@ -144,6 +144,48 @@ const config = {
       ],
     },
 
+    "crm-implementation-guide": {
+      slug:        "crm-implementation-guide",
+      title:       "How to Implement a CRM: A Practical Framework for Getting It Right | GoWarm Insights",
+      description: "Most CRM implementations fail not because of the tool chosen, but because the process wasn't documented before the tool was selected. A step-by-step framework covering process design, tool selection, change management, and the first 90 days.",
+      label:       "CRM Implementation",
+      audience:    "VP Sales · Sales Ops · RevOps",
+      readTime:    "10 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "What is the first step in implementing a CRM?",
+          a: "Document your actual sales process before evaluating any tools. Spend two weeks talking to sales reps about how they sell today — not how you want them to sell. Map the process with clear definitions of what has to happen at each stage before a deal moves forward. Every CRM implementation that skips this step produces a system that doesn't match how people work." },
+        { q: "Which CRM should a small or mid-market B2B company implement?",
+          a: "The right CRM depends on your sales motion. High-volume, short-cycle sales (under 30 days) suit lightweight tools like HubSpot or Pipedrive. Mid-market 30-90 day cycles need solid workflow automation and forecast tools. Enterprise multi-stakeholder deals justify Salesforce. Founder-led or early-stage teams (under 5 reps) should start with something configurable in a day before investing in a full platform." },
+        { q: "How do you get sales reps to adopt a new CRM?",
+          a: "Design the CRM for rep productivity, not just management visibility. Involve reps in configuration before it's finished — ask what information would help them before calls, what takes too long to log. The manager's behaviour sets the standard: if pipeline reviews bypass the CRM, reps learn it doesn't matter. Adoption typically takes 60-90 days of consistent reinforcement after go-live." },
+        { q: "What are the biggest mistakes in a first CRM implementation?",
+          a: "The five most common mistakes are: configuring for an ideal process rather than the current one, adding too many fields too early, having no data quality owner, measuring adoption by logins rather than data completeness, and treating go-live as the finish line rather than the start of the adoption phase." },
+      ],
+    },
+
+    "lead-generation-discovery-meetings": {
+      slug:        "lead-generation-discovery-meetings",
+      title:       "How to Improve Lead Generation and Book More Discovery Meetings | GoWarm Insights",
+      description: "Most lead gen underperformance is a definition problem, not a volume problem. Before hiring more SDRs or buying another sequencing tool, get alignment on ICP, lead qualification, and the metrics that actually show where your funnel is breaking.",
+      label:       "Lead Generation",
+      audience:    "VP Sales · Head of Growth · RevOps",
+      readTime:    "10 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "How do you improve B2B lead generation?",
+          a: "Start by diagnosing where the funnel is breaking before changing volume or tooling. Measure contact-to-meeting rate, meeting show rate, and discovery-to-opportunity rate. If contact-to-meeting is below 5% for cold outbound, the problem is messaging or targeting. If show rate is below 70%, the problem is qualification — meetings are being booked before genuine interest is established. Fix the conversion rate before scaling volume." },
+        { q: "What is an ideal customer profile (ICP) and how do you define one?",
+          a: "A usable ICP has four components: a firmographic profile (company size, industry, revenue range), a situational trigger (what has to be happening at the company for them to be a real prospect now), a buyer persona (who experiences the problem and has authority to buy), and a disqualifying signal (what makes a company definitively not your customer). The fastest way to build it is to analyse your last 10-15 closed won deals and identify what they had in common that other prospects didn't." },
+        { q: "What is a good discovery meeting show rate?",
+          a: "A healthy meeting show rate is 70% or above. Below that level, meetings are being booked before genuine interest is established — prospects agreed to get off the phone, not because they were curious. The fix is better qualification before booking, not better reminder sequences." },
+        { q: "What is the difference between MQL, SAL, and SQL?",
+          a: "An MQL (marketing qualified lead) meets firmographic criteria and has shown intent signals. An SAL (sales accepted lead) is an MQL that sales has reviewed and agreed meets the ICP — this is the handoff point. An SQL (sales qualified lead) has been contacted, responded, and meets qualification criteria like budget, authority, need, and timeline. The SAL stage is commonly skipped, causing marketing to pass unreviewed leads directly into outreach sequences." },
+        { q: "When should you hire SDRs to improve lead generation?",
+          a: "Add SDR volume when your ICP is tight, your messaging is working (contact-to-meeting rate above 8%), your show rate is healthy, and your discovery-to-opportunity rate is strong. If those conditions aren't met, adding SDRs generates more noise and burns through your best prospects before you've figured out what to say to them." },
+      ],
+    },
+
     "contact": {
       slug:        "contact",
       title:       "Free CRM Consultation — GoWarm Insights",
@@ -175,6 +217,8 @@ const config = {
     "revops-stack-crm-foundation":      "revops-stack-crm-foundation.html",
     "contact":                          "contact.html",
     "crm-diagnostic":                   "diagnostic.html",
+    "crm-implementation-guide":         "crm-implementation-guide.html",
+    "lead-generation-discovery-meetings": "lead-generation-discovery-meetings.html",
   },
 
 };

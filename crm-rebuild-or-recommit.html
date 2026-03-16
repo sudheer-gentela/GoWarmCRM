@@ -144,6 +144,48 @@
   }
   </script>
 
+  <!-- FAQ schema (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I know if Salesforce is the right CRM for my company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salesforce is the right fit if you have a genuinely complex sales process (multi-stakeholder, long-cycle enterprise), dedicated Salesforce admin capacity, a team of 50+ reps, and existing data and integrations that would be expensive to rebuild. If none of these apply, you may be over-CRMed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the true cost of switching CRM systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The true cost includes data migration (typically 2-3x the vendor's estimate), rep retraining and 60-90 days of reduced productivity, process redesign, and integration rebuilds. All of these must be quantified honestly before evaluating alternatives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When does building a custom CRM make sense?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom CRM makes sense when your sales process has genuinely idiosyncratic requirements no commercial platform addresses, the business logic is core IP, and you can commit to owning the system for 3+ years including ongoing maintenance. It is a trap when driven by frustration with existing platforms rather than a specific capability gap."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the worst outcome of a CRM evaluation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Spending six months evaluating, building organizational energy around change, and returning to the status quo with nothing changed. This depletes political capital, signals to reps that nothing will change, and validates learned helplessness. Setting a hard decision date at the start of any evaluation prevents this."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- ═══ SEO / AEO — injected by build.js (safe to re-run) ═══ -->
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://go-warm-crm.vercel.app/crm-rebuild-or-recommit" />
@@ -393,6 +435,8 @@
             <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
             <li><a href="crm-integration-complexity.html">The integration trap</a></li>
             <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
+            <li><a href="crm-implementation-guide.html">How to implement a CRM</a></li>
+            <li><a href="lead-generation-discovery-meetings.html">Improving lead generation</a></li>
           </ul>
         </div>
         <div class="footer-col">

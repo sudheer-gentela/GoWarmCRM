@@ -144,6 +144,48 @@
   }
   </script>
 
+  <!-- FAQ schema (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you measure sales playbook effectiveness?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The three core metrics are: play completion rate (what percentage of reps complete the associated actions when a play is triggered), stage velocity by playbook (do deals where the play was executed move through stages faster), and win rate by play used (is there a measurable win rate difference between deals where the play ran versus those where it didn't)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do sales playbooks fail to get adopted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Playbooks fail when they're designed as training documents rather than operational tools. If reps have to leave their CRM workflow to find and read a playbook, adoption approaches zero. Playbooks need to be embedded in the deal workflow, triggered automatically at the right deal stage, with defined completion criteria and outcome tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a playbook and playbook execution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A playbook is a document — a collection of guidance and best practices. Playbook execution is the system by which that guidance actually changes rep behavior at the moment of a sales interaction. Most organisations have the first. Very few have the second."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good play completion rate for sales playbooks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A completion rate below 40% indicates the play isn't being used. Above 80% with no outcome differentiation suggests reps are ticking boxes without it changing behavior. The target is high completion paired with measurable outcome improvement — stage velocity or win rate lift."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- ═══ SEO / AEO — injected by build.js (safe to re-run) ═══ -->
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://go-warm-crm.vercel.app/are-your-sales-playbooks-working" />
@@ -376,6 +418,8 @@
             <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
             <li><a href="crm-integration-complexity.html">The integration trap</a></li>
             <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
+            <li><a href="crm-implementation-guide.html">How to implement a CRM</a></li>
+            <li><a href="lead-generation-discovery-meetings.html">Improving lead generation</a></li>
           </ul>
         </div>
         <div class="footer-col">
