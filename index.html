@@ -464,12 +464,30 @@
       links.style.borderBottom = '1px solid var(--border)';
       links.style.zIndex = '99';
     }
-    function handleSubscribe(e) {
+    async function handleSubscribe(e) {
       e.preventDefault();
+      const btn = e.target.querySelector('button');
       const msg = document.getElementById('sub-msg');
-      msg.textContent = 'You\'re in. New articles will come straight to your inbox.';
-      msg.style.color = 'var(--ink-3)';
-      document.getElementById('sub-email').value = '';
+      btn.textContent = 'Subscribing…';
+      btn.disabled = true;
+      const email = document.getElementById('sub-email').value.trim();
+      try {
+        const res = await fetch('/api/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ formType: 'subscribe', email }),
+        });
+        if (!res.ok) throw new Error();
+        msg.textContent = "You're in. New articles will come straight to your inbox.";
+        msg.style.color = 'var(--ink-3)';
+        document.getElementById('sub-email').value = '';
+        btn.textContent = 'Subscribed ✓';
+      } catch {
+        btn.textContent = 'Subscribe';
+        btn.disabled = false;
+        msg.textContent = 'Something went wrong — please try again.';
+        msg.style.color = 'var(--rust)';
+      }
     }
   </script>
 </body>

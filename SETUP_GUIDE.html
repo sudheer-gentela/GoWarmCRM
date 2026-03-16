@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Backend Setup Guide — Action Insights</title>
+  <style>
+    body { font-family: -apple-system, Arial, sans-serif; max-width: 780px; margin: 0 auto; padding: 40px 24px; color: #1A1814; line-height: 1.7; background: #FAFAF8; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 18px; margin: 40px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #C4420A; color: #C4420A; }
+    h3 { font-size: 15px; margin: 20px 0 6px; }
+    p, li { font-size: 15px; color: #3D3A34; }
+    ul, ol { padding-left: 24px; margin: 8px 0 16px; }
+    li { margin-bottom: 6px; }
+    code { background: #EAE7E0; padding: 2px 6px; border-radius: 3px; font-family: monospace; font-size: 13px; color: #C4420A; }
+    pre { background: #1A1814; color: #F3F1EC; padding: 16px 20px; border-radius: 6px; font-size: 13px; overflow-x: auto; margin: 12px 0; }
+    .step { background: #fff; border: 1px solid #E0DDD6; border-left: 4px solid #C4420A; border-radius: 0 6px 6px 0; padding: 16px 20px; margin: 12px 0; }
+    .step strong { display: block; font-size: 14px; color: #1A1814; margin-bottom: 4px; }
+    .tag { display: inline-block; background: #F2E8E2; color: #C4420A; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; margin-right: 6px; }
+    .done { color: #2e7d32; font-weight: 600; }
+    .warn { background: #FFF8E1; border-color: #F9A825; color: #5D4037; padding: 12px 16px; border-radius: 4px; border-left: 4px solid #F9A825; margin: 12px 0; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+    th { background: #EAE7E0; padding: 8px 12px; text-align: left; font-weight: 600; }
+    td { padding: 8px 12px; border-bottom: 1px solid #E0DDD6; vertical-align: top; }
+    .summary-box { background: #EAE7E0; border-radius: 6px; padding: 20px 24px; margin: 24px 0; }
+  </style>
+</head>
+<body>
+
+<h1>Form Backend Setup Guide</h1>
+<p>This guide walks you through connecting your 4 form destinations. Total time: <strong>~25 minutes</strong>. All services are free.</p>
+
+<div class="summary-box">
+  <strong>What you're setting up:</strong>
+  <ul style="margin:8px 0 0">
+    <li>📧 <strong>Gmail SMTP</strong> — sends team notifications + auto-replies</li>
+    <li>📊 <strong>Google Sheets</strong> — stores every form submission</li>
+    <li>💬 <strong>Microsoft Teams</strong> — instant card notification per submission</li>
+    <li>🔑 <strong>Vercel Environment Variables</strong> — connects it all securely</li>
+  </ul>
+</div>
+
+<!-- ── SECTION 1 ─────────────────────────────────────── -->
+<h2>Step 1 — Gmail App Password (~3 min)</h2>
+<p>Your form sends email via Gmail SMTP. You need an <strong>App Password</strong> — a separate 16-character password just for this app. Your main Google password is never exposed.</p>
+
+<div class="warn">⚠️ Gmail 2-Step Verification must be ON before you can create App Passwords. Check at <a href="https://myaccount.google.com/security">myaccount.google.com/security</a>.</div>
+
+<div class="step"><strong>1.</strong> Go to <a href="https://myaccount.google.com">myaccount.google.com</a> → Security</div>
+<div class="step"><strong>2.</strong> In the search bar at the top, type <code>App Passwords</code> and click it</div>
+<div class="step"><strong>3.</strong> App name: type <code>Action Insights Forms</code> → click <strong>Create</strong></div>
+<div class="step"><strong>4.</strong> Google shows a 16-character password. <strong>Copy it now</strong> — you won't see it again. It looks like: <code>abcd efgh ijkl mnop</code></div>
+
+<p>You'll add this as <code>GMAIL_APP_PASSWORD</code> in Vercel in Step 4.</p>
+
+
+<!-- ── SECTION 2 ─────────────────────────────────────── -->
+<h2>Step 2 — Google Sheets Setup (~8 min)</h2>
+<p>Every form submission gets logged to a Google Sheet you control. This requires a Service Account — a bot Google identity that can write to your sheet.</p>
+
+<h3>2a. Create the Google Sheet</h3>
+<div class="step"><strong>1.</strong> Go to <a href="https://sheets.google.com">sheets.google.com</a> → create a new sheet → name it <code>Action Insights — Form Submissions</code></div>
+<div class="step"><strong>2.</strong> Add these headers in row 1 (one per column A through J):<br>
+<code>Timestamp</code> &nbsp; <code>First Name</code> &nbsp; <code>Last Name</code> &nbsp; <code>Email</code> &nbsp; <code>Company</code> &nbsp; <code>Role</code> &nbsp; <code>Team Size</code> &nbsp; <code>CRM</code> &nbsp; <code>Challenge</code> &nbsp; <code>Form Type</code>
+</div>
+<div class="step"><strong>3.</strong> Copy the Sheet ID from the URL:<br>
+<code>https://docs.google.com/spreadsheets/d/<strong>THIS_IS_YOUR_SHEET_ID</strong>/edit</code>
+</div>
+
+<h3>2b. Create a Service Account</h3>
+<div class="step"><strong>1.</strong> Go to <a href="https://console.cloud.google.com">console.cloud.google.com</a> → click the project dropdown at the top → <strong>New Project</strong> → name it <code>action-insights-forms</code> → Create</div>
+<div class="step"><strong>2.</strong> In the left sidebar: <strong>APIs &amp; Services → Library</strong> → search <code>Google Sheets API</code> → click it → <strong>Enable</strong></div>
+<div class="step"><strong>3.</strong> Left sidebar: <strong>IAM &amp; Admin → Service Accounts → + Create Service Account</strong><br>
+Name: <code>sheets-writer</code> → Continue → Role: <strong>Editor</strong> → Done</div>
+<div class="step"><strong>4.</strong> Click the service account email → <strong>Keys</strong> tab → <strong>Add Key → Create new key → JSON → Create</strong><br>
+A JSON file downloads. <strong>Keep this safe</strong> — it's your credentials.</div>
+<div class="step"><strong>5.</strong> Open the JSON file. Find and copy:<br>
+• <code>"client_email"</code> → this is your <code>GOOGLE_SERVICE_ACCOUNT_EMAIL</code><br>
+• <code>"private_key"</code> → this is your <code>GOOGLE_PRIVATE_KEY</code> (the long block starting with <code>-----BEGIN RSA PRIVATE KEY-----</code>)</div>
+
+<h3>2c. Share the sheet with the service account</h3>
+<div class="step"><strong>1.</strong> Back in your Google Sheet → click <strong>Share</strong></div>
+<div class="step"><strong>2.</strong> Paste the service account email (looks like <code>sheets-writer@action-insights-forms.iam.gserviceaccount.com</code>) → give it <strong>Editor</strong> access → Send</div>
+
+
+<!-- ── SECTION 3 ─────────────────────────────────────── -->
+<h2>Step 3 — Teams Incoming Webhook (~3 min)</h2>
+
+<div class="step"><strong>1.</strong> In Microsoft Teams, go to the channel where you want notifications (e.g. <code>#sales-leads</code>)</div>
+<div class="step"><strong>2.</strong> Click the <strong>···</strong> menu next to the channel name → <strong>Connectors</strong></div>
+<div class="step"><strong>3.</strong> Search for <strong>Incoming Webhook</strong> → click <strong>Configure</strong></div>
+<div class="step"><strong>4.</strong> Name: <code>Action Insights</code> → optionally upload a logo → click <strong>Create</strong></div>
+<div class="step"><strong>5.</strong> Copy the webhook URL — it looks like:<br>
+<code>https://your-org.webhook.office.com/webhookb2/xxxxx@xxxxx/IncomingWebhook/xxxxx</code></div>
+
+<p>This is your <code>TEAMS_WEBHOOK_URL</code>.</p>
+
+
+<!-- ── SECTION 4 ─────────────────────────────────────── -->
+<h2>Step 4 — Add Variables to Vercel (~5 min)</h2>
+<p>Never put secrets in your code. Vercel stores them securely and injects them at runtime.</p>
+
+<div class="step"><strong>1.</strong> Go to <a href="https://vercel.com">vercel.com</a> → your project → <strong>Settings → Environment Variables</strong></div>
+<div class="step"><strong>2.</strong> Add each of these variables (Name + Value), selecting <strong>All Environments</strong>:</div>
+
+<table>
+  <tr><th>Variable Name</th><th>Value</th></tr>
+  <tr><td><code>GMAIL_USER</code></td><td>Your Gmail address, e.g. <code>you@gmail.com</code></td></tr>
+  <tr><td><code>GMAIL_APP_PASSWORD</code></td><td>The 16-char App Password from Step 1 (no spaces)</td></tr>
+  <tr><td><code>NOTIFY_EMAIL</code></td><td>Where team notifications go, e.g. <code>team@company.com</code></td></tr>
+  <tr><td><code>TEAMS_WEBHOOK_URL</code></td><td>The full webhook URL from Step 3</td></tr>
+  <tr><td><code>GOOGLE_SHEET_ID</code></td><td>The Sheet ID from Step 2a</td></tr>
+  <tr><td><code>GOOGLE_SERVICE_ACCOUNT_EMAIL</code></td><td>The <code>client_email</code> from the JSON file</td></tr>
+  <tr><td><code>GOOGLE_PRIVATE_KEY</code></td><td>The entire <code>private_key</code> value from the JSON file. Paste as-is including the <code>-----BEGIN...</code> lines.</td></tr>
+</table>
+
+<div class="step"><strong>3.</strong> Click <strong>Save</strong> after each variable</div>
+<div class="step"><strong>4.</strong> Go to <strong>Deployments</strong> → click the three dots on your latest deployment → <strong>Redeploy</strong> (so the new env vars take effect)</div>
+
+
+<!-- ── SECTION 5 ─────────────────────────────────────── -->
+<h2>Step 5 — Update Your Domain in the Auto-Reply Emails</h2>
+<p>In <code>api/submit.js</code>, find the three instances of <code>https://YOUR_DOMAIN</code> in the auto-reply HTML and replace with your actual domain, e.g. <code>https://insights.actioncrm.io</code>.</p>
+
+<pre>// Find these lines in api/submit.js and update:
+href="https://YOUR_DOMAIN/article-1"
+href="https://YOUR_DOMAIN/article-2"
+href="https://YOUR_DOMAIN/article-3"</pre>
+
+
+<!-- ── TEST ─────────────────────────────────────────── -->
+<h2>Step 6 — Test It</h2>
+<div class="step"><strong>1.</strong> Submit the consultation form on your live site with a real email address you can check</div>
+<div class="step"><strong>2.</strong> Within 30 seconds you should see: ✓ Team email in your inbox &nbsp; ✓ Auto-reply to the submitted address &nbsp; ✓ Teams card in your channel &nbsp; ✓ New row in your Google Sheet</div>
+<div class="step"><strong>3.</strong> If something is missing: Vercel Dashboard → your project → <strong>Functions</strong> tab → click <code>api/submit</code> → view logs to see any error messages</div>
+
+
+<!-- ── TROUBLESHOOTING ─────────────────────────────── -->
+<h2>Troubleshooting</h2>
+<table>
+  <tr><th>Symptom</th><th>Likely cause</th></tr>
+  <tr><td>Gmail fails to send</td><td>App Password incorrect, or 2-Step Verification not enabled. Regenerate the App Password.</td></tr>
+  <tr><td>Google Sheets not logging</td><td>Service account not shared on the sheet with Editor access (Step 2c). Private key pasted incorrectly — must include the <code>-----BEGIN</code> and <code>-----END</code> lines.</td></tr>
+  <tr><td>Teams notification not appearing</td><td>Webhook URL expired or copied incorrectly. Recreate the webhook in Teams Connectors.</td></tr>
+  <tr><td>Form shows error on submit</td><td>Check Vercel Function logs. Usually a missing env variable.</td></tr>
+</table>
+
+<p style="margin-top:40px;color:#6B6760;font-size:13px">This setup guide is specific to the Action Insights site. Questions? Email the team.</p>
+
+</body>
+</html>
