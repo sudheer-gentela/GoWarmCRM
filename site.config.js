@@ -17,8 +17,8 @@ const config = {
 
   // ── Brand ──────────────────────────────────────────────────────────────────
   BRAND_PUBLICATION: "GoWarm Insights",   // Publication name (nav, footer, OG)
-  BRAND_COMPANY:     "GoWarm CRM",        // Company name (footer copyright, bios)
-  BRAND_TAGLINE:     "Practical intelligence for B2B sales leaders at companies doing $5M–$500M in revenue.",
+  BRAND_COMPANY:     "GoWarm",        // Company name (footer copyright, bios)
+  BRAND_TAGLINE:     "Practical intelligence for B2B sales and business leaders.",
 
   // ── SEO Defaults ───────────────────────────────────────────────────────────
   // Used as fallback OG image for all pages
@@ -48,6 +48,13 @@ const config = {
 
     "is-your-crm-a-crud-app": {
       slug:        "is-your-crm-a-crud-app",
+      navLabel:    "Are you using Salesforce as a CRUD app?",
+      tldr: [
+        "Most Salesforce users get pipeline visibility and reporting — things a spreadsheet could do.",
+        "5 warning signals: reps log calls after the fact, nothing triggers on stage change, pipeline reviews are interrogations, playbooks live in a doc nobody reads, forecast is gut feel.",
+        "The diagnostic question: how many automated next steps did your CRM generate in the last 90 days without anyone creating them manually?",
+        "The gap between what most orgs do and what's possible isn't a technology gap — it's a configuration and adoption gap.",
+      ],
       title:       "Is Your CRM Just a CRUD App? 5 Signs You're Wasting Your Investment | GoWarm Insights",
       description: "Most Salesforce users pay $150k/year for pipeline visibility a spreadsheet could provide. Here are 5 diagnostic signals that reveal you're using your CRM as a data entry tool — not a revenue engine.",
       label:       "Self-Diagnostic",
@@ -68,6 +75,13 @@ const config = {
 
     "are-your-sales-playbooks-working": {
       slug:        "are-your-sales-playbooks-working",
+      navLabel:    "Are your playbooks working?",
+      tldr: [
+        "Most orgs have playbooks. Very few have playbook execution — guidance that actually changes rep behaviour at the moment of a sale.",
+        "A dormant playbook is worse than no playbook: it creates false confidence that the process is being followed when it isn't.",
+        "Three metrics that tell the truth: play completion rate, stage velocity by playbook, win rate by play used.",
+        "If a rep has to leave their CRM workflow to find the playbook, adoption will be near zero.",
+      ],
       title:       "Are Your Sales Playbooks Actually Working? How to Measure Playbook Adoption | GoWarm Insights",
       description: "A playbook nobody executes creates false confidence — it's worse than no playbook at all. Here's how to measure play completion rate, stage velocity, and win rate by playbook to know if yours are working.",
       label:       "Playbooks · Enablement",
@@ -88,6 +102,13 @@ const config = {
 
     "crm-rebuild-or-recommit": {
       slug:        "crm-rebuild-or-recommit",
+      navLabel:    "Rebuild or recommit?",
+      tldr: [
+        "Before evaluating alternatives, answer honestly: is this a platform problem or an adoption and configuration problem? Most orgs mistake the second for the first.",
+        "Salesforce is right for you if: complex multi-stakeholder deals, dedicated admin capacity, 50+ reps, significant existing integrations.",
+        "True switching costs: data migration (budget 2–3x the vendor estimate), 60–90 days of reduced rep productivity, process redesign, integration rebuilds.",
+        "The worst outcome: six months of evaluation, organisational energy around change, then returning to the status quo with nothing changed.",
+      ],
       title:       "Salesforce vs Switch vs Build Custom: The Honest CRM Decision Framework | GoWarm Insights",
       description: "Should you stay on Salesforce, move to a lighter CRM, or build custom? A real evaluation framework covering true switching costs, when custom makes sense, and how to avoid spending 6 months evaluating and returning to the status quo.",
       label:       "Decision Framework",
@@ -108,6 +129,13 @@ const config = {
 
     "crm-integration-complexity": {
       slug:        "crm-integration-complexity",
+      navLabel:    "The integration trap",
+      tldr: [
+        "Integration complexity is the most effective reason organisations give for tolerating a CRM that isn't delivering — and it's often used as an excuse, not a genuine constraint.",
+        "Three categories: load-bearing (genuinely critical), convenience (real value, rebuildable), ghost (no live purpose, just inflates switching cost).",
+        "Integration quality degrades silently — the sync that worked in 2021 may be dropping records today, with reps having quietly built workarounds around the gaps.",
+        "Staying and fixing is only legitimate as a strategy if you can answer: fix what, by when, measured how?",
+      ],
       title:       "CRM Integration Complexity: Legitimate Cost or Excuse for Inertia? | GoWarm Insights",
       description: "You have 12 integrations and a working system. Before using that as a reason to avoid fixing your CRM, audit what those integrations actually do. A framework for separating load-bearing integrations from convenience and ghost integrations.",
       label:       "Integration Strategy",
@@ -126,6 +154,13 @@ const config = {
 
     "revops-stack-crm-foundation": {
       slug:        "revops-stack-crm-foundation",
+      navLabel:    "Do your RevOps tools actually help?",
+      tldr: [
+        "Tools like Outreach exist because CRMs failed at the workflow layer. In a well-designed system, what they do belongs inside the CRM itself.",
+        "Gong and Clari are genuinely different — conversation intelligence and revenue forecasting are capabilities the CRM was never designed to provide.",
+        "But both depend heavily on CRM data quality. Clari running on inflated pipeline and stale close dates produces a forecast that looks precise and is structurally wrong.",
+        "Fix the foundation first. Intelligence tools amplify what's underneath them — good or bad.",
+      ],
       title:       "Why Your Gong, Clari, and Outreach Stack Depends on CRM Data Quality | GoWarm Insights",
       description: "RevOps tools like Gong and Clari are intelligence multipliers — but they're only as good as the CRM data they read. Broken CRM foundation means your forecasting model is fitting corrupted data and your call intelligence is pattern-matching against noise.",
       label:       "RevOps Stack",
@@ -146,6 +181,13 @@ const config = {
 
     "crm-implementation-guide": {
       slug:        "crm-implementation-guide",
+      navLabel:    "How to implement a CRM",
+      tldr: [
+        "The tool is the last decision, not the first. Organisations that get CRM right spend more time on process design before vendor evaluation than on the implementation itself.",
+        "Document your actual sales process — not the ideal one — before opening a single demo. Every point of disagreement between reps is a future data quality problem.",
+        "Change management is the implementation. Reps will use a system that helps them sell and ignore one that doesn't. Design for rep productivity, not management visibility.",
+        "Five first-90-days mistakes: configuring for the ideal process, too many fields too early, no data quality owner, measuring adoption by logins, treating go-live as the finish line.",
+      ],
       title:       "How to Implement a CRM: A Practical Framework for Getting It Right | GoWarm Insights",
       description: "Most CRM implementations fail not because of the tool chosen, but because the process wasn't documented before the tool was selected. A step-by-step framework covering process design, tool selection, change management, and the first 90 days.",
       label:       "CRM Implementation",
@@ -166,6 +208,13 @@ const config = {
 
     "lead-generation-discovery-meetings": {
       slug:        "lead-generation-discovery-meetings",
+      navLabel:    "Improving lead generation",
+      tldr: [
+        "Most lead gen underperformance is a definition problem, not a volume problem. Adding more outreach before fixing conversion rates generates more noise faster.",
+        "A usable ICP has four parts: firmographic profile, situational trigger, buyer persona, and a disqualifying signal. If sales and marketing can't independently write the same sentence, you don't have an ICP.",
+        "The metrics that actually diagnose the problem: lead-to-SAL rate, contact-to-meeting rate (target 5%+ for cold outbound), meeting show rate (target 70%+), discovery-to-opportunity rate.",
+        "Add volume only when ICP is tight, messaging is working, show rate is healthy, and discovery conversion is strong. Before that, scaling makes the problem harder to diagnose.",
+      ],
       title:       "How to Improve Lead Generation and Book More Discovery Meetings | GoWarm Insights",
       description: "Most lead gen underperformance is a definition problem, not a volume problem. Before hiring more SDRs or buying another sequencing tool, get alignment on ICP, lead qualification, and the metrics that actually show where your funnel is breaking.",
       label:       "Lead Generation",

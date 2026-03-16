@@ -254,44 +254,46 @@
     }
   </style>
 
-  <!-- ═══ SEO / AEO — injected by build.js (safe to re-run) ═══ -->
+  
+  
+  
+  <!-- ═══ SEO/AEO:START ═══ -->
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://go-warm-crm.vercel.app/" />
-
-  <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://go-warm-crm.vercel.app/" />
   <meta property="og:title"       content="CRM Intelligence for B2B Sales Leaders | GoWarm Insights" />
   <meta property="og:description" content="Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking." />
   <meta property="og:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
   <meta property="og:site_name"   content="GoWarm Insights" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:site"        content="@gowarmcrm" />
   <meta name="twitter:title"       content="CRM Intelligence for B2B Sales Leaders | GoWarm Insights" />
   <meta name="twitter:description" content="Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking." />
   <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
-  <!-- ═══ end SEO block ═══ -->
-
-  <!-- WebPage schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "CRM Intelligence for B2B Sales Leaders | GoWarm Insights",
-    "description": "Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking.",
-    "url": "https://go-warm-crm.vercel.app/",
-    "publisher": {
-      "@type": "Organization",
-      "name": "GoWarm Insights",
-      "url": "https://go-warm-crm.vercel.app"
-    }
-  }
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CRM Intelligence for B2B Sales Leaders | GoWarm Insights","description":"Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking.","url":"https://go-warm-crm.vercel.app/","publisher":{"@type":"Organization","name":"GoWarm Insights","url":"https://go-warm-crm.vercel.app"}}</script>
+  <!-- ═══ SEO/AEO:END ═══ -->
 </head>
 <body>
-
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#articles">Articles</a></li>
+          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
+          <li><a href="contact.html">Work With Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+      
   <!-- NAV -->
   <header class="site-nav" role="banner">
     <div class="container">
@@ -561,5 +563,41 @@
       }
     }
   </script>
+        <!-- ═══ FOOTER:START ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales and business leaders. Published by the team at GoWarm.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Articles</h4>
+          <ul>
+            <li><a href="is-your-crm-a-crud-app.html">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="are-your-sales-playbooks-working.html">Are your playbooks working?</a></li>
+            <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
+            <li><a href="crm-integration-complexity.html">The integration trap</a></li>
+            <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
+            <li><a href="crm-implementation-guide.html">How to implement a CRM</a></li>
+            <li><a href="lead-generation-discovery-meetings.html">Improving lead generation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
+            <li><a href="contact.html">Request a Consultation</a></li>
+            <li><a href="https://gowarm.ai" target="_blank" rel="noopener">GoWarm →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GoWarm. All rights reserved.</span>
+        <span>gowarm.ai</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ═══ FOOTER:END ═══ -->
 </body>
 </html>
