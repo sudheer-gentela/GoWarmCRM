@@ -33,13 +33,11 @@ async function appendToSheet(data) {
   const sig = sign.sign(privateKey, "base64url");
   const jwt = `${header}.${payload}.${sig}`;
 
+  const tokenBody = `grant_type=urn%3Aietf%3Aparams%3Aoauth2%3Agrant-type%3Ajwt-bearer&assertion=${encodeURIComponent(jwt)}`;
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "urn:ietf:params:oauth2:grant-type:jwt-bearer",
-      assertion: jwt,
-    }),
+    body: tokenBody,
   });
 
   const tokenJson = await tokenRes.json();
