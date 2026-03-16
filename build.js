@@ -253,26 +253,18 @@ function processFile(filename, pageKey) {
   html = html.replace("</head>", `\n  ${buildSeoBlock(pageKey)}\n</head>`);
 
   // ── Nav ───────────────────────────────────────────────────────────────────
+  // Strip marker-wrapped block AND any bare hardcoded block (handles duplicates)
   html = stripBlock(html, NAV_START, NAV_END);
-  if (html.includes('<header class="site-nav">')) {
-    html = html.replace(
-      /<header class="site-nav">[\s\S]*?<\/header>/,
-      buildNav()
-    );
-  } else {
-    html = html.replace("<body>", `<body>\n  ${buildNav()}`);
-  }
+  html = html.replace(/<header[^>]*class="site-nav"[^>]*>[\s\S]*?<\/header>/g, "");
+  // Inject fresh nav after <body>
+  html = html.replace("<body>", `<body>\n  ${buildNav()}`);
 
   // ── Footer ────────────────────────────────────────────────────────────────
+  // Strip marker-wrapped block AND any bare hardcoded block (handles duplicates)
   html = stripBlock(html, FOOTER_START, FOOTER_END);
-  if (html.includes('<footer class="site-footer">')) {
-    html = html.replace(
-      /<footer class="site-footer">[\s\S]*?<\/footer>/,
-      buildFooter()
-    );
-  } else {
-    html = html.replace("</body>", `  ${buildFooter()}\n</body>`);
-  }
+  html = html.replace(/<footer[^>]*class="site-footer"[^>]*>[\s\S]*?<\/footer>/g, "");
+  // Inject fresh footer before </body>
+  html = html.replace("</body>", `  ${buildFooter()}\n</body>`);
 
   // ── TLDR ─────────────────────────────────────────────────────────────────
   const tldrHtml = buildTldr(pageKey);

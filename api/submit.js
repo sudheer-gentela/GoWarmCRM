@@ -229,7 +229,7 @@ async function sendAutoReply(data) {
   if (!transport) return false;
 
   const isSubscribe = data.formType === "subscribe";
-  const domain = process.env.SITE_URL || "https://your-site.vercel.app";
+  const domain = process.env.SITE_URL || "https://go-warm-crm.vercel.app";
 
   try {
     await transport.sendMail({
