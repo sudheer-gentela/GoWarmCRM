@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Playbook Question: Are Yours Working or Just Sitting There? — GoWarm Insights</title>
-  <meta name="description" content="A reframe for RevOps and enablement leads who have built playbooks but suspect low adoption." />
+  <title>Are Your Sales Playbooks Actually Working? How to Measure Playbook Adoption | GoWarm Insights</title>
+  <meta name="description" content="A playbook nobody executes creates false confidence — it's worse than no playbook at all. Here's how to measure play completion rate, stage velocity, and win rate by playbook to know if yours are working." />
   <link rel="stylesheet" href="style.css" />
   <style>
     .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
@@ -22,6 +22,86 @@
     .metric-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
     @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } }
   </style>
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://go-warm-crm.vercel.app/are-your-sales-playbooks-working" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://go-warm-crm.vercel.app/are-your-sales-playbooks-working" />
+  <meta property="og:title"       content="Are Your Sales Playbooks Actually Working? How to Measure Playbook Adoption | GoWarm Insights" />
+  <meta property="og:description" content="A playbook nobody executes creates false confidence — it's worse than no playbook at all. Here's how to measure play completion rate, stage velocity, and win rate by playbook to know if yours are working." />
+  <meta property="og:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title"       content="Are Your Sales Playbooks Actually Working? How to Measure Playbook Adoption | GoWarm Insights" />
+  <meta name="twitter:description" content="A playbook nobody executes creates false confidence — it's worse than no playbook at all. Here's how to measure play completion rate, stage velocity, and win rate by playbook to know if yours are working." />
+  <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Are Your Sales Playbooks Actually Working? How to Measure Playbook Adoption | GoWarm Insights",
+    "description": "A playbook nobody executes creates false confidence — it's worse than no playbook at all. Here's how to measure play completion rate, stage velocity, and win rate by playbook to know if yours are working.",
+    "url": "https://go-warm-crm.vercel.app/are-your-sales-playbooks-working",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GoWarm Insights",
+      "url": "https://go-warm-crm.vercel.app"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://go-warm-crm.vercel.app/are-your-sales-playbooks-working"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you measure sales playbook effectiveness?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The three core metrics are: play completion rate (what percentage of reps complete the associated actions when a play is triggered), stage velocity by playbook (do deals where the play was executed move through stages faster), and win rate by play used (is there a measurable win rate difference between deals where the play ran versus those where it didn't)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do sales playbooks fail to get adopted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Playbooks fail when they're designed as training documents rather than operational tools. If reps have to leave their CRM workflow to find and read a playbook, adoption approaches zero. Playbooks need to be embedded in the deal workflow, triggered automatically at the right deal stage, with defined completion criteria and outcome tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a playbook and playbook execution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A playbook is a document — a collection of guidance and best practices. Playbook execution is the system by which that guidance actually changes rep behavior at the moment of a sales interaction. Most organisations have the first. Very few have the second."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good play completion rate for sales playbooks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A completion rate below 40% indicates the play isn't being used. Above 80% with no outcome differentiation suggests reps are ticking boxes without it changing behavior. The target is high completion paired with measurable outcome improvement — stage velocity or win rate lift."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body>
 
@@ -31,9 +111,9 @@
       <nav>
         <ul class="nav-links">
           <li><a href="index.html#articles">Articles</a></li>
-          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
-          <li><a href="contact.html">Work With Us</a></li>
-          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
+          <li><a href="crm-diagnostic">CRM Diagnostic</a></li>
+          <li><a href="contact">Work With Us</a></li>
+          <li><a href="contact" class="nav-cta">Get a Free Audit</a></li>
         </ul>
       </nav>
       <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
@@ -130,12 +210,12 @@
         </div>
 
         <div class="author-bio-box">
-          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm CRM</a> — an AI-native CRM built for teams who want playbooks that execute, not just exist. Want to see what executable playbooks look like in practice? <a href="contact.html" style="color:var(--rust)">Request a free consultation.</a>
+          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm CRM</a> — an AI-native CRM built for teams who want playbooks that execute, not just exist. Want to see what executable playbooks look like in practice? <a href="contact" style="color:var(--rust)">Request a free consultation.</a>
         </div>
 
         <div class="article-nav">
-          <a href="article-1.html">← Previous: Are You Using Salesforce as a CRUD App?</a>
-          <a href="article-3.html">Next: Rebuild or Recommit? →</a>
+          <a href="is-your-crm-a-crud-app">← Previous: Are You Using Salesforce as a CRUD App?</a>
+          <a href="crm-rebuild-or-recommit">Next: Rebuild or Recommit? →</a>
         </div>
       </div>
     </div>
@@ -151,16 +231,18 @@
         <div class="footer-col">
           <h4>Articles</h4>
           <ul>
-            <li><a href="article-1.html">Are you using Salesforce as a CRUD app?</a></li>
-            <li><a href="article-2.html">Are your playbooks working?</a></li>
-            <li><a href="article-3.html">Rebuild or recommit?</a></li>
+            <li><a href="is-your-crm-a-crud-app">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="are-your-sales-playbooks-working">Are your playbooks working?</a></li>
+            <li><a href="crm-rebuild-or-recommit">Rebuild or recommit?</a></li>
+            <li><a href="crm-integration-complexity">The integration trap</a></li>
+            <li><a href="revops-stack-crm-foundation">Do your RevOps tools actually help?</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get Help</h4>
           <ul>
-            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
-            <li><a href="contact.html">Request a Consultation</a></li>
+            <li><a href="crm-diagnostic">Free CRM Diagnostic</a></li>
+            <li><a href="contact">Request a Consultation</a></li>
             <li><a href="https://gowarm.ai" target="_blank" rel="noopener">GoWarm CRM →</a></li>
           </ul>
         </div>

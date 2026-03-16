@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request a Free CRM Consultation — GoWarm Insights</title>
-  <meta name="description" content="Book a free 30-minute CRM diagnostic. We'll tell you exactly what's working, what isn't, and what to fix first." />
+  <title>Free CRM Consultation — GoWarm Insights</title>
+  <meta name="description" content="Book a free 30-minute CRM diagnostic call. We'll review your setup, tell you whether you have a platform or adoption problem, and give you 2-3 specific next steps — no pitch, no obligation." />
   <link rel="stylesheet" href="style.css" />
   <style>
     .contact-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
@@ -25,6 +25,41 @@
     .trust-strip p:last-child { margin-bottom: 0; }
     @media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} .contact-hero h1{font-size:30px;} }
   </style>
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://go-warm-crm.vercel.app/contact" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://go-warm-crm.vercel.app/contact" />
+  <meta property="og:title"       content="Free CRM Consultation — GoWarm Insights" />
+  <meta property="og:description" content="Book a free 30-minute CRM diagnostic call. We'll review your setup, tell you whether you have a platform or adoption problem, and give you 2-3 specific next steps — no pitch, no obligation." />
+  <meta property="og:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title"       content="Free CRM Consultation — GoWarm Insights" />
+  <meta name="twitter:description" content="Book a free 30-minute CRM diagnostic call. We'll review your setup, tell you whether you have a platform or adoption problem, and give you 2-3 specific next steps — no pitch, no obligation." />
+  <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Free CRM Consultation — GoWarm Insights",
+    "description": "Book a free 30-minute CRM diagnostic call. We'll review your setup, tell you whether you have a platform or adoption problem, and give you 2-3 specific next steps — no pitch, no obligation.",
+    "url": "https://go-warm-crm.vercel.app/contact",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GoWarm Insights",
+      "url": "https://go-warm-crm.vercel.app"
+    }
+  }
+  </script>
+
 </head>
 <body>
 
@@ -34,9 +69,9 @@
       <nav>
         <ul class="nav-links">
           <li><a href="index.html#articles">Articles</a></li>
-          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
-          <li><a href="contact.html">Work With Us</a></li>
-          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
+          <li><a href="crm-diagnostic">CRM Diagnostic</a></li>
+          <li><a href="contact">Work With Us</a></li>
+          <li><a href="contact" class="nav-cta">Get a Free Audit</a></li>
         </ul>
       </nav>
       <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
@@ -187,16 +222,18 @@
         <div class="footer-col">
           <h4>Articles</h4>
           <ul>
-            <li><a href="article-1.html">Are you using Salesforce as a CRUD app?</a></li>
-            <li><a href="article-2.html">Are your playbooks working?</a></li>
-            <li><a href="article-3.html">Rebuild or recommit?</a></li>
+            <li><a href="is-your-crm-a-crud-app">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="are-your-sales-playbooks-working">Are your playbooks working?</a></li>
+            <li><a href="crm-rebuild-or-recommit">Rebuild or recommit?</a></li>
+            <li><a href="crm-integration-complexity">The integration trap</a></li>
+            <li><a href="revops-stack-crm-foundation">Do your RevOps tools actually help?</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get Help</h4>
           <ul>
-            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
-            <li><a href="contact.html">Request a Consultation</a></li>
+            <li><a href="crm-diagnostic">Free CRM Diagnostic</a></li>
+            <li><a href="contact">Request a Consultation</a></li>
             <li><a href="https://gowarm.ai" target="_blank" rel="noopener">GoWarm CRM →</a></li>
           </ul>
         </div>

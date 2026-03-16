@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://go-warm-crm.vercel.app/sitemap.xml
