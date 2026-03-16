@@ -296,9 +296,12 @@ module.exports = async function handler(req, res) {
       ? appendDiagnosticToSheet(data)
       : appendToSheet(data)
     ).then(ok => { isDiagnostic ? (results.diagnostic = !!ok) : (results.sheet = !!ok); }),
-    sendTeamEmail(data).then(ok => { results.email     = !!ok; }),
-    sendAutoReply(data).then(ok => { results.autoReply = !!ok; }),
-    notifyTeams(data).then(ok   => { results.teams     = !!ok; }),
+    // Skip email, auto-reply and Teams for diagnostics — no valid email address
+    ...(isDiagnostic ? [] : [
+      sendTeamEmail(data).then(ok => { results.email     = !!ok; }),
+      sendAutoReply(data).then(ok => { results.autoReply = !!ok; }),
+      notifyTeams(data).then(ok   => { results.teams     = !!ok; }),
+    ]),
   ]);
 
   settled.forEach((s, i) => {
