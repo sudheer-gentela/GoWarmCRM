@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Prove CRM ROI to Your CFO — and What to Do When the Numbers Are Weak | GoWarm Insights</title>
+  <meta name="description" content="Your CFO is questioning the CRM spend. Here is how to build an honest ROI case using productivity value, revenue impact, and cost avoidance — and what options to present when the current system isn't delivering." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .metric-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    .option-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--rust); letter-spacing: 1px; margin-bottom: 4px; display: block; }
+    .roi-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 1.5em 0 2em; }
+    .roi-table th { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding: 8px 12px; border-bottom: 2px solid var(--border); text-align: left; }
+    .roi-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: top; font-family: var(--body-serif); font-weight: 300; color: var(--ink-2); line-height: 1.5; font-size: 14px; }
+    .roi-table tr:last-child td { border-bottom: none; }
+    .roi-table td:first-child { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 13px; white-space: nowrap; }
+    .share-bar { max-width: 720px; margin: 40px auto 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
+    @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } .roi-table { font-size: 13px; } }
+  </style>
+
+  
+  <!-- ═══ SEO/AEO:START ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://go-warm-crm.vercel.app/crm-roi-cro-response" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://go-warm-crm.vercel.app/crm-roi-cro-response" />
+  <meta property="og:title"       content="How to Prove CRM ROI to Your CFO — and What to Do When the Numbers Are Weak | GoWarm Insights" />
+  <meta property="og:description" content="Your CFO is questioning the CRM spend. Here is how to build an honest ROI case using productivity value, revenue impact, and cost avoidance — and what options to present when the current system isn't delivering." />
+  <meta property="og:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="How to Prove CRM ROI to Your CFO — and What to Do When the Numbers Are Weak | GoWarm Insights" />
+  <meta name="twitter:description" content="Your CFO is questioning the CRM spend. Here is how to build an honest ROI case using productivity value, revenue impact, and cost avoidance — and what options to present when the current system isn't delivering." />
+  <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Prove CRM ROI to Your CFO — and What to Do When the Numbers Are Weak | GoWarm Insights","description":"Your CFO is questioning the CRM spend. Here is how to build an honest ROI case using productivity value, revenue impact, and cost avoidance — and what options to present when the current system isn't delivering.","url":"https://go-warm-crm.vercel.app/crm-roi-cro-response","publisher":{"@type":"Organization","name":"GoWarm Insights","url":"https://go-warm-crm.vercel.app"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://go-warm-crm.vercel.app/crm-roi-cro-response"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate CRM ROI?","acceptedAnswer":{"@type":"Answer","text":"Build the case in three components: productivity value (time saved per rep multiplied by rep cost, e.g. 45 minutes per day saved across 20 reps at £80k fully loaded = ~£750k recovered time annually), revenue impact (specific deals closed faster or rescued by system activity), and cost avoidance (what the next-best alternative would cost). Most organisations only attempt the third component, which produces weak cases."}},{"@type":"Question","name":"What metrics should I show my CFO to justify CRM spend?","acceptedAnswer":{"@type":"Answer","text":"The five metrics that hold up to scrutiny: forecast accuracy versus actual close (target within 10%); deal velocity trend over 6-8 quarters; win rate by CRM adoption cohort (high vs low users); new rep ramp time before and after CRM adoption; and pipeline coverage ratio accuracy. Avoid vanity metrics like pipeline value or number of activities logged, which don't isolate CRM contribution."}},{"@type":"Question","name":"What should you do if your CRM is not delivering ROI?","acceptedAnswer":{"@type":"Answer","text":"Present three options honestly: invest in an adoption improvement programme with specific targets and a timeline; right-size the contract by auditing unused capability and renegotiating (typically reduces cost 20-40%); or conduct a structured evaluation of alternatives before the next renewal. The worst option is continuing to pay full price for partial value while avoiding the conversation."}},{"@type":"Question","name":"How do you reduce CRM costs without switching platforms?","acceptedAnswer":{"@type":"Answer","text":"Conduct a capability audit: list everything contracted, identify what is activated and what is actually used. Most enterprise CRM contracts include modules sold in the initial deal and never implemented. Renegotiating down to active usage — removing unused modules, adjusting licence tiers — typically reduces cost by 20-40% without changing how the sales team works."}}]}</script>
+  <!-- ═══ SEO/AEO:END ═══ -->
+</head>
+<body>
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#articles">Articles</a></li>
+          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
+          <li><a href="contact.html">Work With Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+  
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">CRM ROI · Finance</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For CROs · VP Sales · RevOps</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">10 min read</span>
+          </div>
+          <h1 class="article-title">Your CFO Is Questioning the CRM Spend. Here's How to Respond.</h1>
+          <p class="article-deck">The right answer isn't a polished deck full of lagging metrics. It's an honest assessment of what the system is delivering, where it's falling short, and a credible plan for both. Here's how to build that case.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+                <!-- ═══ TLDR:START ═══ -->
+        <div class="tldr-box">
+          <div class="tldr-label">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5M8 11v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            TL;DR — 60-second read
+          </div>
+          <ul class="tldr-list">
+          <li>A polished deck of lagging metrics won't satisfy a financially rigorous CFO. Candour paired with a plan will.</li>
+          <li>Build the ROI case in three parts: productivity value (time saved per rep), revenue impact (specific deals the system influenced), cost avoidance (what the alternative would cost).</li>
+          <li>If adoption is low and the numbers are weak, say so — and present three options: invest in adoption, right-size the contract, or evaluate alternatives.</li>
+          <li>Win rate by adoption cohort is the most compelling metric: split reps into high/low CRM adoption groups and compare close rates. A meaningful gap is hard to argue with.</li>
+          </ul>
+        </div>
+        <!-- ═══ TLDR:END ═══ -->
+        <div class="article-body">
+
+          <p>The CFO has asked the question you've been half-expecting. The CRM spend is rising, the business case feels intuitive rather than evidenced, and the request is clear: prove the ROI, or propose options to reduce cost.</p>
+
+          <p>The instinctive response is to pull together a presentation showing pipeline growth, deal velocity improvements, and forecast accuracy — framed to make the investment look justified. That presentation will satisfy a CFO who isn't looking too carefully. It will not satisfy one who is.</p>
+
+          <p>The approach that actually works — and that builds trust with a financially rigorous CFO — is a different one: an honest audit of what the CRM is and isn't delivering, with a clear-eyed explanation of why the gaps exist and a specific plan for closing them. CFOs respect candour paired with a plan far more than a defensive deck. And if the numbers genuinely hold up, an honest presentation makes them more convincing, not less.</p>
+
+          <h2>First: Build the Actual ROI Case</h2>
+
+          <p>A credible CRM ROI case has three components. Most organisations only attempt the third.</p>
+
+          <p><span class="metric-label">Component 1 — Productivity value</span>How much time does the CRM save per rep per week, and what is that worth? This is calculable. If automated activity logging saves a rep 45 minutes a day of manual data entry, and you have 20 reps at an average fully-loaded cost of £80,000 per year, that's roughly £750,000 of recovered productive time annually — time that should be going into selling activity, not admin. You don't need to claim all of that as CRM value, but you can claim a credible proportion of it.</p>
+
+          <p><span class="metric-label">Component 2 — Revenue impact</span>This is harder to isolate cleanly but is the most compelling part of the case. You're looking for evidence that the CRM has changed commercial outcomes — not just recorded them. Specific examples carry more weight than averages: deals that were flagged as at-risk by the system and rescued, leads that were surfaced by scoring and converted that wouldn't have been contacted otherwise, forecast accuracy that allowed resource decisions to be made correctly. Build a list of these. Even three or four specific examples with attached revenue figures is more persuasive than a generic pipeline velocity chart.</p>
+
+          <p><span class="metric-label">Component 3 — Cost avoidance</span>What would the alternative cost? If you weren't using the current CRM, you'd need something — a simpler tool, a manual process, more headcount to compensate for what the system does. Estimating the cost of the next-best alternative, even roughly, gives the CFO a comparison point and makes the current spend look different than it does in isolation.</p>
+
+          <h2>The ROI Metrics That Actually Hold Up</h2>
+
+          <table class="roi-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>What it measures</th>
+                <th>How to calculate it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Forecast accuracy</td>
+                <td>Whether the system produces reliable revenue predictions</td>
+                <td>Compare system-generated forecast at start of quarter vs actual close. Target: within 10% consistently.</td>
+              </tr>
+              <tr>
+                <td>Deal velocity</td>
+                <td>Whether CRM workflows are accelerating pipeline movement</td>
+                <td>Average days from creation to close, trended over 6–8 quarters. A shortening trend after CRM adoption is meaningful.</td>
+              </tr>
+              <tr>
+                <td>Win rate by adoption cohort</td>
+                <td>Whether reps using the CRM properly close more deals</td>
+                <td>Split reps into high/low CRM adoption groups. Compare win rates. A meaningful gap is strong evidence of system value.</td>
+              </tr>
+              <tr>
+                <td>Rep ramp time</td>
+                <td>Whether the CRM accelerates new hire productivity</td>
+                <td>Time from start date to first closed deal, trended before and after CRM adoption. Playbooks and process embedded in the system measurably reduce ramp time.</td>
+              </tr>
+              <tr>
+                <td>Pipeline coverage ratio</td>
+                <td>Whether better lead visibility allows more accurate capacity planning</td>
+                <td>How often actual pipeline at quarter start accurately predicted the deals available to close. Erratic coverage ratios indicate forecast unreliability.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>What to Do When the Numbers Don't Hold Up</h2>
+
+          <p>This is the harder and more important conversation. If you pull these numbers and they're weak — forecast accuracy is poor, adoption is low, you can't point to specific revenue outcomes — the right response is not to find a better way to frame the weak numbers. It's to be honest about the gap and present a plan.</p>
+
+          <p>A CFO who has been in business for a while knows that enterprise software underdelivers regularly. What they're evaluating in this conversation is whether you know it's underdelivering and have a plan — or whether you're going to spend another year paying full price for partial value while pretending otherwise.</p>
+
+          <p>The structure that works: acknowledge the gap explicitly ("our current adoption rate is X, which means we're realising approximately Y% of the system's potential value"), explain why it exists (configuration incomplete, change management insufficient, wrong tool for the motion), and present three options with honest cost-benefit assessments for each.</p>
+
+          <h2>The Three Options Worth Presenting</h2>
+
+          <p><span class="option-label">Option 1 — Stay and invest in adoption</span>Commit to a 90-day adoption improvement programme with specific targets: data completeness above a defined threshold, automated workflows activated, forecast accuracy measured against actuals. This option requires internal resource and genuine executive commitment — not another "CRM optimisation project" that gets deprioritised when a quarter gets difficult. Present the cost of the programme alongside the projected value recovery. If adoption doubles, what does that realistically mean for the metrics above?</p>
+
+          <p><span class="option-label">Option 2 — Right-size the contract</span>Before the next renewal, conduct a capability audit: what features are you contracted for, which are activated, which are being used. Most enterprise CRM contracts include capability that was sold in the initial deal and never implemented. Renegotiating down to what you actually use — removing unused modules, adjusting licence tiers to match actual user activity — can typically reduce cost by 20–40% without changing anything about how the sales team works. This is worth doing regardless of which option you choose.</p>
+
+          <p><span class="option-label">Option 3 — Evaluate alternatives</span>If the honest assessment is that the current platform's cost exceeds the value it's delivering, and the adoption gap is structural rather than fixable, a controlled evaluation of alternatives is the responsible recommendation. This doesn't mean committing to switch — it means doing the analysis properly before the next renewal rather than defaulting to the status quo. The output is either a stronger negotiating position with the current vendor or a genuine business case for change.</p>
+
+          <div class="diagnostic-box">
+            <div class="box-label">◆ Before the CFO Meeting — Self-Assessment</div>
+            <p><strong>Can you answer these five questions with specific numbers?</strong></p>
+            <p><strong>1.</strong> What is your CRM adoption rate measured by data completeness, not logins?</p>
+            <p><strong>2.</strong> What was your forecast accuracy last quarter, and how much of it came from system data versus manager override?</p>
+            <p><strong>3.</strong> Can you name three specific deals in the last six months that closed better, faster, or at all because of CRM-driven activity?</p>
+            <p><strong>4.</strong> What percentage of your contracted CRM capability is actively in use?</p>
+            <p><strong>5.</strong> What would your sales operation cost to run if the CRM spend were 30% lower?</p>
+            <p>If you can answer all five with data, you're ready for the conversation. If you can't, the gaps in your answers are your agenda for the next 30 days — not the CFO meeting.</p>
+          </div>
+
+          <h2>The Posture That Works</h2>
+
+          <p>The CFOs who push on CRM spend are doing their job correctly. They're looking at a line item that grows every year, that's justified with commercial outcomes the business already expected to achieve, and they're asking a reasonable question: how much of that outcome is the system, and how much would have happened anyway?</p>
+
+          <p>The CROs who handle this conversation well are the ones who have already been asking themselves the same question. They come in with data, with candour about the gaps, and with options rather than defences. They treat the CFO as a partner in getting the investment right, not an obstacle to be managed.</p>
+
+          <p>That posture — accountable, specific, forward-looking — is more persuasive than any ROI deck. And it's the posture that gets you the budget, the resource, and the runway to actually fix the problem.</p>
+
+          <p>If you want to understand the specific questions your CFO is likely to ask, the companion piece covers that in detail: <a href="crm-roi-cfo-questions.html" style="color:var(--rust)">As a CFO, what should you be asking your CRO about CRM spend?</a></p>
+
+          <div class="cta-inline">
+            The five self-assessment questions above are the ones worth answering before you prepare anything else. If your answers are strong, your CFO presentation writes itself. If they're not, you've just identified exactly what needs to change — and that's the more valuable output.
+          </div>
+
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm</a>. Want help building an honest CRM ROI assessment before your next renewal? <a href="contact.html" style="color:var(--rust)">Request a free 30-minute diagnostic.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="crm-roi-cfo-questions.html">← Companion: The CFO's Questions</a>
+          <a href="index.html">← All Articles</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+  </script>
+    <!-- ═══ FOOTER:START ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales and business leaders. Published by the team at GoWarm.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Articles</h4>
+          <ul>
+            <li><a href="is-your-crm-a-crud-app.html">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="are-your-sales-playbooks-working.html">Are your playbooks working?</a></li>
+            <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
+            <li><a href="crm-integration-complexity.html">The integration trap</a></li>
+            <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
+            <li><a href="crm-roi-cfo-questions.html">CFO questions on CRM spend</a></li>
+            <li><a href="crm-roi-cro-response.html">Proving CRM ROI to your CFO</a></li>
+            <li><a href="crm-implementation-guide.html">How to implement a CRM</a></li>
+            <li><a href="lead-generation-discovery-meetings.html">Improving lead generation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
+            <li><a href="contact.html">Request a Consultation</a></li>
+            <li><a href="https://gowarm.ai" target="_blank" rel="noopener">GoWarm →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GoWarm. All rights reserved.</span>
+        <span>gowarm.ai</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ═══ FOOTER:END ═══ -->
+</body>
+</html>

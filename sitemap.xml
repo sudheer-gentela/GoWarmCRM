@@ -41,6 +41,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://go-warm-crm.vercel.app/crm-roi-cfo-questions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://go-warm-crm.vercel.app/crm-roi-cro-response</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://go-warm-crm.vercel.app/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
