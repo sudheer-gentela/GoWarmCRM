@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Action Insights — CRM Intelligence for B2B Sales Leaders</title>
+  <meta name="description" content="Practical intelligence for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline visibility." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+    .hero-subtitle {
+      font-family: var(--body-serif);
+      font-size: 18px;
+      color: var(--ink-3);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+    }
+    .stat-card:first-child { border-left: 4px solid var(--rust); }
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--rust);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--ink-3);
+      line-height: 1.5;
+    }
+
+    /* ── Diagnostic Quiz Strip ── */
+    .quiz-strip {
+      background: var(--cream-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+    }
+    .quiz-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .quiz-text h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .quiz-text p {
+      font-size: 14px;
+      color: var(--ink-3);
+    }
+
+    /* ── Articles Section ── */
+    .articles-section { padding: 72px 0; }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--ink-4);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    /* ── Featured Article ── */
+    .featured-article {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .featured-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .featured-tag { color: var(--rust); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .featured-title {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .featured-excerpt {
+      font-family: var(--body-serif);
+      font-size: 16px;
+      color: var(--ink-3);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+    .featured-visual {
+      background: var(--cream-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .signal-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .signal-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .signal-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--rust-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+    .signal-text { font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+
+    /* ── CTA Band ── */
+    .cta-band {
+      background: var(--ink);
+      padding: 64px 0;
+      margin-top: 0;
+    }
+    .cta-band-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+    .cta-band h2 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .cta-band p {
+      font-family: var(--body-serif);
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+    }
+    .cta-band-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .cta-band .btn-primary { white-space: nowrap; padding: 14px 28px; }
+    .cta-caption { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    /* ── Email Subscribe ── */
+    .subscribe-section { padding: 64px 0; border-top: 1px solid var(--border); }
+    .subscribe-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .subscribe-inner h2 {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .subscribe-inner p {
+      font-family: var(--body-serif);
+      font-size: 16px;
+      color: var(--ink-3);
+      font-weight: 300;
+      margin-bottom: 28px;
+    }
+    .subscribe-form { display: flex; gap: 10px; }
+    .subscribe-form input {
+      flex: 1;
+      padding: 11px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--sans);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .subscribe-form input:focus { border-color: var(--rust); }
+    .subscribe-note { font-size: 12px; color: var(--ink-4); margin-top: 12px; }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: row; }
+      .hero-title { font-size: 36px; }
+      .articles-grid { grid-template-columns: 1fr; gap: 32px; }
+      .featured-inner { grid-template-columns: 1fr; }
+      .cta-band-inner { grid-template-columns: 1fr; }
+      .cta-band-actions { align-items: flex-start; }
+      .quiz-strip-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav" role="banner">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Action<span>Insights</span></a>
+      <nav role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#articles">Articles</a></li>
+          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
+          <li><a href="contact.html">Work With Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <span class="hero-eyebrow">For VP Sales · RevOps · Sales Directors</span>
+          <h1 class="hero-title">Is your CRM working for you — or against you?</h1>
+          <p class="hero-subtitle">Practical intelligence for B2B sales leaders who want more from their systems than pipeline visibility and quarterly reports.</p>
+          <div class="hero-cta-row">
+            <a href="diagnostic.html" class="btn btn-primary">Take the CRM Diagnostic</a>
+            <a href="index.html#articles" class="btn btn-outline">Read the Articles</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-number">72%</div>
+            <div class="stat-label">of Salesforce users report getting less value than expected at purchase</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">$150k</div>
+            <div class="stat-label">Average annual CRM spend for a 50-person sales org — licenses, admin, integrations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ STRIP -->
+  <section class="quiz-strip">
+    <div class="container">
+      <div class="quiz-strip-inner">
+        <div class="quiz-text">
+          <h3>Not sure if you have a CRM problem?</h3>
+          <p>Answer 5 questions and find out exactly where your sales system is leaking value.</p>
+        </div>
+        <a href="diagnostic.html" class="btn btn-dark">Take the 5-Question Diagnostic →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTICLE -->
+  <section style="padding: 72px 0 0;">
+    <div class="container">
+      <div class="featured-article">
+        <div class="featured-inner">
+          <div>
+            <span class="featured-tag">Featured · Self-Diagnostic</span>
+            <h2 class="featured-title">Are You Using Salesforce as a CRUD App?</h2>
+            <p class="featured-excerpt">You're spending $150k/year on a system your reps use to log calls after the fact and fill in fields before the pipeline review. Here are five specific patterns that reveal the gap — and what good actually looks like.</p>
+            <a href="article-1.html" class="btn btn-primary">Read the Article</a>
+          </div>
+          <div class="featured-visual">
+            <div style="font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 16px;">The 5 Warning Signals</div>
+            <div class="signal-item">
+              <div class="signal-icon">①</div>
+              <div class="signal-text">Reps log calls after the fact — if at all</div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">②</div>
+              <div class="signal-text">Nothing happens automatically after a stage change</div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">③</div>
+              <div class="signal-text">Pipeline reviews are interrogations, not conversations</div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">④</div>
+              <div class="signal-text">Playbooks live in a Google Doc nobody reads</div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">⑤</div>
+              <div class="signal-text">Forecast is gut feel with a spreadsheet attached</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL ARTICLES -->
+  <section class="articles-section" id="articles">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">All Articles</span>
+        <span style="font-size:13px;color:var(--ink-4)">3 articles · Updated 2025</span>
+      </div>
+      <div class="articles-grid">
+
+        <a href="article-1.html" class="article-card">
+          <span class="tag">Self-Diagnostic</span>
+          <div class="card-title">Are You Using Salesforce as a CRUD App?</div>
+          <div class="card-excerpt">Five patterns that reveal you're paying $150k/year for a glorified spreadsheet — and what good actually looks like.</div>
+          <div class="card-meta">8 min read <span class="dot"></span> VP Sales</div>
+        </a>
+
+        <a href="article-2.html" class="article-card">
+          <span class="tag">Playbooks</span>
+          <div class="card-title">The Playbook Question: Are Yours Working or Just Sitting There?</div>
+          <div class="card-excerpt">A playbook nobody executes is worse than no playbook at all. Here's how to tell the difference — and fix it.</div>
+          <div class="card-meta">7 min read <span class="dot"></span> RevOps · Enablement</div>
+        </a>
+
+        <a href="article-3.html" class="article-card">
+          <span class="tag">Decision Framework</span>
+          <div class="card-title">Should You Rebuild or Recommit? The Honest CRM Decision Framework</div>
+          <div class="card-excerpt">Not a vendor pitch. A real decision framework for whether to stay, switch, or build — and how to avoid the status quo trap.</div>
+          <div class="card-meta">10 min read <span class="dot"></span> CTO · VP Sales</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Not sure where your sales system stands?</h2>
+          <p>Book a free 30-minute CRM diagnostic. We'll review your current setup and tell you exactly what's working, what isn't, and what to fix first. No pitch, just clarity.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="contact.html" class="btn btn-primary">Request a Consultation</a>
+          <span class="cta-caption">Free · 30 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL SUBSCRIBE -->
+  <section class="subscribe-section">
+    <div class="container">
+      <div class="subscribe-inner">
+        <h2>Get new articles in your inbox</h2>
+        <p>Practical CRM and sales process intelligence — no fluff, no vendor spin. Written for people who actually run sales teams.</p>
+        <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+          <input type="email" id="sub-email" placeholder="your@company.com" required />
+          <button type="submit" class="btn btn-dark">Subscribe</button>
+        </form>
+        <p class="subscribe-note" id="sub-msg"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Action<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales leaders at companies doing $5M–$500M in revenue. Published by the team at Action CRM.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Articles</h4>
+          <ul>
+            <li><a href="article-1.html">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="article-2.html">Are your playbooks working?</a></li>
+            <li><a href="article-3.html">Rebuild or recommit?</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
+            <li><a href="contact.html">Request a Consultation</a></li>
+            <li><a href="https://actioncrm.io" target="_blank" rel="noopener">Action CRM →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Action CRM. All rights reserved.</span>
+        <span>actioncrm.io</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '60px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'var(--cream)';
+      links.style.padding = '16px 20px';
+      links.style.borderBottom = '1px solid var(--border)';
+      links.style.zIndex = '99';
+    }
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const msg = document.getElementById('sub-msg');
+      msg.textContent = 'You\'re in. New articles will come straight to your inbox.';
+      msg.style.color = 'var(--ink-3)';
+      document.getElementById('sub-email').value = '';
+    }
+  </script>
+</body>
+</html>

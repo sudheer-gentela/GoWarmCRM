@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Should You Rebuild or Recommit? The Honest CRM Decision Framework — Action Insights</title>
+  <meta name="description" content="A real decision framework for staying on Salesforce, switching, or building custom — without the vendor spin." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .cost-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Action<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#articles">Articles</a></li>
+          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
+          <li><a href="contact.html">Work With Us</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">Decision Framework</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For CTO &amp; VP Sales</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">10 min read</span>
+          </div>
+          <h1 class="article-title">Should You Rebuild or Recommit? The Honest CRM Decision Framework</h1>
+          <p class="article-deck">A practical evaluation guide for leaders weighing whether to stay, switch, or build — without the vendor spin.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+        <div class="article-body">
+
+          <p>Every 18 months or so, someone in the building raises the CRM question. Usually after a bad forecast. Sometimes after a rep attrition spike, a botched QBR, or a competitor win that the system didn't see coming. The question gets serious. An evaluation gets kicked off. Vendors get invited in. Spreadsheets are built.</p>
+
+          <p>Six months later, nothing has changed. The committee couldn't agree. The switching costs looked terrifying. The new vendor's demo was great but the migration story fell apart under scrutiny. Everyone went back to Salesforce, mildly more frustrated than before, with a fresh set of promises from the account team.</p>
+
+          <p>This is the outcome you're trying to avoid — not making the wrong choice, but making no choice with significant cost. Time, attention, political capital, and the morale of the people who got excited about change and then watched it evaporate.</p>
+
+          <p>Here's a framework for running the evaluation honestly.</p>
+
+          <h2>First: Separate the Platform Problem from the Adoption Problem</h2>
+
+          <p>Before you evaluate any alternatives, you need to answer a prior question honestly: is your CRM problem a platform problem or an adoption and configuration problem?</p>
+
+          <p>These require completely different solutions. A platform problem means you've hit real limitations — Salesforce genuinely can't do what you need, or the architecture doesn't support the workflows your team runs. An adoption problem means the capability exists but isn't being used, the system isn't configured to reflect your process, or the incentives don't reward good CRM hygiene.</p>
+
+          <p>Most organizations that think they have a platform problem actually have an adoption problem. That's not a criticism — it's a structural reality. Salesforce is extraordinarily capable and extraordinarily generic. Out of the box, it doesn't know your sales process. Without significant configuration and a deliberate change management effort, it becomes a compliance tool rather than a productivity tool. You can't solve a configuration problem by switching to a platform that requires the same configuration.</p>
+
+          <p><strong>A useful rule of thumb:</strong> if you can't articulate three specific things Salesforce cannot do that you need it to do — not won't do, can't do — you probably have an adoption problem dressed up as a platform problem.</p>
+
+          <h2>Signals That Salesforce Is Right for You</h2>
+
+          <ul>
+            <li>Your sales process is genuinely complex — multi-product, multi-stakeholder, long-cycle enterprise deals where relationship mapping, territory management, and approval workflows matter.</li>
+            <li>You have dedicated Salesforce admin capacity (at minimum a part-time admin; ideally a dedicated resource or team) and the organizational will to use it.</li>
+            <li>You run a large team (50+ reps) where standardization, role-based access, and governance are real operational requirements, not aspirational ones.</li>
+            <li>You have significant existing data, integrations, and process built on Salesforce that would be genuinely expensive to rebuild — and you've actually quantified that cost.</li>
+            <li>Your buyers or customers expect Salesforce-based workflows (common in enterprise professional services).</li>
+          </ul>
+
+          <h2>Signals You're Over-CRMed</h2>
+
+          <ul>
+            <li>Your team is under 30 reps and your sales cycle is under 90 days. Salesforce's complexity doesn't buy you much at this scale.</li>
+            <li>Your Salesforce admin time is predominantly spent on field cleanup, deduplication, and report building rather than workflow automation and process improvement.</li>
+            <li>Reps regularly work around the CRM — keeping their own spreadsheets, using personal notes, maintaining a side system — because Salesforce is slower than their own ad hoc method.</li>
+            <li>You've been through two or more Salesforce "optimization" projects in three years without measurable change in adoption or forecast accuracy.</li>
+            <li>The business case for Salesforce at your current scale is primarily "we'll grow into it." You've been saying that for three years.</li>
+          </ul>
+
+          <h2>The True Cost of Switching</h2>
+
+          <p>If you've concluded that a platform change is genuinely warranted, run the full cost — not the vendor's TCO comparison, which is optimistic by design, but your own accounting.</p>
+
+          <p><span class="cost-label">Data migration</span>This is almost always underestimated. Historical deal data, contact records, activity logs, custom fields, attachments, and workflow history need to migrate cleanly. The new system's import tools are better than they used to be. The data quality in your current system is probably worse than you think. Budget 2–3x whatever the vendor estimates.</p>
+
+          <p><span class="cost-label">Retraining and habit change</span>Reps have muscle memory built around the current system — even if they hate it. Switching systems resets that entirely. Budget 60–90 days of reduced productivity during the transition. For a 20-person sales team, that's real revenue impact. Plan for it explicitly rather than hoping it won't happen.</p>
+
+          <p><span class="cost-label">Process redesign</span>A system switch is a forcing function to redesign your sales process — which is either a burden or an opportunity depending on how you approach it. If you migrate your current process into a new tool without redesigning, you get the same outputs faster. The real value of a switch is the process redesign that comes with it. That takes time, senior attention, and willingness to kill sacred cows.</p>
+
+          <p><span class="cost-label">Integration rebuild</span>How many tools feed into or out of your CRM today? Marketing automation, billing, support ticketing, revenue intelligence, ERP connections? Each one is a project. Some will be native integrations in the new platform. Some will be Zapier duct tape. Some will need to be rebuilt from scratch. Get an honest inventory before you commit.</p>
+
+          <h2>When Custom Makes Sense — and When It's a Trap</h2>
+
+          <p>The "build it ourselves" option appears on the table in companies that have engineering capacity and a CTO who's confident in the team's ability to ship. It's occasionally the right answer. More often it's a trap.</p>
+
+          <p>Custom makes sense when your sales process has genuinely idiosyncratic requirements that no commercial platform addresses well — where the business logic is core IP, the workflow is fundamentally different from standard B2B sales, or deep integration with a proprietary system is non-negotiable.</p>
+
+          <p>It's a trap when it's driven by frustration with commercial platforms rather than a specific capability gap. Internal CRM projects routinely underestimate the ongoing maintenance burden: schema changes as the business evolves, reporting requirements that multiply, mobile support, security updates, and the feature requests that will come from every rep on the team the day after launch. The initial build is the easy part. Maintaining and evolving a bespoke CRM while also running a sales org is a long-term organizational commitment that most companies aren't prepared to make.</p>
+
+          <p><strong>A useful test:</strong> would you be comfortable owning this system in three years when the engineers who built it have moved on? If the honest answer is no, custom is probably not the answer.</p>
+
+          <h2>How to Run the Internal Evaluation Honestly</h2>
+
+          <div class="diagnostic-box">
+            <div class="box-label">◆ Evaluation Framework — 5 Steps</div>
+            <p><strong>Step 1</strong> — Define the decision criteria before you talk to vendors. What are the three to five things your current system cannot do that are measurably costing you revenue or efficiency? Be specific. "Better UX" is not a criterion. "Automated next-step generation on stage change" is a criterion.</p>
+            <p><strong>Step 2</strong> — Assign a single decision owner. Evaluations that run by committee produce status quo outcomes. Someone needs to own the recommendation with their name on it.</p>
+            <p><strong>Step 3</strong> — Run a 30-day pilot on live deals, not a sandbox demo. Every platform looks good in a demo. Require vendors to run a real pilot with real reps on real deals before you make a commitment.</p>
+            <p><strong>Step 4</strong> — Price the full migration honestly before you see the demo. If the migration cost makes the switch economically irrational, know that before you fall in love with the interface.</p>
+            <p><strong>Step 5</strong> — Set a decision date at the start and hold it. Six months in, if you haven't decided, the default is to stay. Make that explicit. If staying is the likely outcome, save everyone the time and spend the evaluation budget on actually improving what you have.</p>
+          </div>
+
+          <h2>The Worst Outcome Is the Status Quo Dressed Up as Rigor</h2>
+
+          <p>Here's what actually kills sales organizations: not making a wrong choice, but spending six months in evaluation, surfacing every legitimate frustration with the current system, building organizational energy around change — and then returning to the status quo with nothing to show for it.</p>
+
+          <p>That outcome is worse than staying with a mediocre system. It depletes the political capital needed to drive process change. It tells reps that nothing will actually change. It validates the learned helplessness that develops when people have been through evaluation cycles before.</p>
+
+          <p>If you start this process, commit to ending it with a decision. Stay and fix it properly. Switch with a real migration plan and process redesign. Build custom with eyes open about the maintenance commitment. Any of those is better than another six months of meetings about the CRM.</p>
+
+          <div class="cta-inline">
+            The best version of this exercise isn't evaluating vendors — it's forcing clarity on what you actually need your sales system to do. Start there, and the platform decision becomes much easier.
+          </div>
+
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://actioncrm.io" style="color:var(--rust)">Action CRM</a> — an AI-native CRM built for sales teams ready to move past pipeline tracking and into action generation. Working through a CRM evaluation? <a href="contact.html" style="color:var(--rust)">We're happy to be a sounding board — no strings attached.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="article-2.html">← Previous: Are Your Playbooks Working?</a>
+          <a href="contact.html">Ready to talk? Request a consultation →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Action<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales leaders at companies doing $5M–$500M in revenue. Published by the team at Action CRM.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Articles</h4>
+          <ul>
+            <li><a href="article-1.html">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="article-2.html">Are your playbooks working?</a></li>
+            <li><a href="article-3.html">Rebuild or recommit?</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
+            <li><a href="contact.html">Request a Consultation</a></li>
+            <li><a href="https://actioncrm.io" target="_blank" rel="noopener">Action CRM →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Action CRM. All rights reserved.</span>
+        <span>actioncrm.io</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+  </script>
+</body>
+</html>
