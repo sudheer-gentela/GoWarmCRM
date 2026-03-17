@@ -66,6 +66,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://go-warm-crm.vercel.app/account-research-module-build-vs-buy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://go-warm-crm.vercel.app/pricing-approval-workflow-crm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://go-warm-crm.vercel.app/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

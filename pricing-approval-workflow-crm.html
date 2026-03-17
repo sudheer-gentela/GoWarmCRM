@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Approval Workflows: Should You Configure, Build or Buy? | GoWarm Insights</title>
+  <meta name="description" content="Should you configure a native Salesforce approval process, install a CPQ or AppExchange tool, build a custom module, or use a standalone solution? A decision framework covering audit trail requirements, approval complexity, and total cost of ownership." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .opt-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--rust); letter-spacing: 1px; margin-bottom: 4px; display: block; }
+    .req-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 4px; }
+    .decision-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 1.5em 0 2em; }
+    .decision-table th { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding: 8px 12px; border-bottom: 2px solid var(--border); text-align: left; }
+    .decision-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: top; font-family: var(--body-serif); font-weight: 300; color: var(--ink-2); line-height: 1.5; font-size: 14px; }
+    .decision-table tr:last-child td { border-bottom: none; }
+    .decision-table td:first-child { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 13px; white-space: nowrap; }
+    .share-bar { max-width: 720px; margin: 40px auto 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
+    @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } .decision-table { font-size: 13px; } }
+  </style>
+
+  
+  <!-- ═══ SEO/AEO:START ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://go-warm-crm.vercel.app/pricing-approval-workflow-crm" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://go-warm-crm.vercel.app/pricing-approval-workflow-crm" />
+  <meta property="og:title"       content="Pricing Approval Workflows: Should You Configure, Build or Buy? | GoWarm Insights" />
+  <meta property="og:description" content="Should you configure a native Salesforce approval process, install a CPQ or AppExchange tool, build a custom module, or use a standalone solution? A decision framework covering audit trail requirements, approval complexity, and total cost of ownership." />
+  <meta property="og:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="Pricing Approval Workflows: Should You Configure, Build or Buy? | GoWarm Insights" />
+  <meta name="twitter:description" content="Should you configure a native Salesforce approval process, install a CPQ or AppExchange tool, build a custom module, or use a standalone solution? A decision framework covering audit trail requirements, approval complexity, and total cost of ownership." />
+  <meta name="twitter:image"       content="https://go-warm-crm.vercel.app/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Pricing Approval Workflows: Should You Configure, Build or Buy? | GoWarm Insights","description":"Should you configure a native Salesforce approval process, install a CPQ or AppExchange tool, build a custom module, or use a standalone solution? A decision framework covering audit trail requirements, approval complexity, and total cost of ownership.","url":"https://go-warm-crm.vercel.app/pricing-approval-workflow-crm","publisher":{"@type":"Organization","name":"GoWarm Insights","url":"https://go-warm-crm.vercel.app"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://go-warm-crm.vercel.app/pricing-approval-workflow-crm"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can Salesforce handle pricing approval workflows natively?","acceptedAnswer":{"@type":"Answer","text":"Yes, for the majority of use cases. Salesforce's built-in approval process engine supports multi-step approvals, conditional entry criteria, multiple approvers at each step, parallel approval tracks, email and Chatter notifications, and a complete immutable audit history. It is configurable by an admin without custom code. The limits appear with highly conditional routing, dynamic approver assignment, or approvers without Salesforce licences — though email-based approval actions allow non-Salesforce users to approve or reject via email reply."}},{"@type":"Question","name":"When do you need CPQ for pricing approval?","acceptedAnswer":{"@type":"Answer","text":"CPQ is justified when the approval workflow is inseparable from a complex quoting problem: a large product catalogue with bundling logic, configuration rules, and volume pricing that need to be enforced before a quote reaches the approval stage. If your quoting process is straightforward — a defined product set with standard pricing and a discount threshold — CPQ is disproportionate for the approval requirement alone."}},{"@type":"Question","name":"What are the audit trail requirements for pricing approval?","acceptedAnswer":{"@type":"Answer","text":"Pricing approval records have downstream commercial and sometimes legal significance as evidence that a discount was authorised by the right person. The audit trail needs to be immutable (approval decisions not editable after the fact), accessible to finance and legal without requiring Salesforce access, and retained for the appropriate period. Native Salesforce approval history is immutable by design. External tools may have different guarantees — check this explicitly before committing."}},{"@type":"Question","name":"Should pricing approval be built as a custom module in Salesforce?","acceptedAnswer":{"@type":"Answer","text":"Only when native Salesforce approval processes genuinely cannot express your logic — highly conditional routing based on multiple deal attributes, dynamic approver calculation, or deep ERP integration requirements. Custom approval modules are maintenance-intensive because approval logic changes frequently as discount policy evolves, and because Salesforce's three annual platform releases can affect Flow and Process Builder behaviour. Build in Flow rather than Apex where possible to reduce migration risk from deprecated automation tools."}}]}</script>
+  <!-- ═══ SEO/AEO:END ═══ -->
+</head>
+<body>
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#articles">Articles</a></li>
+          <li><a href="diagnostic.html">CRM Diagnostic</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+  
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">Sales Process · CRM Architecture</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For VP Sales · RevOps · CTO · Sales Ops</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">11 min read</span>
+          </div>
+          <h1 class="article-title">Pricing Approval Workflows: Should You Configure, Build, or Buy?</h1>
+          <p class="article-deck">Most organisations over-engineer pricing approval. Native Salesforce handles the majority of use cases without additional tooling. Here is how to know whether your situation is in that majority — and what to do if it is not.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+                <!-- ═══ TLDR:START ═══ -->
+        <div class="tldr-box">
+          <div class="tldr-label">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5M8 11v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            TL;DR — 60-second read
+          </div>
+          <ul class="tldr-list">
+          <li>Most organisations over-engineer pricing approval. Native Salesforce approval processes handle the majority of use cases — multi-step approval chains, conditional entry criteria, complete audit trail — without any additional tooling or cost.</li>
+          <li>CPQ tools are justified when your quoting process is complex (bundling, configuration rules, volume pricing). They are not justified when your requirement is specifically about discount governance on a straightforward product set.</li>
+          <li>Pricing approval audit trails have downstream commercial and legal significance. Check that wherever your approval records live, they are immutable after the decision is made — not all external tools guarantee this.</li>
+          <li>Before evaluating any tool: write your approval trigger conditions, approval chain, and approver roles on one page. Most organisations discover at this stage that native Salesforce is sufficient — and skip this step, buying complexity they did not need.</li>
+          </ul>
+        </div>
+        <!-- ═══ TLDR:END ═══ -->
+        <div class="article-body">
+
+          <p>The requirement lands clearly: every pricing proposal above a certain discount threshold needs to go through an approval process before it reaches the customer. Approvals need to be logged, decisions need to be traceable, and the sales team needs to be able to submit and track approvals without leaving their CRM workflow.</p>
+
+          <p>The question of how to implement this — native configuration, AppExchange tool, custom module, or standalone CPQ — is one where the default choice is often more complex and more expensive than the situation requires. The right starting point is not which tool to evaluate but which requirements actually apply to your situation. Most pricing approval needs are simpler than they initially appear, and most implementations add more complexity than they need to carry.</p>
+
+          <h2>What Pricing Approval Actually Requires — and What It Usually Doesn't</h2>
+
+          <p>Before evaluating options, distinguish between the requirements your approval process genuinely has and the requirements that get added because they sound like good ideas. These two categories have different implications for which solution is appropriate.</p>
+
+          <p><span class="req-label">Requirements most approval processes actually have:</span>A trigger condition — discount above a threshold, deal size above a value, specific product combinations. A defined approver or approval chain. A notification mechanism — the approver needs to know a request is waiting. An audit trail — a record of who approved what, when, and at what price. An outcome that affects the deal — approved proposals can proceed, rejected ones cannot without revision.</p>
+
+          <p><span class="req-label">Requirements that get added but often aren't necessary:</span>Complex multi-level conditional routing based on deal characteristics. Integration with ERP or finance systems for revenue recognition. Automated contract generation triggered by approval. Parallel approval tracks for legal, finance, and sales leadership simultaneously. Real-time margin calculation during the approval request. Custom approval portals accessible outside Salesforce.</p>
+
+          <p>The first set of requirements is handled cleanly by Salesforce's native approval process engine. The second set starts to push beyond what native configuration can do well — and that is where the case for additional tooling begins to exist. The mistake most organisations make is assuming they need the second set before they have validated that assumption.</p>
+
+          <h2>Option 1 — Native Salesforce Approval Processes</h2>
+
+          <p><span class="opt-label">What this covers</span>Salesforce has a built-in approval process engine that has been part of the platform since its early versions. It supports multi-step approvals, conditional entry criteria, multiple approvers at each step, parallel approval tracks, email and Chatter notifications, and a complete audit history of every approval decision. It is configurable entirely by an admin — no Apex code required for the majority of use cases.</p>
+
+          <p><span class="opt-label">What it does well</span>For a pricing approval process with a defined trigger, one to three approval levels, and a standard notification requirement, native Salesforce approval processes are genuinely sufficient. They are part of the platform you are already paying for, require no integration maintenance, store approval history natively in the record, and work on any object — Opportunity, Quote, custom object — without additional configuration. The audit trail is automatic and complete: every approval request, every delegate action, every approval or rejection is logged with a timestamp and the approver's identity.</p>
+
+          <p><span class="opt-label">Where the limits appear</span>Three scenarios push native approvals toward their limits. First, highly conditional routing — if your approval chain changes significantly based on combinations of deal characteristics (discount percentage AND product family AND customer segment AND territory), native approval process logic becomes difficult to maintain as conditions multiply. Second, dynamic approver assignment — if the approver is not a fixed role but needs to be calculated based on deal attributes at submission time, native approvals require workarounds that increase complexity. Third, approval requests that need to be initiated, reviewed, or acted on entirely outside Salesforce — by approvers who do not have Salesforce licences, for example.</p>
+
+          <p><span class="opt-label">Total cost of ownership</span>Low. No additional licence cost. Admin time to configure and maintain. The primary ongoing cost is admin capacity when the approval logic needs to change — which it will, as your discount policy evolves.</p>
+
+          <h2>Option 2 — AppExchange CPQ and Approval Tools</h2>
+
+          <p><span class="opt-label">What this covers</span>The Salesforce AppExchange has a substantial ecosystem of Configure-Price-Quote (CPQ) tools — Salesforce's own CPQ product (formerly Steelbrick), as well as third-party tools like DealHub, PandaDoc, Conga, and others — that handle pricing approval as part of a broader quote-to-cash workflow. There are also lighter approval-specific tools that add capability to the native engine without the full CPQ overhead.</p>
+
+          <p><span class="opt-label">When CPQ is the right answer</span>CPQ is justified when your pricing approval requirement is inseparable from a more complex quoting problem: a large product catalogue with complex pricing rules, bundling logic, volume discounts, and configuration constraints that need to be enforced before a quote reaches the approval stage. In this context, the approval workflow is one component of a system that is solving a genuinely hard problem — and a standalone approval configuration would sit on top of a broken quoting process rather than fixing it.</p>
+
+          <p>If your quoting process is straightforward — a defined set of products with standard pricing and a discount approval threshold — CPQ is not the right answer for your approval requirement. You are buying a significantly more expensive and complex system to solve a problem that native Salesforce handles.</p>
+
+          <p><span class="opt-label">The Salesforce CPQ consideration specifically</span>Salesforce CPQ is deeply integrated with the platform and eliminates many of the sync reliability concerns that apply to third-party AppExchange tools. But it is expensive — plan for meaningful per-user licence costs on top of your existing Salesforce contract — and it requires dedicated admin expertise to configure and maintain. The implementation timeline for a meaningful CPQ deployment is typically three to six months. If your approval requirement is primarily about discount governance rather than complex quoting, that investment is disproportionate.</p>
+
+          <p><span class="opt-label">Data and integration considerations</span>Third-party CPQ tools that sit outside Salesforce but integrate with it carry the same sync reliability risks described in the account research module article. The sync that works at deployment degrades over time as both platforms update. Approval records stored in the external tool may not be fully reflected in Salesforce, creating audit trail gaps that become significant during finance reviews or compliance audits.</p>
+
+          <p><span class="opt-label">Total cost of ownership</span>High for full CPQ. Salesforce CPQ licences, implementation costs, and ongoing admin expertise make this a significant investment. Lighter AppExchange approval tools are cheaper but still carry integration maintenance overhead. Neither is appropriate if your requirement is straightforward.</p>
+
+          <h2>Option 3 — Custom Module Inside Salesforce</h2>
+
+          <p><span class="opt-label">What this covers</span>Building a custom approval workflow using Apex code, Flow, Process Builder, or Lightning Web Components — creating a bespoke system that handles approval logic that native Salesforce cannot manage through configuration alone.</p>
+
+          <p><span class="opt-label">When it is justified</span>Genuinely complex conditional routing that native approval processes cannot express cleanly. Dynamic approver calculation based on multiple deal attributes. Custom approval interfaces — for example, a bespoke approval dashboard for sales leadership showing all pending approvals across their team with deal context. Integration with a finance or ERP system that needs to receive approval outcomes in a specific format.</p>
+
+          <p><span class="opt-label">The maintenance reality</span>Custom Apex code for approval workflows is among the more maintenance-intensive categories of Salesforce customisation. Approval logic frequently changes as discount policy evolves — every policy change requires a code change and a deployment. Salesforce's three annual platform releases can break custom Flow and Process Builder logic, particularly in major release cycles. If you build a custom approval module, budget for a Salesforce developer to review and test it against each major release — not as a contingency, as a planned recurring cost.</p>
+
+          <p>One specific risk worth calling out: Salesforce has been deprecating older automation tools in favour of Flow. If your custom approval module was built using Process Builder or Workflow Rules — both of which Salesforce has announced end-of-life plans for — you are carrying technical debt that will need to be rebuilt into Flow regardless of whether your requirements change.</p>
+
+          <p><span class="opt-label">Total cost of ownership</span>High upfront, medium ongoing if you have internal Salesforce development capacity. Without it, agency costs for maintenance and policy-change deployments accumulate quickly.</p>
+
+          <h2>Option 4 — Custom CRM with Native Approval Module</h2>
+
+          <p><span class="opt-label">What this covers</span>Building a pricing approval workflow as part of a fully custom CRM — either as one module among many in a bespoke system, or as the primary justification for moving away from Salesforce entirely.</p>
+
+          <p><span class="opt-label">When the approval requirement alone justifies this</span>It almost never does. A pricing approval requirement — even a complex one — is not sufficient justification for a custom CRM build. The approval workflow is one process within a broader sales system that also handles pipeline management, forecasting, activity tracking, reporting, and a dozen other functions. Building or moving to a custom CRM to solve an approval problem you could have solved with native Salesforce configuration means accepting the full cost and complexity of a custom CRM to avoid a configuration effort that would have taken days.</p>
+
+          <p>The scenario where this makes sense is when the approval requirement is symptomatic of broader inadequacy — when Salesforce is failing across multiple dimensions and the approval complexity is one of several reasons you are evaluating alternatives. In that context, the approval capability of a custom CRM is one factor in a broader platform decision, not the driving one. If your primary frustration is specifically the approval workflow, the right question is whether you have fully explored what native Salesforce can do before concluding it is inadequate.</p>
+
+          <p><span class="opt-label">Total cost of ownership</span>Very high. The same considerations apply as in the account research article: a custom CRM is a product, not a project, and the ongoing engineering commitment is substantially underestimated in most build decisions.</p>
+
+          <h2>The Audit Trail Requirement Deserves Special Attention</h2>
+
+          <p>Pricing approval audit trails are different from other workflow audit requirements because they have downstream commercial and sometimes legal significance. An approval record is evidence that a discount was authorised by the right person at the right level — it may be relevant in a customer dispute, an internal audit, a finance review, or a regulatory examination depending on your industry.</p>
+
+          <p>This has two practical implications for your solution choice. First, wherever your approval records live, they need to be immutable — the record of an approval decision should not be editable after the fact. Native Salesforce approval history is immutable by design. External tools that store approval records in their own system may have different data retention and immutability guarantees. Check this explicitly, not by assumption.</p>
+
+          <p>Second, the audit trail needs to be accessible to the people who will need it — finance, legal, compliance — without requiring them to access Salesforce directly or to contact RevOps for a data export. If your approval records are buried in Salesforce in a way that is hard to retrieve for a non-Salesforce user, that is a reporting and access problem worth solving alongside the approval workflow itself.</p>
+
+          <h2>The Decision Framework</h2>
+
+          <table class="decision-table">
+            <thead>
+              <tr>
+                <th>Your situation</th>
+                <th>Right option</th>
+                <th>Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Simple trigger, 1–3 approval levels, fixed approvers</td>
+                <td>Native Salesforce approval process</td>
+                <td>Fully sufficient, no additional cost, complete audit trail built in. Explore this thoroughly before looking elsewhere.</td>
+              </tr>
+              <tr>
+                <td>Complex quoting with bundling, configuration rules, volume pricing</td>
+                <td>Salesforce CPQ or third-party CPQ</td>
+                <td>Approval is one component of a quoting problem that needs end-to-end solving. CPQ investment is justified by the quoting complexity, not the approval alone.</td>
+              </tr>
+              <tr>
+                <td>Highly conditional routing or dynamic approver assignment</td>
+                <td>Custom Salesforce module (Flow)</td>
+                <td>Native approval logic cannot express complex conditions cleanly. Build in Flow rather than Apex where possible to reduce future migration risk.</td>
+              </tr>
+              <tr>
+                <td>Approvers without Salesforce licences need to act on requests</td>
+                <td>AppExchange approval tool or custom module with email-based approval</td>
+                <td>Native Salesforce approval email actions allow approvers to approve/reject via email without a Salesforce login — explore this before buying a tool.</td>
+              </tr>
+              <tr>
+                <td>ERP or finance system needs approval outcomes in real time</td>
+                <td>Custom module with API integration or iPaaS middleware</td>
+                <td>Native approvals can trigger outbound API calls via Flow. Evaluate whether a middleware layer (MuleSoft, Workato, Zapier) is sufficient before building custom.</td>
+              </tr>
+              <tr>
+                <td>Salesforce is inadequate across multiple dimensions</td>
+                <td>Platform evaluation including custom CRM</td>
+                <td>The approval requirement is one signal in a broader platform decision. Evaluate it as part of the whole, not as the driver.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="diagnostic-box">
+            <div class="box-label">◆ Before You Evaluate Any Tool — Answer These First</div>
+            <p><strong>1. Have you built and tested a native Salesforce approval process for your actual use case?</strong> Not evaluated it theoretically — built it in a sandbox and walked your team through it. Most organisations discover native Salesforce is sufficient at this stage. Most skip this stage and go straight to vendor evaluations.</p>
+            <p><strong>2. What are your approval trigger conditions, approval levels, and approver roles — written down specifically?</strong> "It's complex" is not a specification. Write out every condition under which an approval is required, who approves at each level, and what the outcome is for each decision. This document will reveal whether your process is genuinely complex or complex-feeling because it has never been written down clearly.</p>
+            <p><strong>3. Who needs to see the audit trail, how often, and in what format?</strong> Finance quarterly? Legal on request? Compliance annually? The answer determines whether Salesforce's native reporting is sufficient or whether you need a separate reporting layer.</p>
+            <p><strong>4. Do any of your approvers lack Salesforce licences?</strong> If yes, note that native Salesforce approval processes support email-based approval actions — approvers can approve or reject via email reply without logging into Salesforce. Evaluate this before concluding that an external tool is required.</p>
+          </div>
+
+          <h2>The Recommendation for Most Sales Teams</h2>
+
+          <p>Start with native Salesforce. Configure it for your actual use case — not a theoretical future use case — and run it for 90 days. The most common outcome is that it is sufficient. The second most common outcome is that it surfaces specific gaps that you can now specify precisely and solve in the most targeted way — rather than buying a broad platform to solve a problem you had not fully defined.</p>
+
+          <p>The organisations that end up with over-engineered approval systems are almost universally the ones that began evaluating tools before specifying requirements. The organisations that end up with appropriate solutions are the ones that wrote down exactly what they needed, tested the simplest option first, and escalated complexity only when the simpler option demonstrably failed.</p>
+
+          <p>Pricing approval is a governance problem before it is a technology problem. The technology should enforce the governance policy your business has defined. If your governance policy is not clearly defined — if there is ambiguity about who approves what at which threshold — no tool will fix that. Define the policy first. Then configure the simplest tool that can enforce it.</p>
+
+          <div class="cta-inline">
+            Write down your approval trigger conditions, your approval chain, and your audit requirements on one page before opening Salesforce Setup or a vendor demo. That document will tell you more about the right solution than any sales conversation will.
+          </div>
+
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm</a> — an AI-native CRM with configurable approval workflows built in. If you're rethinking your sales process architecture, <a href="contact.html" style="color:var(--rust)">request a free 30-minute diagnostic.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="account-research-module-build-vs-buy.html">← Related: Account Research Build vs Buy</a>
+          <a href="index.html">All Articles →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+  </script>
+    <!-- ═══ FOOTER:START ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales and business leaders. Published by the team at GoWarm.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Articles</h4>
+          <ul>
+            <li><a href="is-your-crm-a-crud-app.html">Are you using Salesforce as a CRUD app?</a></li>
+            <li><a href="are-your-sales-playbooks-working.html">Are your playbooks working?</a></li>
+            <li><a href="crm-rebuild-or-recommit.html">Rebuild or recommit?</a></li>
+            <li><a href="crm-integration-complexity.html">The integration trap</a></li>
+            <li><a href="revops-stack-crm-foundation.html">Do your RevOps tools actually help?</a></li>
+            <li><a href="crm-roi-cfo-questions.html">CFO questions on CRM spend</a></li>
+            <li><a href="crm-roi-cro-response.html">Proving CRM ROI to your CFO</a></li>
+            <li><a href="forecast-accuracy-arr.html">Why your sales forecast is unreliable</a></li>
+            <li><a href="sales-team-task-tracking.html">Team task tracking and workflow</a></li>
+            <li><a href="discovery-call-dropoff.html">High discovery volume, low stage progression</a></li>
+            <li><a href="account-research-module-build-vs-buy.html">Account research: build, buy or configure?</a></li>
+            <li><a href="pricing-approval-workflow-crm.html">Pricing approval workflows: configure, build or buy?</a></li>
+            <li><a href="crm-implementation-guide.html">How to implement a CRM</a></li>
+            <li><a href="lead-generation-discovery-meetings.html">Improving lead generation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="diagnostic.html">Free CRM Diagnostic</a></li>
+            <li><a href="contact.html">Request a Consultation</a></li>
+            <li><a href="https://gowarm.ai" target="_blank" rel="noopener">GoWarm →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GoWarm. All rights reserved.</span>
+        <span>gowarm.ai</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ═══ FOOTER:END ═══ -->
+</body>
+</html>
