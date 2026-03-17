@@ -51,6 +51,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://go-warm-crm.vercel.app/forecast-accuracy-arr</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://go-warm-crm.vercel.app/sales-team-task-tracking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://go-warm-crm.vercel.app/discovery-call-dropoff</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://go-warm-crm.vercel.app/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

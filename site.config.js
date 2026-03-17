@@ -49,6 +49,9 @@ const config = {
     "is-your-crm-a-crud-app": {
       slug:        "is-your-crm-a-crud-app",
       navLabel:    "Are you using Salesforce as a CRUD app?",
+      cardLabel:   "Self-Diagnostic",
+      cardExcerpt: "Five patterns that reveal you're paying $150k/year for a glorified spreadsheet — and what good actually looks like.",
+      cardMeta:    "8 min read · VP Sales",
       tldr: [
         "Most Salesforce users get pipeline visibility and reporting — things a spreadsheet could do.",
         "5 warning signals: reps log calls after the fact, nothing triggers on stage change, pipeline reviews are interrogations, playbooks live in a doc nobody reads, forecast is gut feel.",
@@ -76,6 +79,9 @@ const config = {
     "are-your-sales-playbooks-working": {
       slug:        "are-your-sales-playbooks-working",
       navLabel:    "Are your playbooks working?",
+      cardLabel:   "Playbooks",
+      cardExcerpt: "A playbook nobody executes is worse than no playbook at all. Here's how to tell the difference — and fix it.",
+      cardMeta:    "7 min read · RevOps · Enablement",
       tldr: [
         "Most orgs have playbooks. Very few have playbook execution — guidance that actually changes rep behaviour at the moment of a sale.",
         "A dormant playbook is worse than no playbook: it creates false confidence that the process is being followed when it isn't.",
@@ -103,6 +109,9 @@ const config = {
     "crm-rebuild-or-recommit": {
       slug:        "crm-rebuild-or-recommit",
       navLabel:    "Rebuild or recommit?",
+      cardLabel:   "Decision Framework",
+      cardExcerpt: "Not a vendor pitch. A real decision framework for whether to stay, switch, or build — and how to avoid the status quo trap.",
+      cardMeta:    "10 min read · CTO · VP Sales",
       tldr: [
         "Before evaluating alternatives, answer honestly: is this a platform problem or an adoption and configuration problem? Most orgs mistake the second for the first.",
         "Salesforce is right for you if: complex multi-stakeholder deals, dedicated admin capacity, 50+ reps, significant existing integrations.",
@@ -130,6 +139,9 @@ const config = {
     "crm-integration-complexity": {
       slug:        "crm-integration-complexity",
       navLabel:    "The integration trap",
+      cardLabel:   "Integration Strategy",
+      cardExcerpt: "You have 12 integrations and a working system. Here's how to separate legitimate switching costs from integration inertia — and what to do about either.",
+      cardMeta:    "9 min read · VP Sales · RevOps · CTO",
       tldr: [
         "Integration complexity is the most effective reason organisations give for tolerating a CRM that isn't delivering — and it's often used as an excuse, not a genuine constraint.",
         "Three categories: load-bearing (genuinely critical), convenience (real value, rebuildable), ghost (no live purpose, just inflates switching cost).",
@@ -155,6 +167,9 @@ const config = {
     "revops-stack-crm-foundation": {
       slug:        "revops-stack-crm-foundation",
       navLabel:    "Do your RevOps tools actually help?",
+      cardLabel:   "RevOps Stack",
+      cardExcerpt: "Gong, Clari, Outreach — great tools. But intelligence layers built on broken CRM data amplify noise, not signal. Here's the honest diagnostic.",
+      cardMeta:    "9 min read · RevOps · VP Sales · Sales Ops",
       tldr: [
         "Tools like Outreach exist because CRMs failed at the workflow layer. In a well-designed system, what they do belongs inside the CRM itself.",
         "Gong and Clari are genuinely different — conversation intelligence and revenue forecasting are capabilities the CRM was never designed to provide.",
@@ -182,6 +197,9 @@ const config = {
     "crm-implementation-guide": {
       slug:        "crm-implementation-guide",
       navLabel:    "How to implement a CRM",
+      cardLabel:   "CRM Implementation",
+      cardExcerpt: "Most implementations fail not because of the tool chosen, but because the process wasn't documented first. A framework covering process design, tool selection, change management, and the first 90 days.",
+      cardMeta:    "10 min read · VP Sales · Sales Ops · RevOps",
       tldr: [
         "The tool is the last decision, not the first. Organisations that get CRM right spend more time on process design before vendor evaluation than on the implementation itself.",
         "Document your actual sales process — not the ideal one — before opening a single demo. Every point of disagreement between reps is a future data quality problem.",
@@ -209,6 +227,9 @@ const config = {
     "lead-generation-discovery-meetings": {
       slug:        "lead-generation-discovery-meetings",
       navLabel:    "Improving lead generation",
+      cardLabel:   "Lead Generation",
+      cardExcerpt: "Most lead gen underperformance is a definition problem, not a volume problem. ICP, qualification frameworks, and the metrics that show where your funnel is actually breaking.",
+      cardMeta:    "10 min read · VP Sales · Head of Growth · RevOps",
       tldr: [
         "Most lead gen underperformance is a definition problem, not a volume problem. Adding more outreach before fixing conversion rates generates more noise faster.",
         "A usable ICP has four parts: firmographic profile, situational trigger, buyer persona, and a disqualifying signal. If sales and marketing can't independently write the same sentence, you don't have an ICP.",
@@ -238,6 +259,9 @@ const config = {
     "crm-roi-cfo-questions": {
       slug:        "crm-roi-cfo-questions",
       navLabel:    "CFO questions on CRM spend",
+      cardLabel:   "CFO · Finance",
+      cardExcerpt: "Your CRM line item is growing and the answers are vague. Six specific questions that cut through — and what a real answer looks like versus a deflection.",
+      cardMeta:    "9 min read · CFO · Finance Directors · CEOs",
       tldr: [
         "Most CFOs approve CRM renewals because disrupting the revenue org feels riskier than the cost — not because the ROI is clear.",
         "The foundational question: what did the CRM generate last quarter that a spreadsheet couldn't have? If the answer is vague, you have your answer.",
@@ -263,6 +287,9 @@ const config = {
     "crm-roi-cro-response": {
       slug:        "crm-roi-cro-response",
       navLabel:    "Proving CRM ROI to your CFO",
+      cardLabel:   "CRM ROI · Finance",
+      cardExcerpt: "Candour plus a plan beats a polished deck every time. How to build an honest ROI case — and what options to present when the numbers are weak.",
+      cardMeta:    "10 min read · CROs · VP Sales · RevOps",
       tldr: [
         "A polished deck of lagging metrics won't satisfy a financially rigorous CFO. Candour paired with a plan will.",
         "Build the ROI case in three parts: productivity value (time saved per rep), revenue impact (specific deals the system influenced), cost avoidance (what the alternative would cost).",
@@ -284,6 +311,90 @@ const config = {
           a: "Present three options honestly: invest in an adoption improvement programme with specific targets and a timeline; right-size the contract by auditing unused capability and renegotiating (typically reduces cost 20-40%); or conduct a structured evaluation of alternatives before the next renewal. The worst option is continuing to pay full price for partial value while avoiding the conversation." },
         { q: "How do you reduce CRM costs without switching platforms?",
           a: "Conduct a capability audit: list everything contracted, identify what is activated and what is actually used. Most enterprise CRM contracts include modules sold in the initial deal and never implemented. Renegotiating down to active usage — removing unused modules, adjusting licence tiers — typically reduces cost by 20-40% without changing how the sales team works." },
+      ],
+    },
+
+    "forecast-accuracy-arr": {
+      slug:        "forecast-accuracy-arr",
+      navLabel:    "Why your sales forecast is unreliable",
+      cardLabel:   "Forecasting · ARR",
+      cardExcerpt: "Manual forecast assembly breaks at every step. Here is why the process itself is the problem — and what structured data, ARR timing, and honest accuracy measurement actually look like.",
+      cardMeta:    "10 min read · VP Sales · RevOps · CRO",
+      tldr: [
+        "When RevOps analysts update CRM data with sales leaders, they are correcting a symptom. The root cause is reps not maintaining records accurately in real time.",
+        "Structured data (stage, time in stage, days since contact) and unstructured data (rep narrative) have very different reliability properties — your forecast should be built on the first, refined by the second.",
+        "ARR timing inconsistency is the most common source of disconnect between sales and finance. Define commit date, signature date, billing start, and revenue recognition separately.",
+        "The most revealing metric: track your Commit category close rate over four quarters. Below 75% means your Commit definition is too loose — fix that before any tooling investment.",
+      ],
+      title:       "Why Your Sales Forecast Is Unreliable — and How to Fix It | GoWarm Insights",
+      description: "If your RevOps team is manually assembling your forecast from sales leader conversations, the process itself is the problem. Why manual forecast assembly breaks, what structured vs unstructured data means for accuracy, and how to measure forecast reliability honestly.",
+      label:       "Forecasting · ARR",
+      audience:    "VP Sales · RevOps · CRO",
+      readTime:    "10 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "Why is my sales forecast always inaccurate?",
+          a: "Manual forecast assembly breaks at four points: CRM data is wrong because reps update it for compliance; the forecast inherits sales leader bias; structured and unstructured data are mixed without distinction; and ARR timing is inconsistent. A reliable forecast is built primarily from structured CRM signals with human judgement used to refine individual deals." },
+        { q: "What is the difference between structured and unstructured data in sales forecasting?",
+          a: "Structured data is objective CRM signals: time in stage, days since last contact, stakeholders engaged, close date, stage probability. Unstructured data is qualitative rep narrative. A trustworthy forecast builds the baseline from structured data and uses unstructured context only to adjust individual deals at the margin." },
+        { q: "When should ARR be counted in a sales forecast?",
+          a: "Maintain two numbers: a sales forecast based on signature date and a revenue forecast based on recognition date. These can differ significantly on multi-year deals. The most common source of distrust between finance and revenue leadership is each team using different timing assumptions on the same deal." },
+      ],
+    },
+
+    "sales-team-task-tracking": {
+      slug:        "sales-team-task-tracking",
+      navLabel:    "Team task tracking and workflow",
+      cardLabel:   "Sales Operations",
+      cardExcerpt: "When reps miss follow-ups and deals fall through the cracks, the instinct is to add a tool. Almost always the right fix is to configure the CRM they already have. Here is what that actually looks like.",
+      cardMeta:    "9 min read · VP Sales · Sales Managers · RevOps",
+      tldr: [
+        "Reps miss follow-ups not because they lack a task tool but because no system is telling them what to do next, when, and what happens if they don't.",
+        "Project management tools are for flexible work. Sales tasks belong in the CRM — attached to the deal they relate to, visible to the manager without switching tools.",
+        "A well-configured CRM generates tasks automatically at every stage transition, assigns them with owners and deadlines, and surfaces overdue tasks to the manager daily.",
+        "The most commonly missed configuration: a required handoff note when deal ownership changes. Five minutes to write. Its absence costs multiple customer interactions to recover.",
+      ],
+      title:       "Your Sales Team Is Missing Follow-Ups and Working from Memory. Here Is What to Fix | GoWarm Insights",
+      description: "When reps miss next steps, drop handoffs, and managers cannot see what is happening on deals, the fix is almost never a new tool. It is configuring the CRM they already have. Here is what a well-configured next-step system looks like.",
+      label:       "Sales Operations",
+      audience:    "VP Sales · Sales Managers · RevOps",
+      readTime:    "9 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "Should sales teams use a project management tool or CRM for task tracking?",
+          a: "Sales tasks belong in the CRM. Every sales task is associated with a specific deal, contact, and stage — disconnecting it into a separate tool means the manager cannot see task status without leaving the pipeline, and task completion has no effect on deal progress. Project management tools are appropriate for work around the sales process: onboarding, campaigns, cross-functional deal support." },
+        { q: "How do you stop deals from falling through the cracks?",
+          a: "Configure three things: automatic task generation at every stage transition with specific owners and due dates; a no-activity alert surfacing deals with nothing logged in 7-14 days; and a manager view showing overdue tasks and stale deals daily. Together these ensure no deal can go quietly dormant without surfacing to someone who can act." },
+        { q: "How do you manage sales rep handoffs effectively?",
+          a: "Require three things at every handoff: a complete activity log, a next-step task assigned to the new owner with a due date, and a handoff note written by the departing owner. Make the handoff note a required field when deal ownership changes. Without enforcement it will always be skipped." },
+      ],
+    },
+
+    "discovery-call-dropoff": {
+      slug:        "discovery-call-dropoff",
+      navLabel:    "High discovery volume, low stage progression",
+      cardLabel:   "Pipeline · Discovery",
+      cardExcerpt: "High discovery call volume with alarming drop-off between stages almost always traces to one of three causes. The fix depends entirely on which one — and they require completely different interventions.",
+      cardMeta:    "10 min read · VP Sales · Sales Managers · RevOps",
+      tldr: [
+        "Three root causes — wrong people reaching discovery (ICP failure), calls not establishing value or urgency (quality failure), no committed next step before the call ends (handoff failure). They look similar. They require different fixes.",
+        "The diagnostic: pull stage 1 to stage 2 conversion by rep. High variance = skills or process problem. Low conversion across all reps = ICP or qualification problem.",
+        "A discovery call that ends with an interested prospect who has no reason to move forward quickly is a failed call — even if every question was asked correctly.",
+        "Stage definitions are the upstream fix. If moving to stage 2 means 'the rep thinks it's interesting' rather than confirmed problem, economic buyer, and next step — your pipeline stages carry no information about deal quality.",
+      ],
+      title:       "High Discovery Call Volume, Low Stage Progression: What to Fix | GoWarm Insights",
+      description: "High discovery call volume with alarming drop-off from stage 1 to stage 3 almost always traces to one of three root causes: ICP failure, call quality failure, or next step failure. Here is how to diagnose which one you have — and what to do about it.",
+      label:       "Pipeline · Discovery",
+      audience:    "VP Sales · Sales Managers · RevOps",
+      readTime:    "10 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "Why are deals dropping off after discovery calls?",
+          a: "There are three distinct causes: the wrong people are reaching discovery because qualification is too loose; the call is not establishing a compelling problem or urgency; or the call ends without a committed next step. Pull stage 1 to stage 2 conversion by rep — high variance between reps means a skills problem; uniformly low conversion means an ICP or qualification problem." },
+        { q: "What should be true before a deal moves from stage 1 to stage 2?",
+          a: "Three things confirmed: a specific business problem (not product interest), the economic buyer identified by name, and a specific next step agreed with a date before the call ends. Deals that move without these criteria produce pipeline that looks active but cannot close." },
+        { q: "What is a good stage 1 to stage 2 conversion rate?",
+          a: "Below 30% indicates a qualification or call quality problem. Above 50% may suggest stage 2 entry criteria are too loose. Track by rep — the variance between reps is more informative than the average and immediately tells you whether you have a market problem or a process problem." },
       ],
     },
 
@@ -320,6 +431,9 @@ const config = {
     "crm-diagnostic":                   "diagnostic.html",
     "crm-roi-cfo-questions":            "crm-roi-cfo-questions.html",
     "crm-roi-cro-response":             "crm-roi-cro-response.html",
+    "forecast-accuracy-arr":            "forecast-accuracy-arr.html",
+    "sales-team-task-tracking":         "sales-team-task-tracking.html",
+    "discovery-call-dropoff":           "discovery-call-dropoff.html",
     "crm-implementation-guide":         "crm-implementation-guide.html",
     "lead-generation-discovery-meetings": "lead-generation-discovery-meetings.html",
   },

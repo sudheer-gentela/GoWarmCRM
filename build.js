@@ -223,8 +223,51 @@ ${items}
         ${TLDR_END}`;
 }
 
+
 // ─────────────────────────────────────────────────────────────────────────────
-// 5. Process a single file in-place
+// 5. Articles grid — auto-generated in index.html from cfg
+// ─────────────────────────────────────────────────────────────────────────────
+
+const GRID_START = "<!-- ═══ ARTICLES-GRID:START ═══ -->";
+const GRID_END   = "<!-- ═══ ARTICLES-GRID:END ═══ -->";
+
+function buildArticlesGrid() {
+  const articles = Object.entries(cfg.fileMap)
+    .filter(([pageKey]) => {
+      const p = cfg.pages[pageKey];
+      return p && p.cardLabel && p.cardExcerpt && p.cardMeta;
+    });
+
+  const count = articles.length;
+
+  const cards = articles.map(([pageKey, filename]) => {
+    const p = cfg.pages[pageKey];
+    return `
+        <a href="${filename}" class="article-card">
+          <span class="tag">${p.cardLabel}</span>
+          <div class="card-title">${p.navLabel}</div>
+          <div class="card-excerpt">${p.cardExcerpt}</div>
+          <div class="card-meta">${p.cardMeta.replace(" · ", ' <span class="dot"></span> ')}</div>
+        </a>`;
+  }).join("\n");
+
+  return `${GRID_START}
+  <section class="articles-section" id="articles">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">All Articles</span>
+        <span style="font-size:13px;color:var(--ink-4)">${count} article${count !== 1 ? "s" : ""} · Updated ${new Date().getFullYear()}</span>
+      </div>
+      <div class="articles-grid">
+${cards}
+      </div>
+    </div>
+  </section>
+  ${GRID_END}`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 6. Process a single file in-place
 // ─────────────────────────────────────────────────────────────────────────────
 
 function processFile(filename, pageKey) {
@@ -265,6 +308,20 @@ function processFile(filename, pageKey) {
   html = html.replace(/<footer[^>]*class="site-footer"[^>]*>[\s\S]*?<\/footer>/g, "");
   // Inject fresh footer before </body>
   html = html.replace("</body>", `  ${buildFooter()}\n</body>`);
+
+  // ── Articles grid (index.html only) ──────────────────────────────────────
+  html = stripBlock(html, GRID_START, GRID_END);
+  if (html.includes(GRID_START.replace(" ═══ -->"," ═══ -->")) || filename === "index.html") {
+    const gridHtml = buildArticlesGrid();
+    if (html.includes(GRID_START)) {
+      html = html.replace(GRID_START, "").replace(GRID_END, "");
+    }
+    // Inject before the CTA band section
+    html = html.replace(
+      '<!-- CTA BAND -->',
+      gridHtml + '\n\n  <!-- CTA BAND -->'
+    );
+  }
 
   // ── TLDR ─────────────────────────────────────────────────────────────────
   const tldrHtml = buildTldr(pageKey);
