@@ -148,9 +148,12 @@ const FOOTER_START = "<!-- ═══ FOOTER:START ═══ -->";
 const FOOTER_END   = "<!-- ═══ FOOTER:END ═══ -->";
 
 function buildFooter() {
-  // Build article list: only pages that have a navLabel, in fileMap order
-  const articleLinks = Object.entries(cfg.fileMap)
-    .filter(([pageKey]) => cfg.pages[pageKey] && cfg.pages[pageKey].navLabel)
+  // Latest 6 articles: pages with a navLabel, in fileMap order (oldest first),
+  // excluding non-article pages (index, contact, diagnostic). Take last 6.
+  const NON_ARTICLE = new Set(["index", "contact", "crm-diagnostic"]);
+  const latestSix = Object.entries(cfg.fileMap)
+    .filter(([pageKey]) => !NON_ARTICLE.has(pageKey) && cfg.pages[pageKey] && cfg.pages[pageKey].navLabel)
+    .slice(-6)
     .map(([pageKey, filename]) =>
       `            <li><a href="${filename}">${cfg.pages[pageKey].navLabel}</a></li>`
     )
@@ -170,9 +173,19 @@ function buildFooter() {
           <p class="footer-tagline">${cfg.BRAND_TAGLINE} Published by the team at ${cfg.BRAND_COMPANY}.</p>
         </div>
         <div class="footer-col">
-          <h4>Articles</h4>
+          <h4>Topics</h4>
           <ul>
-${articleLinks}
+            <li><a href="index.html#articles">All Articles</a></li>
+            <li><a href="index.html#articles">CRM Health</a></li>
+            <li><a href="index.html#articles">Decisions</a></li>
+            <li><a href="index.html#articles">Revenue Ops</a></li>
+            <li><a href="index.html#articles">Finance &amp; ROI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Latest Articles</h4>
+          <ul>
+${latestSix}
           </ul>
         </div>
         <div class="footer-col">
@@ -255,7 +268,7 @@ function buildArticlesGrid() {
   }).join("\n");
 
   return `${GRID_START}
-  <section class="articles-section" id="articles">
+  <section class="articles-section" id="articles" style="padding-top:32px;">
     <div class="container">
 
       <!-- Topic/Role toggle + filter pills -->
