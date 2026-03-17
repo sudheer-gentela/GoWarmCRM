@@ -52,6 +52,8 @@ const config = {
       cardLabel:   "Self-Diagnostic",
       cardExcerpt: "Five patterns that reveal you're paying $150k/year for a glorified spreadsheet — and what good actually looks like.",
       cardMeta:    "8 min read · VP Sales",
+      category:    "crm",
+      roles:       "vps ceo",
       tldr: [
         "Most Salesforce users get pipeline visibility and reporting — things a spreadsheet could do.",
         "5 warning signals: reps log calls after the fact, nothing triggers on stage change, pipeline reviews are interrogations, playbooks live in a doc nobody reads, forecast is gut feel.",
@@ -82,6 +84,8 @@ const config = {
       cardLabel:   "Playbooks",
       cardExcerpt: "A playbook nobody executes is worse than no playbook at all. Here's how to tell the difference — and fix it.",
       cardMeta:    "7 min read · RevOps · Enablement",
+      category:    "crm",
+      roles:       "rvp vps",
       tldr: [
         "Most orgs have playbooks. Very few have playbook execution — guidance that actually changes rep behaviour at the moment of a sale.",
         "A dormant playbook is worse than no playbook: it creates false confidence that the process is being followed when it isn't.",
@@ -112,6 +116,8 @@ const config = {
       cardLabel:   "Decision Framework",
       cardExcerpt: "Not a vendor pitch. A real decision framework for whether to stay, switch, or build — and how to avoid the status quo trap.",
       cardMeta:    "10 min read · CTO · VP Sales",
+      category:    "dec",
+      roles:       "cto vps ceo",
       tldr: [
         "Before evaluating alternatives, answer honestly: is this a platform problem or an adoption and configuration problem? Most orgs mistake the second for the first.",
         "Salesforce is right for you if: complex multi-stakeholder deals, dedicated admin capacity, 50+ reps, significant existing integrations.",
@@ -142,6 +148,8 @@ const config = {
       cardLabel:   "Integration Strategy",
       cardExcerpt: "You have 12 integrations and a working system. Here's how to separate legitimate switching costs from integration inertia — and what to do about either.",
       cardMeta:    "9 min read · VP Sales · RevOps · CTO",
+      category:    "crm",
+      roles:       "rvp cto vps",
       tldr: [
         "Integration complexity is the most effective reason organisations give for tolerating a CRM that isn't delivering — and it's often used as an excuse, not a genuine constraint.",
         "Three categories: load-bearing (genuinely critical), convenience (real value, rebuildable), ghost (no live purpose, just inflates switching cost).",
@@ -170,6 +178,8 @@ const config = {
       cardLabel:   "RevOps Stack",
       cardExcerpt: "Gong, Clari, Outreach — great tools. But intelligence layers built on broken CRM data amplify noise, not signal. Here's the honest diagnostic.",
       cardMeta:    "9 min read · RevOps · VP Sales · Sales Ops",
+      category:    "crm",
+      roles:       "rvp cto",
       tldr: [
         "Tools like Outreach exist because CRMs failed at the workflow layer. In a well-designed system, what they do belongs inside the CRM itself.",
         "Gong and Clari are genuinely different — conversation intelligence and revenue forecasting are capabilities the CRM was never designed to provide.",
@@ -200,6 +210,8 @@ const config = {
       cardLabel:   "CRM Implementation",
       cardExcerpt: "Most implementations fail not because of the tool chosen, but because the process wasn't documented first. A framework covering process design, tool selection, change management, and the first 90 days.",
       cardMeta:    "10 min read · VP Sales · Sales Ops · RevOps",
+      category:    "dec",
+      roles:       "vps rvp",
       tldr: [
         "The tool is the last decision, not the first. Organisations that get CRM right spend more time on process design before vendor evaluation than on the implementation itself.",
         "Document your actual sales process — not the ideal one — before opening a single demo. Every point of disagreement between reps is a future data quality problem.",
@@ -230,6 +242,8 @@ const config = {
       cardLabel:   "Lead Generation",
       cardExcerpt: "Most lead gen underperformance is a definition problem, not a volume problem. ICP, qualification frameworks, and the metrics that show where your funnel is actually breaking.",
       cardMeta:    "10 min read · VP Sales · Head of Growth · RevOps",
+      category:    "ops",
+      roles:       "vps rvp",
       tldr: [
         "Most lead gen underperformance is a definition problem, not a volume problem. Adding more outreach before fixing conversion rates generates more noise faster.",
         "A usable ICP has four parts: firmographic profile, situational trigger, buyer persona, and a disqualifying signal. If sales and marketing can't independently write the same sentence, you don't have an ICP.",
@@ -262,6 +276,8 @@ const config = {
       cardLabel:   "CFO · Finance",
       cardExcerpt: "Your CRM line item is growing and the answers are vague. Six specific questions that cut through — and what a real answer looks like versus a deflection.",
       cardMeta:    "9 min read · CFO · Finance Directors · CEOs",
+      category:    "fin",
+      roles:       "cfo ceo",
       tldr: [
         "Most CFOs approve CRM renewals because disrupting the revenue org feels riskier than the cost — not because the ROI is clear.",
         "The foundational question: what did the CRM generate last quarter that a spreadsheet couldn't have? If the answer is vague, you have your answer.",
@@ -290,6 +306,8 @@ const config = {
       cardLabel:   "CRM ROI · Finance",
       cardExcerpt: "Candour plus a plan beats a polished deck every time. How to build an honest ROI case — and what options to present when the numbers are weak.",
       cardMeta:    "10 min read · CROs · VP Sales · RevOps",
+      category:    "fin",
+      roles:       "vps cfo ceo",
       tldr: [
         "A polished deck of lagging metrics won't satisfy a financially rigorous CFO. Candour paired with a plan will.",
         "Build the ROI case in three parts: productivity value (time saved per rep), revenue impact (specific deals the system influenced), cost avoidance (what the alternative would cost).",
@@ -320,6 +338,8 @@ const config = {
       cardLabel:   "Forecasting · ARR",
       cardExcerpt: "Manual forecast assembly breaks at every step. Here is why the process itself is the problem — and what structured data, ARR timing, and honest accuracy measurement actually look like.",
       cardMeta:    "10 min read · VP Sales · RevOps · CRO",
+      category:    "ops",
+      roles:       "vps rvp ceo",
       tldr: [
         "When RevOps analysts update CRM data with sales leaders, they are correcting a symptom. The root cause is reps not maintaining records accurately in real time.",
         "Structured data (stage, time in stage, days since contact) and unstructured data (rep narrative) have very different reliability properties — your forecast should be built on the first, refined by the second.",
@@ -348,6 +368,8 @@ const config = {
       cardLabel:   "Sales Operations",
       cardExcerpt: "When reps miss follow-ups and deals fall through the cracks, the instinct is to add a tool. Almost always the right fix is to configure the CRM they already have. Here is what that actually looks like.",
       cardMeta:    "9 min read · VP Sales · Sales Managers · RevOps",
+      category:    "ops",
+      roles:       "vps rvp",
       tldr: [
         "Reps miss follow-ups not because they lack a task tool but because no system is telling them what to do next, when, and what happens if they don't.",
         "Project management tools are for flexible work. Sales tasks belong in the CRM — attached to the deal they relate to, visible to the manager without switching tools.",
@@ -376,6 +398,8 @@ const config = {
       cardLabel:   "Pipeline · Discovery",
       cardExcerpt: "High discovery call volume with alarming drop-off between stages almost always traces to one of three causes. The fix depends entirely on which one — and they require completely different interventions.",
       cardMeta:    "10 min read · VP Sales · Sales Managers · RevOps",
+      category:    "ops",
+      roles:       "vps rvp",
       tldr: [
         "Three root causes — wrong people reaching discovery (ICP failure), calls not establishing value or urgency (quality failure), no committed next step before the call ends (handoff failure). They look similar. They require different fixes.",
         "The diagnostic: pull stage 1 to stage 2 conversion by rep. High variance = skills or process problem. Low conversion across all reps = ICP or qualification problem.",

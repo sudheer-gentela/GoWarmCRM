@@ -129,7 +129,6 @@ function buildNav() {
         <ul class="nav-links">
           <li><a href="index.html#articles">Articles</a></li>
           <li><a href="diagnostic.html">CRM Diagnostic</a></li>
-          <li><a href="contact.html">Work With Us</a></li>
           <li><a href="contact.html" class="nav-cta">Get a Free Audit</a></li>
         </ul>
       </nav>
@@ -242,27 +241,90 @@ function buildArticlesGrid() {
 
   const cards = articles.map(([pageKey, filename]) => {
     const p = cfg.pages[pageKey];
+    const cat   = p.category || "crm";
+    const roles = p.roles    || "vps";
+    // Tag colour class based on category
+    const tagClass = { crm:"gc-crm", dec:"gc-dec", ops:"gc-ops", fin:"gc-fin" }[cat] || "gc-crm";
     return `
-        <a href="${filename}" class="article-card">
-          <span class="tag">${p.cardLabel}</span>
-          <div class="card-title">${p.navLabel}</div>
-          <div class="card-excerpt">${p.cardExcerpt}</div>
-          <div class="card-meta">${p.cardMeta.replace(" · ", ' <span class="dot"></span> ')}</div>
+        <a href="${filename}" class="gc-card" data-topic="${cat}" data-roles="${roles}">
+          <span class="gc-tag ${tagClass}">${p.cardLabel}</span>
+          <div class="gc-title">${p.navLabel}</div>
+          <div class="gc-excerpt">${p.cardExcerpt}</div>
+          <div class="gc-meta">${p.cardMeta}</div>
         </a>`;
   }).join("\n");
 
   return `${GRID_START}
   <section class="articles-section" id="articles">
     <div class="container">
-      <div class="section-header">
-        <span class="section-title">All Articles</span>
-        <span style="font-size:13px;color:var(--ink-4)">${count} article${count !== 1 ? "s" : ""} · Updated ${new Date().getFullYear()}</span>
+
+      <!-- Topic/Role toggle + filter pills -->
+      <div class="gc-topbar">
+        <div class="gc-tbtns">
+          <button class="gc-tbtn gc-on" onclick="gcSwitch(this,'topic')">By Topic</button>
+          <button class="gc-tbtn" onclick="gcSwitch(this,'role')">By Role</button>
+        </div>
+        <div class="gc-sep"></div>
+        <div class="gc-pills" id="gc-pills-topic">
+          <button class="gc-pill gc-on" onclick="gcFilter(this,'all')">All ${count}</button>
+          <button class="gc-pill" onclick="gcFilter(this,'crm')">CRM Health</button>
+          <button class="gc-pill" onclick="gcFilter(this,'dec')">Decisions</button>
+          <button class="gc-pill" onclick="gcFilter(this,'ops')">Revenue Ops</button>
+          <button class="gc-pill" onclick="gcFilter(this,'fin')">Finance &amp; ROI</button>
+        </div>
+        <div class="gc-pills" id="gc-pills-role" style="display:none">
+          <button class="gc-pill gc-on" onclick="gcFilter(this,'all')">All roles</button>
+          <button class="gc-pill" onclick="gcFilter(this,'vps')">VP Sales</button>
+          <button class="gc-pill" onclick="gcFilter(this,'rvp')">RevOps</button>
+          <button class="gc-pill" onclick="gcFilter(this,'cto')">CTO</button>
+          <button class="gc-pill" onclick="gcFilter(this,'cfo')">CFO</button>
+          <button class="gc-pill" onclick="gcFilter(this,'ceo')">CEO · Founder</button>
+        </div>
+        <span class="gc-count" id="gc-count">${count} articles</span>
       </div>
-      <div class="articles-grid">
+
+      <!-- Card grid -->
+      <div class="gc-grid" id="gc-grid">
 ${cards}
       </div>
+
     </div>
   </section>
+
+  <script>
+    var gcMode = 'topic';
+    function gcSwitch(btn, mode) {
+      gcMode = mode;
+      document.querySelectorAll('.gc-tbtn').forEach(function(b){b.classList.remove('gc-on');});
+      btn.classList.add('gc-on');
+      document.getElementById('gc-pills-topic').style.display = mode==='topic' ? 'flex' : 'none';
+      document.getElementById('gc-pills-role').style.display  = mode==='role'  ? 'flex' : 'none';
+      var pills = document.getElementById(mode==='topic'?'gc-pills-topic':'gc-pills-role');
+      pills.querySelectorAll('.gc-pill').forEach(function(p){p.classList.remove('gc-on');});
+      pills.querySelector('.gc-pill').classList.add('gc-on');
+      gcApply('all');
+    }
+    function gcFilter(pill, val) {
+      pill.closest('.gc-pills').querySelectorAll('.gc-pill').forEach(function(p){p.classList.remove('gc-on');});
+      pill.classList.add('gc-on');
+      gcApply(val);
+    }
+    function gcApply(val) {
+      var cards = document.querySelectorAll('#gc-grid .gc-card');
+      var n = 0;
+      cards.forEach(function(c){
+        var show = val==='all';
+        if (!show) {
+          if (gcMode==='topic') show = c.dataset.topic===val;
+          else show = c.dataset.roles && c.dataset.roles.split(' ').indexOf(val)!==-1;
+        }
+        c.style.display = show ? '' : 'none';
+        if (show) n++;
+      });
+      var el = document.getElementById('gc-count');
+      if (el) el.textContent = n + ' article' + (n!==1?'s':'');
+    }
+  <\/script>
   ${GRID_END}`;
 }
 
