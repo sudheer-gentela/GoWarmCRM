@@ -14,11 +14,21 @@ async function appendToSheet(data) {
     return false;
   }
 
+  // Log key format to help debug
+  const keyPreview = privateKey ? privateKey.substring(0, 40).replace(/\n/g, "\\n") : "empty";
+  console.log("[Sheets] Key preview:", keyPreview);
+
   try {
+    // Sanitise key — handles escaped \n, literal newlines, and both PKCS8 + RSA formats
+    const cleanKey = privateKey
+      .replace(/\\n/g, "\n")   // escaped \n → real newline
+      .replace(/\r/g, "")        // strip carriage returns
+      .trim();
+
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: clientEmail,
-        private_key: privateKey.replace(/\\n/g, "\n"),
+        private_key: cleanKey,
       },
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
@@ -69,7 +79,7 @@ async function appendDiagnosticToSheet(data) {
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: clientEmail,
-        private_key: privateKey.replace(/\\n/g, "\n"),
+        private_key: privateKey.replace(/\\n/g, "\n").replace(/\r/g, "").trim(),
       },
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
