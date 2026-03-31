@@ -267,27 +267,14 @@
         <span class="section-title">From the Blog</span>
         <a href="/blog" class="section-link">All articles →</a>
       </div>
-      <!-- Carousel wrapper -->
-      <div class="blog-carousel-outer">
-        <div class="blog-carousel-track" id="blogTrack">
-          <a href="/blog/pipeline-deals-going-dark" class="blog-card">
-            <span class="blog-tag">Pipeline Health</span>
-            <div class="blog-title">Why your best deals go dark — and how to catch them before they're gone</div>
-            <p class="blog-excerpt">The gap between stage 3 and stage 4 is where most revenue disappears. Here's the diagnostic pattern that reveals it.</p>
-            <div class="blog-meta">8 min read · VP Sales · RevOps</div>
-          </a>
-          <a href="/blog/per-user-ai-settings-crm" class="blog-card">
-            <span class="blog-tag" style="background:#EAF3DE;color:#3B6D11;">AI in CRM</span>
-            <div class="blog-title">Per-user AI settings: why one prompt doesn't fit your whole sales team</div>
-            <p class="blog-excerpt">AEs, CSMs, and SDRs need different intelligence. A look at how configurable AI modules change what your CRM is actually worth.</p>
-            <div class="blog-meta">6 min read · Sales Leaders · RevOps</div>
-          </a>
-          <a href="/blog/playbook-adoption-crm" class="blog-card">
-            <span class="blog-tag" style="background:#E6F1FB;color:#185FA5;">Playbooks</span>
-            <div class="blog-title">The playbook adoption problem nobody talks about</div>
-            <p class="blog-excerpt">You built the playbook. Nobody's following it. The issue isn't culture — it's that your CRM doesn't surface the next play at the moment it matters.</p>
-            <div class="blog-meta">7 min read · Enablement · VP Sales</div>
-          </a>
+    </div>
+
+    <!-- Full-width carousel — 6 cards, shows 3 at a time, slides one row every 3s -->
+    <div class="blog-carousel-outer">
+      <div class="blog-carousel-track" id="blogTrack">
+
+        <!-- Row 1 of 2 -->
+        <div class="blog-row">
           <a href="/blog/pipeline-deals-going-dark" class="blog-card">
             <span class="blog-tag">Pipeline Health</span>
             <div class="blog-title">Why your best deals go dark — and how to catch them before they're gone</div>
@@ -307,32 +294,62 @@
             <div class="blog-meta">7 min read · Enablement · VP Sales</div>
           </a>
         </div>
-        <!-- Dot indicators -->
-        <div class="blog-dots">
-          <span class="blog-dot active" onclick="goToSlide(0)"></span>
-          <span class="blog-dot" onclick="goToSlide(1)"></span>
-          <span class="blog-dot" onclick="goToSlide(2)"></span>
+
+        <!-- Row 2 of 2 -->
+        <div class="blog-row">
+          <a href="/blog/forecast-accuracy-arr" class="blog-card">
+            <span class="blog-tag" style="background:#FCEBEB;color:#A32D2D;">Forecasting</span>
+            <div class="blog-title">Why your sales forecast is unreliable — and how to fix it</div>
+            <p class="blog-excerpt">Manual forecast assembly breaks at every step. Here is why the process itself is the problem — and what activity-signal forecasting actually looks like.</p>
+            <div class="blog-meta">10 min read · VP Sales · RevOps · CRO</div>
+          </a>
+          <a href="/blog/are-your-sales-playbooks-working" class="blog-card">
+            <span class="blog-tag" style="background:#EAF3DE;color:#3B6D11;">Playbooks</span>
+            <div class="blog-title">Are your sales playbooks actually working?</div>
+            <p class="blog-excerpt">A playbook nobody executes is worse than no playbook at all. Here's how to measure play completion rate and win rate by playbook.</p>
+            <div class="blog-meta">7 min read · RevOps · Enablement</div>
+          </a>
+          <a href="/blog/crm-rebuild-or-recommit" class="blog-card">
+            <span class="blog-tag" style="background:#E6F1FB;color:#185FA5;">Decision Framework</span>
+            <div class="blog-title">Rebuild or recommit? The honest CRM decision framework</div>
+            <p class="blog-excerpt">Not a vendor pitch. A real framework for whether to stay, switch, or build — and how to avoid the status quo trap.</p>
+            <div class="blog-meta">10 min read · CTO · VP Sales</div>
+          </a>
         </div>
+
+      </div>
+
+      <!-- Dot indicators — 2 dots for 2 rows -->
+      <div class="blog-dots">
+        <span class="blog-dot active" onclick="blogGoTo(0)"></span>
+        <span class="blog-dot" onclick="blogGoTo(1)"></span>
       </div>
     </div>
   </section>
+
   <style>
-    .blog-carousel-outer { position: relative; overflow: hidden; }
+    .blog-carousel-outer {
+      overflow: hidden;
+      padding: 0 40px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
     .blog-carousel-track {
       display: flex;
-      gap: 24px;
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: grab;
     }
-    .blog-carousel-track .blog-card {
-      min-width: calc((100% - 48px) / 3);
+    .blog-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      min-width: 100%;
       flex-shrink: 0;
     }
     .blog-dots {
       display: flex;
       justify-content: center;
       gap: 8px;
-      margin-top: 24px;
+      margin-top: 28px;
     }
     .blog-dot {
       width: 8px; height: 8px;
@@ -343,60 +360,41 @@
     }
     .blog-dot.active { background: var(--rust); }
     @media (max-width: 900px) {
-      .blog-carousel-track .blog-card { min-width: calc(100% - 0px); }
+      .blog-row { grid-template-columns: 1fr; }
+      .blog-carousel-outer { padding: 0 20px; }
     }
   </style>
+
   <script>
     (function() {
-      var track = document.getElementById('blogTrack');
-      var dots  = document.querySelectorAll('.blog-dot');
+      var track   = document.getElementById('blogTrack');
+      var dots    = document.querySelectorAll('.blog-dot');
       var current = 0;
-      var total = 3;
-      var cardWidth;
+      var total   = 2;
       var timer;
-      var isDragging = false;
 
-      function getCardWidth() {
-        var card = track.querySelector('.blog-card');
-        return card.offsetWidth + 24; // width + gap
-      }
-
-      function goToSlide(idx) {
+      function blogGoTo(idx) {
         current = idx;
-        cardWidth = getCardWidth();
-        track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
-        dots.forEach(function(d, i) {
-          d.classList.toggle('active', i === current);
-        });
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
       }
 
-      function next() {
-        goToSlide((current + 1) % total);
-      }
+      function blogNext() { blogGoTo((current + 1) % total); }
 
-      function startTimer() {
-        timer = setInterval(next, 3000);
-      }
+      function startTimer() { timer = setInterval(blogNext, 3000); }
 
-      function resetTimer() {
-        clearInterval(timer);
-        startTimer();
-      }
-
-      // Dot clicks reset the timer
       dots.forEach(function(dot, i) {
         dot.addEventListener('click', function() {
-          goToSlide(i);
-          resetTimer();
+          blogGoTo(i);
+          clearInterval(timer);
+          startTimer();
         });
       });
 
-      // Pause on hover
-      track.addEventListener('mouseenter', function() { clearInterval(timer); });
-      track.addEventListener('mouseleave', function() { startTimer(); });
+      track.closest('.blog-carousel-outer').addEventListener('mouseenter', function() { clearInterval(timer); });
+      track.closest('.blog-carousel-outer').addEventListener('mouseleave', function() { startTimer(); });
 
-      // Init
-      goToSlide(0);
+      blogGoTo(0);
       startTimer();
     })();
   </script>
