@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Implement a CRM: A Practical Framework for Getting It Right | GoWarm Insights</title>
+  <meta name="description" content="Most CRM implementations fail not because of the tool chosen, but because the process wasn't documented before the tool was selected." />
+  <link rel="stylesheet" href="/blog/style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .mistake-num { font-family: var(--serif); font-size: 13px; font-weight: 600; color: var(--rust); letter-spacing: 1px; margin-bottom: 4px; display: block; }
+    .crm-matrix { width: 100%; border-collapse: collapse; font-size: 14px; margin: 1.5em 0 2em; }
+    .crm-matrix th { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding: 8px 12px; border-bottom: 2px solid var(--border); text-align: left; }
+    .crm-matrix td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: top; font-family: var(--body-serif); font-weight: 300; color: var(--ink-2); line-height: 1.5; font-size: 14px; }
+    .crm-matrix tr:last-child td { border-bottom: none; }
+    .crm-matrix td:first-child { font-family: var(--sans); font-weight: 600; color: var(--ink); white-space: nowrap; font-size: 13px; }
+    .share-bar { max-width: 720px; margin: 40px auto 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
+    @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } .crm-matrix { font-size: 13px; } }
+  </style>
+
+  <!-- FAQ schema (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the first step in implementing a CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Document your actual sales process before evaluating any tools. Spend two weeks talking to sales reps about how they sell today — not how you want them to sell. Map the process with clear definitions of what has to happen at each stage before a deal moves forward. Every CRM implementation that skips this step produces a system that doesn't match how people work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which CRM should a small or mid-market B2B company implement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The right CRM depends on your sales motion. High-volume, short-cycle sales (under 30 days) suit lightweight tools like HubSpot or Pipedrive. Mid-market 30-90 day cycles need solid workflow automation and forecast tools. Enterprise multi-stakeholder deals justify Salesforce. Founder-led or early-stage teams (under 5 reps) should start with something configurable in a day before investing in a full platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you get sales reps to adopt a new CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Design the CRM for rep productivity, not just management visibility. Involve reps in configuration before it's finished — ask what information would help them before calls, what takes too long to log. The manager's behaviour sets the standard: if pipeline reviews bypass the CRM, reps learn it doesn't matter. Adoption typically takes 60-90 days of consistent reinforcement after go-live."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the biggest mistakes in a first CRM implementation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The five most common mistakes are: configuring for an ideal process rather than the current one, adding too many fields too early, having no data quality owner, measuring adoption by logins rather than data completeness, and treating go-live as the finish line rather than the start of the adoption phase."
+        }
+      }
+    ]
+  }
+  </script>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- ═══ SEO/AEO:START ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://userproofpoint.com/blog/crm-implementation-guide" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://userproofpoint.com/blog/crm-implementation-guide" />
+  <meta property="og:title"       content="How to Implement a CRM: A Practical Framework for Getting It Right | GoWarm Insights" />
+  <meta property="og:description" content="Most CRM implementations fail not because of the tool chosen, but because the process wasn't documented before the tool was selected." />
+  <meta property="og:image"       content="https://userproofpoint.com/blog/blog/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="How to Implement a CRM: A Practical Framework for Getting It Right | GoWarm Insights" />
+  <meta name="twitter:description" content="Most CRM implementations fail not because of the tool chosen, but because the process wasn't documented before the tool was selected." />
+  <meta name="twitter:image"       content="https://userproofpoint.com/blog/blog/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Implement a CRM: A Practical Framework for Getting It Right | GoWarm Insights","description":"Most CRM implementations fail not because of the tool chosen, but because the process wasn't documented before the tool was selected.","url":"https://userproofpoint.com/blog/crm-implementation-guide","publisher":{"@type":"Organization","name":"GoWarm Insights","url":"https://userproofpoint.com/blog"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://userproofpoint.com/blog/crm-implementation-guide"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the first step in implementing a CRM?","acceptedAnswer":{"@type":"Answer","text":"Document your actual sales process before evaluating any tools. Spend two weeks talking to sales reps about how they sell today — not how you want them to sell."}},{"@type":"Question","name":"Which CRM should a small or mid-market B2B company implement?","acceptedAnswer":{"@type":"Answer","text":"The right CRM depends on your sales motion. High-volume short-cycle sales suit HubSpot or Pipedrive. Enterprise multi-stakeholder deals justify Salesforce."}},{"@type":"Question","name":"How do you get sales reps to adopt a new CRM?","acceptedAnswer":{"@type":"Answer","text":"Design the CRM for rep productivity, not just management visibility. Involve reps in configuration before it's finished. Adoption typically takes 60-90 days of consistent reinforcement after go-live."}}]}</script>
+  <!-- ═══ SEO/AEO:END ═══ -->
+</head>
+<body>
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/blog" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/blog#articles">Articles</a></li>
+          <li><a href="/contact" class="nav-cta">Get a Free Audit</a></li>
+          <li><a href="/" style="font-size:13px;color:var(--ink-4);border-left:1px solid var(--border);padding-left:16px;margin-left:4px;">← GoWarmCRM</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+                                      
+  
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">CRM Implementation</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For VP Sales · Sales Ops · RevOps</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">10 min read</span>
+          </div>
+          <h1 class="article-title">You've Been Told to Implement a CRM. Here's Where to Actually Start.</h1>
+          <p class="article-deck">Most first CRM implementations fail not because the team picked the wrong tool, but because they picked a tool before they understood their process. A practical framework for getting it right from day one.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+                                                                                                                                                        <!-- ═══ TLDR:START ═══ -->
+        <div class="tldr-box">
+          <div class="tldr-label">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5M8 11v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            TL;DR — 60-second read
+          </div>
+          <ul class="tldr-list">
+          <li>The tool is the last decision, not the first.</li>
+          <li>Document your actual sales process — not the ideal one — before opening a single demo.</li>
+          <li>Change management is the implementation. Reps will use a system that helps them sell and ignore one that doesn't.</li>
+          <li>Five first-90-days mistakes: configuring for the ideal process, too many fields too early, no data quality owner, measuring adoption by logins, treating go-live as the finish line.</li>
+          </ul>
+        </div>
+        <!-- ═══ TLDR:END ═══ -->
+        <div class="article-body">
+
+          <p>You've been given the mandate. Implement a CRM. Make the sales team more organised, improve visibility, drive better outcomes. The timeline is aggressive. Everyone has an opinion about which tool to use. The vendors have already started emailing.</p>
+
+          <p>Here's the thing most CRM implementation guides won't tell you: the tool is the last decision you should be making, not the first. The organisations that get CRM right — the ones where adoption is high, data is clean, and the system actually drives behaviour — almost always spent more time on process design before the tool choice than they spent on the implementation itself.</p>
+
+          <p>The ones that get it wrong pick a tool in week one, spend three months configuring it to match how they think their sales process works, discover that their sales process doesn't actually work that way, and end up with a system that nobody uses and a contract they can't exit for two years.</p>
+
+          <p>Here's a framework for doing it in the right order.</p>
+
+          <h2>Step 1: Document What Your Sales Process Actually Is — Not What You Think It Is</h2>
+
+          <p>Before you open a single demo or read a single comparison article, spend two weeks doing one thing: talking to your sales reps about how they actually sell. Not how you want them to sell. How they do it today.</p>
+
+          <p>The questions that matter: How does a lead first come in? What's the first thing a rep does with it? What information do they need to know before they make contact? What does a good discovery call look like? When do they know a deal is real versus just interesting? What are the three or four moments in a deal where something has to happen for it to keep moving? What kills deals most often?</p>
+
+          <p>You are building a process map, not a pipeline. Most CRM implementations start by defining pipeline stages — Prospecting, Qualification, Proposal, Close — which are labels, not a process. A process describes what happens at each stage: what the rep does, what the customer does, what information needs to be captured, and what triggers the move to the next stage.</p>
+
+          <p>This exercise will take longer than you expect and surface more disagreement than you expect. That's the point. Every place where two reps describe the same situation differently is a place where the CRM will produce bad data if you don't resolve it first.</p>
+
+          <h2>Step 2: Choose the Right Tool for Your Sales Motion</h2>
+
+          <p>Once you understand your process, you can choose a tool that supports it rather than fighting it. The most important variable is not feature count — it's fit with your sales motion.</p>
+
+          <table class="crm-matrix">
+            <thead>
+              <tr>
+                <th>If your sales motion is...</th>
+                <th>You likely need...</th>
+                <th>Avoid over-engineering with...</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>High-volume, short-cycle (under 30 days)</td>
+                <td>Lightweight CRM with strong automation — HubSpot, Pipedrive, or a modern AI-native option</td>
+                <td>Salesforce's full enterprise suite. The overhead kills velocity at this scale.</td>
+              </tr>
+              <tr>
+                <td>Mid-market, 30–90 day cycles</td>
+                <td>A CRM with solid workflow automation, playbook support, and forecast tools</td>
+                <td>Custom-built systems. You need vendor support and regular feature updates.</td>
+              </tr>
+              <tr>
+                <td>Enterprise, multi-stakeholder, 90+ day cycles</td>
+                <td>Salesforce or Microsoft Dynamics — the complexity is justified at this scale</td>
+                <td>Lightweight tools that can't handle territory management, approvals, or complex reporting.</td>
+              </tr>
+              <tr>
+                <td>Founder-led or early-stage (under 5 reps)</td>
+                <td>Something you can configure in a day — Notion CRM, Attio, or HubSpot free tier</td>
+                <td>Any platform requiring a dedicated admin. You don't have the capacity yet.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>The build vs buy question rarely needs much deliberation at the CRM layer. Building a custom CRM is a significant ongoing engineering commitment — schema changes, mobile support, security updates, reporting requests that never stop. Unless your sales process has genuinely proprietary logic that no commercial platform can accommodate, buy and configure. The edge cases where custom makes sense are much rarer than the enthusiasm for building one usually suggests.</p>
+
+          <h2>Step 3: Change Management Is the Implementation</h2>
+
+          <p>This is the part most implementation plans treat as an afterthought. It isn't. The technical configuration of a CRM takes weeks. Getting a sales team to actually use it takes months, and the outcome is determined almost entirely by decisions made before a single field is configured.</p>
+
+          <p>The first principle of CRM adoption is that reps will use a system that makes their job easier and ignore one that doesn't. That sounds obvious. Most CRM implementations violate it anyway — they're designed for management visibility, not rep productivity. Fields are added because managers want reporting, not because reps need them. Pipeline stages are created to match the forecast model, not the actual sale. The system becomes a thing reps do for their manager, not a thing that helps them close deals.</p>
+
+          <p>To avoid this, involve reps in the configuration process before it's finished. Not as a courtesy, as a requirement. Ask them: what would make this system worth opening? What information would help you before a call? What takes too long to log right now? You won't be able to accommodate every answer, but the ones you can incorporate will dramatically improve adoption.</p>
+
+          <p>The second principle is that the manager's behaviour sets the standard. If the CRM is bypassed in pipeline reviews — if decisions are made from memory and spreadsheets rather than the system — reps learn instantly that the CRM doesn't matter. The most powerful adoption lever available to a sales leader is using the CRM visibly and consistently in every deal conversation.</p>
+
+          <h2>Mistakes to Avoid in the First 90 Days</h2>
+
+          <p><span class="mistake-num">Mistake 1 — Configuring for the ideal process rather than the current one</span>It's tempting to use the CRM implementation as an opportunity to redesign your sales process. Resist this. Implement the process you have, get adoption, then improve. Trying to change process and technology simultaneously is a reliable way to achieve neither.</p>
+
+          <p><span class="mistake-num">Mistake 2 — Adding too many fields too early</span>Every field you add is a field a rep has to fill in. Start with the minimum viable set of data you actually need to run the business — stage, close date, value, next step, and one or two deal-specific fields. Add fields only when you have a specific use case for the data. Most CRMs end up bloated with fields that were added speculatively and never used.</p>
+
+          <p><span class="mistake-num">Mistake 3 — No data quality owner</span>A CRM without someone responsible for data quality degrades quickly. Duplicates accumulate. Fields get used inconsistently. Closed deals don't get updated. Assign one person — usually in RevOps or Sales Ops — with explicit responsibility for data hygiene, and give them the authority to enforce it.</p>
+
+          <p><span class="mistake-num">Mistake 4 — Measuring adoption by logins</span>Login rates are a vanity metric. The real adoption signal is data completeness and timeliness — are reps updating opportunities before pipeline reviews rather than during them? Are next steps being logged? Is the forecast being built from system data rather than manager overrides? Measure those things instead.</p>
+
+          <p><span class="mistake-num">Mistake 5 — Treating go-live as the finish line</span>The implementation is not complete on go-live day. It's complete when the CRM is the primary system reps use to manage their deals. That typically takes 60–90 days of consistent reinforcement after go-live. Build that into your plan and your expectations.</p>
+
+          <h2>The Right Question to Ask Before You Start</h2>
+
+          <div class="diagnostic-box">
+            <div class="box-label">◆ Implementation Readiness Check</div>
+            <p><strong>Q1:</strong> Can you write down your sales process in five to seven steps, with a clear definition of what has to be true for a deal to move from each step to the next? If the answer is no — or if two sales leaders would write different versions — resolve this before you evaluate a single vendor.</p>
+            <p><strong>Q2:</strong> Who owns adoption post-launch, and what does success look like at 30, 60, and 90 days? If you don't have answers to both parts of this question, you have a tool selection project, not an implementation project.</p>
+            <p>A CRM that's configured correctly and adopted poorly produces worse outcomes than a simple spreadsheet used consistently. The technology is not the intervention. The behaviour change is.</p>
+          </div>
+
+          <div class="cta-inline">
+            The single best investment you can make before any CRM implementation is two weeks of honest process documentation. Everything else — the tool, the configuration, the training — will be easier and more likely to stick if you do this first.
+          </div>
+
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm CRM</a> — an AI-native CRM built for sales teams that want their system to drive action, not just record it. Starting a CRM implementation? <a href="/contact" style="color:var(--rust)">Talk to us before you sign anything.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="/blog">← All Articles</a>
+          <a href="/blog/lead-generation-discovery-meetings">Next: Improving Lead Generation →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+  </script>
+                                        <!-- ═══ FOOTER:START ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales and business leaders. Published by the team at GoWarmCRM.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="/blog#articles">All Articles</a></li>
+            <li><a href="/blog#articles">CRM Health</a></li>
+            <li><a href="/blog#articles">Decisions</a></li>
+            <li><a href="/blog#articles">Revenue Ops</a></li>
+            <li><a href="/blog#articles">Finance &amp; ROI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Latest Articles</h4>
+          <ul>
+            <li><a href="/blog/pricing-approval-workflow-crm">Pricing approval workflows: configure, build or buy?</a></li>
+            <li><a href="/blog/pipeline-deals-going-dark">Why your best deals go dark</a></li>
+            <li><a href="/blog/per-user-ai-settings-crm">Per-user AI settings in your CRM</a></li>
+            <li><a href="/blog/playbook-adoption-crm">The playbook adoption problem nobody talks about</a></li>
+            <li><a href="/blog/crm-implementation-guide">How to implement a CRM</a></li>
+            <li><a href="/blog/lead-generation-discovery-meetings">Improving lead generation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="/diagnostic">Free CRM Diagnostic</a></li>
+            <li><a href="/contact">Request a Consultation</a></li>
+            <li><a href="https://userproofpoint.com">GoWarmCRM ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GoWarmCRM. All rights reserved.</span>
+        <span>userproofpoint.com</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ═══ FOOTER:END ═══ -->
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Per-User AI Settings: Why One Prompt Does Not Fit Your Whole Sales Team | GoWarm Insights</title>
+  <meta name="description" content="AEs, SDRs, and CSMs need different AI intelligence from their CRM. When a single configuration serves everyone, most of it is noise." />
+  <link rel="stylesheet" href="/blog/style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .role-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--rust); letter-spacing: 1px; margin-bottom: 4px; display: block; }
+    .ai-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 1.5em 0 2em; }
+    .ai-table th { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding: 8px 12px; border-bottom: 2px solid var(--border); text-align: left; }
+    .ai-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: top; font-family: var(--body-serif); font-weight: 300; color: var(--ink-2); line-height: 1.5; font-size: 14px; }
+    .ai-table tr:last-child td { border-bottom: none; }
+    .ai-table td:first-child { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 13px; white-space: nowrap; }
+    .share-bar { max-width: 720px; margin: 40px auto 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
+    @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } .ai-table { font-size: 13px; } }
+  </style>
+
+  
+  
+  
+  
+  <!-- ═══ SEO/AEO:START ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://userproofpoint.com/blog/per-user-ai-settings-crm" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://userproofpoint.com/blog/per-user-ai-settings-crm" />
+  <meta property="og:title"       content="Per-User AI Settings: Why One Prompt Does Not Fit Your Whole Sales Team | GoWarm Insights" />
+  <meta property="og:description" content="AEs, SDRs, and CSMs need different AI intelligence from their CRM. When a single configuration serves everyone, most of it is noise." />
+  <meta property="og:image"       content="https://userproofpoint.com/blog/blog/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="Per-User AI Settings: Why One Prompt Does Not Fit Your Whole Sales Team | GoWarm Insights" />
+  <meta name="twitter:description" content="AEs, SDRs, and CSMs need different AI intelligence from their CRM. When a single configuration serves everyone, most of it is noise." />
+  <meta name="twitter:image"       content="https://userproofpoint.com/blog/blog/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Per-User AI Settings: Why One Prompt Does Not Fit Your Whole Sales Team | GoWarm Insights","description":"AEs, SDRs, and CSMs need different AI intelligence from their CRM. When a single configuration serves everyone, most of it is noise.","url":"https://userproofpoint.com/blog/per-user-ai-settings-crm","publisher":{"@type":"Organization","name":"GoWarm Insights","url":"https://userproofpoint.com/blog"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://userproofpoint.com/blog/per-user-ai-settings-crm"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do CRM AI features have low adoption?","acceptedAnswer":{"@type":"Answer","text":"Most CRM AI is configured once and served uniformly to all users. The output is not close enough to what any specific role needs to be immediately actionable."}},{"@type":"Question","name":"What AI does an AE need versus an SDR?","acceptedAnswer":{"@type":"Answer","text":"AEs need deal health signals and prioritised actions. SDRs need pre-contact account research."}},{"@type":"Question","name":"How should per-user CRM AI be configured?","acceptedAnswer":{"@type":"Answer","text":"Role-based defaults by RevOps, with user-level overrides. Each role gets a default covering data scope, output format, trigger conditions, and prompt context."}}]}</script>
+  <!-- ═══ SEO/AEO:END ═══ -->
+</head>
+<body>
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/blog" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/blog#articles">Articles</a></li>
+          <li><a href="/contact" class="nav-cta">Get a Free Audit</a></li>
+          <li><a href="/" style="font-size:13px;color:var(--ink-4);border-left:1px solid var(--border);padding-left:16px;margin-left:4px;">← GoWarmCRM</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+          <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">AI in CRM</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For Sales Leaders · RevOps</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">6 min read</span>
+          </div>
+          <h1 class="article-title">Per-User AI Settings: Why One Prompt Doesn't Fit Your Whole Sales Team</h1>
+          <p class="article-deck">AEs, SDRs, and CSMs do fundamentally different work. When your CRM serves the same AI intelligence to all of them, most of it is noise. Here is what configurable per-user AI modules actually change — and why it matters for adoption.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+                                        <!-- ═══ TLDR:START ═══ -->
+        <div class="tldr-box">
+          <div class="tldr-label">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5M8 11v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            TL;DR — 60-second read
+          </div>
+          <ul class="tldr-list">
+          <li>One AI configuration for all roles is the primary reason CRM AI has high demo appeal and low adoption.</li>
+          <li>AEs need deal health and prioritised actions. SDRs need pre-contact research briefs. CSMs need churn signals. Managers need exceptions. These are different products.</li>
+          <li>The right model: role-based defaults defined by RevOps, user-level overrides for specialists.</li>
+          <li>The adoption test: ask users across roles what the AI told them this week that they acted on.</li>
+          </ul>
+        </div>
+        <!-- ═══ TLDR:END ═══ -->
+        <div class="article-body">
+
+          <p>Most CRM AI features are configured once and applied uniformly. A single prompt, a single model setting, a single output format served to every user regardless of role. The intent is simplicity. The outcome is that nobody gets quite what they need, and the feature gets used by the people whose work happens to fit the default — and ignored by everyone else.</p>
+
+          <p>This is not a minor inconvenience. It is the primary reason AI features in CRMs have high demo appeal and low sustained adoption. The gap between what the feature does and what the user actually needs at their specific moment in their specific workflow is wide enough that using the feature requires more effort than not using it. So most people don't.</p>
+
+          <p>Per-user AI configuration addresses this directly. When the intelligence your CRM surfaces is shaped by who is asking — their role, their current deal context, their preferred output format — the output is useful enough to act on immediately rather than requiring further interpretation. That is the difference between an AI feature that changes how people work and one that gets demoed in the sales cycle and ignored in production.</p>
+
+          <h2>What Different Roles Actually Need from CRM Intelligence</h2>
+
+          <p><span class="role-label">Account Executives</span>An AE's primary intelligence need is deal-level: what is the current health of this opportunity, what has changed since the last interaction, what is the highest-leverage action to take today. The relevant context is the deal record — stage, time in stage, last interaction date, stakeholder engagement, close date history, value. The useful output is a prioritised action, not a summary. "Your three highest-risk deals this week, and what to do about each one" is valuable. "Here is a summary of your pipeline" is not — the AE already knows their pipeline.</p>
+
+          <p>AEs also need AI that understands the difference between genuine deal signals and noise. A deal where the economic buyer just replied with a question is different from a deal where a junior contact sent a calendar invite. Weighting matters, and the weighting that is right for an AE managing complex enterprise deals is different from the weighting that is right for someone closing high-velocity SMB.</p>
+
+          <p><span class="role-label">Sales Development Representatives</span>An SDR's intelligence need is primarily pre-contact: what do I need to know about this account and this contact before I reach out, and what is the most relevant angle given what I know about them? The useful output is account context — recent news, relevant signals, suggested opening — not pipeline analysis. An SDR does not manage a pipeline in the same sense an AE does. Their CRM AI should be optimised for the outbound motion: research synthesis, personalisation signals, and talk track suggestions based on the prospect's industry and role.</p>
+
+          <p>Serving an SDR the same deal health analysis an AE gets is a category error. It produces output that is structurally irrelevant to their work and trains them to ignore the feature.</p>
+
+          <p><span class="role-label">Customer Success Managers</span>A CSM's intelligence need is account health and expansion signal: is this customer getting value, are there indicators of churn risk, and are there natural moments to discuss expansion? The relevant data is usage patterns, support ticket history, NPS trends, and engagement with the product or service. A CSM using CRM AI that is configured for new business prospecting will find nothing useful. The context, the signals, and the actions it should recommend are entirely different.</p>
+
+          <p><span class="role-label">Sales Managers</span>A manager's intelligence need is aggregate and comparative: which reps are at risk this quarter, where is pipeline coverage thin, which deals need intervention, where is coaching most needed. They need the system to surface exceptions — the things that are not working as expected — not summaries of normal activity. A manager who opens their CRM AI and sees a digest of everything happening is getting a report. A manager who sees "three deals at stage 3 with no economic buyer engagement" and "two reps whose stage conversion rate dropped this month" is getting intelligence.</p>
+
+          <h2>The Configuration Dimensions That Matter</h2>
+
+          <table class="ai-table">
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>What it controls</th>
+                <th>Why it matters per role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Data scope</td>
+                <td>Which CRM objects and fields the AI has access to when generating output</td>
+                <td>An SDR needs account and contact data. An AE needs deal and interaction data. A CSM needs account health and usage data. Giving all roles access to all data produces unfocused output.</td>
+              </tr>
+              <tr>
+                <td>Output format</td>
+                <td>How the AI presents its output — action item, summary, analysis, suggested message</td>
+                <td>AEs want prioritised actions. SDRs want research briefs. Managers want exception alerts. The same underlying analysis formatted differently has completely different utility across roles.</td>
+              </tr>
+              <tr>
+                <td>Trigger condition</td>
+                <td>What causes the AI to generate output — a record view, a stage change, a time-based schedule, a data threshold</td>
+                <td>An AE benefits from AI that triggers on deal activity changes. An SDR benefits from AI that triggers when a new prospect is added. A manager benefits from AI that runs on a daily schedule across the team.</td>
+              </tr>
+              <tr>
+                <td>Custom prompt context</td>
+                <td>Role-specific instructions that shape how the AI interprets the data and what it emphasises</td>
+                <td>An enterprise AE's prompt should emphasise multi-stakeholder engagement and contract complexity. An SMB AE's prompt should emphasise velocity and next-step immediacy. A CSM's prompt should weight churn signals differently from expansion signals.</td>
+              </tr>
+              <tr>
+                <td>AI provider and model</td>
+                <td>Which underlying model powers the feature for a given user</td>
+                <td>Relevant when different roles have different latency tolerance or output quality requirements. Less important than the above — the configuration around the model matters more than the model itself for most sales intelligence use cases.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>What Good Per-User AI Configuration Looks Like in Practice</h2>
+
+          <p>The practical implementation does not require every user to configure their own AI settings from scratch — that is a recipe for low adoption of the configuration interface itself. The right model is role-based defaults with user-level overrides.</p>
+
+          <p>RevOps or Sales Ops defines the baseline configuration for each role: what data the AI accesses, what format it uses, what prompt context applies. A new AE who joins the team gets the AE configuration automatically. They can adjust it if their specific situation warrants — if they cover a specialist vertical, for example, and want the AI to weight certain signals differently — but they do not need to configure it from zero to get useful output on day one.</p>
+
+          <p>This is the configuration model that drives adoption. The default is useful enough to act on immediately. The customisation layer is available for users whose work has specific requirements that the default does not serve well. The result is that AI features get used because they produce relevant output, not because they were mandated in the onboarding process.</p>
+
+          <h2>The Adoption Test</h2>
+
+          <p>The most direct way to assess whether your current CRM AI configuration is working is to ask a simple question to users across different roles: in the last week, did the AI in your CRM surface something you acted on? Not something you found interesting. Something you acted on — sent a message, reprioritised a deal, escalated something to a manager.</p>
+
+          <p>If AEs, SDRs, and CSMs all give different answers — if some roles are acting on AI output and others are not — the configuration is not working for the roles where adoption is low. The issue is almost never that the AI is not capable enough. It is that the output is not close enough to what that role needs at that moment in their workflow to be immediately actionable.</p>
+
+          <p>Closing that gap — role by role, workflow step by workflow step — is the actual work of CRM AI configuration. It is less glamorous than the model selection conversation and considerably more important.</p>
+
+          <div class="cta-inline">
+            Ask your SDRs and your AEs the same question: "What did your CRM AI tell you this week that you acted on?" If the answers are the same — or if both groups say nothing — your AI is configured for a generic user who does not exist on your team.
+          </div>
+
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://gowarm.ai" style="color:var(--rust)">GoWarm</a> — an AI-native CRM with per-user configurable AI modules for AEs, SDRs, CSMs, and managers. <a href="/contact" style="color:var(--rust)">See how it works.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="/blog">← All Articles</a>
+          <a href="/blog/playbook-adoption-crm">Related: The Playbook Adoption Problem →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+  </script>
+          <!-- ═══ FOOTER:START ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales and business leaders. Published by the team at GoWarmCRM.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="/blog#articles">All Articles</a></li>
+            <li><a href="/blog#articles">CRM Health</a></li>
+            <li><a href="/blog#articles">Decisions</a></li>
+            <li><a href="/blog#articles">Revenue Ops</a></li>
+            <li><a href="/blog#articles">Finance &amp; ROI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Latest Articles</h4>
+          <ul>
+            <li><a href="/blog/pricing-approval-workflow-crm">Pricing approval workflows: configure, build or buy?</a></li>
+            <li><a href="/blog/pipeline-deals-going-dark">Why your best deals go dark</a></li>
+            <li><a href="/blog/per-user-ai-settings-crm">Per-user AI settings in your CRM</a></li>
+            <li><a href="/blog/playbook-adoption-crm">The playbook adoption problem nobody talks about</a></li>
+            <li><a href="/blog/crm-implementation-guide">How to implement a CRM</a></li>
+            <li><a href="/blog/lead-generation-discovery-meetings">Improving lead generation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="/diagnostic">Free CRM Diagnostic</a></li>
+            <li><a href="/contact">Request a Consultation</a></li>
+            <li><a href="https://userproofpoint.com">GoWarmCRM ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GoWarmCRM. All rights reserved.</span>
+        <span>userproofpoint.com</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ═══ FOOTER:END ═══ -->
+</body>
+</html>

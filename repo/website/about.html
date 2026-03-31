@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About GoWarmCRM — Built by Someone Tired of CRMs That Just Record Things</title>
+  <meta name="description" content="GoWarmCRM was built by a sales ops practitioner who got tired of CRMs that record what happened but never tell you what to do next. Here's our story." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+
+  <!-- ═══ SEO/AEO:START ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://userproofpoint.com/about" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://userproofpoint.com/about" />
+  <meta property="og:title"       content="About GoWarmCRM — Built by Someone Tired of CRMs That Just Record Things" />
+  <meta property="og:description" content="GoWarmCRM was built by a sales ops practitioner who got tired of CRMs that record what happened but never tell you what to do next." />
+  <meta property="og:image"       content="https://userproofpoint.com/og-image.png" />
+  <meta property="og:site_name"   content="GoWarmCRM" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="About GoWarmCRM — Built by Someone Tired of CRMs That Just Record Things" />
+  <meta name="twitter:description" content="GoWarmCRM was built by a sales ops practitioner who got tired of CRMs that record what happened but never tell you what to do next." />
+  <meta name="twitter:image"       content="https://userproofpoint.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About GoWarmCRM",
+    "description": "GoWarmCRM was built by a sales ops practitioner who got tired of CRMs that record what happened but never tell you what to do next.",
+    "url": "https://userproofpoint.com/about",
+    "publisher": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://userproofpoint.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What makes GoWarmCRM different from other CRM platforms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GoWarmCRM is built around the action as the primary unit of the system. Every diagnostic, every playbook step, every handover commitment, and every contract risk signal flows into a single prioritised action queue. Most CRMs record what happened — GoWarmCRM tells you what to do next."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What technology is GoWarmCRM built on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GoWarmCRM is a production-grade platform built on Node.js and PostgreSQL, deployed on Railway, served via Cloudflare, with a React frontend. The rules engine runs nightly across your entire pipeline."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ═══ SEO/AEO:END ═══ -->
+
+  <style>
+    .page-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+    .page-hero-inner { max-width: 640px; }
+    .page-hero h1 { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 16px; }
+    .page-hero p { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); font-weight: 300; line-height: 1.7; }
+    .about-section { padding: 72px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: start; }
+    .about-body { font-family: var(--body-serif); font-size: 17px; color: var(--ink-2); line-height: 1.8; font-weight: 300; }
+    .about-body p { margin-bottom: 1.5em; }
+    .about-body h2 { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--ink); margin: 2em 0 0.6em; line-height: 1.25; }
+    .about-body strong { font-weight: 600; color: var(--ink); }
+    .about-sidebar { display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--cream-2); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+    .sidebar-card h4 { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .sidebar-card p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+    .sidebar-card.accent { border-left: 4px solid var(--rust); border-radius: 0 8px 8px 0; }
+    .values-section { padding: 0 0 72px; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+    .value-card { border-top: 2px solid var(--border); padding-top: 20px; }
+    .value-title { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .value-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .section-title { font-family: var(--sans); font-size: 13px; font-weight: 400; color: var(--ink-4); letter-spacing: 1.5px; text-transform: uppercase; }
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } .values-grid { grid-template-columns: 1fr; } .page-hero h1 { font-size: 30px; } }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo">GoWarm<span>CRM</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/problems">Problems Solved</a></li>
+          <li><a href="/about" class="active">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <span class="section-eyebrow">Our Story</span>
+        <h1>Built by someone who was tired of CRMs that just record things.</h1>
+        <p>GoWarmCRM exists because the gap between "what happened in your pipeline" and "what you should do right now" was costing teams real revenue — and nobody was fixing it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-body">
+          <p>Most CRMs are brilliant at storing information. They'll tell you a deal moved to stage 3 on the 14th. They'll show you the contact's job title changed. They'll log every email you've ever sent.</p>
+          <p>What they won't do — what almost none of them do well — is tell you <strong>what to do next.</strong></p>
+          <p>GoWarmCRM was built to close that gap. Not with more dashboards. Not with better reports. With a real-time action engine that watches your pipeline, applies your rules, and surfaces the exact interventions your team needs to make — before opportunities are lost.</p>
+          <h2>Why we built it from scratch</h2>
+          <p>We looked at the available options. Bolt-on AI layers for Salesforce. Engagement platforms like Outreach and Salesloft. Forecasting tools like Clari. Each solves a slice of the problem. None of them solves the core one: your CRM doesn't know what an action is, and it doesn't have the architecture to generate, track, and resolve them at scale.</p>
+          <p>So we built GoWarmCRM from the ground up — with the action as the primary unit of the system. Every diagnostic, every playbook step, every handover commitment, every contract risk signal flows into a single action queue. Your team always knows what needs to happen next.</p>
+          <h2>Who we're building for</h2>
+          <p>GoWarmCRM is built for <strong>B2B sales organisations</strong> with 10–200 reps who have outgrown a basic CRM but don't want to assemble a 12-tool stack to get intelligence out of their pipeline.</p>
+          <p>If your VP Sales is spending 3 hours a week in pipeline reviews that could be replaced by a live diagnostic — GoWarmCRM is built for you.</p>
+        </div>
+        <div class="about-sidebar">
+          <div class="sidebar-card accent">
+            <h4>The core belief</h4>
+            <p>A CRM that tells you what happened is a record. A CRM that tells you what to do is a system. We build systems.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Built on Node.js &amp; PostgreSQL</h4>
+            <p>GoWarmCRM is a production-grade platform — not a prototype. Deployed on Railway, served via Cloudflare, with a React frontend and a rules engine that runs nightly across your entire pipeline.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>AI that stays in its lane</h4>
+            <p>Every AI feature in GoWarmCRM is per-user configurable. You choose the provider, the prompt, and whether the AI recommends or acts. No black boxes. No forced automation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-title">Our Principles</span>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-title">Specificity over dashboards</div>
+          <p class="value-desc">A dashboard that shows "pipeline health: amber" helps nobody. An action that says "Deal X has been in stage 3 for 18 days with no activity — call the champion today" helps everyone.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-title">Persistence over noise</div>
+          <p class="value-desc">We don't regenerate alerts from scratch every night. We track alert age, preserve snooze state, and resolve alerts when the underlying condition clears. Context that survives the morning.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-title">Humans in the loop</div>
+          <p class="value-desc">AI features are opt-in per user, configurable per module. The system makes recommendations. Your team makes decisions. We're not building automation — we're building intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Want to see the system in action?</h2>
+          <p>Book a free 30-minute demo. We'll walk through how GoWarmCRM would work with your team's pipeline, playbooks, and CRM data today.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 30 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-logo">GoWarm<span>CRM</span></div><p class="footer-tagline">Sales intelligence that acts. Built for VP Sales, RevOps, and sales leaders who want more than pipeline visibility.</p></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="/">Home</a></li><li><a href="/problems">Problems Solved</a></li><li><a href="/diagnostic">Diagnostic</a></li>
+          <li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Problems We Solve</h4><ul><li><a href="/problems">Stalled deals &amp; pipeline rot</a></li><li><a href="/problems">Playbook adoption</a></li><li><a href="/problems">Forecast accuracy</a></li><li><a href="/problems">Contract risk</a></li></ul></div>
+        <div class="footer-col"><h4>Get Started</h4><ul><li><a href="/contact">Book a Free Demo</a></li><li><a href="https://blog.userproofpoint.com" target="_blank" rel="noopener">Read the Blog ↗</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>userproofpoint.com</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { links.style.flexDirection='column'; links.style.position='absolute'; links.style.top='60px'; links.style.left='0'; links.style.right='0'; links.style.background='var(--cream)'; links.style.padding='16px 20px'; links.style.borderBottom='1px solid var(--border)'; links.style.zIndex='99'; links.style.gap='16px'; }
+    }
+  </script>
+</body>
+</html>

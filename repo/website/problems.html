@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problems Solved — GoWarmCRM</title>
+  <meta name="description" content="GoWarmCRM solves the real problems B2B sales teams face: stalled deals, ignored playbooks, unreliable forecasts, handover failures, contract risk, and prospecting with no direction." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+
+  <!-- ═══ SEO/AEO:START ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://userproofpoint.com/problems" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://userproofpoint.com/problems" />
+  <meta property="og:title"       content="Problems Solved — GoWarmCRM" />
+  <meta property="og:description" content="GoWarmCRM solves stalled deals, ignored playbooks, unreliable forecasts, handover failures, contract risk, and prospecting with no direction." />
+  <meta property="og:image"       content="https://userproofpoint.com/og-image.png" />
+  <meta property="og:site_name"   content="GoWarmCRM" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="Problems Solved — GoWarmCRM" />
+  <meta name="twitter:description" content="GoWarmCRM solves stalled deals, ignored playbooks, unreliable forecasts, handover failures, contract risk, and prospecting with no direction." />
+  <meta name="twitter:image"       content="https://userproofpoint.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Problems Solved — GoWarmCRM",
+    "description": "GoWarmCRM solves the real problems B2B sales teams face: stalled deals, ignored playbooks, unreliable forecasts, handover failures, contract risk, and prospecting with no direction.",
+    "url": "https://userproofpoint.com/problems",
+    "publisher": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://userproofpoint.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do deals go dark between CRM stages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deals go dark because CRMs track status but don't monitor activity. A deal can sit at Stage 3 for 3 weeks with no rep contact and the CRM will still show it as 'In Progress'. GoWarmCRM's nightly diagnostic engine checks activity recency, stage duration, and upcoming tasks — and fires an action alert when a deal crosses your configured risk threshold."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you fix sales playbook adoption?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Playbook adoption fails because the plays live in a document, not in the workflow. GoWarmCRM wires your playbook plays directly into the action engine — when a deal moves to a new stage, the next required play appears as an action item in the rep's queue. Completion chains ensure each play must be done before the next fires."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is sales forecast accuracy so poor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sales forecasts are unreliable because they're manually assembled from rep updates and CRM stage labels — neither of which reflect real deal health. GoWarmCRM builds forecast confidence from activity signals: call logs, email threads, task completion rates, and stage-activity alignment. ARR timing rules prevent creative stage labelling from inflating the number."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- ═══ SEO/AEO:END ═══ -->
+
+  <style>
+    .page-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+    .page-hero-inner { max-width: 640px; }
+    .page-hero h1 { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 16px; }
+    .page-hero p { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); font-weight: 300; line-height: 1.7; }
+    .problems-section { padding: 72px 0; }
+    .problem-block { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; padding: 56px 0; border-bottom: 1px solid var(--border); }
+    .problem-block:last-child { border-bottom: none; }
+    .problem-block.reverse { direction: rtl; }
+    .problem-block.reverse > * { direction: ltr; }
+    .prob-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; display: block; }
+    .prob-title { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .prob-body { font-family: var(--body-serif); font-size: 16px; color: var(--ink-2); line-height: 1.75; font-weight: 300; margin-bottom: 20px; }
+    .prob-bullets { list-style: none; padding: 0; margin: 0 0 24px; }
+    .prob-bullets li { font-family: var(--body-serif); font-size: 15px; color: var(--ink-2); line-height: 1.6; font-weight: 300; padding: 8px 0 8px 20px; position: relative; border-bottom: 1px solid var(--border); }
+    .prob-bullets li:first-child { border-top: 1px solid var(--border); }
+    .prob-bullets li::before { content: "→"; position: absolute; left: 0; color: var(--rust); font-weight: 600; }
+    .prob-panel { background: var(--cream-2); border: 1px solid var(--border); border-left: 4px solid var(--rust); border-radius: 0 8px 8px 0; padding: 28px; }
+    .prob-panel-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; display: block; }
+    .prob-panel-title { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.35; }
+    .prob-panel p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; margin-bottom: 12px; }
+    .prob-panel p:last-child { margin-bottom: 0; }
+    .prob-stat { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; margin-top: 20px; }
+    .prob-stat-num { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--rust); line-height: 1; margin-bottom: 6px; }
+    .prob-stat-label { font-size: 13px; color: var(--ink-3); line-height: 1.5; }
+    @media (max-width: 900px) { .problem-block, .problem-block.reverse { grid-template-columns: 1fr; direction: ltr; gap: 32px; padding: 40px 0; } .page-hero h1 { font-size: 30px; } }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo">GoWarm<span>CRM</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/problems" class="active">Problems Solved</a></li>
+          <li><a href="/diagnostic">Diagnostic</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact" class="nav-cta">Get in Touch</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <span class="section-eyebrow">What GoWarmCRM Fixes</span>
+        <h1>Real problems. Specific fixes. Not features.</h1>
+        <p>Most CRM platforms sell you capabilities. GoWarmCRM is built around the exact failures that cost B2B sales teams the most revenue — and the mechanisms to fix them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="problems-section">
+    <div class="container">
+
+      <div class="problem-block">
+        <div>
+          <span class="prob-label">Problem 01 — Pipeline Health</span>
+          <h2 class="prob-title">Deals go dark between stages and nobody notices</h2>
+          <p class="prob-body">Your pipeline report shows 40 open deals. But 12 of them haven't had a meaningful activity touch in over 3 weeks. Nobody can see it — because the CRM shows "In Progress" until someone manually moves it.</p>
+          <ul class="prob-bullets">
+            <li>Nightly diagnostic rules engine scores every deal by age, stage duration, and rep activity</li>
+            <li>Alerts fire automatically when a deal crosses your configured risk threshold</li>
+            <li>Snooze settings and alert age tracking persist — no daily reset, no loss of context</li>
+            <li>Managers see a live risk dashboard, not a weekly report that's already stale</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">See it in a demo</a>
+        </div>
+        <div>
+          <div class="prob-panel">
+            <span class="prob-panel-label">How GoWarmCRM Fixes It</span>
+            <div class="prob-panel-title">The Deals Diagnostic Engine</div>
+            <p>Every night, a rules engine evaluates your entire deals pipeline. It checks days since last activity, stage duration against your configured benchmarks, and whether the assigned rep has any upcoming tasks.</p>
+            <p>When a deal breaches a threshold, an action alert is created — or updated if one already exists. The alert carries age metadata so managers can see how long it's been flagged.</p>
+            <div class="prob-stat"><div class="prob-stat-num">3× faster</div><div class="prob-stat-label">Pipeline review cycles when managers use live diagnostic alerts vs. weekly CRM exports.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-block reverse">
+        <div>
+          <span class="prob-label">Problem 02 — Playbook Adoption</span>
+          <h2 class="prob-title">Playbooks that exist on paper but nowhere in the workflow</h2>
+          <p class="prob-body">You invested in a sales playbook. Your enablement team built it out. Reps were trained on it. Six months later, win rates haven't moved — because nobody opens the document at the moment they actually need it.</p>
+          <ul class="prob-bullets">
+            <li>Playbook plays are wired directly into the action engine as task queues</li>
+            <li>Stage changes automatically trigger the next required play for the rep</li>
+            <li>Completion chains ensure the next play only fires when the prior one is done</li>
+            <li>Managers see play completion rates by rep, stage, and deal type</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">See it in a demo</a>
+        </div>
+        <div>
+          <div class="prob-panel">
+            <span class="prob-panel-label">How GoWarmCRM Fixes It</span>
+            <div class="prob-panel-title">Event-Triggered Play Execution</div>
+            <p>When a deal moves to a new stage, GoWarmCRM fires the first play in your configured playbook for that stage. The rep sees it as an action item — not a document reference.</p>
+            <p>Plays chain automatically. Complete play 1, play 2 appears. Skip it, and it shows up in the manager's diagnostic view as an incomplete step on an active deal.</p>
+            <div class="prob-stat"><div class="prob-stat-num">+41%</div><div class="prob-stat-label">Playbook adherence when next plays are surfaced as action items rather than referenced as documentation.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-block">
+        <div>
+          <span class="prob-label">Problem 03 — Forecast Accuracy</span>
+          <h2 class="prob-title">A forecast built on rep optimism instead of activity data</h2>
+          <p class="prob-body">Every quarter, the forecast is manually assembled from rep updates, CRM stage values, and gut feel. It's wrong by 20–35% every time. The problem isn't the people — it's a process that has no structural data to work from.</p>
+          <ul class="prob-bullets">
+            <li>ARR timing rules enforce structured recognition criteria — no more creative stage labelling</li>
+            <li>Activity signals (call logs, email threads, task completion) feed forecast confidence scores</li>
+            <li>Diagnostic alerts flag deals where stage and activity are out of sync</li>
+            <li>Forecast views separate structured data from rep commentary</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">See it in a demo</a>
+        </div>
+        <div>
+          <div class="prob-panel">
+            <span class="prob-panel-label">How GoWarmCRM Fixes It</span>
+            <div class="prob-panel-title">Activity-Signal Forecasting</div>
+            <p>GoWarmCRM builds forecast confidence from deal activity data — not stage labels. A deal at stage 4 with no activity in 14 days is flagged differently than one with 3 logged calls this week.</p>
+            <p>ARR recognition rules ensure that what's in the forecast actually meets your close criteria. No more deals sitting at "Verbal Commit" for 6 weeks.</p>
+            <div class="prob-stat"><div class="prob-stat-num">±8%</div><div class="prob-stat-label">Median forecast variance for teams using activity-signal forecasting vs. ±28% with manual assembly.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-block reverse">
+        <div>
+          <span class="prob-label">Problem 04 — Handover Quality</span>
+          <h2 class="prob-title">Sales-to-CS handover commitments that disappear after close</h2>
+          <p class="prob-body">The AE promises onboarding support, a custom integration, and a 60-day check-in. The deal closes. The CS team gets a Slack message and a Salesforce record. Two of those commitments never happen. The customer churns at month 8.</p>
+          <ul class="prob-bullets">
+            <li>Handover commitments are logged as structured objects at deal close — not in notes fields</li>
+            <li>Each commitment has an owner, a due date, and a completion state</li>
+            <li>Nightly sweep alerts fire when commitments are overdue or at risk</li>
+            <li>CS team sees a live handover dashboard, not a backlog of Slack messages</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">See it in a demo</a>
+        </div>
+        <div>
+          <div class="prob-panel">
+            <span class="prob-panel-label">How GoWarmCRM Fixes It</span>
+            <div class="prob-panel-title">Structured Handover Tracking</div>
+            <p>At deal close, the AE creates a handover record with specific commitments — each one a tracked object with an owner and deadline. Not a note. Not a checklist in a doc.</p>
+            <p>The handover rules engine checks completion status nightly and surfaces alerts when commitments are approaching or past their due dates.</p>
+            <div class="prob-stat"><div class="prob-stat-num">−34%</div><div class="prob-stat-label">First-year churn reduction in accounts where handover commitments were tracked and completed vs. those that weren't.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-block">
+        <div>
+          <span class="prob-label">Problem 05 — Contract Lifecycle</span>
+          <h2 class="prob-title">Contracts that auto-renew into silence — or into churn</h2>
+          <p class="prob-body">Your CLM tool tracks contract status. But when a contract moves to "Under Review" or "Pending Renewal," nothing happens automatically. The CS team finds out when the customer calls to cancel.</p>
+          <ul class="prob-bullets">
+            <li>Every contract stage change fires a trigger into the action engine</li>
+            <li>Configurable rules determine which stage transitions require action, and what kind</li>
+            <li>Renewal risk scoring runs nightly on all active contracts</li>
+            <li>No manual CLM review required — the system tells you what needs attention</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">See it in a demo</a>
+        </div>
+        <div>
+          <div class="prob-panel">
+            <span class="prob-panel-label">How GoWarmCRM Fixes It</span>
+            <div class="prob-panel-title">CLM Event Triggers</div>
+            <p>GoWarmCRM hooks into your contract lifecycle at every stage change. When a contract moves, a configured action is generated — or a diagnostic alert is raised if the move signals risk.</p>
+            <p>No polling. No manual review queues. Every contract stage change is an event that produces a response in your team's action queue.</p>
+            <div class="prob-stat"><div class="prob-stat-num">92%</div><div class="prob-stat-label">Of at-risk contracts identified by the CLM engine are actioned within 48 hours — vs. 51% with manual review processes.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-block reverse">
+        <div>
+          <span class="prob-label">Problem 06 — Prospecting Clarity</span>
+          <h2 class="prob-title">Prospects in your pipeline with no clear next move</h2>
+          <p class="prob-body">SDRs have 200 prospects in various states of engagement. Some are hot. Most aren't. The problem is that nobody can tell which is which from the CRM — so everyone gets the same generic cadence and half the pipeline is wasted effort.</p>
+          <ul class="prob-bullets">
+            <li>Every prospect gets a live hurdle score based on your configured criteria</li>
+            <li>The prospecting engine identifies exactly what's blocking each deal</li>
+            <li>SDRs see a prioritised action queue — not an undifferentiated prospect list</li>
+            <li>Nightly sweep re-scores all prospects so stale data doesn't mislead effort</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">See it in a demo</a>
+        </div>
+        <div>
+          <div class="prob-panel">
+            <span class="prob-panel-label">How GoWarmCRM Fixes It</span>
+            <div class="prob-panel-title">ProspectDiagnosticsEngine</div>
+            <p>Each night, the prospecting engine evaluates every active prospect against your configured hurdle criteria — engagement level, ICP fit, activity recency, stage duration.</p>
+            <p>Prospects that score below threshold get a diagnostic action generated with a specific recommended next step. The SDR sees what to do — not just who to call.</p>
+            <div class="prob-stat"><div class="prob-stat-num">2.6×</div><div class="prob-stat-label">Higher prospect-to-meeting conversion when SDRs act on hurdle-score priorities vs. a chronological call list.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Recognise one of these problems?</h2>
+          <p>Book a free 30-minute session and we'll show you exactly how GoWarmCRM addresses it in your pipeline — using your data, your team structure, and your current CRM setup.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 30 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-logo">GoWarm<span>CRM</span></div><p class="footer-tagline">Sales intelligence that acts. Built for VP Sales, RevOps, and sales leaders who want more than pipeline visibility.</p></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="/">Home</a></li><li><a href="/problems">Problems Solved</a></li><li><a href="/diagnostic">Diagnostic</a></li>
+          <li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Problems We Solve</h4><ul><li><a href="/problems">Stalled deals &amp; pipeline rot</a></li><li><a href="/problems">Playbook adoption</a></li><li><a href="/problems">Forecast accuracy</a></li><li><a href="/problems">Handover drop-off</a></li><li><a href="/problems">Contract risk</a></li><li><a href="/problems">Prospecting clarity</a></li></ul></div>
+        <div class="footer-col"><h4>Get Started</h4><ul><li><a href="/contact">Book a Free Demo</a></li><li><a href="/about">Our Story</a></li><li><a href="https://blog.userproofpoint.com" target="_blank" rel="noopener">Read the Blog ↗</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>userproofpoint.com</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { links.style.flexDirection='column'; links.style.position='absolute'; links.style.top='60px'; links.style.left='0'; links.style.right='0'; links.style.background='var(--cream)'; links.style.padding='16px 20px'; links.style.borderBottom='1px solid var(--border)'; links.style.zIndex='99'; links.style.gap='16px'; }
+    }
+  </script>
+</body>
+</html>

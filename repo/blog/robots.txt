@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://userproofpoint.com/blog/sitemap.xml

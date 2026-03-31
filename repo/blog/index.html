@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Intelligence for B2B Sales Leaders | GoWarm Insights</title>
+  <meta name="description" content="Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking." />
+  <link rel="stylesheet" href="/blog/style.css" />
+  <style>
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 0 64px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+    .hero-subtitle {
+      font-family: var(--body-serif);
+      font-size: 18px;
+      color: var(--ink-3);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .hero-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+    }
+    .stat-card:first-child { border-left: 4px solid var(--rust); }
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--rust);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--ink-3);
+      line-height: 1.5;
+    }
+
+    /* ── Diagnostic Quiz Strip ── */
+    .quiz-strip {
+      background: var(--cream-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+    }
+    .quiz-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .quiz-text h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .quiz-text p {
+      font-size: 14px;
+      color: var(--ink-3);
+    }
+
+    /* ── Articles Section ── */
+    .articles-section { padding: 72px 0; }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--ink-4);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    /* ── Featured Article ── */
+    .featured-article {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .featured-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .featured-tag { color: var(--rust); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .featured-title {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .featured-excerpt {
+      font-family: var(--body-serif);
+      font-size: 16px;
+      color: var(--ink-3);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+    .featured-visual {
+      background: var(--cream-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .signal-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .signal-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .signal-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--rust-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+    .signal-text { font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+
+    /* ── CTA Band ── */
+    .cta-band {
+      background: var(--ink);
+      padding: 64px 0;
+      margin-top: 0;
+    }
+    .cta-band-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+    .cta-band h2 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .cta-band p {
+      font-family: var(--body-serif);
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+    }
+    .cta-band-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .cta-band .btn-primary { white-space: nowrap; padding: 14px 28px; }
+    .cta-caption { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-stats { flex-direction: row; }
+      .hero-title { font-size: 36px; }
+      .articles-grid { grid-template-columns: 1fr; gap: 32px; }
+      .featured-inner { grid-template-columns: 1fr; }
+      .cta-band-inner { grid-template-columns: 1fr; }
+      .cta-band-actions { align-items: flex-start; }
+      .quiz-strip-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- ═══ SEO/AEO:START ═══ -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://userproofpoint.com/blog/" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://userproofpoint.com/blog/" />
+  <meta property="og:title"       content="CRM Intelligence for B2B Sales Leaders | GoWarm Insights" />
+  <meta property="og:description" content="Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking." />
+  <meta property="og:image"       content="https://userproofpoint.com/blog/blog/og-image.png" />
+  <meta property="og:site_name"   content="GoWarm Insights" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@gowarmcrm" />
+  <meta name="twitter:title"       content="CRM Intelligence for B2B Sales Leaders | GoWarm Insights" />
+  <meta name="twitter:description" content="Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking." />
+  <meta name="twitter:image"       content="https://userproofpoint.com/blog/blog/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CRM Intelligence for B2B Sales Leaders | GoWarm Insights","description":"Practical guides, diagnostics, and frameworks for VP Sales, RevOps, and Sales Directors who want more from their CRM than pipeline tracking.","url":"https://userproofpoint.com/blog/","publisher":{"@type":"Organization","name":"GoWarm Insights","url":"https://userproofpoint.com/blog"}}</script>
+  <!-- ═══ SEO/AEO:END ═══ -->
+</head>
+<body>
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/blog" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/blog#articles">Articles</a></li>
+          <li><a href="/contact" class="nav-cta">Get a Free Audit</a></li>
+          <li><a href="/" style="font-size:13px;color:var(--ink-4);border-left:1px solid var(--border);padding-left:16px;margin-left:4px;">← GoWarmCRM</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+                                        
+  <!-- NAV -->
+  
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <span class="hero-eyebrow">For VP Sales · RevOps · Sales Directors</span>
+          <h1 class="hero-title">Is your CRM working for you — or against you?</h1>
+          <p class="hero-subtitle">Practical intelligence for B2B sales leaders who want more from their systems than pipeline visibility and quarterly reports.</p>
+          <div class="hero-cta-row">
+            <a href="/diagnostic" class="btn btn-primary">Take the CRM Diagnostic</a>
+            <a href="/blog#articles" class="btn btn-outline">Read the Articles</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-number">51%</div>
+            <div class="stat-label">
+              of Salesforce customers would switch to another CRM if they could, citing high costs and low value-to-price ratios.
+              <a href="https://nucleusresearch.com/research/single/salesforce-dream-versus-reality/" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:11px;color:var(--ink-4);text-decoration:underline;text-underline-offset:2px;">Nucleus Research — "Salesforce: Dream Versus Reality" (2022) ↗</a>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">$150k</div>
+            <div class="stat-label">Average annual CRM spend for a 50-person sales org — licenses, admin, integrations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ STRIP -->
+  <section class="quiz-strip">
+    <div class="container">
+      <div class="quiz-strip-inner">
+        <div class="quiz-text">
+          <h3>Not sure if you have a CRM problem?</h3>
+          <p>Answer 5 questions and find out exactly where your sales system is leaking value.</p>
+        </div>
+        <a href="/diagnostic" class="btn btn-dark">Take the 5-Question Diagnostic →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTICLE -->
+  <section style="padding: 72px 0 0;">
+    <div class="container">
+      <div class="featured-article">
+        <div class="featured-inner">
+          <div>
+            <span class="featured-tag">Featured · Self-Diagnostic</span>
+            <h2 class="featured-title">Are You Using Salesforce as a CRUD App?</h2>
+            <p class="featured-excerpt">You're spending $150k/year on a system your reps use to log calls after the fact and fill in fields before the pipeline review. Here are five specific patterns that reveal the gap — and what good actually looks like.</p>
+            <a href="/blog/is-your-crm-a-crud-app" class="btn btn-primary">Read the Article</a>
+          </div>
+          <div class="featured-visual">
+            <div style="font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 16px;">The 5 Warning Signals</div>
+            <div class="signal-item">
+              <div class="signal-icon">①</div>
+              <div class="signal-text">Reps log calls after the fact — if at all</div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">②</div>
+              <div class="signal-text">Nothing happens automatically after a stage change</div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">③</div>
+              <div class="signal-text">Pipeline reviews are interrogations, not conversations</div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">④</div>
+              <div class="signal-text">Playbooks live in a Google Doc nobody reads</div>
+            </div>
+            <div class="signal-item">
+              <div class="signal-icon">⑤</div>
+              <div class="signal-text">Forecast is gut feel with a spreadsheet attached</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- ═══ ARTICLES-GRID:START ═══ -->
+  <section class="articles-section" id="articles" style="padding-top:32px;">
+    <div class="container">
+
+      <!-- Topic/Role toggle + filter pills -->
+      <div class="gc-topbar">
+        <div class="gc-tbtns">
+          <button class="gc-tbtn gc-on" onclick="gcSwitch(this,'topic')">By Topic</button>
+          <button class="gc-tbtn" onclick="gcSwitch(this,'role')">By Role</button>
+        </div>
+        <div class="gc-sep"></div>
+        <div class="gc-pills" id="gc-pills-topic">
+          <button class="gc-pill gc-on" onclick="gcFilter(this,'all')">All 17</button>
+          <button class="gc-pill" onclick="gcFilter(this,'crm')">CRM Health</button>
+          <button class="gc-pill" onclick="gcFilter(this,'dec')">Decisions</button>
+          <button class="gc-pill" onclick="gcFilter(this,'ops')">Revenue Ops</button>
+          <button class="gc-pill" onclick="gcFilter(this,'fin')">Finance &amp; ROI</button>
+        </div>
+        <div class="gc-pills" id="gc-pills-role" style="display:none">
+          <button class="gc-pill gc-on" onclick="gcFilter(this,'all')">All roles</button>
+          <button class="gc-pill" onclick="gcFilter(this,'vps')">VP Sales</button>
+          <button class="gc-pill" onclick="gcFilter(this,'rvp')">RevOps</button>
+          <button class="gc-pill" onclick="gcFilter(this,'cto')">CTO</button>
+          <button class="gc-pill" onclick="gcFilter(this,'cfo')">CFO</button>
+          <button class="gc-pill" onclick="gcFilter(this,'ceo')">CEO · Founder</button>
+        </div>
+        <span class="gc-count" id="gc-count">17 articles</span>
+      </div>
+
+      <!-- Card grid -->
+      <div class="gc-grid" id="gc-grid">
+
+        <a href="/blog/is-your-crm-a-crud-app" class="gc-card" data-topic="crm" data-roles="vps ceo">
+          <span class="gc-tag gc-crm">Self-Diagnostic</span>
+          <div class="gc-title">Are you using Salesforce as a CRUD app?</div>
+          <div class="gc-excerpt">Five patterns that reveal you're paying $150k/year for a glorified spreadsheet — and what good actually looks like.</div>
+          <div class="gc-meta">8 min read · VP Sales</div>
+        </a>
+
+        <a href="/blog/are-your-sales-playbooks-working" class="gc-card" data-topic="crm" data-roles="rvp vps">
+          <span class="gc-tag gc-crm">Playbooks</span>
+          <div class="gc-title">Are your playbooks working?</div>
+          <div class="gc-excerpt">A playbook nobody executes is worse than no playbook at all. Here's how to tell the difference — and fix it.</div>
+          <div class="gc-meta">7 min read · RevOps · Enablement</div>
+        </a>
+
+        <a href="/blog/crm-rebuild-or-recommit" class="gc-card" data-topic="dec" data-roles="cto vps ceo">
+          <span class="gc-tag gc-dec">Decision Framework</span>
+          <div class="gc-title">Rebuild or recommit?</div>
+          <div class="gc-excerpt">Not a vendor pitch. A real decision framework for whether to stay, switch, or build — and how to avoid the status quo trap.</div>
+          <div class="gc-meta">10 min read · CTO · VP Sales</div>
+        </a>
+
+        <a href="/blog/crm-integration-complexity" class="gc-card" data-topic="crm" data-roles="rvp cto vps">
+          <span class="gc-tag gc-crm">Integration Strategy</span>
+          <div class="gc-title">The integration trap</div>
+          <div class="gc-excerpt">You have 12 integrations and a working system. Here's how to separate legitimate switching costs from integration inertia — and what to do about either.</div>
+          <div class="gc-meta">9 min read · VP Sales · RevOps · CTO</div>
+        </a>
+
+        <a href="/blog/revops-stack-crm-foundation" class="gc-card" data-topic="crm" data-roles="rvp cto">
+          <span class="gc-tag gc-crm">RevOps Stack</span>
+          <div class="gc-title">Do your RevOps tools actually help?</div>
+          <div class="gc-excerpt">Gong, Clari, Outreach — great tools. But intelligence layers built on broken CRM data amplify noise, not signal. Here's the honest diagnostic.</div>
+          <div class="gc-meta">9 min read · RevOps · VP Sales · Sales Ops</div>
+        </a>
+
+        <a href="/blog/crm-roi-cfo-questions" class="gc-card" data-topic="fin" data-roles="cfo ceo">
+          <span class="gc-tag gc-fin">CFO · Finance</span>
+          <div class="gc-title">CFO questions on CRM spend</div>
+          <div class="gc-excerpt">Your CRM line item is growing and the answers are vague. Six specific questions that cut through — and what a real answer looks like versus a deflection.</div>
+          <div class="gc-meta">9 min read · CFO · Finance Directors · CEOs</div>
+        </a>
+
+        <a href="/blog/crm-roi-cro-response" class="gc-card" data-topic="fin" data-roles="vps cfo ceo">
+          <span class="gc-tag gc-fin">CRM ROI · Finance</span>
+          <div class="gc-title">Proving CRM ROI to your CFO</div>
+          <div class="gc-excerpt">Candour plus a plan beats a polished deck every time. How to build an honest ROI case — and what options to present when the numbers are weak.</div>
+          <div class="gc-meta">10 min read · CROs · VP Sales · RevOps</div>
+        </a>
+
+        <a href="/blog/forecast-accuracy-arr" class="gc-card" data-topic="ops" data-roles="vps rvp ceo">
+          <span class="gc-tag gc-ops">Forecasting · ARR</span>
+          <div class="gc-title">Why your sales forecast is unreliable</div>
+          <div class="gc-excerpt">Manual forecast assembly breaks at every step. Here is why the process itself is the problem — and what structured data, ARR timing, and honest accuracy measurement actually look like.</div>
+          <div class="gc-meta">10 min read · VP Sales · RevOps · CRO</div>
+        </a>
+
+        <a href="/blog/sales-team-task-tracking" class="gc-card" data-topic="ops" data-roles="vps rvp">
+          <span class="gc-tag gc-ops">Sales Operations</span>
+          <div class="gc-title">Team task tracking and workflow</div>
+          <div class="gc-excerpt">When reps miss follow-ups and deals fall through the cracks, the instinct is to add a tool. Almost always the right fix is to configure the CRM they already have.</div>
+          <div class="gc-meta">9 min read · VP Sales · Sales Managers · RevOps</div>
+        </a>
+
+        <a href="/blog/discovery-call-dropoff" class="gc-card" data-topic="ops" data-roles="vps rvp">
+          <span class="gc-tag gc-ops">Pipeline · Discovery</span>
+          <div class="gc-title">High discovery volume, low stage progression</div>
+          <div class="gc-excerpt">High discovery call volume with alarming drop-off between stages almost always traces to one of three causes. The fix depends entirely on which one — and they require completely different interventions.</div>
+          <div class="gc-meta">10 min read · VP Sales · Sales Managers · RevOps</div>
+        </a>
+
+        <a href="/blog/account-research-module-build-vs-buy" class="gc-card" data-topic="dec" data-roles="cto vps rvp ceo">
+          <span class="gc-tag gc-dec">CRM Architecture</span>
+          <div class="gc-title">Account research: build, buy or configure?</div>
+          <div class="gc-excerpt">Native config, AppExchange, custom Salesforce module, or fully custom CRM — four options with very different total cost of ownership.</div>
+          <div class="gc-meta">12 min read · CTO · VP Sales · RevOps</div>
+        </a>
+
+        <a href="/blog/pricing-approval-workflow-crm" class="gc-card" data-topic="dec" data-roles="cto vps rvp ceo">
+          <span class="gc-tag gc-dec">CRM Architecture</span>
+          <div class="gc-title">Pricing approval workflows: configure, build or buy?</div>
+          <div class="gc-excerpt">Native Salesforce handles most pricing approval use cases without additional tooling. Here is how to know if your situation is in that majority.</div>
+          <div class="gc-meta">11 min read · VP Sales · RevOps · CTO</div>
+        </a>
+
+        <a href="/blog/pipeline-deals-going-dark" class="gc-card" data-topic="ops" data-roles="vps rvp">
+          <span class="gc-tag gc-ops">Pipeline Health</span>
+          <div class="gc-title">Why your best deals go dark</div>
+          <div class="gc-excerpt">The gap between stage 3 and stage 4 is where most revenue disappears. Five signals that reveal a deal going dark — and the rescue pattern that catches them before they are gone.</div>
+          <div class="gc-meta">8 min read · VP Sales · RevOps</div>
+        </a>
+
+        <a href="/blog/per-user-ai-settings-crm" class="gc-card" data-topic="crm" data-roles="vps rvp ceo">
+          <span class="gc-tag gc-crm">AI in CRM</span>
+          <div class="gc-title">Per-user AI settings in your CRM</div>
+          <div class="gc-excerpt">AEs, SDRs, and CSMs need fundamentally different intelligence from their CRM. When one AI configuration serves everyone, most of it is noise.</div>
+          <div class="gc-meta">6 min read · Sales Leaders · RevOps</div>
+        </a>
+
+        <a href="/blog/playbook-adoption-crm" class="gc-card" data-topic="crm" data-roles="vps rvp">
+          <span class="gc-tag gc-crm">Playbooks</span>
+          <div class="gc-title">The playbook adoption problem nobody talks about</div>
+          <div class="gc-excerpt">You built the playbook. Nobody is following it. The problem is not culture — it is that your CRM does not surface the next play at the moment it matters.</div>
+          <div class="gc-meta">7 min read · Enablement · VP Sales</div>
+        </a>
+
+        <a href="/blog/crm-implementation-guide" class="gc-card" data-topic="dec" data-roles="vps rvp">
+          <span class="gc-tag gc-dec">CRM Implementation</span>
+          <div class="gc-title">How to implement a CRM</div>
+          <div class="gc-excerpt">Most implementations fail not because of the tool chosen, but because the process wasn't documented first. A framework covering process design, tool selection, change management, and the first 90 days.</div>
+          <div class="gc-meta">10 min read · VP Sales · Sales Ops · RevOps</div>
+        </a>
+
+        <a href="/blog/lead-generation-discovery-meetings" class="gc-card" data-topic="ops" data-roles="vps rvp">
+          <span class="gc-tag gc-ops">Lead Generation</span>
+          <div class="gc-title">Improving lead generation</div>
+          <div class="gc-excerpt">Most lead gen underperformance is a definition problem, not a volume problem. ICP, qualification frameworks, and the metrics that show where your funnel is actually breaking.</div>
+          <div class="gc-meta">10 min read · VP Sales · Head of Growth · RevOps</div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    var gcMode = 'topic';
+    function gcSwitch(btn, mode) {
+      gcMode = mode;
+      document.querySelectorAll('.gc-tbtn').forEach(function(b){b.classList.remove('gc-on');});
+      btn.classList.add('gc-on');
+      document.getElementById('gc-pills-topic').style.display = mode==='topic' ? 'flex' : 'none';
+      document.getElementById('gc-pills-role').style.display  = mode==='role'  ? 'flex' : 'none';
+      var pills = document.getElementById(mode==='topic'?'gc-pills-topic':'gc-pills-role');
+      pills.querySelectorAll('.gc-pill').forEach(function(p){p.classList.remove('gc-on');});
+      pills.querySelector('.gc-pill').classList.add('gc-on');
+      gcApply('all');
+    }
+    function gcFilter(pill, val) {
+      pill.closest('.gc-pills').querySelectorAll('.gc-pill').forEach(function(p){p.classList.remove('gc-on');});
+      pill.classList.add('gc-on');
+      gcApply(val);
+    }
+    function gcApply(val) {
+      var cards = document.querySelectorAll('#gc-grid .gc-card');
+      var n = 0;
+      cards.forEach(function(c){
+        var show = val==='all';
+        if (!show) {
+          if (gcMode==='topic') show = c.dataset.topic===val;
+          else show = c.dataset.roles && c.dataset.roles.split(' ').indexOf(val)!==-1;
+        }
+        c.style.display = show ? '' : 'none';
+        if (show) n++;
+      });
+      var el = document.getElementById('gc-count');
+      if (el) el.textContent = n + ' article' + (n!==1?'s':'');
+    }
+  </script>
+  <!-- ═══ ARTICLES-GRID:END ═══ -->
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Not sure where your sales system stands?</h2>
+          <p>Book a free 30-minute CRM diagnostic. We'll review your current setup and tell you exactly what's working, what isn't, and what to fix first. No pitch, just clarity.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/blog/contact" class="btn btn-primary">Request a Consultation</a>
+          <span class="cta-caption">Free · 30 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '60px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'var(--cream)';
+      links.style.padding = '16px 20px';
+      links.style.borderBottom = '1px solid var(--border)';
+      links.style.zIndex = '99';
+    }
+
+  </script>
+                                          <!-- ═══ FOOTER:START ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales and business leaders. Published by the team at GoWarmCRM.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="/blog#articles">All Articles</a></li>
+            <li><a href="/blog#articles">CRM Health</a></li>
+            <li><a href="/blog#articles">Decisions</a></li>
+            <li><a href="/blog#articles">Revenue Ops</a></li>
+            <li><a href="/blog#articles">Finance &amp; ROI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Latest Articles</h4>
+          <ul>
+            <li><a href="/blog/pricing-approval-workflow-crm">Pricing approval workflows: configure, build or buy?</a></li>
+            <li><a href="/blog/pipeline-deals-going-dark">Why your best deals go dark</a></li>
+            <li><a href="/blog/per-user-ai-settings-crm">Per-user AI settings in your CRM</a></li>
+            <li><a href="/blog/playbook-adoption-crm">The playbook adoption problem nobody talks about</a></li>
+            <li><a href="/blog/crm-implementation-guide">How to implement a CRM</a></li>
+            <li><a href="/blog/lead-generation-discovery-meetings">Improving lead generation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="/diagnostic">Free CRM Diagnostic</a></li>
+            <li><a href="/contact">Request a Consultation</a></li>
+            <li><a href="https://userproofpoint.com">GoWarmCRM ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GoWarmCRM. All rights reserved.</span>
+        <span>userproofpoint.com</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ═══ FOOTER:END ═══ -->
+</body>
+</html>
