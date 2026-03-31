@@ -267,85 +267,104 @@
         <span class="section-title">From the Blog</span>
         <a href="/blog" class="section-link">All articles →</a>
       </div>
-    </div>
 
-    <!-- Full-width carousel — 6 cards, shows 3 at a time, slides one row every 3s -->
-    <div class="blog-carousel-outer">
-      <div class="blog-carousel-track" id="blogTrack">
+      <div class="bc-outer" id="bcOuter">
+        <div class="bc-track" id="bcTrack">
 
-        <!-- Row 1 of 2 -->
-        <div class="blog-row">
-          <a href="/blog/pipeline-deals-going-dark" class="blog-card">
+          <a href="/blog/pipeline-deals-going-dark" class="blog-card bc-card">
             <span class="blog-tag">Pipeline Health</span>
             <div class="blog-title">Why your best deals go dark — and how to catch them before they're gone</div>
             <p class="blog-excerpt">The gap between stage 3 and stage 4 is where most revenue disappears. Here's the diagnostic pattern that reveals it.</p>
             <div class="blog-meta">8 min read · VP Sales · RevOps</div>
           </a>
-          <a href="/blog/per-user-ai-settings-crm" class="blog-card">
+
+          <a href="/blog/per-user-ai-settings-crm" class="blog-card bc-card">
             <span class="blog-tag" style="background:#EAF3DE;color:#3B6D11;">AI in CRM</span>
             <div class="blog-title">Per-user AI settings: why one prompt doesn't fit your whole sales team</div>
             <p class="blog-excerpt">AEs, CSMs, and SDRs need different intelligence. A look at how configurable AI modules change what your CRM is actually worth.</p>
             <div class="blog-meta">6 min read · Sales Leaders · RevOps</div>
           </a>
-          <a href="/blog/playbook-adoption-crm" class="blog-card">
+
+          <a href="/blog/playbook-adoption-crm" class="blog-card bc-card">
             <span class="blog-tag" style="background:#E6F1FB;color:#185FA5;">Playbooks</span>
             <div class="blog-title">The playbook adoption problem nobody talks about</div>
             <p class="blog-excerpt">You built the playbook. Nobody's following it. The issue isn't culture — it's that your CRM doesn't surface the next play at the moment it matters.</p>
             <div class="blog-meta">7 min read · Enablement · VP Sales</div>
           </a>
-        </div>
 
-        <!-- Row 2 of 2 -->
-        <div class="blog-row">
-          <a href="/blog/forecast-accuracy-arr" class="blog-card">
+          <a href="/blog/forecast-accuracy-arr" class="blog-card bc-card">
             <span class="blog-tag" style="background:#FCEBEB;color:#A32D2D;">Forecasting</span>
             <div class="blog-title">Why your sales forecast is unreliable — and how to fix it</div>
             <p class="blog-excerpt">Manual forecast assembly breaks at every step. Here is why the process itself is the problem — and what activity-signal forecasting actually looks like.</p>
             <div class="blog-meta">10 min read · VP Sales · RevOps · CRO</div>
           </a>
-          <a href="/blog/are-your-sales-playbooks-working" class="blog-card">
+
+          <a href="/blog/are-your-sales-playbooks-working" class="blog-card bc-card">
             <span class="blog-tag" style="background:#EAF3DE;color:#3B6D11;">Playbooks</span>
             <div class="blog-title">Are your sales playbooks actually working?</div>
             <p class="blog-excerpt">A playbook nobody executes is worse than no playbook at all. Here's how to measure play completion rate and win rate by playbook.</p>
             <div class="blog-meta">7 min read · RevOps · Enablement</div>
           </a>
-          <a href="/blog/crm-rebuild-or-recommit" class="blog-card">
+
+          <a href="/blog/crm-rebuild-or-recommit" class="blog-card bc-card">
             <span class="blog-tag" style="background:#E6F1FB;color:#185FA5;">Decision Framework</span>
             <div class="blog-title">Rebuild or recommit? The honest CRM decision framework</div>
             <p class="blog-excerpt">Not a vendor pitch. A real framework for whether to stay, switch, or build — and how to avoid the status quo trap.</p>
             <div class="blog-meta">10 min read · CTO · VP Sales</div>
           </a>
+
+          <!-- Clones of first 3 for seamless infinite loop -->
+          <a href="/blog/pipeline-deals-going-dark" class="blog-card bc-card bc-clone">
+            <span class="blog-tag">Pipeline Health</span>
+            <div class="blog-title">Why your best deals go dark — and how to catch them before they're gone</div>
+            <p class="blog-excerpt">The gap between stage 3 and stage 4 is where most revenue disappears. Here's the diagnostic pattern that reveals it.</p>
+            <div class="blog-meta">8 min read · VP Sales · RevOps</div>
+          </a>
+
+          <a href="/blog/per-user-ai-settings-crm" class="blog-card bc-card bc-clone">
+            <span class="blog-tag" style="background:#EAF3DE;color:#3B6D11;">AI in CRM</span>
+            <div class="blog-title">Per-user AI settings: why one prompt doesn't fit your whole sales team</div>
+            <p class="blog-excerpt">AEs, CSMs, and SDRs need different intelligence. A look at how configurable AI modules change what your CRM is actually worth.</p>
+            <div class="blog-meta">6 min read · Sales Leaders · RevOps</div>
+          </a>
+
+          <a href="/blog/playbook-adoption-crm" class="blog-card bc-card bc-clone">
+            <span class="blog-tag" style="background:#E6F1FB;color:#185FA5;">Playbooks</span>
+            <div class="blog-title">The playbook adoption problem nobody talks about</div>
+            <p class="blog-excerpt">You built the playbook. Nobody's following it. The issue isn't culture — it's that your CRM doesn't surface the next play at the moment it matters.</p>
+            <div class="blog-meta">7 min read · Enablement · VP Sales</div>
+          </a>
+
         </div>
 
+        <!-- Dot indicators — 6 dots, one per real card -->
+        <div class="blog-dots" id="bcDots">
+          <span class="blog-dot active"></span>
+          <span class="blog-dot"></span>
+          <span class="blog-dot"></span>
+          <span class="blog-dot"></span>
+          <span class="blog-dot"></span>
+          <span class="blog-dot"></span>
+        </div>
       </div>
 
-      <!-- Dot indicators — 2 dots for 2 rows -->
-      <div class="blog-dots">
-        <span class="blog-dot active" onclick="blogGoTo(0)"></span>
-        <span class="blog-dot" onclick="blogGoTo(1)"></span>
-      </div>
     </div>
   </section>
 
   <style>
-    .blog-carousel-outer {
+    .bc-outer {
       overflow: hidden;
-      padding: 0 40px;
-      max-width: 1120px;
-      margin: 0 auto;
+      position: relative;
     }
-    .blog-carousel-track {
+    .bc-track {
       display: flex;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 24px;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
       will-change: transform;
     }
-    .blog-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      /* width is set by JS to match the outer container exactly */
+    .bc-card {
+      /* Each card takes exactly 1/3 of outer width minus gaps */
       flex-shrink: 0;
-      box-sizing: border-box;
     }
     .blog-dots {
       display: flex;
@@ -362,59 +381,94 @@
     }
     .blog-dot.active { background: var(--rust); }
     @media (max-width: 900px) {
-      .blog-row { grid-template-columns: 1fr; }
-      .blog-carousel-outer { padding: 0 20px; }
+      .bc-card { flex-shrink: 0; }
     }
   </style>
 
   <script>
     (function() {
-      var outer   = document.querySelector('.blog-carousel-outer');
-      var track   = document.getElementById('blogTrack');
-      var rows    = track.querySelectorAll('.blog-row');
-      var dots    = document.querySelectorAll('.blog-dot');
-      var current = 0;
-      var total   = 2;
+      var outer    = document.getElementById('bcOuter');
+      var track    = document.getElementById('bcTrack');
+      var cards    = track.querySelectorAll('.bc-card');
+      var dots     = document.querySelectorAll('#bcDots .blog-dot');
+      var REAL     = 6;   // real cards
+      var VISIBLE  = 3;   // cards shown at once
+      var GAP      = 24;
+      var current  = 0;   // 0-based index into real cards
       var timer;
+      var jumping  = false;
 
-      function setRowWidths() {
-        var w = outer.offsetWidth;
-        rows.forEach(function(row) { row.style.width = w + 'px'; });
+      function cardW() {
+        return (outer.offsetWidth - GAP * (VISIBLE - 1)) / VISIBLE;
       }
 
-      function blogGoTo(idx) {
-        current = idx;
-        var w = outer.offsetWidth;
-        track.style.transform = 'translateX(-' + (current * w) + 'px)';
-        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+      function step() {
+        return cardW() + GAP;
       }
 
-      function blogNext() { blogGoTo((current + 1) % total); }
-      function startTimer() { timer = setInterval(blogNext, 3000); }
+      function setCardWidths() {
+        var w = cardW();
+        cards.forEach(function(c) { c.style.width = w + 'px'; });
+      }
+
+      function moveTo(idx, animate) {
+        if (!animate) {
+          track.style.transition = 'none';
+        } else {
+          track.style.transition = 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
+        track.style.transform = 'translateX(-' + (idx * step()) + 'px)';
+        // Update dots (clamp to real cards)
+        var dotIdx = idx % REAL;
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === dotIdx); });
+      }
+
+      function next() {
+        if (jumping) return;
+        current++;
+        moveTo(current, true);
+
+        // After we've shown all 6 real cards (current === REAL), 
+        // silently jump back to 0 after the transition ends
+        if (current >= REAL) {
+          jumping = true;
+          setTimeout(function() {
+            moveTo(0, false);
+            // Force reflow so the no-transition jump takes effect
+            track.offsetHeight;
+            current = 0;
+            jumping = false;
+          }, 750); // slightly longer than transition
+        }
+      }
+
+      function startTimer() { timer = setInterval(next, 10000); }
+      function stopTimer()  { clearInterval(timer); }
 
       dots.forEach(function(dot, i) {
         dot.addEventListener('click', function() {
-          blogGoTo(i);
-          clearInterval(timer);
+          current = i;
+          moveTo(current, true);
+          stopTimer();
           startTimer();
         });
       });
 
-      outer.addEventListener('mouseenter', function() { clearInterval(timer); });
-      outer.addEventListener('mouseleave', function() { startTimer(); });
+      outer.addEventListener('mouseenter', stopTimer);
+      outer.addEventListener('mouseleave', startTimer);
 
       window.addEventListener('resize', function() {
-        setRowWidths();
-        blogGoTo(current);
+        setCardWidths();
+        moveTo(current, false);
       });
 
-      setRowWidths();
-      blogGoTo(0);
+      // Init
+      setCardWidths();
+      moveTo(0, false);
       startTimer();
     })();
   </script>
   <!-- ═══ BLOG-PREVIEW:END ═══ -->
-
   <!-- ═══ CTA-BAND:START ═══ -->
   <section class="cta-band">
     <div class="container">
