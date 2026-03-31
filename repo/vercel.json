@@ -1,17 +1,24 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
   "functions": {
     "blog/api/submit.js": { "maxDuration": 15 }
   },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "blog.userproofpoint.com" }],
+      "destination": "https://userproofpoint.com/blog/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/blog",      "destination": "/blog/index.html" },
-    { "source": "/blog/:path*","destination": "/blog/:path*.html" },
-    { "source": "/",           "destination": "/website/index.html" },
-    { "source": "/problems",   "destination": "/website/problems.html" },
-    { "source": "/about",      "destination": "/website/about.html" },
-    { "source": "/contact",    "destination": "/website/contact.html" },
-    { "source": "/diagnostic", "destination": "/website/diagnostic.html" }
+    { "source": "/",            "destination": "/website/index.html" },
+    { "source": "/problems",    "destination": "/website/problems.html" },
+    { "source": "/about",       "destination": "/website/about.html" },
+    { "source": "/contact",     "destination": "/website/contact.html" },
+    { "source": "/diagnostic",  "destination": "/website/diagnostic.html" },
+    { "source": "/blog",        "destination": "/blog/index.html" },
+    { "source": "/blog/:path*", "destination": "/blog/:path*.html" }
   ],
   "headers": [
     {
