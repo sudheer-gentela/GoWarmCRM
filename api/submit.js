@@ -25,15 +25,14 @@ async function appendToSheet(data) {
       .replace(/\r/g, "")        // strip carriage returns
       .trim();
 
-    const auth = new google.auth.GoogleAuth({
-      credentials: {
-        client_email: clientEmail,
-        private_key: cleanKey,
-      },
+    const jwt = new google.auth.JWT({
+      email: clientEmail,
+      key: cleanKey,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
 
-    const sheets = google.sheets({ version: "v4", auth });
+    await jwt.authorize();
+    const sheets = google.sheets({ version: "v4", auth: jwt });
 
     const row = [
       new Date().toISOString(),
@@ -76,15 +75,19 @@ async function appendDiagnosticToSheet(data) {
   }
 
   try {
-    const auth = new google.auth.GoogleAuth({
-      credentials: {
-        client_email: clientEmail,
-        private_key: privateKey.replace(/\\n/g, "\n").replace(/\r/g, "").trim(),
-      },
+    const cleanKey2 = privateKey
+      .replace(/\\n/g, "\n")
+      .replace(/\r/g, "")
+      .trim();
+
+    const jwt2 = new google.auth.JWT({
+      email: clientEmail,
+      key: cleanKey2,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
 
-    const sheets = google.sheets({ version: "v4", auth });
+    await jwt2.authorize();
+    const sheets = google.sheets({ version: "v4", auth: jwt2 });
 
     // Parse answers from JSON string if needed
     let answers = data.diagnosticAnswers || {};
