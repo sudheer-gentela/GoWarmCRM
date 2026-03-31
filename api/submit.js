@@ -194,7 +194,7 @@ async function sendTeamEmail(data) {
 
   try {
     await transport.sendMail({
-      from: `"Action Insights" <${process.env.GMAIL_USER}>`,
+      from: `"GoWarmCRM" <${process.env.GMAIL_USER}>`,
       to: notifyEmail,
       subject: isSubscribe
         ? `New subscriber: ${data.email}`
@@ -233,7 +233,7 @@ async function sendAutoReply(data) {
 
   try {
     await transport.sendMail({
-      from: `"Action Insights" <${process.env.GMAIL_USER}>`,
+      from: `"GoWarmCRM" <${process.env.GMAIL_USER}>`,
       to: data.email,
       replyTo: process.env.NOTIFY_EMAIL || process.env.GMAIL_USER,
       subject: isSubscribe ? "You're subscribed to Action Insights" : `We'll be in touch, ${data.firstName}`,
@@ -242,22 +242,35 @@ async function sendAutoReply(data) {
             <h2>You're in.</h2>
             <p>Thanks for subscribing. New articles land in your inbox as they're published.</p>
             <ul style="font-family:Arial,sans-serif;font-size:14px">
-              <li><a href="${domain}/article-1" style="color:#C4420A">Are you using Salesforce as a CRUD app?</a></li>
-              <li><a href="${domain}/article-2" style="color:#C4420A">Are your playbooks working?</a></li>
-              <li><a href="${domain}/article-3" style="color:#C4420A">Should you rebuild or recommit?</a></li>
+              <li><a href="https://userproofpoint.com/blog/is-your-crm-a-crud-app" style="color:#C4420A">Are you using Salesforce as a CRUD app?</a></li>
+              <li><a href="https://userproofpoint.com/blog/are-your-sales-playbooks-working" style="color:#C4420A">Are your playbooks working?</a></li>
+              <li><a href="https://userproofpoint.com/blog/crm-rebuild-or-recommit" style="color:#C4420A">Should you rebuild or recommit?</a></li>
             </ul>
-            <p style="color:#888;font-size:13px">— The Action Insights team</p>
+            <p style="color:#888;font-size:13px">— The GoWarmCRM team<br><a href="https://userproofpoint.com" style="color:#C4420A">userproofpoint.com</a></p>
            </div>`
-        : `<div style="font-family:Georgia,serif;max-width:560px;line-height:1.7">
-            <h2>Got it, ${data.firstName}.</h2>
-            <p>We'll be in touch within one business day to schedule your 30-minute session.</p>
-            <p>On the call: an honest read on platform vs adoption problem, and 2–3 specific next steps regardless of whether we work together.</p>
-            <ul style="font-family:Arial,sans-serif;font-size:14px">
-              <li><a href="${domain}/article-1" style="color:#C4420A">Are you using Salesforce as a CRUD app?</a></li>
-              <li><a href="${domain}/article-2" style="color:#C4420A">Are your playbooks working?</a></li>
-              <li><a href="${domain}/article-3" style="color:#C4420A">Should you rebuild or recommit?</a></li>
+        : `<div style="font-family:Georgia,serif;max-width:560px;line-height:1.8;color:#1A1814">
+            <p style="font-size:15px;color:#9B978F;margin:0 0 24px">GoWarmCRM · Demo Confirmation</p>
+            <h2 style="font-family:Georgia,serif;font-size:24px;font-weight:700;color:#1A1814;margin:0 0 16px">You're booked in, ${data.firstName}.</h2>
+            <p style="font-size:16px;color:#3D3A34;margin:0 0 16px">Thank you for reaching out — we're looking forward to showing you what GoWarmCRM can do.</p>
+            <p style="font-size:16px;color:#3D3A34;margin:0 0 16px">On the call, we'll walk through a live demo tailored to your pipeline — showing you exactly how the action engine diagnoses deals, fires playbook triggers, and surfaces the next move for your team.</p>
+            <p style="font-size:16px;color:#3D3A34;margin:0 0 24px">If you have specific requirements, use cases, or scenarios you'd like us to cover, we'd love to hear them in advance. Drop us a note at <a href="mailto:demo@gowarm.ai" style="color:#C4420A;text-decoration:none">demo@gowarm.ai</a> and we'll make sure the session is as relevant as possible.</p>
+            <div style="background:#F3F1EC;border-left:4px solid #C4420A;padding:16px 20px;margin:0 0 28px;border-radius:0 6px 6px 0">
+              <p style="font-size:14px;color:#6B6760;margin:0 0 4px;font-family:Arial,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:1px">What to expect</p>
+              <p style="font-size:15px;color:#3D3A34;margin:0 0 12px;font-family:Arial,sans-serif">30 minutes · Live demo · No slides, no pitch deck · Honest answers to your questions</p>
+              <a href="https://calendar.app.google/tYXi97BftKCqXPHBA" style="display:inline-block;background:#C4420A;color:#fff;padding:12px 24px;border-radius:4px;font-family:Arial,sans-serif;font-size:14px;font-weight:600;text-decoration:none">Book your demo slot →</a>
+            </div>
+            <p style="font-size:14px;color:#9B978F;margin:0 0 8px;font-family:Arial,sans-serif">In the meantime, these might be worth a read:</p>
+            <ul style="font-family:Arial,sans-serif;font-size:14px;color:#3D3A34;padding-left:20px;margin:0 0 28px">
+              <li style="margin-bottom:8px"><a href="https://userproofpoint.com/blog/pipeline-deals-going-dark" style="color:#C4420A;text-decoration:none">Why your best deals go dark — and how to catch them</a></li>
+              <li style="margin-bottom:8px"><a href="https://userproofpoint.com/blog/are-your-sales-playbooks-working" style="color:#C4420A;text-decoration:none">Are your sales playbooks actually working?</a></li>
+              <li style="margin-bottom:8px"><a href="https://userproofpoint.com/blog/per-user-ai-settings-crm" style="color:#C4420A;text-decoration:none">Per-user AI settings: why one prompt doesn't fit your whole team</a></li>
             </ul>
-            <p style="color:#888;font-size:13px">— The Action Insights team<br><a href="https://actioncrm.io" style="color:#C4420A">actioncrm.io</a></p>
+            <p style="font-size:15px;color:#3D3A34;margin:0 0 4px">See you on the call.</p>
+            <p style="font-size:15px;color:#3D3A34;margin:0 0 32px">— The GoWarmCRM team</p>
+            <p style="font-size:12px;color:#9B978F;font-family:Arial,sans-serif;border-top:1px solid #E0DDD6;padding-top:16px;margin:0">
+              <a href="https://userproofpoint.com" style="color:#C4420A;text-decoration:none">userproofpoint.com</a> &nbsp;·&nbsp;
+              Questions? <a href="mailto:demo@gowarm.ai" style="color:#C4420A;text-decoration:none">demo@gowarm.ai</a>
+            </p>
            </div>`,
     });
     console.log("[Gmail] Auto-reply sent to", data.email);

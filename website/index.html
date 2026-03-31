@@ -267,28 +267,139 @@
         <span class="section-title">From the Blog</span>
         <a href="/blog" class="section-link">All articles →</a>
       </div>
-      <div class="blog-grid">
-        <a href="/blog/pipeline-deals-going-dark" class="blog-card">
-          <span class="blog-tag">Pipeline Health</span>
-          <div class="blog-title">Why your best deals go dark — and how to catch them before they're gone</div>
-          <p class="blog-excerpt">The gap between stage 3 and stage 4 is where most revenue disappears. Here's the diagnostic pattern that reveals it.</p>
-          <div class="blog-meta">8 min read · VP Sales · RevOps</div>
-        </a>
-        <a href="/blog/per-user-ai-settings-crm" class="blog-card">
-          <span class="blog-tag" style="background:#EAF3DE;color:#3B6D11;">AI in CRM</span>
-          <div class="blog-title">Per-user AI settings: why one prompt doesn't fit your whole sales team</div>
-          <p class="blog-excerpt">AEs, CSMs, and SDRs need different intelligence. A look at how configurable AI modules change what your CRM is actually worth.</p>
-          <div class="blog-meta">6 min read · Sales Leaders · RevOps</div>
-        </a>
-        <a href="/blog/playbook-adoption-crm" class="blog-card">
-          <span class="blog-tag" style="background:#E6F1FB;color:#185FA5;">Playbooks</span>
-          <div class="blog-title">The playbook adoption problem nobody talks about</div>
-          <p class="blog-excerpt">You built the playbook. Nobody's following it. The issue isn't culture — it's that your CRM doesn't surface the next play at the moment it matters.</p>
-          <div class="blog-meta">7 min read · Enablement · VP Sales</div>
-        </a>
+      <!-- Carousel wrapper -->
+      <div class="blog-carousel-outer">
+        <div class="blog-carousel-track" id="blogTrack">
+          <a href="/blog/pipeline-deals-going-dark" class="blog-card">
+            <span class="blog-tag">Pipeline Health</span>
+            <div class="blog-title">Why your best deals go dark — and how to catch them before they're gone</div>
+            <p class="blog-excerpt">The gap between stage 3 and stage 4 is where most revenue disappears. Here's the diagnostic pattern that reveals it.</p>
+            <div class="blog-meta">8 min read · VP Sales · RevOps</div>
+          </a>
+          <a href="/blog/per-user-ai-settings-crm" class="blog-card">
+            <span class="blog-tag" style="background:#EAF3DE;color:#3B6D11;">AI in CRM</span>
+            <div class="blog-title">Per-user AI settings: why one prompt doesn't fit your whole sales team</div>
+            <p class="blog-excerpt">AEs, CSMs, and SDRs need different intelligence. A look at how configurable AI modules change what your CRM is actually worth.</p>
+            <div class="blog-meta">6 min read · Sales Leaders · RevOps</div>
+          </a>
+          <a href="/blog/playbook-adoption-crm" class="blog-card">
+            <span class="blog-tag" style="background:#E6F1FB;color:#185FA5;">Playbooks</span>
+            <div class="blog-title">The playbook adoption problem nobody talks about</div>
+            <p class="blog-excerpt">You built the playbook. Nobody's following it. The issue isn't culture — it's that your CRM doesn't surface the next play at the moment it matters.</p>
+            <div class="blog-meta">7 min read · Enablement · VP Sales</div>
+          </a>
+          <a href="/blog/pipeline-deals-going-dark" class="blog-card">
+            <span class="blog-tag">Pipeline Health</span>
+            <div class="blog-title">Why your best deals go dark — and how to catch them before they're gone</div>
+            <p class="blog-excerpt">The gap between stage 3 and stage 4 is where most revenue disappears. Here's the diagnostic pattern that reveals it.</p>
+            <div class="blog-meta">8 min read · VP Sales · RevOps</div>
+          </a>
+          <a href="/blog/per-user-ai-settings-crm" class="blog-card">
+            <span class="blog-tag" style="background:#EAF3DE;color:#3B6D11;">AI in CRM</span>
+            <div class="blog-title">Per-user AI settings: why one prompt doesn't fit your whole sales team</div>
+            <p class="blog-excerpt">AEs, CSMs, and SDRs need different intelligence. A look at how configurable AI modules change what your CRM is actually worth.</p>
+            <div class="blog-meta">6 min read · Sales Leaders · RevOps</div>
+          </a>
+          <a href="/blog/playbook-adoption-crm" class="blog-card">
+            <span class="blog-tag" style="background:#E6F1FB;color:#185FA5;">Playbooks</span>
+            <div class="blog-title">The playbook adoption problem nobody talks about</div>
+            <p class="blog-excerpt">You built the playbook. Nobody's following it. The issue isn't culture — it's that your CRM doesn't surface the next play at the moment it matters.</p>
+            <div class="blog-meta">7 min read · Enablement · VP Sales</div>
+          </a>
+        </div>
+        <!-- Dot indicators -->
+        <div class="blog-dots">
+          <span class="blog-dot active" onclick="goToSlide(0)"></span>
+          <span class="blog-dot" onclick="goToSlide(1)"></span>
+          <span class="blog-dot" onclick="goToSlide(2)"></span>
+        </div>
       </div>
     </div>
   </section>
+  <style>
+    .blog-carousel-outer { position: relative; overflow: hidden; }
+    .blog-carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: grab;
+    }
+    .blog-carousel-track .blog-card {
+      min-width: calc((100% - 48px) / 3);
+      flex-shrink: 0;
+    }
+    .blog-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .blog-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .blog-dot.active { background: var(--rust); }
+    @media (max-width: 900px) {
+      .blog-carousel-track .blog-card { min-width: calc(100% - 0px); }
+    }
+  </style>
+  <script>
+    (function() {
+      var track = document.getElementById('blogTrack');
+      var dots  = document.querySelectorAll('.blog-dot');
+      var current = 0;
+      var total = 3;
+      var cardWidth;
+      var timer;
+      var isDragging = false;
+
+      function getCardWidth() {
+        var card = track.querySelector('.blog-card');
+        return card.offsetWidth + 24; // width + gap
+      }
+
+      function goToSlide(idx) {
+        current = idx;
+        cardWidth = getCardWidth();
+        track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function next() {
+        goToSlide((current + 1) % total);
+      }
+
+      function startTimer() {
+        timer = setInterval(next, 3000);
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        startTimer();
+      }
+
+      // Dot clicks reset the timer
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() {
+          goToSlide(i);
+          resetTimer();
+        });
+      });
+
+      // Pause on hover
+      track.addEventListener('mouseenter', function() { clearInterval(timer); });
+      track.addEventListener('mouseleave', function() { startTimer(); });
+
+      // Init
+      goToSlide(0);
+      startTimer();
+    })();
+  </script>
   <!-- ═══ BLOG-PREVIEW:END ═══ -->
 
   <!-- ═══ CTA-BAND:START ═══ -->
