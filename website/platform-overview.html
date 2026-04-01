@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoWarm CRM — Platform Overview</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rust:     #E8630A;
+      --rust-2:   #C4420A;
+      --ink:      #1A1814;
+      --ink-2:    #3D3A34;
+      --ink-3:    #6B6760;
+      --cream:    #FAF8F4;
+      --cream-2:  #F3F1EC;
+      --border:   #E0DDD6;
+      --serif:    'Playfair Display', Georgia, serif;
+      --sans:     'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--ink);
+      color: #fff;
+      padding: 72px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,99,10,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .hero-logo svg { flex-shrink: 0; }
+    .hero-logo-text {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.3px;
+    }
+    .hero-logo-text span { color: var(--rust); }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 20px;
+      max-width: 640px;
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      max-width: 560px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 36px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      font-weight: 400;
+    }
+    .pill-dot {
+      width: 6px; height: 6px;
+      background: var(--rust);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-body {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.75;
+      font-weight: 300;
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+
+    /* ── PHILOSOPHY CARDS ── */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .phil-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 20px;
+    }
+    .phil-icon {
+      font-size: 20px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .phil-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .phil-body {
+      font-size: 13px;
+      color: var(--ink-3);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── ACTION TYPES ── */
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .action-card {
+      background: var(--cream-2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--rust);
+      border-radius: 0 6px 6px 0;
+      padding: 18px 20px;
+    }
+    .action-type {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 6px;
+    }
+    .action-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .action-body {
+      font-size: 13px;
+      color: var(--ink-3);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── MODULE TABLE ── */
+    .module-list {
+      margin-top: 28px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .module-row {
+      display: grid;
+      grid-template-columns: 44px 1fr 1fr;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+      gap: 12px;
+    }
+    .module-row:last-child { border-bottom: none; }
+    .module-row:nth-child(even) { background: var(--cream-2); }
+    .module-icon { font-size: 18px; }
+    .module-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .module-desc {
+      font-size: 13px;
+      color: var(--ink-3);
+      font-weight: 300;
+    }
+    .module-who {
+      font-size: 12px;
+      color: var(--ink-3);
+      font-style: italic;
+    }
+
+    /* ── CHANNELS ── */
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .channel-chip {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--ink-2);
+    }
+    .channel-chip strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    /* ── STAT CALLOUT ── */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 32px 0;
+    }
+    .stat-cell {
+      background: #fff;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--rust);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--ink-3);
+      line-height: 1.5;
+    }
+
+    /* ── ONBOARDING PHASES ── */
+    .phases {
+      margin-top: 28px;
+      position: relative;
+    }
+    .phase-item {
+      display: flex;
+      gap: 20px;
+      padding: 0 0 28px;
+      position: relative;
+    }
+    .phase-item:last-child { padding-bottom: 0; }
+    .phase-item::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 32px;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+    .phase-item:last-child::before { display: none; }
+    .phase-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--rust);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .phase-content { padding-top: 4px; }
+    .phase-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .phase-detail {
+      font-size: 13px;
+      color: var(--ink-3);
+      font-weight: 300;
+    }
+    .phase-time {
+      font-size: 11px;
+      color: var(--rust);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* ── CTA ── */
+    .cta-band {
+      background: var(--ink);
+      padding: 56px 0;
+      text-align: center;
+    }
+    .cta-band h2 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-band p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: var(--sans);
+    }
+    .btn-primary { background: var(--rust); color: #fff; }
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.2);
+      margin-left: 12px;
+    }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      background: var(--cream-2);
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-3);
+    }
+    .page-footer a { color: var(--rust); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .action-grid { grid-template-columns: 1fr; }
+      .channels-grid { grid-template-columns: 1fr 1fr; }
+      .stat-row { grid-template-columns: 1fr; }
+      .module-row { grid-template-columns: 36px 1fr; }
+      .module-who { display: none; }
+      .btn-ghost { margin-left: 0; margin-top: 10px; display: inline-block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-logo">
+        <svg width="32" height="32" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <rect width="72" height="72" rx="16" fill="#E8630A"/>
+          <path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/>
+          <path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/>
+          <path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/>
+        </svg>
+        <span class="hero-logo-text">GoWarm<span>CRM</span></span>
+      </div>
+      <span class="hero-eyebrow">Platform Overview</span>
+      <h1>The execution application for your GTM team.</h1>
+      <p class="hero-sub">GoWarm CRM doesn't just track your pipeline — it tells every rep exactly what to do next on every deal, fires your playbooks automatically, and routes them directly to the right channel to act.</p>
+      <div class="hero-pills">
+        <span class="pill"><span class="pill-dot"></span>Actions Engine</span>
+        <span class="pill"><span class="pill-dot"></span>Playbook Execution</span>
+        <span class="pill"><span class="pill-dot"></span>Deal Diagnostics</span>
+        <span class="pill"><span class="pill-dot"></span>Contract Lifecycle</span>
+        <span class="pill"><span class="pill-dot"></span>Sales-to-CS Handovers</span>
+        <span class="pill"><span class="pill-dot"></span>Prospecting</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">What GoWarm CRM Is</span>
+      <h2 class="section-title">A CRM built around the next move, not the last update.</h2>
+      <p class="section-body">Most CRMs are passive databases. Reps log activity, managers export reports, and decisions are made from data that's already stale. GoWarm CRM is built differently — it actively diagnoses the state of every deal, fires your playbook plays at the right moment, and surfaces a prioritised action queue each morning so every rep knows exactly where to focus.</p>
+
+      <div class="stat-row">
+        <div class="stat-cell">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Action types — from diagnostic alerts to AI transcript extraction</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">01:00</div>
+          <div class="stat-label">UTC nightly sweep — fresh priorities waiting every morning</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">11</div>
+          <div class="stat-label">Platform modules covering the full GTM motion</div>
+        </div>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="phil-card">
+          <span class="phil-icon">⚡</span>
+          <div class="phil-title">Deal-specific, always</div>
+          <div class="phil-body">Every action is generated from the actual state of that deal — not a generic template applied to everyone.</div>
+        </div>
+        <div class="phil-card">
+          <span class="phil-icon">🔗</span>
+          <div class="phil-title">Channel-routed actions</div>
+          <div class="phil-body">Each action has a channel. Click Start and you're taken directly to email, call log, WhatsApp, LinkedIn, or the relevant document.</div>
+        </div>
+        <div class="phil-card">
+          <span class="phil-icon">📋</span>
+          <div class="phil-title">Playbooks in the workflow</div>
+          <div class="phil-body">Plays fire automatically on stage changes or conditions — appearing as action items, not documents to be opened separately.</div>
+        </div>
+        <div class="phil-card">
+          <span class="phil-icon">🏛️</span>
+          <div class="phil-title">History preserved</div>
+          <div class="phil-body">Completed actions are permanent record. Regenerating nightly actions never destroys completed work or resets context.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ACTIONS TAB -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">The Core — Actions</span>
+      <h2 class="section-title">Your team's daily hub. Five ways actions are generated.</h2>
+      <p class="section-body">The Actions tab is where reps start every day. It shows a prioritised queue across all their deals — sorted by urgency, with a specific next step and channel for each one. Actions are generated in five ways:</p>
+
+      <div class="action-grid">
+        <div class="action-card">
+          <div class="action-type">Type A</div>
+          <div class="action-title">Diagnostic Alerts</div>
+          <div class="action-body">Nightly rules engine detects stale deals, missing contacts, close date risks, and unhealthy pipeline. AI enhances the description with specific context.</div>
+        </div>
+        <div class="action-card">
+          <div class="action-type">Type B</div>
+          <div class="action-title">Playbook Tasks</div>
+          <div class="action-body">When a deal moves stage or a condition is met, the next play in your configured playbook fires automatically as an action item.</div>
+        </div>
+        <div class="action-card">
+          <div class="action-type">Type C</div>
+          <div class="action-title">Transcript Actions</div>
+          <div class="action-body">Upload a Zoom, Teams, or Gong transcript and the AI extracts commitments, follow-ups, and next steps as ready-to-act items.</div>
+        </div>
+        <div class="action-card">
+          <div class="action-type">Type D</div>
+          <div class="action-title">Email Actions</div>
+          <div class="action-body">When email sync detects commitment language in a thread, AI extracts the action and surfaces it in the queue before it gets buried.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px; background:#fff; border:1px solid var(--border); border-radius:8px; padding:20px 24px;">
+        <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:14px;">Action channels — what happens when a rep clicks Start</div>
+        <div class="channels-grid">
+          <div class="channel-chip"><strong>Email</strong>Opens composer pre-filled with deal &amp; contact</div>
+          <div class="channel-chip"><strong>Call</strong>Opens call log modal directly</div>
+          <div class="channel-chip"><strong>WhatsApp</strong>Deep-links to the contact</div>
+          <div class="channel-chip"><strong>LinkedIn</strong>Opens the contact's profile</div>
+          <div class="channel-chip"><strong>Document</strong>Links to file or contract</div>
+          <div class="channel-chip"><strong>Internal Task</strong>Opens task completion dialog</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Platform Modules</span>
+      <h2 class="section-title">One platform. The full GTM motion.</h2>
+      <p class="section-body">GoWarm CRM is organised into modules. Your Org Admin controls which are enabled. All modules share the same underlying data model and cross-link seamlessly — actions, deals, contracts, handovers, and cases all talk to each other.</p>
+
+      <div class="module-list">
+        <div class="module-row" style="background:var(--cream-2);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink-3);padding:10px 20px;">
+          <div></div><div>Module</div><div>Who it's for</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">⚡</div>
+          <div><div class="module-name">Actions (Core)</div><div class="module-desc">AI + rules-driven prioritised next steps for every deal. The rep's daily hub.</div></div>
+          <div class="module-who">All reps</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">💼</div>
+          <div><div class="module-name">Deals</div><div class="module-desc">Pipeline stages, deal health scoring, deal team, products, and playbook execution.</div></div>
+          <div class="module-who">Sales</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">🏢</div>
+          <div><div class="module-name">Accounts &amp; Contacts</div><div class="module-desc">Company hierarchy, coverage tracking, person roles — decision-makers, champions, blockers.</div></div>
+          <div class="module-who">All</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">📋</div>
+          <div><div class="module-name">Playbooks</div><div class="module-desc">Structured plays per stage or condition. Approval flows. Plays fire into the Actions tab automatically.</div></div>
+          <div class="module-who">Managers</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">📄</div>
+          <div><div class="module-name">Contracts (CLM)</div><div class="module-desc">Create, approve, e-sign, and version-track contracts from within a deal. Stage changes generate CLM actions.</div></div>
+          <div class="module-who">Sales / Legal</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">🤝</div>
+          <div><div class="module-name">Handovers</div><div class="module-desc">Structured sales-to-CS handover with tracked commitments, owner assignment, and nightly sweep alerts.</div></div>
+          <div class="module-who">Sales / CS</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">🎧</div>
+          <div><div class="module-name">Service</div><div class="module-desc">Case management, SLA tiers, case plays, and case actions linked to the same actions engine.</div></div>
+          <div class="module-who">Support / CS</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">🎯</div>
+          <div><div class="module-name">Prospecting</div><div class="module-desc">Outbound prospecting, sequences, sender accounts, prospect inbox, and AI-generated next steps.</div></div>
+          <div class="module-who">SDR / BDR</div>
+        </div>
+        <div class="module-row">
+          <div class="module-icon">🤖</div>
+          <div><div class="module-name">Agent Inbox</div><div class="module-desc">AI-proposed actions for review and execution. For power users who want AI suggestions before acting.</div></div>
+          <div class="module-who">Power users</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONBOARDING -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Getting Started</span>
+      <h2 class="section-title">Most teams are live within two hours of first login.</h2>
+      <p class="section-body">GoWarm CRM is designed for fast time-to-value. A phased onboarding approach means you can start generating AI-powered actions on day one and reach full adoption — with playbooks, integrations, and all modules configured — within two weeks.</p>
+
+      <div class="phases">
+        <div class="phase-item">
+          <div class="phase-num">1</div>
+          <div class="phase-content">
+            <div class="phase-title">Account Setup &amp; First Login</div>
+            <div class="phase-detail">Accept your invitation, set your password, complete your profile, and connect your Microsoft 365 account for email and calendar sync.</div>
+            <div class="phase-time">Day 1 · 1–2 hours</div>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-num">2</div>
+          <div class="phase-content">
+            <div class="phase-title">Core Data Import</div>
+            <div class="phase-detail">Import Accounts, then Contacts, then Deals via CSV. Download the template for each object, populate it, and upload. Historical activities optional but recommended.</div>
+            <div class="phase-time">Days 1–2 · 2–4 hours</div>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-num">3</div>
+          <div class="phase-content">
+            <div class="phase-title">Integrations</div>
+            <div class="phase-detail">Connect Microsoft 365 for two-way email sync, calendar matching, OneDrive file access, and meeting transcript import. AI configuration requires no end-user setup.</div>
+            <div class="phase-time">Days 2–3 · 1–2 hours</div>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-num">4</div>
+          <div class="phase-content">
+            <div class="phase-title">Pipeline &amp; Deal Health Configuration</div>
+            <div class="phase-detail">Org Admin configures pipeline stages, deal health scoring weights, ARR timing rules, and team dimensions. This is what the nightly diagnostic engine runs against.</div>
+            <div class="phase-time">Days 3–5 · 2–3 hours</div>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-num">5</div>
+          <div class="phase-content">
+            <div class="phase-title">Team Setup &amp; Playbooks</div>
+            <div class="phase-detail">Invite your team, assign roles (Member or Org Admin), and build your first playbook — defining plays, channels, assignee roles, and fire conditions per stage.</div>
+            <div class="phase-time">Week 1–2 · variable</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:36px;background:var(--cream-2);border:1px solid var(--border);border-left:4px solid var(--rust);border-radius:0 8px 8px 0;padding:22px 24px;">
+        <div style="font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--rust);margin-bottom:8px;">Dedicated onboarding manager</div>
+        <div style="font-size:14px;color:var(--ink-2);font-weight:300;line-height:1.7;">Every new GoWarm CRM customer is assigned a dedicated onboarding manager for the first 30 days. They'll schedule your kickoff call, guide your configuration, and make sure your team hits its first meaningful actions milestone. After day 30, your account transitions to our Customer Success team for ongoing support.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <footer class="page-footer">
+    <div class="container">
+      <p>© 2026 GoWarmCRM · <a href="https://www.gowarmcrm.com">gowarmcrm.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
