@@ -6,8 +6,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "blog.userproofpoint.com" }],
-      "destination": "https://userproofpoint.com/blog/:path*",
+      "has": [{ "type": "host", "value": "blog.gowarmcrm.com" }],
+      "destination": "https://www.gowarmcrm.com/blog/:path*",
       "permanent": true
     }
   ],

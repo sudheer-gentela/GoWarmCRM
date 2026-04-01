@@ -1,8 +1,8 @@
 "use strict";
 
 const config = {
-  SITE_URL:    "https://userproofpoint.com/blog",
-  PRODUCT_URL: "https://userproofpoint.com",
+  SITE_URL:    "https://www.gowarmcrm.com/blog",
+  PRODUCT_URL: "https://www.gowarmcrm.com",
   BRAND_PUBLICATION: "GoWarm Insights",
   BRAND_COMPANY:     "GoWarmCRM",
   BRAND_TAGLINE:     "Practical intelligence for B2B sales and business leaders.",
