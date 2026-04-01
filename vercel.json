@@ -17,6 +17,7 @@
     { "source": "/about",       "destination": "/website/about.html" },
     { "source": "/contact",     "destination": "/website/contact.html" },
     { "source": "/diagnostic",  "destination": "/website/diagnostic.html" },
+    { "source": "/platform-overview", "destination": "/website/platform-overview.html" },
     { "source": "/blog",        "destination": "/blog/index.html" },
     { "source": "/blog/:path*", "destination": "/blog/:path*.html" }
   ],
