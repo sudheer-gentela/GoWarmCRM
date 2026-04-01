@@ -270,7 +270,7 @@ async function sendAutoReply(data) {
             <div style="background:#F3F1EC;border-left:4px solid #C4420A;padding:16px 20px;margin:0 0 28px;border-radius:0 6px 6px 0">
               <p style="font-size:14px;color:#6B6760;margin:0 0 4px;font-family:Arial,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:1px">What to expect</p>
               <p style="font-size:15px;color:#3D3A34;margin:0 0 12px;font-family:Arial,sans-serif">30 minutes · Live demo · No slides, no pitch deck · Honest answers to your questions</p>
-              <a href="https://calendar.app.google/tYXi97BftKCqXPHBA" style="display:inline-block;background:#C4420A;color:#fff;padding:12px 24px;border-radius:4px;font-family:Arial,sans-serif;font-size:14px;font-weight:600;text-decoration:none">Book your demo slot →</a>
+              <a href="https://calendar.app.google/VKeU3Q7mKpkwzZxX8" style="display:inline-block;background:#C4420A;color:#fff;padding:12px 24px;border-radius:4px;font-family:Arial,sans-serif;font-size:14px;font-weight:600;text-decoration:none">Book your demo slot →</a>
             </div>
             <p style="font-size:14px;color:#9B978F;margin:0 0 8px;font-family:Arial,sans-serif">In the meantime, these might be worth a read:</p>
             <ul style="font-family:Arial,sans-serif;font-size:14px;color:#3D3A34;padding-left:20px;margin:0 0 28px">
