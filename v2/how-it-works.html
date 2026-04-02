@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works — GoWarmCRM Sales Execution Platform</title>
+  <meta name="description" content="GoWarmCRM runs nightly diagnostic rules across your pipeline, fires playbook triggers on stage changes, and surfaces a prioritised action queue for every rep. Here's exactly how it works." />
+  <link rel="stylesheet" href="/v2/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="theme-color" content="#E8630A">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/v2/how-it-works" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url"         content="https://www.gowarmcrm.com/v2/how-it-works" />
+  <meta property="og:title" content="How GoWarmCRM Works — Sales Execution Platform" />
+  <meta property="og:description" content="Nightly pipeline diagnostics, playbook triggers, handover tracking, and AI-assisted next steps. Here's how GoWarmCRM turns your CRM data into daily action queues." />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "How GoWarmCRM Works",
+    "description": "GoWarmCRM runs nightly diagnostic rules across deals, contracts, cases, handovers, and prospects — then surfaces a prioritised action queue for your team.",
+    "url": "https://www.gowarmcrm.com/v2/how-it-works"
+  }
+  </script>
+  <style>
+    .page-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+    .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .page-title { font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; max-width: 680px; }
+    .page-subtitle { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 560px; }
+
+    /* PHASES */
+    .phases-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .phases-intro { margin-bottom: 56px; max-width: 600px; }
+    .phases-intro h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 12px; }
+    .phases-intro p { font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); font-weight: 300; line-height: 1.7; }
+
+    .phase { display: grid; grid-template-columns: 80px 1fr; gap: 0 40px; margin-bottom: 0; border-top: 1px solid var(--border); }
+    .phase:last-child { border-bottom: 1px solid var(--border); }
+    .phase-num-col { padding: 40px 0; display: flex; flex-direction: column; align-items: flex-start; }
+    .phase-num { font-family: var(--serif); font-size: 13px; font-weight: 600; color: var(--rust); letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+    .phase-line { flex: 1; width: 1px; background: var(--border); margin: 12px 0 0 6px; }
+    .phase-body { padding: 40px 0; }
+    .phase-title { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 14px; }
+    .phase-desc { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 24px; max-width: 620px; }
+    .phase-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .phase-detail { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+    .phase-detail h4 { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .phase-detail p { font-family: var(--body-serif); font-size: 13px; color: var(--ink-3); line-height: 1.6; font-weight: 300; }
+
+    /* ACTION QUEUE */
+    .action-queue-section { padding: 80px 0; border-bottom: 1px solid var(--border); background: var(--cream-2); }
+    .aq-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .aq-text h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .aq-text p { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+    .aq-mockup { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .aq-bar { background: var(--ink); padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+    .aq-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .aq-bar-title { font-size: 12px; color: rgba(255,255,255,0.5); margin-left: auto; margin-right: auto; font-family: var(--sans); }
+    .aq-header { padding: 16px 20px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .aq-header-title { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--ink); }
+    .aq-badge { font-size: 10px; font-weight: 600; background: var(--rust); color: #fff; padding: 2px 8px; border-radius: 10px; }
+    .aq-item { padding: 14px 20px; border-bottom: 1px solid var(--border); display: flex; gap: 14px; align-items: flex-start; }
+    .aq-item:last-child { border-bottom: none; }
+    .aq-item-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+    .aq-item-dot.urgent { background: var(--rust); }
+    .aq-item-dot.medium { background: #F5A623; }
+    .aq-item-dot.low { background: var(--ink-4); }
+    .aq-item-content { flex: 1; }
+    .aq-item-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+    .aq-item-meta { font-size: 11px; color: var(--ink-4); }
+    .aq-item-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; }
+    .aq-item-tag.stalled { background: #FFF4ED; color: var(--rust); }
+    .aq-item-tag.playbook { background: #EFF6FF; color: #2563EB; }
+    .aq-item-tag.handover { background: #F0FDF4; color: #16A34A; }
+
+    /* ECOSYSTEMS */
+    .ecosystems-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .eco-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px 24px; }
+    .eco-icon { font-size: 24px; margin-bottom: 14px; }
+    .eco-title { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .eco-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+    .eco-list { list-style: none; margin-top: 14px; }
+    .eco-list li { font-size: 13px; color: var(--ink-3); padding: 5px 0; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .eco-list li::before { content: "→"; color: var(--rust); font-size: 12px; margin-top: 1px; flex-shrink: 0; }
+
+    /* AI SETTINGS */
+    .ai-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .ai-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .ai-text h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .ai-text p { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+    .ai-features { list-style: none; margin-top: 20px; }
+    .ai-features li { font-size: 14px; color: var(--ink-2); padding: 10px 0; border-top: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+    .ai-features li .check { color: var(--rust); font-weight: 700; flex-shrink: 0; }
+    .ai-visual { background: var(--cream-2); border: 1px solid var(--border); border-radius: 10px; padding: 28px; }
+    .ai-visual-title { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 20px; }
+    .ai-setting-row { margin-bottom: 20px; }
+    .ai-setting-label { font-size: 12px; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; display: flex; justify-content: space-between; }
+    .ai-setting-label span { font-weight: 400; color: var(--rust); }
+    .ai-setting-bar { height: 4px; background: var(--border); border-radius: 2px; }
+    .ai-setting-fill { height: 4px; border-radius: 2px; background: var(--rust); }
+    .ai-toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink-2); }
+    .ai-toggle { width: 32px; height: 18px; border-radius: 9px; background: var(--rust); position: relative; }
+    .ai-toggle::after { content: ''; position: absolute; width: 14px; height: 14px; border-radius: 50%; background: #fff; top: 2px; right: 2px; }
+    .ai-toggle.off { background: var(--border); }
+    .ai-toggle.off::after { right: auto; left: 2px; }
+
+    @media (max-width: 900px) {
+      .page-title { font-size: 34px; }
+      .phase { grid-template-columns: 1fr; gap: 0; }
+      .phase-num-col { padding: 24px 0 8px; flex-direction: row; align-items: center; gap: 12px; }
+      .phase-line { display: none; }
+      .phase-body { padding: 0 0 32px; }
+      .phase-details { grid-template-columns: 1fr; }
+      .aq-inner, .ai-inner { grid-template-columns: 1fr; gap: 40px; }
+      .eco-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GoWarmCRM",
+    "url": "https://www.gowarmcrm.com",
+    "logo": "https://www.gowarmcrm.com/favicon-512x512.png",
+    "description": "GoWarmCRM is the sales execution platform for B2B sales teams.",
+    "sameAs": ["https://twitter.com/gowarmcrm","https://www.linkedin.com/company/gowarmcrm"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/v2/"},
+      {"@type":"ListItem","position":2,"name":"How It Works","item":"https://www.gowarmcrm.com/v2/how-it-works"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="/v2/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/v2/">Home</a></li>
+          <li><a href="/v2/how-it-works" class="active">How It Works</a></li>
+          <li><a href="/v2/problems">Problems We Solve</a></li>
+          <li><a href="/v2/pricing">Pricing</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-eyebrow">How GoWarmCRM Works</span>
+      <h1 class="page-title">Three phases. One outcome: your team knows what to do next.</h1>
+      <p class="page-subtitle">GoWarmCRM sits alongside your existing CRM, runs nightly diagnostics across your entire pipeline, and delivers a prioritised action queue to every rep — every morning.</p>
+    </div>
+  </section>
+
+  <!-- THREE PHASES -->
+  <section class="phases-section">
+    <div class="container">
+      <div class="phases-intro">
+        <h2>From raw CRM data to daily action — automatically</h2>
+        <p>No manual pipeline reviews. No weekly spreadsheets. GoWarmCRM's execution engine runs continuously, so your team always has a clear, current view of what needs to happen — and why.</p>
+      </div>
+
+      <div class="phase">
+        <div class="phase-num-col">
+          <div class="phase-num">Phase 01</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-title">Diagnose your pipeline every night</div>
+          <p class="phase-desc">Rules engines run nightly across every deal, contract, case, handover, and prospect in your pipeline. Each entity is scored against configurable thresholds — stage duration, rep activity, last contact date, ARR timing — and flagged if it breaches a risk boundary.</p>
+          <div class="phase-details">
+            <div class="phase-detail">
+              <h4>Stall detection</h4>
+              <p>Deals are scored by days in stage, last activity, and rep engagement. Thresholds are configurable per stage and deal size.</p>
+            </div>
+            <div class="phase-detail">
+              <h4>Contract risk</h4>
+              <p>CLM stage changes trigger automatic action queues. Your team gets proactive alerts on contracts approaching renewal or risk windows.</p>
+            </div>
+            <div class="phase-detail">
+              <h4>Prospect hurdle scores</h4>
+              <p>Every prospect gets a live hurdle score. GoWarmCRM surfaces exactly what's blocking progression and what action to take next.</p>
+            </div>
+            <div class="phase-detail">
+              <h4>Handover monitoring</h4>
+              <p>Sales-to-CS commitments are tracked as first-class objects. Every promise logged, every delivery monitored automatically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-num-col">
+          <div class="phase-num">Phase 02</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-title">Surface the exact actions to take</div>
+          <p class="phase-desc">Diagnostic alerts become a live, prioritised action queue for every rep. Unlike static task lists that go stale the moment they're generated, GoWarmCRM actions persist intelligently — snooze settings are preserved, playbook progress is tracked, and resolved items close automatically when the underlying condition clears.</p>
+          <div class="phase-details">
+            <div class="phase-detail">
+              <h4>Upsert-and-resolve logic</h4>
+              <p>Actions are updated nightly using conflict-safe logic. Existing actions are refreshed — never duplicated — when conditions change.</p>
+            </div>
+            <div class="phase-detail">
+              <h4>Playbook triggers</h4>
+              <p>When a deal moves stage, your configured playbook fires automatically. Reps see the required next step in their queue — not buried in a doc.</p>
+            </div>
+            <div class="phase-detail">
+              <h4>Priority ranking</h4>
+              <p>Actions are ranked by urgency, deal value, and days-at-risk. Your team knows exactly where to start every morning.</p>
+            </div>
+            <div class="phase-detail">
+              <h4>Snooze & supersede</h4>
+              <p>Reps can snooze actions with context. If conditions worsen, GoWarmCRM supersedes the snoozed action automatically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-num-col">
+          <div class="phase-num">Phase 03</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-body">
+          <div class="phase-title">AI writes the play — you approve it</div>
+          <p class="phase-desc">Per-user AI configuration lets each rep and manager tune how intelligence is applied in their workflow. Choose your AI provider, adjust prompt behaviour per module, and keep a human in the loop for every suggested action. GoWarmCRM augments your team's judgment — it doesn't replace it.</p>
+          <div class="phase-details">
+            <div class="phase-detail">
+              <h4>Per-user AI settings</h4>
+              <p>Every user can configure their own AI preferences — provider, tone, verbosity — with org-level defaults that cascade where no personal setting exists.</p>
+            </div>
+            <div class="phase-detail">
+              <h4>Module-level prompt tuning</h4>
+              <p>AI behaviour can be tuned differently for deals vs. contracts vs. prospecting. The right tone and depth for each context.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTION QUEUE MOCKUP -->
+  <section class="action-queue-section">
+    <div class="container">
+      <div class="aq-inner">
+        <div class="aq-text">
+          <span class="section-eyebrow">The Rep Experience</span>
+          <h2>A clear action queue. Every morning. No guesswork.</h2>
+          <p>Reps don't need to triage their pipeline or decode CRM reports. GoWarmCRM surfaces the three to five actions that matter most — ranked by urgency, deal value, and time-at-risk.</p>
+          <p>Playbook steps appear exactly when they're triggered. Stall alerts fire before deals are lost. Handover tasks appear the moment a commitment is made upstream.</p>
+        </div>
+        <div class="aq-mockup">
+          <div class="aq-bar">
+            <div class="aq-dot" style="background:#FF5F57;"></div>
+            <div class="aq-dot" style="background:#FFBD2E;"></div>
+            <div class="aq-dot" style="background:#28CA41;"></div>
+            <div class="aq-bar-title">GoWarmCRM — My Actions</div>
+          </div>
+          <div class="aq-header">
+            <div class="aq-header-title">Today's Action Queue</div>
+            <div class="aq-badge">7 actions</div>
+          </div>
+          <div class="aq-item">
+            <div class="aq-item-dot urgent"></div>
+            <div class="aq-item-content">
+              <div class="aq-item-title">Acme Corp — Stage stall: 18 days in Proposal</div>
+              <div class="aq-item-meta" style="display:flex;gap:8px;align-items:center;margin-top:4px;"><span class="aq-item-tag stalled">Stalled deal</span> · £120K · Last activity 18 days ago</div>
+            </div>
+          </div>
+          <div class="aq-item">
+            <div class="aq-item-dot urgent"></div>
+            <div class="aq-item-content">
+              <div class="aq-item-title">Meridian SaaS — Playbook: Send security questionnaire</div>
+              <div class="aq-item-meta" style="display:flex;gap:8px;align-items:center;margin-top:4px;"><span class="aq-item-tag playbook">Playbook step</span> · £85K · Triggered on stage move</div>
+            </div>
+          </div>
+          <div class="aq-item">
+            <div class="aq-item-dot medium"></div>
+            <div class="aq-item-content">
+              <div class="aq-item-title">GlobalTech — CS handover: integration timeline committed</div>
+              <div class="aq-item-meta" style="display:flex;gap:8px;align-items:center;margin-top:4px;"><span class="aq-item-tag handover">Handover</span> · Due in 3 days</div>
+            </div>
+          </div>
+          <div class="aq-item">
+            <div class="aq-item-dot medium"></div>
+            <div class="aq-item-content">
+              <div class="aq-item-title">Northstar Ltd — Contract approaching renewal window</div>
+              <div class="aq-item-meta" style="display:flex;gap:8px;align-items:center;margin-top:4px;"><span class="aq-item-tag stalled">Contract risk</span> · £210K ARR · 47 days to renewal</div>
+            </div>
+          </div>
+          <div class="aq-item" style="opacity:0.4;">
+            <div class="aq-item-dot low"></div>
+            <div class="aq-item-content">
+              <div class="aq-item-title">3 more actions</div>
+              <div class="aq-item-meta">2 prospecting · 1 follow-up</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSYSTEMS -->
+  <section class="ecosystems-section">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="section-eyebrow-label">Action Ecosystems</span>
+        <h2 class="section-h2" style="margin-bottom:0;">Five areas of pipeline. One unified queue.</h2>
+      </div>
+      <div class="eco-grid">
+        <div class="eco-card">
+          <div class="eco-icon">🔍</div>
+          <div class="eco-title">Deal Actions</div>
+          <p class="eco-desc">Stall detection, stage-move playbooks, and follow-up gap monitoring across your active pipeline.</p>
+          <ul class="eco-list">
+            <li>Stall alerts by stage and deal size</li>
+            <li>Playbook triggers on stage change</li>
+            <li>Follow-up gap detection</li>
+          </ul>
+        </div>
+        <div class="eco-card">
+          <div class="eco-icon">📄</div>
+          <div class="eco-title">Contract Actions</div>
+          <p class="eco-desc">CLM stage-change triggers, renewal window alerts, and at-risk contract monitoring.</p>
+          <ul class="eco-list">
+            <li>Renewal window proximity alerts</li>
+            <li>Stage-change action queues</li>
+            <li>ARR timing diagnostics</li>
+          </ul>
+        </div>
+        <div class="eco-card">
+          <div class="eco-icon">🤝</div>
+          <div class="eco-title">Handover Actions</div>
+          <p class="eco-desc">Sales-to-CS commitments tracked as first-class objects. Every promise monitored to delivery.</p>
+          <ul class="eco-list">
+            <li>Commitment logging at handover</li>
+            <li>Delivery deadline monitoring</li>
+            <li>Escalation on missed commitments</li>
+          </ul>
+        </div>
+        <div class="eco-card">
+          <div class="eco-icon">🎯</div>
+          <div class="eco-title">Prospecting Actions</div>
+          <p class="eco-desc">Live hurdle scores for every prospect. Know exactly what's blocking progression and what to do next.</p>
+          <ul class="eco-list">
+            <li>Hurdle scoring per prospect</li>
+            <li>Blocker identification</li>
+            <li>Next-best-action surfacing</li>
+          </ul>
+        </div>
+        <div class="eco-card">
+          <div class="eco-icon">🆘</div>
+          <div class="eco-title">Case &amp; Support Actions</div>
+          <p class="eco-desc">Support cases tracked alongside commercial pipeline. No revenue at risk from unresolved issues.</p>
+          <ul class="eco-list">
+            <li>Case age and SLA monitoring</li>
+            <li>Escalation triggers</li>
+            <li>Revenue-impact tagging</li>
+          </ul>
+        </div>
+        <div class="eco-card" style="background:var(--cream-2);">
+          <div class="eco-icon">⚡</div>
+          <div class="eco-title">Play Completion</div>
+          <p class="eco-desc">When one play completes, the next fires automatically. Your pipeline always knows what's next.</p>
+          <ul class="eco-list">
+            <li>Next-play chaining on completion</li>
+            <li>Playbook progress tracking</li>
+            <li>Manager visibility into adoption</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI SETTINGS -->
+  <section class="ai-section">
+    <div class="container">
+      <div class="ai-inner">
+        <div class="ai-text">
+          <span class="section-eyebrow-label">AI Configuration</span>
+          <h2>Intelligence tuned to your team. Not a black box.</h2>
+          <p>GoWarmCRM's AI layer is fully configurable at the org and individual level. Every rep can set their preferred AI provider, adjust how suggestions are written, and control when AI input appears in their workflow.</p>
+          <p>Org defaults cascade to users who haven't set preferences. Power users can override everything. The result: an AI layer that feels native to every person on your team.</p>
+          <ul class="ai-features">
+            <li><span class="check">→</span> Per-user AI provider selection (OpenAI, Anthropic, others)</li>
+            <li><span class="check">→</span> Module-level prompt tuning — deals, contracts, prospecting</li>
+            <li><span class="check">→</span> Org-level defaults with user override</li>
+            <li><span class="check">→</span> Human-in-the-loop approval before actions fire</li>
+            <li><span class="check">→</span> Tone and verbosity controls per user</li>
+          </ul>
+        </div>
+        <div class="ai-visual">
+          <div class="ai-visual-title">AI Settings — User Config</div>
+          <div class="ai-setting-row">
+            <div class="ai-setting-label">Deal suggestion verbosity <span>Medium</span></div>
+            <div class="ai-setting-bar"><div class="ai-setting-fill" style="width:55%;"></div></div>
+          </div>
+          <div class="ai-setting-row">
+            <div class="ai-setting-label">Prospecting prompt depth <span>High</span></div>
+            <div class="ai-setting-bar"><div class="ai-setting-fill" style="width:80%;"></div></div>
+          </div>
+          <div class="ai-setting-row">
+            <div class="ai-setting-label">Contract risk tone <span>Concise</span></div>
+            <div class="ai-setting-bar"><div class="ai-setting-fill" style="width:30%;"></div></div>
+          </div>
+          <div class="ai-toggle-row">AI-assisted next steps on deal actions <div class="ai-toggle"></div></div>
+          <div class="ai-toggle-row">Auto-suggest email draft on stall alert <div class="ai-toggle"></div></div>
+          <div class="ai-toggle-row">Show AI reasoning in action card <div class="ai-toggle off"></div></div>
+          <div class="ai-toggle-row">Override org defaults <div class="ai-toggle off"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>See it working on your pipeline.</h2>
+          <p>Book a free 20-minute demo. We'll walk through your setup and show you what GoWarmCRM would surface in your pipeline today.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, RevOps, and Sales Directors.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul><li><a href="/v2/how-it-works">How It Works</a></li><li><a href="/v2/pricing">Pricing</a></li><li><a href="/problems">Problems We Solve</a></li><li><a href="/diagnostic">Pipeline Diagnostic</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">GoWarm Insights</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Get Started</h4><ul><li><a href="/contact">Book a Free Demo</a></li><li><a href="/v2/pricing">View Pricing</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com · <a href="/" style="color:inherit;">← Back to V1</a></span></div>
+    </div>
+  </footer>
+  <script>function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}</script>
+</body>
+</html>

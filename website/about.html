@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About GoWarmCRM — Built by Someone Tired of CRMs That Just Record Things</title>
-  <meta name="description" content="GoWarmCRM was built by a sales ops practitioner who got tired of CRMs that record what happened but never tell you what to do next. Here's our story." />
+  <title>About GoWarmCRM — Why We Built the Sales Execution Platform CRMs Are Missing</title>
+  <meta name="description" content="GoWarmCRM was built by a sales ops practitioner tired of CRMs that record what happened but never tell you what to do next. Here's our story and why execution intelligence matters." />
   <link rel="stylesheet" href="/website/style-main.css" />
 
   <!-- ═══ SEO/AEO:START ═══ -->
@@ -12,14 +12,14 @@
   <link rel="canonical" href="https://www.gowarmcrm.com/about" />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://www.gowarmcrm.com/about" />
-  <meta property="og:title"       content="About GoWarmCRM — Built by Someone Tired of CRMs That Just Record Things" />
-  <meta property="og:description" content="GoWarmCRM was built by a sales ops practitioner who got tired of CRMs that record what happened but never tell you what to do next." />
+  <meta property="og:title"       content="About GoWarmCRM — Why We Built the Sales Execution Platform CRMs Are Missing" />
+  <meta property="og:description" content="GoWarmCRM was built by a sales ops practitioner tired of CRMs that record what happened but never tell you what to do next." />
   <meta property="og:image"       content="https://www.gowarmcrm.com/og-image.png" />
   <meta property="og:site_name"   content="GoWarmCRM" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:site"        content="@gowarmcrm" />
-  <meta name="twitter:title"       content="About GoWarmCRM — Built by Someone Tired of CRMs That Just Record Things" />
-  <meta name="twitter:description" content="GoWarmCRM was built by a sales ops practitioner who got tired of CRMs that record what happened but never tell you what to do next." />
+  <meta name="twitter:title"       content="About GoWarmCRM — Built for Sales Teams That Need More Than Visibility" />
+  <meta name="twitter:description" content="The story behind GoWarmCRM — why we built the execution layer that CRMs are missing." />
   <meta name="twitter:image"       content="https://www.gowarmcrm.com/og-image.png" />
   <script type="application/ld+json">
   {
@@ -29,30 +29,6 @@
     "description": "GoWarmCRM was built by a sales ops practitioner who got tired of CRMs that record what happened but never tell you what to do next.",
     "url": "https://www.gowarmcrm.com/about",
     "publisher": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://www.gowarmcrm.com" }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What makes GoWarmCRM different from other CRM platforms?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GoWarmCRM is built around the action as the primary unit of the system. Every diagnostic, every playbook step, every handover commitment, and every contract risk signal flows into a single prioritised action queue. Most CRMs record what happened — GoWarmCRM tells you what to do next."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What technology is GoWarmCRM built on?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GoWarmCRM is a production-grade platform built on Node.js and PostgreSQL, deployed on Railway, served via Cloudflare, with a React frontend. The rules engine runs nightly across your entire pipeline."
-        }
-      }
-    ]
   }
   </script>
   <!-- ═══ SEO/AEO:END ═══ -->
@@ -82,6 +58,27 @@
     .section-title { font-family: var(--sans); font-size: 13px; font-weight: 400; color: var(--ink-4); letter-spacing: 1.5px; text-transform: uppercase; }
     @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } .values-grid { grid-template-columns: 1fr; } .page-hero h1 { font-size: 30px; } }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.gowarmcrm.com/"
+      },
+      {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://www.gowarmcrm.com/about"
+      }
+  ]
+  }
+  </script>
 </head>
 <body>
 
@@ -90,13 +87,13 @@
     <div class="container">
       <a href="/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
       <nav>
-        <ul class="nav-links">
+                <ul class="nav-links">
           <li><a href="/">Home</a></li>
-          <li><a href="/problems">Problems Solved</a></li>
-          <li><a href="/diagnostic">Diagnostic</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/diagnostic">Pipeline Diagnostic</a></li>
           <li><a href="/about" class="active">About</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact" class="nav-cta">Get in Touch</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
         </ul>
       </nav>
       <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>

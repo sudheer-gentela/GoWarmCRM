@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — GoWarmCRM Sales Execution Platform</title>
+  <meta name="description" content="GoWarmCRM pricing for B2B sales teams. Transparent plans for growing sales orgs, RevOps teams, and enterprise. No per-seat surprises." />
+  <link rel="stylesheet" href="/v2/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="theme-color" content="#E8630A">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/pricing" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/pricing" />
+  <meta property="og:title" content="Pricing — GoWarmCRM" />
+  <meta property="og:description" content="Transparent pricing for sales execution. Plans built for growing B2B sales teams." />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <style>
+    .page-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); text-align: center; }
+    .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .page-title { font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 16px; }
+    .page-subtitle { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 520px; margin: 0 auto; }
+
+    /* PLANS */
+    .plans-section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+    .plan-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 36px 32px; position: relative; }
+    .plan-card.featured { border: 2px solid var(--rust); }
+    .plan-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--rust); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
+    .plan-name { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 8px; }
+    .plan-price { font-family: var(--serif); font-size: 48px; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+    .plan-price span { font-size: 20px; font-weight: 400; color: var(--ink-3); }
+    .plan-period { font-size: 13px; color: var(--ink-4); margin-bottom: 8px; }
+    .plan-seats { font-size: 13px; color: var(--ink-3); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .plan-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; margin-bottom: 24px; }
+    .plan-cta { display: block; text-align: center; width: 100%; padding: 13px; border-radius: 6px; font-family: var(--sans); font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.15s; text-decoration: none; margin-bottom: 28px; }
+    .plan-cta.primary { background: var(--rust); color: #fff; border: none; }
+    .plan-cta.primary:hover { background: var(--rust-dark); }
+    .plan-cta.outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+    .plan-cta.outline:hover { border-color: var(--ink-3); }
+    .plan-features { list-style: none; }
+    .plan-features li { font-size: 13px; color: var(--ink-2); padding: 9px 0; border-top: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start; }
+    .feat-check { color: var(--rust); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .feat-check.dim { color: var(--ink-4); }
+    .plan-features li.dimmed { color: var(--ink-4); }
+
+    /* FEATURE COMPARE */
+    .compare-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .compare-h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 40px; }
+    .feat-table { width: 100%; border-collapse: collapse; }
+    .feat-table th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-4); padding: 12px 16px; border-bottom: 2px solid var(--border); }
+    .feat-table th:first-child { width: 40%; padding-left: 0; }
+    .feat-table th.col-rust { color: var(--rust); }
+    .feat-table td { padding: 13px 16px; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--ink-2); vertical-align: middle; }
+    .feat-table td:first-child { padding-left: 0; font-weight: 500; color: var(--ink); }
+    .feat-table tr.section-row td { background: var(--cream-2); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding: 10px 16px; }
+    .feat-table tr.section-row td:first-child { padding-left: 0; }
+    .tick { color: var(--rust); font-weight: 700; font-size: 15px; }
+    .dash { color: var(--ink-4); }
+    .limit { color: var(--ink-3); font-size: 12px; }
+
+    /* FAQ */
+    .faq-section { padding: 80px 0; }
+    .faq-h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 40px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 64px; }
+    .faq-item h4 { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+
+    /* CUSTOM NOTE */
+    .custom-note { background: var(--cream-2); border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; margin-top: 40px; display: flex; gap: 32px; align-items: center; }
+    .custom-note-text h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .custom-note-text p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); font-weight: 300; line-height: 1.6; }
+    .custom-note-cta { flex-shrink: 0; }
+
+    @media (max-width: 900px) {
+      .page-title { font-size: 34px; }
+      .plans-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .custom-note { flex-direction: column; gap: 20px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GoWarmCRM",
+    "url": "https://www.gowarmcrm.com",
+    "logo": "https://www.gowarmcrm.com/favicon-512x512.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/v2/"},
+      {"@type":"ListItem","position":2,"name":"Pricing","item":"https://www.gowarmcrm.com/v2/pricing"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="/v2/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/v2/">Home</a></li>
+          <li><a href="/v2/how-it-works">How It Works</a></li>
+          <li><a href="/v2/problems">Problems We Solve</a></li>
+          <li><a href="/v2/pricing" class="active">Pricing</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-eyebrow">Pricing</span>
+      <h1 class="page-title">Simple, transparent pricing.<br>No per-seat surprises.</h1>
+      <p class="page-subtitle">Every plan includes the full action engine. Pick the scale and configuration depth that fits your team.</p>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="plans-section">
+    <div class="container">
+      <div class="plans-grid">
+
+        <div class="plan-card">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price">$599<span>/mo</span></div>
+          <div class="plan-period">billed annually</div>
+          <div class="plan-seats">Up to 10 reps · 1 manager seat</div>
+          <p class="plan-desc">For early-stage sales teams that want nightly pipeline diagnostics and a structured action queue from day one.</p>
+          <a href="/contact" class="plan-cta outline">Book a demo →</a>
+          <ul class="plan-features">
+            <li><span class="feat-check">→</span> Nightly pipeline diagnostics</li>
+            <li><span class="feat-check">→</span> Deal stall detection</li>
+            <li><span class="feat-check">→</span> Prioritised action queue per rep</li>
+            <li><span class="feat-check">→</span> 2 configurable playbooks</li>
+            <li><span class="feat-check">→</span> Handover tracking</li>
+            <li><span class="feat-check">→</span> Email support</li>
+            <li><span class="feat-check dim">—</span><span class="dimmed"> AI-assisted next steps</span></li>
+            <li><span class="feat-check dim">—</span><span class="dimmed"> Contract / CLM actions</span></li>
+            <li><span class="feat-check dim">—</span><span class="dimmed"> RevOps reporting dashboard</span></li>
+          </ul>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="plan-badge">Most popular</div>
+          <div class="plan-name">Growth</div>
+          <div class="plan-price">$1,299<span>/mo</span></div>
+          <div class="plan-period">billed annually</div>
+          <div class="plan-seats">Up to 40 reps · 3 manager seats</div>
+          <p class="plan-desc">For scaling B2B sales orgs that need full execution intelligence — deals, contracts, prospecting, and AI-assisted plays.</p>
+          <a href="/contact" class="plan-cta primary">Book a demo →</a>
+          <ul class="plan-features">
+            <li><span class="feat-check">→</span> Everything in Starter</li>
+            <li><span class="feat-check">→</span> AI-assisted next steps (per-user config)</li>
+            <li><span class="feat-check">→</span> Contract &amp; CLM action queues</li>
+            <li><span class="feat-check">→</span> Prospecting hurdle scores</li>
+            <li><span class="feat-check">→</span> Unlimited playbooks</li>
+            <li><span class="feat-check">→</span> Play completion chaining</li>
+            <li><span class="feat-check">→</span> Forecast health dashboard</li>
+            <li><span class="feat-check">→</span> RevOps reporting view</li>
+            <li><span class="feat-check">→</span> Priority support + onboarding</li>
+          </ul>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-price" style="font-size:36px;margin-top:6px;">Custom</div>
+          <div class="plan-period">&nbsp;</div>
+          <div class="plan-seats">40+ reps · Unlimited manager seats</div>
+          <p class="plan-desc">For large sales orgs that need custom integrations, dedicated onboarding, SLAs, and multi-team configuration.</p>
+          <a href="/contact" class="plan-cta outline">Talk to us →</a>
+          <ul class="plan-features">
+            <li><span class="feat-check">→</span> Everything in Growth</li>
+            <li><span class="feat-check">→</span> Custom CRM integrations</li>
+            <li><span class="feat-check">→</span> Multi-team / multi-region config</li>
+            <li><span class="feat-check">→</span> Custom rules &amp; threshold tuning</li>
+            <li><span class="feat-check">→</span> Dedicated onboarding manager</li>
+            <li><span class="feat-check">→</span> Uptime SLA</li>
+            <li><span class="feat-check">→</span> SSO / SAML</li>
+            <li><span class="feat-check">→</span> Quarterly business reviews</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="custom-note">
+        <div class="custom-note-text">
+          <h3>Not sure which plan fits?</h3>
+          <p>Most teams start with a 20-minute demo where we look at your actual pipeline setup and recommend the right configuration. No sales pressure — just an honest walkthrough.</p>
+        </div>
+        <div class="custom-note-cta">
+          <a href="/contact" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE COMPARE -->
+  <section class="compare-section">
+    <div class="container">
+      <h2 class="compare-h2">Everything that's included</h2>
+      <table class="feat-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th class="col-rust">Growth</th>
+            <th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row"><td colspan="4">Action Engine</td></tr>
+          <tr><td>Nightly pipeline diagnostics</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Deal stall detection</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Prioritised action queue per rep</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Playbooks wired to action engine</td><td><span class="limit">2 playbooks</span></td><td><span class="tick">✓ Unlimited</span></td><td><span class="tick">✓ Unlimited</span></td></tr>
+          <tr><td>Play completion chaining</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Snooze &amp; supersede logic</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+
+          <tr class="section-row"><td colspan="4">Pipeline Coverage</td></tr>
+          <tr><td>Deal &amp; stage actions</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Handover tracking</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Contract &amp; CLM actions</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Prospecting hurdle scores</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Case &amp; support action tracking</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+
+          <tr class="section-row"><td colspan="4">AI Layer</td></tr>
+          <tr><td>AI-assisted next steps</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Per-user AI configuration</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Org-level AI defaults</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Custom AI provider (BYO key)</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td></tr>
+
+          <tr class="section-row"><td colspan="4">Reporting &amp; Management</td></tr>
+          <tr><td>Manager action overview</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Forecast health dashboard</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>RevOps reporting view</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Multi-team configuration</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td></tr>
+
+          <tr class="section-row"><td colspan="4">Support &amp; Onboarding</td></tr>
+          <tr><td>Email support</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Priority support</td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Dedicated onboarding manager</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Uptime SLA</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>SSO / SAML</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="tick">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="faq-h2">Common questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>Does GoWarmCRM replace my CRM?</h4>
+          <p>No — it sits alongside your existing CRM. No rip-and-replace required. GoWarmCRM adds the execution layer that Salesforce, HubSpot, Pipedrive, and Zoho don't provide natively.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How long does onboarding take?</h4>
+          <p>Most Starter and Growth teams are live within 1–2 weeks. We walk you through connecting your CRM data, configuring your diagnostic thresholds, and loading your first playbooks.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can I change plans later?</h4>
+          <p>Yes. You can upgrade at any time — your configuration, playbooks, and action history carry over. Downgrades take effect at the next renewal date.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What CRMs does GoWarmCRM work with?</h4>
+          <p>Native integrations with Salesforce, HubSpot, Pipedrive, and Zoho. Enterprise plans include custom integration support for other CRM platforms.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Is there a free trial?</h4>
+          <p>We offer a free 20-minute demo with a pipeline walkthrough rather than a self-serve trial — because the most useful thing we can show you is what GoWarmCRM would actually surface in your specific pipeline today.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How is AI billing handled?</h4>
+          <p>Growth plans include GoWarmCRM's managed AI layer. Enterprise customers can bring their own API key (OpenAI, Anthropic, others) and pay AI costs directly to their provider.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Start with a free pipeline walkthrough.</h2>
+          <p>20 minutes. We'll show you exactly what GoWarmCRM would surface in your pipeline — no generic demos, no slide decks.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul><li><a href="/v2/how-it-works">How It Works</a></li><li><a href="/v2/pricing">Pricing</a></li><li><a href="/problems">Problems We Solve</a></li><li><a href="/diagnostic">Pipeline Diagnostic</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/blog">GoWarm Insights</a></li><li><a href="/contact">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Get Started</h4><ul><li><a href="/contact">Book a Free Demo</a></li><li><a href="/v2/pricing">View Pricing</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com · <a href="/" style="color:inherit;">← Back to V1</a></span></div>
+    </div>
+  </footer>
+  <script>function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}</script>
+</body>
+</html>

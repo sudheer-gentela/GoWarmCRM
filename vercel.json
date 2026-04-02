@@ -12,14 +12,22 @@
     }
   ],
   "rewrites": [
-    { "source": "/",            "destination": "/website/index.html" },
-    { "source": "/problems",    "destination": "/website/problems.html" },
-    { "source": "/about",       "destination": "/website/about.html" },
-    { "source": "/contact",     "destination": "/website/contact.html" },
-    { "source": "/diagnostic",  "destination": "/website/diagnostic.html" },
+    { "source": "/",                  "destination": "/website/index.html" },
+    { "source": "/problems",          "destination": "/website/problems.html" },
+    { "source": "/about",             "destination": "/website/about.html" },
+    { "source": "/contact",           "destination": "/website/contact.html" },
+    { "source": "/diagnostic",        "destination": "/website/diagnostic.html" },
     { "source": "/platform-overview", "destination": "/website/platform-overview.html" },
-    { "source": "/blog",        "destination": "/blog/index.html" },
-    { "source": "/blog/:path*", "destination": "/blog/:path*.html" }
+    { "source": "/blog",              "destination": "/blog/index.html" },
+    { "source": "/blog/:path*",       "destination": "/blog/:path*.html" },
+
+    { "source": "/v2",                "destination": "/v2/index.html" },
+    { "source": "/v2/",               "destination": "/v2/index.html" },
+    { "source": "/v2/how-it-works",   "destination": "/v2/how-it-works.html" },
+    { "source": "/v2/problems",       "destination": "/v2/problems.html" },
+    { "source": "/v2/pricing",        "destination": "/v2/pricing.html" },
+    { "source": "/v2/diagnostic",     "destination": "/v2/diagnostic.html" },
+    { "source": "/v2/insights",       "destination": "/v2/insights.html" }
   ],
   "headers": [
     {
