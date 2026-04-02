@@ -3,20 +3,37 @@
 //
 // ── What this does ───────────────────────────────────────────────────────────
 //   1. SEO/AEO  — injects/refreshes meta tags, canonical URLs, Open Graph,
-//                 Twitter Card, JSON-LD Article/WebPage/FAQ schema in every file
+//                 Twitter Card, JSON-LD Article/WebPage/FAQ schema in every file.
+//                 Articles get: datePublished, dateModified, author, image,
+//                 keywords, BreadcrumbList. Index gets Organization +
+//                 SoftwareApplication. All pages get BreadcrumbList.
 //   2. Nav      — regenerates the <header class="site-nav"> block in every file
 //                 from site.config.js (brand name, links)
 //   3. Footer   — regenerates <footer class="site-footer"> in every file,
 //                 including the full article list, from site.config.js
-//   4. Sitemap  — writes sitemap.xml
-//   5. Robots   — writes robots.txt
-//   6. API patch— updates SITE_URL fallback in api/submit.js
+//   4. TLDR     — injects TL;DR box into article pages from tldr[] in config
+//   5. Grid     — regenerates article card grid in index.html
+//   6. Sitemap  — writes sitemap.xml (with <lastmod> dates for articles)
+//   7. Robots   — writes robots.txt
+//   8. API patch— updates SITE_URL fallback in api/submit.js
 //
 // ── Adding a new article ─────────────────────────────────────────────────────
-//   1. Create the HTML file  (content only — nav/footer are auto-generated)
-//   2. Add one entry to site.config.js  pages  and  fileMap
-//   3. Run: node build.js
-//   4. git push  →  Vercel deploys
+//   1. Create  your-slug.html  (write content only — nav/footer are generated)
+//   2. In site.config.js, add one entry to `pages` with ALL required fields:
+//        slug, title, description, schema:"Article",
+//        datePublished (YYYY-MM-DD), keywords (comma-separated string),
+//        cardLabel, cardExcerpt, cardMeta, category, roles, tldr[], faqs[]
+//   3. Add one entry to `fileMap` pointing to the .html filename
+//   4. Run: node build.js
+//   5. git push → Vercel deploys
+//
+// ── SEO fields that are automatically generated (no manual work needed) ──────
+//   - BreadcrumbList schema (all pages)
+//   - Organization schema (index.html only)
+//   - SoftwareApplication schema (index.html only)
+//   - Article author (always GoWarmCRM org)
+//   - Article image (always OG image from config)
+//   - <lastmod> in sitemap (uses datePublished from config, or today's date)
 //
 // Safe to run multiple times — all injected blocks carry markers and are
 // replaced cleanly on every run. Nothing is ever duplicated.
@@ -38,6 +55,14 @@ function pageUrl(pageKey) {
   return slug === "index" ? cfg.SITE_URL + "/" : `${cfg.SITE_URL}/${slug}`;
 }
 
+// Canonical URL — articles live under /blog/, non-article pages under root
+function canonicalUrl(pageKey) {
+  const page = cfg.pages[pageKey];
+  if (page.slug === "index") return cfg.SITE_URL + "/";
+  if (page.slug === "contact") return `${cfg.PRODUCT_URL}/contact`;
+  return `${cfg.SITE_URL}/${page.slug}`;
+}
+
 function escRe(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -45,6 +70,14 @@ function escRe(s) {
 function stripBlock(html, startMarker, endMarker) {
   const re = new RegExp(`\\n?${escRe(startMarker)}[\\s\\S]*?${escRe(endMarker)}\\n?`, "g");
   return html.replace(re, "");
+}
+
+function jsonLdTag(obj) {
+  return `  <script type="application/ld+json">\n  ${JSON.stringify(obj, null, 2).replace(/\n/g, "\n  ")}\n  </script>`;
+}
+
+function todayISO() {
+  return new Date().toISOString().split("T")[0];
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -56,12 +89,13 @@ const SEO_END   = "<!-- ═══ SEO/AEO:END ═══ -->";
 
 function buildSeoBlock(pageKey) {
   const page    = cfg.pages[pageKey];
-  const url     = pageUrl(pageKey);
-  const ogImage = cfg.SITE_URL + cfg.OG_IMAGE;
+  const url     = canonicalUrl(pageKey);
+  const ogImage = cfg.PRODUCT_URL + cfg.OG_IMAGE;
   const twTag   = cfg.TWITTER_HANDLE
     ? `  <meta name="twitter:site"        content="${cfg.TWITTER_HANDLE}" />\n`
     : "";
 
+  // ── Core meta ──────────────────────────────────────────────────────────────
   let block = `${SEO_START}
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="${url}" />
@@ -70,40 +104,150 @@ function buildSeoBlock(pageKey) {
   <meta property="og:title"       content="${page.title}" />
   <meta property="og:description" content="${page.description}" />
   <meta property="og:image"       content="${ogImage}" />
-  <meta property="og:site_name"   content="${cfg.BRAND_PUBLICATION}" />
+  <meta property="og:site_name"   content="${cfg.BRAND_COMPANY}" />
   <meta name="twitter:card"        content="summary_large_image" />
 ${twTag}  <meta name="twitter:title"       content="${page.title}" />
   <meta name="twitter:description" content="${page.description}" />
   <meta name="twitter:image"       content="${ogImage}" />`;
 
+  // ── Article schema ─────────────────────────────────────────────────────────
   if (page.schema === "Article") {
-    const s = {
-      "@context": "https://schema.org", "@type": "Article",
-      "headline": page.title, "description": page.description, "url": url,
-      "publisher": { "@type": "Organization", "name": cfg.BRAND_PUBLICATION, "url": cfg.SITE_URL },
-      "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+    const datePublished = page.datePublished || todayISO();
+    const dateModified  = page.dateModified  || datePublished;
+
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": page.title,
+      "description": page.description,
+      "url": url,
+      "datePublished": datePublished,
+      "dateModified": dateModified,
+      "keywords": page.keywords || "",
+      "image": ogImage,
+      "author": {
+        "@type": "Organization",
+        "name": cfg.BRAND_COMPANY,
+        "url": cfg.PRODUCT_URL
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": cfg.BRAND_COMPANY,
+        "url": cfg.PRODUCT_URL,
+        "logo": {
+          "@type": "ImageObject",
+          "url": cfg.BRAND_LOGO_URL || (cfg.PRODUCT_URL + "/favicon-512x512.png")
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": url
+      }
     };
-    block += `\n  <script type="application/ld+json">${JSON.stringify(s)}</script>`;
+    block += `\n${jsonLdTag(articleSchema)}`;
+
+    // BreadcrumbList for articles: Home → GoWarm Insights → Article title
+    const breadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": cfg.PRODUCT_URL + "/" },
+        { "@type": "ListItem", "position": 2, "name": cfg.BRAND_PUBLICATION, "item": cfg.SITE_URL + "/" },
+        { "@type": "ListItem", "position": 3, "name": page.title.replace(/ \| GoWarm Insights$/, ""), "item": url }
+      ]
+    };
+    block += `\n${jsonLdTag(breadcrumb)}`;
   }
 
+  // ── WebPage schema (non-article pages like index, contact) ─────────────────
   if (page.schema === "WebPage") {
-    const s = {
-      "@context": "https://schema.org", "@type": "WebPage",
-      "name": page.title, "description": page.description, "url": url,
-      "publisher": { "@type": "Organization", "name": cfg.BRAND_PUBLICATION, "url": cfg.SITE_URL },
+    const webPageSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": page.title,
+      "description": page.description,
+      "url": url,
+      "publisher": {
+        "@type": "Organization",
+        "name": cfg.BRAND_COMPANY,
+        "url": cfg.PRODUCT_URL
+      }
     };
-    block += `\n  <script type="application/ld+json">${JSON.stringify(s)}</script>`;
+    block += `\n${jsonLdTag(webPageSchema)}`;
+
+    // BreadcrumbList for index (blog homepage)
+    if (page.slug === "index") {
+      const breadcrumb = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": cfg.PRODUCT_URL + "/" },
+          { "@type": "ListItem", "position": 2, "name": cfg.BRAND_PUBLICATION, "item": cfg.SITE_URL + "/" }
+        ]
+      };
+      block += `\n${jsonLdTag(breadcrumb)}`;
+
+      // Organization schema — only on the blog index (acts as a hub page)
+      const orgSchema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": cfg.BRAND_COMPANY,
+        "url": cfg.PRODUCT_URL,
+        "logo": cfg.BRAND_LOGO_URL || (cfg.PRODUCT_URL + "/favicon-512x512.png"),
+        "description": "GoWarmCRM is the sales execution platform for B2B sales teams. It diagnoses your pipeline nightly and surfaces a prioritised action queue — telling your team exactly what to do next.",
+        "sameAs": cfg.ORG_SOCIAL || [
+          "https://twitter.com/gowarmcrm",
+          "https://www.linkedin.com/company/gowarmcrm"
+        ]
+      };
+      block += `\n${jsonLdTag(orgSchema)}`;
+
+      // SoftwareApplication schema — search engines use this for SaaS products
+      const softwareSchema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": cfg.BRAND_COMPANY,
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Sales Execution Platform",
+        "operatingSystem": "Web",
+        "url": cfg.PRODUCT_URL,
+        "description": "GoWarmCRM runs nightly diagnostic rules across deals, contracts, cases, handovers, and prospects — then surfaces a prioritised action queue for every rep.",
+        "offers": {
+          "@type": "Offer",
+          "url": cfg.PRODUCT_URL + "/contact",
+          "description": "Book a free demo to see pricing options"
+        },
+        "featureList": [
+          "Nightly pipeline diagnostics",
+          "Prioritised action queue per rep",
+          "Playbook triggers on stage change",
+          "Deal stall detection",
+          "Handover commitment tracking",
+          "Contract and CLM action queues",
+          "Prospecting hurdle scores",
+          "Per-user AI configuration"
+        ],
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "VP Sales, RevOps leaders, Sales Directors, B2B sales teams"
+        }
+      };
+      block += `\n${jsonLdTag(softwareSchema)}`;
+    }
   }
 
+  // ── FAQ schema (works for both Article and WebPage pages) ──────────────────
   if (page.faqs && page.faqs.length) {
-    const s = {
-      "@context": "https://schema.org", "@type": "FAQPage",
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
       "mainEntity": page.faqs.map(f => ({
-        "@type": "Question", "name": f.q,
-        "acceptedAnswer": { "@type": "Answer", "text": f.a },
-      })),
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
     };
-    block += `\n  <script type="application/ld+json">${JSON.stringify(s)}</script>`;
+    block += `\n${jsonLdTag(faqSchema)}`;
   }
 
   block += `\n  ${SEO_END}`;
@@ -148,8 +292,6 @@ const FOOTER_START = "<!-- ═══ FOOTER:START ═══ -->";
 const FOOTER_END   = "<!-- ═══ FOOTER:END ═══ -->";
 
 function buildFooter() {
-  // Latest 6 articles: pages with a navLabel, in fileMap order (oldest first),
-  // excluding non-article pages (index, contact, diagnostic). Take last 6.
   const NON_ARTICLE = new Set(["index", "contact", "crm-diagnostic"]);
   const latestSix = Object.entries(cfg.fileMap)
     .filter(([pageKey]) => !NON_ARTICLE.has(pageKey) && cfg.pages[pageKey] && cfg.pages[pageKey].navLabel)
@@ -206,7 +348,6 @@ ${latestSix}
   ${FOOTER_END}`;
 }
 
-
 // ─────────────────────────────────────────────────────────────────────────────
 // 4. TLDR block — injected after article-deck, before article body
 // ─────────────────────────────────────────────────────────────────────────────
@@ -235,7 +376,6 @@ ${items}
         ${TLDR_END}`;
 }
 
-
 // ─────────────────────────────────────────────────────────────────────────────
 // 5. Articles grid — auto-generated in index.html from cfg
 // ─────────────────────────────────────────────────────────────────────────────
@@ -256,7 +396,6 @@ function buildArticlesGrid() {
     const p = cfg.pages[pageKey];
     const cat   = p.category || "crm";
     const roles = p.roles    || "vps";
-    // Tag colour class based on category
     const tagClass = { crm:"gc-crm", dec:"gc-dec", ops:"gc-ops", fin:"gc-fin" }[cat] || "gc-crm";
     return `
         <a href="/blog/${filename.replace('.html', '')}" class="gc-card" data-topic="${cat}" data-roles="${roles}">
@@ -371,44 +510,32 @@ function processFile(filename, pageKey) {
   html = html.replace("</head>", `\n  ${buildSeoBlock(pageKey)}\n</head>`);
 
   // ── Nav ───────────────────────────────────────────────────────────────────
-  // Strip marker-wrapped block AND any bare hardcoded block (handles duplicates)
   html = stripBlock(html, NAV_START, NAV_END);
   html = html.replace(/<header[^>]*class="site-nav"[^>]*>[\s\S]*?<\/header>/g, "");
-  // Inject fresh nav after <body>
   html = html.replace("<body>", `<body>\n  ${buildNav()}`);
 
   // ── Footer ────────────────────────────────────────────────────────────────
-  // Strip marker-wrapped block AND any bare hardcoded block (handles duplicates)
   html = stripBlock(html, FOOTER_START, FOOTER_END);
   html = html.replace(/<footer[^>]*class="site-footer"[^>]*>[\s\S]*?<\/footer>/g, "");
-  // Inject fresh footer before </body>
   html = html.replace("</body>", `  ${buildFooter()}\n</body>`);
 
   // ── Articles grid (index.html only) ──────────────────────────────────────
   html = stripBlock(html, GRID_START, GRID_END);
-  if (html.includes(GRID_START.replace(" ═══ -->"," ═══ -->")) || filename === "index.html") {
+  if (filename === "index.html") {
     const gridHtml = buildArticlesGrid();
-    if (html.includes(GRID_START)) {
-      html = html.replace(GRID_START, "").replace(GRID_END, "");
+    if (html.includes("<!-- CTA BAND -->")) {
+      html = html.replace("<!-- CTA BAND -->", gridHtml + "\n\n  <!-- CTA BAND -->");
     }
-    // Inject before the CTA band section
-    html = html.replace(
-      '<!-- CTA BAND -->',
-      gridHtml + '\n\n  <!-- CTA BAND -->'
-    );
   }
 
   // ── TLDR ─────────────────────────────────────────────────────────────────
   const tldrHtml = buildTldr(pageKey);
   html = stripBlock(html, TLDR_START, TLDR_END);
-  if (tldrHtml) {
-    // Inject after the article-deck paragraph, before the article body div
-    if (html.includes('<div class="article-body">')) {
-      html = html.replace(
-        '<div class="article-body">',
-        `${tldrHtml}\n        <div class="article-body">`
-      );
-    }
+  if (tldrHtml && html.includes('<div class="article-body">')) {
+    html = html.replace(
+      '<div class="article-body">',
+      `${tldrHtml}\n        <div class="article-body">`
+    );
   }
 
   // ── SITE_URL placeholder ──────────────────────────────────────────────────
@@ -419,14 +546,24 @@ function processFile(filename, pageKey) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 5. Sitemap + robots + api patch
+// 7. Sitemap + robots + api patch
 // ─────────────────────────────────────────────────────────────────────────────
 
 function buildSitemap() {
+  const today = todayISO();
   const entries = Object.keys(cfg.pages).map(k => {
-    const url = pageUrl(k);
-    const pri = k === "index" ? "1.0" : "0.8";
-    return `  <url>\n    <loc>${url}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>${pri}</priority>\n  </url>`;
+    const url     = canonicalUrl(k);
+    const page    = cfg.pages[k];
+    const pri     = k === "index" ? "1.0" : "0.8";
+    const lastmod = page.datePublished || today;
+    return [
+      "  <url>",
+      `    <loc>${url}</loc>`,
+      `    <lastmod>${lastmod}</lastmod>`,
+      `    <changefreq>monthly</changefreq>`,
+      `    <priority>${pri}</priority>`,
+      "  </url>"
+    ].join("\n");
   });
   fs.writeFileSync(
     path.join(ROOT, "sitemap.xml"),
@@ -474,8 +611,11 @@ function run() {
 
   console.log(`\n✓ Done — ${ok} files updated.`);
   console.log(`\nTo add a new article next time:`);
-  console.log(`  1. Create  your-slug.html  (write content — no nav/footer needed)`);
+  console.log(`  1. Create  your-slug.html  (write content only — no nav/footer needed)`);
   console.log(`  2. Add one entry to site.config.js  →  pages  +  fileMap`);
+  console.log(`     Required fields: slug, title, description, schema, datePublished,`);
+  console.log(`       keywords, cardLabel, cardExcerpt, cardMeta, category, roles,`);
+  console.log(`       tldr[], faqs[]`);
   console.log(`  3. node build.js`);
   console.log(`  4. git push  →  Vercel deploys automatically\n`);
 }

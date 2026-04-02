@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Exclude non-content pages from indexing
+Disallow: /v2/
+Disallow: /api/
+
+Sitemap: https://www.gowarmcrm.com/sitemap.xml
