@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Rep Action Queue: How to Prioritise Daily Sales Activity | GoWarmCRM</title>
+  <meta name="description" content="A sales rep action queue replaces the daily prioritisation problem with a system-generated ranked list of what matters most. Here's what one looks like, how it works, and why it produces better outcomes than rep-driven prioritisation." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="theme-color" content="#E8630A">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/sales-rep-action-queue" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/sales-rep-action-queue" />
+  <meta property="og:title" content="Sales Rep Action Queue — How Reps Should Prioritise Their Day | GoWarmCRM" />
+  <meta property="og:description" content="Every morning, reps decide what to work on. Most decide based on memory and inbox noise. A system-generated action queue changes that — here's how it works." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="Sales Rep Action Queue — How Reps Should Prioritise Their Day | GoWarmCRM" />
+  <meta name="twitter:description" content="Every morning, reps decide what to work on. Most decide based on memory and inbox noise. A system-generated action queue changes that — here's how it works." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Sales Rep Action Queue: How to Prioritise Daily Sales Activity","description":"A sales rep action queue replaces the daily prioritisation problem with a system-generated ranked list of what matters most. Here's what one looks like, how it works, and why it produces better outcomes than rep-driven prioritisation.","url":"https://www.gowarmcrm.com/sales-rep-action-queue","datePublished":"2026-04-01","dateModified":"2026-04-01","keywords":"sales rep action queue, daily sales prioritisation, sales task prioritisation, sales rep workflow, sales productivity","image":"https://www.gowarmcrm.com/og-image.png","author":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com"},"publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com","logo":{"@type":"ImageObject","url":"https://www.gowarmcrm.com/favicon-512x512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gowarmcrm.com/sales-rep-action-queue"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"Sales Rep Action Queue","item":"https://www.gowarmcrm.com/sales-rep-action-queue"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a sales rep action queue?","acceptedAnswer":{"@type":"Answer","text":"A sales rep action queue is a system-generated, prioritised list of the specific actions a rep should take today — ranked by urgency, deal value, and time-at-risk. Unlike a task list that reps create themselves, an action queue is produced automatically from nightly pipeline diagnostics and includes alerts for stalled deals, playbook steps triggered by stage changes, handover commitments approaching deadlines, and contract renewal windows."}},{"@type":"Question","name":"Why is rep-driven prioritisation a problem?","acceptedAnswer":{"@type":"Answer","text":"When reps decide their own priorities, they default to recency bias (the last email they read) and optimism bias (the deals they feel good about). The deals that most need attention — the ones going quiet, the ones with missed playbook steps, the ones with approaching deadlines — are precisely the ones that don't surface in the rep's natural attention flow. A system-generated queue removes this bias by ranking based on objective signals."}},{"@type":"Question","name":"What should be in a daily sales action queue?","acceptedAnswer":{"@type":"Answer","text":"A well-structured daily action queue includes: stall alerts for deals with 10+ days of email silence; playbook steps triggered by recent stage changes; handover commitments approaching their due dates; contract renewal windows within 90 days; and prospecting actions for contacts that have dropped below engagement thresholds. Each item should include the deal value, trigger reason, days since last activity, and an AI-drafted suggested action."}},{"@type":"Question","name":"How does an action queue differ from a CRM task list?","acceptedAnswer":{"@type":"Answer","text":"CRM task lists are created manually by reps or managers. They go stale the moment they're created. An action queue is generated automatically from nightly pipeline diagnostics — updated every night based on current signals, automatically resolved when the underlying condition clears, and re-surfaced with greater urgency if conditions worsen. The rep doesn't create it. They work through it."}},{"@type":"Question","name":"What is GoWarmCRM's action queue?","acceptedAnswer":{"@type":"Answer","text":"GoWarmCRM's action queue is a live, prioritised list for every rep — generated nightly from diagnostic rules running across deals, contracts, handovers, and prospects. Every item includes deal value, trigger reason, last activity context, and an AI-drafted suggested next action waiting for approval. Managers see a team-level view of open queue items, completed actions, and at-risk deals without asking reps for updates."}}]}</script>
+  <style>
+    .page-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+    .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .page-hero h1 { font-family: var(--serif); font-size: 44px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; max-width: 800px; }
+    .page-hero p { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 640px; }
+    .pg-h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 14px; }
+    .pg-body { font-family: var(--body-serif); font-size: 16px; color: var(--ink-2); line-height: 1.8; font-weight: 300; margin-bottom: 16px; max-width: 720px; }
+    .pg-body strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 15px; }
+    .pg-section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .pg-section.alt { background: var(--cream-2); }
+    .card-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+    .card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+    .info-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px; }
+    .info-card.accent { border-top: 3px solid var(--rust); }
+    .info-card.dark { background: var(--ink); border-color: var(--ink); }
+    .card-icon { font-size: 22px; margin-bottom: 12px; }
+    .card-num { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--rust); margin-bottom: 10px; }
+    .card-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .info-card.dark .card-title { color: #fff; }
+    .card-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.6; font-weight: 300; }
+    .info-card.dark .card-desc { color: rgba(255,255,255,0.6); }
+    .card-list { list-style: none; margin-top: 12px; }
+    .card-list li { font-size: 13px; color: var(--ink-2); padding: 5px 0; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .card-list li::before { content: "→"; color: var(--rust); font-weight: 600; flex-shrink: 0; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+    .compare-table th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-4); padding: 0 20px 14px; border-bottom: 1px solid var(--border); }
+    .compare-table th:first-child { width: 30%; padding-left: 0; }
+    .compare-table th.col-warm { color: var(--rust); }
+    .compare-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; }
+    .compare-table td:first-child { padding-left: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-4); }
+    .compare-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .def-box { background: var(--ink); border-radius: 10px; padding: 32px 36px; margin-bottom: 36px; }
+    .def-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+    .def-text { font-family: var(--serif); font-size: 20px; font-weight: 400; color: #fff; line-height: 1.55; }
+    .pull-stat { background: var(--rust); border-radius: 8px; padding: 28px 32px; margin: 32px 0; }
+    .pull-num { font-family: var(--serif); font-size: 52px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
+    .pull-label { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; font-family: var(--body-serif); font-weight: 300; }
+    .pull-source { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 8px; font-style: italic; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .highlight-box { background: var(--cream-2); border: 1px solid var(--border); border-left: 4px solid var(--rust); border-radius: 0 8px 8px 0; padding: 24px 28px; margin-top: 24px; }
+    .highlight-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+    .highlight-text { font-family: var(--body-serif); font-size: 15px; color: var(--ink-2); line-height: 1.65; font-weight: 300; font-style: italic; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px; margin-top: 32px; }
+    .faq-item h4 { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    
+    .queue-demo { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); max-width: 600px; }
+    .q-bar { background: var(--ink); padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+    .q-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .q-bar-title { font-size: 12px; color: rgba(255,255,255,0.45); margin: 0 auto; }
+    .q-header { padding: 14px 20px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .q-header-title { font-family: var(--serif); font-size: 14px; font-weight: 600; color: var(--ink); }
+    .q-badge { font-size: 10px; font-weight: 600; background: var(--rust); color: #fff; padding: 2px 8px; border-radius: 10px; }
+    .q-item { padding: 14px 20px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+    .q-dot-ind { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+    .q-dot-ind.urgent { background: var(--rust); }
+    .q-dot-ind.medium { background: #F5A623; }
+    .q-dot-ind.low { background: var(--ink-4); }
+    .q-item-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .q-item-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .q-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; }
+    .q-tag.stalled { background: var(--rust-light); color: var(--rust); }
+    .q-tag.playbook { background: #EFF6FF; color: #2563EB; }
+    .q-tag.handover { background: #F0FDF4; color: #16A34A; }
+    .q-tag.contract { background: #FEF9C3; color: #A16207; }
+    .q-detail { font-size: 11px; color: var(--ink-4); }
+    .q-ai-row { padding: 10px 20px; background: var(--cream-2); border-top: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .q-ai-lbl { font-size: 10px; font-weight: 600; color: var(--rust); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+    .q-ai-text { font-size: 12px; color: var(--ink-3); flex: 1; font-style: italic; }
+    .q-ai-btn { font-size: 11px; font-weight: 600; color: var(--ink); background: #fff; border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+    @media (max-width: 900px) {
+      .page-hero h1 { font-size: 32px; }
+      .card-grid-2, .card-grid-3, .two-col { grid-template-columns: 1fr; gap: 20px; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 26px; }
+      .pg-h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav><ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/problems">Problems We Solve</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/blog">GoWarm Insights</a></li>
+        <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+      </ul></nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-eyebrow">Sales Rep Productivity</span>
+      <h1>The Sales Rep Action Queue: How to Prioritise Daily Sales Activity Without Relying on Rep Judgment</h1>
+      <p>Every morning, reps decide what to work on first. Most decide based on the last email they read and the deals they feel good about. A system-generated action queue replaces that decision with ranked, objective priorities — before the rep opens their inbox.</p>
+    </div>
+  </section>
+
+  <section class="pg-section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h2 class="pg-h2">The daily prioritisation problem</h2>
+          <p class="pg-body">The average B2B AE manages 30–50 active opportunities simultaneously. Each morning they face a prioritisation decision without systematic guidance: which deals need attention today? Which follow-ups are overdue? Which playbook steps were triggered by last week's stage movements?</p>
+          <p class="pg-body">Without a system to answer these questions, reps default to two cognitive shortcuts. <strong>Recency bias</strong> — the deals that emailed most recently feel most active. <strong>Optimism bias</strong> — the deals the rep feels good about get attention before the ones going quiet.</p>
+          <p class="pg-body">The result is systematic neglect of the deals that most need action — the stalling ones, the ones with missed playbook steps, the ones with approaching deadlines. These are precisely the deals that generate the most revenue recovery when acted on promptly.</p>
+          <div class="highlight-box">
+            <div class="highlight-label">The fix</div>
+            <p class="highlight-text">Replace rep-driven prioritisation with a system-generated action queue — built from nightly diagnostic rules, ranked by urgency and deal value, waiting when the rep opens their laptop.</p>
+          </div>
+        </div>
+        <div>
+          <div class="queue-demo">
+            <div class="q-bar">
+              <div class="q-dot" style="background:#FF5F57;"></div>
+              <div class="q-dot" style="background:#FFBD2E;"></div>
+              <div class="q-dot" style="background:#28CA41;"></div>
+              <div class="q-bar-title">GoWarmCRM — My Actions</div>
+            </div>
+            <div class="q-header">
+              <div class="q-header-title">Today's Action Queue</div>
+              <div class="q-badge">7 actions</div>
+            </div>
+            <div class="q-item">
+              <div class="q-dot-ind urgent"></div>
+              <div style="flex:1;">
+                <div class="q-item-title">Acme Corp — Stage stall: 18 days in Proposal</div>
+                <div class="q-item-meta"><span class="q-tag stalled">Stalled deal</span><span class="q-detail">$120K · Last email contact 18 days ago</span></div>
+              </div>
+            </div>
+            <div class="q-ai-row">
+              <span class="q-ai-lbl">AI suggests</span>
+              <span class="q-ai-text">"Acknowledge the silence directly — offer to deprioritise if timing has shifted..."</span>
+              <span class="q-ai-btn">Approve →</span>
+            </div>
+            <div class="q-item">
+              <div class="q-dot-ind urgent"></div>
+              <div style="flex:1;">
+                <div class="q-item-title">Meridian SaaS — Playbook: Send security questionnaire</div>
+                <div class="q-item-meta"><span class="q-tag playbook">Playbook step</span><span class="q-detail">$85K · Triggered on stage move to Procurement</span></div>
+              </div>
+            </div>
+            <div class="q-item">
+              <div class="q-dot-ind medium"></div>
+              <div style="flex:1;">
+                <div class="q-item-title">GlobalTech — CS handover: integration timeline committed</div>
+                <div class="q-item-meta"><span class="q-tag handover">Handover</span><span class="q-detail">Due in 3 days</span></div>
+              </div>
+            </div>
+            <div class="q-item">
+              <div class="q-dot-ind medium"></div>
+              <div style="flex:1;">
+                <div class="q-item-title">Northstar Ltd — Contract approaching renewal window</div>
+                <div class="q-item-meta"><span class="q-tag contract">Contract risk</span><span class="q-detail">$210K ARR · 47 days to renewal</span></div>
+              </div>
+            </div>
+            <div class="q-item" style="opacity:0.4;">
+              <div class="q-dot-ind low"></div>
+              <div style="flex:1;"><div class="q-item-title">3 more actions</div><div class="q-item-meta"><span class="q-detail">2 prospecting · 1 follow-up gap</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-section alt">
+    <div class="container">
+      <h2 class="pg-h2">What belongs in an effective action queue</h2>
+      <div class="card-grid-2">
+        <div class="info-card accent"><div class="card-icon">🔇</div><div class="card-title">Stall alerts</div><p class="card-desc">Deals where email silence has exceeded your configured threshold — with the last two-way contact date, deal value, and how long since any meaningful engagement. Ranked by days-at-risk multiplied by deal value.</p></div>
+        <div class="info-card accent"><div class="card-icon">📋</div><div class="card-title">Playbook steps</div><p class="card-desc">Actions triggered by recent stage changes — the specific steps your playbook requires at the new stage, surfaced automatically when the stage move occurred. Not buried in a document.</p></div>
+        <div class="info-card accent"><div class="card-icon">🤝</div><div class="card-title">Handover commitments</div><p class="card-desc">Promises made to customers at close — with deadlines approaching. Surfaced in the rep's queue with enough lead time to act, not on the day they're overdue.</p></div>
+        <div class="info-card accent"><div class="card-icon">📄</div><div class="card-title">Contract alerts</div><p class="card-desc">Renewal windows approaching, CLM stage changes that require action, and at-risk contracts identified by nightly scoring rules. Proactive, not reactive.</p></div>
+      </div>
+      <div class="highlight-box" style="margin-top:32px;">
+        <div class="highlight-label">Critical design principle</div>
+        <p class="highlight-text">An action queue is only as good as the signals it reads. A queue built solely on CRM data inherits all of CRM's incompleteness. The most reliable queues read email contact dates, calendar activity, and meeting patterns — signals that exist whether or not a rep updated a field.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-section">
+    <div class="container">
+      <h2 class="pg-h2">Common questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item"><h4>What is a sales rep action queue?</h4><p>A system-generated, prioritised list of the specific actions a rep should take today — ranked by urgency, deal value, and time-at-risk. Produced automatically from nightly pipeline diagnostics. Not created by the rep — worked through by the rep.</p></div>
+        <div class="faq-item"><h4>How is this different from a CRM task list?</h4><p>CRM task lists are created manually and go stale immediately. An action queue is generated nightly from diagnostic rules — updated automatically, resolved when conditions clear, re-surfaced with greater urgency if conditions worsen. The rep doesn't build it. They act on it.</p></div>
+        <div class="faq-item"><h4>What signals should feed an action queue?</h4><p>Email two-way contact date and response latency, calendar activity and scheduled meetings, CRM stage changes and deal value, playbook step triggers, handover commitment deadlines, and contract renewal windows. The most reliable queues read email and calendar signals directly — not only CRM fields.</p></div>
+        <div class="faq-item"><h4>How does GoWarmCRM build the action queue?</h4><p>GoWarmCRM runs nightly diagnostic rules across deals, contracts, handovers, and prospects — reading email activity, calendar events, and CRM fields. Items are ranked by urgency and deal value. AI drafts the specific next action for each item. The rep opens their queue, reviews the suggestions, and approves or edits before anything sends.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div><h2>Ready to close the execution gap?</h2><p>Book a free 20-minute demo. We'll walk through your actual pipeline and show you what GoWarmCRM surfaces today.</p></div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, RevOps, and Sales Directors.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul>
+          <li><a href="/sales-execution-platform">What is a Sales Execution Platform?</a></li>
+          <li><a href="/why-deals-go-dark">Why Deals Go Dark</a></li>
+          <li><a href="/pipeline-execution">Pipeline Execution</a></li>
+          <li><a href="/pipeline-data-accuracy">Pipeline Data Accuracy</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/diagnostic">Pipeline Diagnostic</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com</span></div>
+    </div>
+  </footer>
+  <script>function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}</script>
+</body>
+</html>

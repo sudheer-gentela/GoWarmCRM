@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Forecast Accuracy: Why Forecasts Are Wrong and How to Fix Them | GoWarmCRM</title>
+  <meta name="description" content="Only 20% of sales organisations forecast within 5% of actual results. Here's why sales forecasts are structurally unreliable — and how activity-signal forecasting fixes the root cause." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="theme-color" content="#E8630A">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/sales-forecast-accuracy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/sales-forecast-accuracy" />
+  <meta property="og:title" content="Sales Forecast Accuracy — Why Forecasts Are Wrong | GoWarmCRM" />
+  <meta property="og:description" content="43% of sales orgs miss forecast by 10% or more. The fix isn't better spreadsheets — it's replacing rep-reported confidence with activity signals from emails, calendars, and meetings." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="Sales Forecast Accuracy — Why Forecasts Are Wrong | GoWarmCRM" />
+  <meta name="twitter:description" content="43% of sales orgs miss forecast by 10% or more. The fix isn't better spreadsheets — it's replacing rep-reported confidence with activity signals from emails, calendars, and meetings." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Sales Forecast Accuracy: Why Forecasts Are Wrong and How to Fix Them","description":"Only 20% of sales organisations forecast within 5% of actual results. Here's why sales forecasts are structurally unreliable and how activity-signal forecasting fixes the root cause.","url":"https://www.gowarmcrm.com/sales-forecast-accuracy","datePublished":"2026-04-01","dateModified":"2026-04-01","keywords":"sales forecast accuracy, improve forecast accuracy, why forecasts are wrong, sales forecasting, pipeline accuracy","image":"https://www.gowarmcrm.com/og-image.png","author":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com"},"publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com","logo":{"@type":"ImageObject","url":"https://www.gowarmcrm.com/favicon-512x512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gowarmcrm.com/sales-forecast-accuracy"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"Sales Forecast Accuracy","item":"https://www.gowarmcrm.com/sales-forecast-accuracy"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why are sales forecasts inaccurate?","acceptedAnswer":{"@type":"Answer","text":"Sales forecasts are inaccurate for three structural reasons: they are built on rep-reported confidence levels rather than objective activity signals; CRM stage fields are updated based on rep optimism rather than buyer behaviour; and the process of assembling a forecast (asking reps for updates, adjusting for known optimism bias) introduces further error at every stage. The fix is not better processes — it's replacing subjective inputs with objective behavioural signals."}},{"@type":"Question","name":"What is the average sales forecast accuracy?","acceptedAnswer":{"@type":"Answer","text":"Research consistently shows that only 20% of sales organisations achieve forecasts within 5% of actual results. 43% miss their forecast by 10% or more. These are not outlier organisations — they are representative of typical B2B sales teams using standard CRM-based forecasting approaches."}},{"@type":"Question","name":"How do you improve sales forecast accuracy?","acceptedAnswer":{"@type":"Answer","text":"The most effective improvement is replacing rep-reported confidence with activity-signal scoring. This means: reading last two-way email contact rather than relying on logged calls; measuring meeting frequency and stakeholder engagement from calendar data; scoring deals against multi-dimensional diagnostic thresholds nightly; and surfacing deals where stage and activity signals are out of sync. When forecast confidence is built on behavioural signals rather than rep sentiment, accuracy improves structurally."}},{"@type":"Question","name":"What is activity-signal forecasting?","acceptedAnswer":{"@type":"Answer","text":"Activity-signal forecasting builds forecast confidence from objective deal behaviour — email response patterns, meeting frequency, stakeholder engagement, and calendar activity — rather than from rep-entered stage fields or confidence percentages. A deal at stage 4 with no two-way email contact in 14 days and no follow-up meeting scheduled is scored differently from one at the same stage with daily email exchanges and a stakeholder meeting booked for next week."}},{"@type":"Question","name":"How does GoWarmCRM improve forecast accuracy?","acceptedAnswer":{"@type":"Answer","text":"GoWarmCRM reads email activity, calendar events, and meeting patterns alongside CRM fields. Deals where stage and activity signals are out of sync are flagged automatically — a deal showing 70% confidence with 18 days of email silence appears in the rep's queue as a stall alert, not in the forecast as a closed-near deal. Managers see which deals have the signal support to justify their stage and which don't."}}]}</script>
+  <style>
+    .page-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+    .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .page-hero h1 { font-family: var(--serif); font-size: 44px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; max-width: 800px; }
+    .page-hero p { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 640px; }
+    .pg-h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 14px; }
+    .pg-body { font-family: var(--body-serif); font-size: 16px; color: var(--ink-2); line-height: 1.8; font-weight: 300; margin-bottom: 16px; max-width: 720px; }
+    .pg-body strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 15px; }
+    .pg-section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .pg-section.alt { background: var(--cream-2); }
+    .card-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+    .card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+    .info-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px; }
+    .info-card.accent { border-top: 3px solid var(--rust); }
+    .info-card.dark { background: var(--ink); border-color: var(--ink); }
+    .card-icon { font-size: 22px; margin-bottom: 12px; }
+    .card-num { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--rust); margin-bottom: 10px; }
+    .card-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .info-card.dark .card-title { color: #fff; }
+    .card-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.6; font-weight: 300; }
+    .info-card.dark .card-desc { color: rgba(255,255,255,0.6); }
+    .card-list { list-style: none; margin-top: 12px; }
+    .card-list li { font-size: 13px; color: var(--ink-2); padding: 5px 0; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .card-list li::before { content: "→"; color: var(--rust); font-weight: 600; flex-shrink: 0; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+    .compare-table th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-4); padding: 0 20px 14px; border-bottom: 1px solid var(--border); }
+    .compare-table th:first-child { width: 30%; padding-left: 0; }
+    .compare-table th.col-warm { color: var(--rust); }
+    .compare-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; }
+    .compare-table td:first-child { padding-left: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-4); }
+    .compare-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .def-box { background: var(--ink); border-radius: 10px; padding: 32px 36px; margin-bottom: 36px; }
+    .def-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+    .def-text { font-family: var(--serif); font-size: 20px; font-weight: 400; color: #fff; line-height: 1.55; }
+    .pull-stat { background: var(--rust); border-radius: 8px; padding: 28px 32px; margin: 32px 0; }
+    .pull-num { font-family: var(--serif); font-size: 52px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
+    .pull-label { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; font-family: var(--body-serif); font-weight: 300; }
+    .pull-source { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 8px; font-style: italic; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .highlight-box { background: var(--cream-2); border: 1px solid var(--border); border-left: 4px solid var(--rust); border-radius: 0 8px 8px 0; padding: 24px 28px; margin-top: 24px; }
+    .highlight-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+    .highlight-text { font-family: var(--body-serif); font-size: 15px; color: var(--ink-2); line-height: 1.65; font-weight: 300; font-style: italic; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px; margin-top: 32px; }
+    .faq-item h4 { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    
+    .forecast-gap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+    .gap-stat { padding: 28px; border-radius: 8px; text-align: center; }
+    .gap-stat.bad { background: #FFF4ED; border: 1px solid var(--rust); }
+    .gap-stat.good { background: var(--cream-2); border: 1px solid var(--border); }
+    .gap-num { font-family: var(--serif); font-size: 48px; font-weight: 700; line-height: 1; margin-bottom: 8px; }
+    .gap-stat.bad .gap-num { color: var(--rust); }
+    .gap-stat.good .gap-num { color: var(--ink); }
+    .gap-label { font-size: 14px; color: var(--ink-3); line-height: 1.5; }
+    @media (max-width: 900px) {
+      .forecast-gap { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .page-hero h1 { font-size: 32px; }
+      .card-grid-2, .card-grid-3, .two-col { grid-template-columns: 1fr; gap: 20px; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 26px; }
+      .pg-h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav><ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/problems">Problems We Solve</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/blog">GoWarm Insights</a></li>
+        <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+      </ul></nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-eyebrow">Forecast Accuracy</span>
+      <h1>Sales Forecast Accuracy: Why Forecasts Are Wrong — and How to Fix Them</h1>
+      <p>Only 20% of sales organisations forecast within 5% of actual results. The problem isn't the people or the spreadsheets. It's that forecasts are built on the wrong data source — rep-reported confidence instead of behavioural signals.</p>
+    </div>
+  </section>
+
+  <section class="pg-section">
+    <div class="container">
+      <div class="forecast-gap">
+        <div class="gap-stat bad">
+          <div class="gap-num">43%</div>
+          <div class="gap-label">of sales organisations miss their forecast by 10% or more</div>
+        </div>
+        <div class="gap-stat good">
+          <div class="gap-num">20%</div>
+          <div class="gap-label">achieve forecasts within 5% of actual results — the standard every team aims for</div>
+        </div>
+      </div>
+      <p class="pg-body" style="margin-top:32px;"><em>Source: Xactly Sales Forecasting Benchmark Report</em></p>
+      <p class="pg-body">These numbers have been consistent for over a decade. Sales leaders get better at CRM configuration, run more frequent pipeline reviews, hire RevOps analysts to build better models — and still miss by 15–25% every quarter. The reason is structural, not executional.</p>
+    </div>
+  </section>
+
+  <section class="pg-section alt">
+    <div class="container">
+      <h2 class="pg-h2">Why forecasts are structurally unreliable</h2>
+      <p class="pg-body">The standard B2B sales forecast is built on a chain of subjective inputs, each introducing its own bias. By the time the forecast reaches the board, it reflects a consensus of human optimism rather than an objective reading of pipeline reality.</p>
+      <div class="card-grid-3">
+        <div class="info-card accent">
+          <div class="card-num">01</div>
+          <div class="card-title">Rep-reported confidence is optimism bias</div>
+          <p class="card-desc">Reps are naturally optimistic about their deals — it's a selection effect of the role. When asked to assign confidence percentages, they anchor on the last positive interaction and discount the silence since. The result is a consistent upward bias in pipeline weighting.</p>
+        </div>
+        <div class="info-card accent">
+          <div class="card-num">02</div>
+          <div class="card-title">Stage fields don't reflect buyer state</div>
+          <p class="card-desc">CRM stage fields are updated when reps feel progress has occurred. They rarely move backward. A deal at "Verbal Commit" that went silent three weeks ago stays at "Verbal Commit" until someone manually moves it — which rarely happens until the quarter ends.</p>
+        </div>
+        <div class="info-card accent">
+          <div class="card-num">03</div>
+          <div class="card-title">The review process amplifies the problem</div>
+          <p class="card-desc">When managers ask reps to update their forecast, reps apply another layer of narrative. The output is a story about each deal rather than an objective signal. Known inaccuracy gets "adjusted for" using gut feel rather than data, introducing yet another layer of subjective error.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-section">
+    <div class="container">
+      <h2 class="pg-h2">What accurate forecasting actually requires</h2>
+      <p class="pg-body">Forecast accuracy requires replacing subjective inputs with objective signals. The signals that actually predict close probability are <strong>behavioural</strong> — they exist in email threads, calendar events, and meeting patterns regardless of what the rep entered in the CRM.</p>
+      <div class="two-col" style="margin-top:32px;">
+        <div>
+          <h3 style="font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink-4);margin-bottom:20px;">What most forecasts are built on</h3>
+          <div class="info-card" style="margin-bottom:12px;"><div class="card-title">Rep confidence percentage</div><p class="card-desc">A number the rep typed. Based on their last positive memory of the deal. Adjusted upward by default.</p></div>
+          <div class="info-card" style="margin-bottom:12px;"><div class="card-title">CRM stage field</div><p class="card-desc">Updated when the rep felt progress. Often weeks behind actual deal state. Never moves backward voluntarily.</p></div>
+          <div class="info-card"><div class="card-title">Manager narrative adjustment</div><p class="card-desc">"I know Sarah's deals tend to slip, so I'm discounting her pipeline by 20%." Judgment layered on top of already-biased data.</p></div>
+        </div>
+        <div>
+          <h3 style="font-family:var(--serif);font-size:20px;font-weight:600;color:var(--rust);margin-bottom:20px;">What accurate forecasts should be built on</h3>
+          <div class="info-card dark" style="margin-bottom:12px;"><div class="card-title">Last two-way email contact</div><p class="card-desc" style="color:rgba(255,255,255,0.6);">Read from email directly. A deal with 18 days of prospect silence is not at 70% — regardless of what stage it's in.</p></div>
+          <div class="info-card dark" style="margin-bottom:12px;"><div class="card-title">Calendar and meeting signals</div><p class="card-desc" style="color:rgba(255,255,255,0.6);">Is a next meeting scheduled? Has meeting frequency increased or decreased? Is the economic buyer in the room?</p></div>
+          <div class="info-card dark"><div class="card-title">Stakeholder engagement breadth</div><p class="card-desc" style="color:rgba(255,255,255,0.6);">A deal with three engaged stakeholders is more likely to close than one with a single champion, regardless of stage.</p></div>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-label">The key diagnostic</div>
+        <p class="highlight-text">When stage and activity signals are out of sync — a deal showing high confidence with no recent two-way contact, or a "verbal commit" with no follow-up meeting scheduled — that's a forecast accuracy problem waiting to materialise. GoWarmCRM flags these automatically, every night.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pg-section alt">
+    <div class="container">
+      <h2 class="pg-h2">Common questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item"><h4>Why are sales forecasts so inaccurate?</h4><p>Because they're built on rep-reported confidence rather than objective activity signals. CRM stage fields are updated based on rep optimism, not buyer behaviour. The process of assembling a forecast adds further subjectivity at every stage. The fix is replacing subjective inputs with behavioural signals — email contact dates, calendar activity, meeting patterns.</p></div>
+        <div class="faq-item"><h4>What is activity-signal forecasting?</h4><p>Building forecast confidence from objective deal behaviour — email response patterns, meeting frequency, stakeholder engagement — rather than rep-entered confidence percentages. A deal at stage 4 with no two-way contact in 14 days and no meeting booked is scored differently from one with daily exchanges and a multi-stakeholder meeting next week.</p></div>
+        <div class="faq-item"><h4>How does GoWarmCRM improve forecast accuracy?</h4><p>GoWarmCRM reads email activity, calendar events, and meeting patterns alongside CRM fields. Deals where stage and activity signals are out of sync are flagged automatically — appearing in the rep's queue as stall alerts rather than staying in the forecast at inflated confidence levels. Managers see which deals have the signal support to justify their stage.</p></div>
+        <div class="faq-item"><h4>What's a realistic improvement in forecast accuracy?</h4><p>Teams that replace rep-reported forecasting with activity-signal approaches typically see meaningful improvement within the first complete quarter of measurement — because the structural bias is removed, not managed. The exact improvement depends on baseline accuracy, pipeline size, and how consistently the diagnostic layer is applied.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div><h2>Ready to close the execution gap?</h2><p>Book a free 20-minute demo. We'll walk through your actual pipeline and show you what GoWarmCRM surfaces today.</p></div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, RevOps, and Sales Directors.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul>
+          <li><a href="/sales-execution-platform">What is a Sales Execution Platform?</a></li>
+          <li><a href="/why-deals-go-dark">Why Deals Go Dark</a></li>
+          <li><a href="/pipeline-execution">Pipeline Execution</a></li>
+          <li><a href="/pipeline-data-accuracy">Pipeline Data Accuracy</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/diagnostic">Pipeline Diagnostic</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com</span></div>
+    </div>
+  </footer>
+  <script>function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}</script>
+</body>
+</html>

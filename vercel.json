@@ -113,6 +113,30 @@
     {
       "source": "/pipeline-data-accuracy",
       "destination": "/website/pipeline-data-accuracy.html"
+    },
+    {
+      "source": "/sales-execution-platform-vs-crm",
+      "destination": "/website/sales-execution-platform-vs-crm.html"
+    },
+    {
+      "source": "/pipeline-leakage",
+      "destination": "/website/pipeline-leakage.html"
+    },
+    {
+      "source": "/sales-forecast-accuracy",
+      "destination": "/website/sales-forecast-accuracy.html"
+    },
+    {
+      "source": "/sales-execution-platform-for-saas",
+      "destination": "/website/sales-execution-platform-for-saas.html"
+    },
+    {
+      "source": "/crm-execution-gap",
+      "destination": "/website/crm-execution-gap.html"
+    },
+    {
+      "source": "/sales-rep-action-queue",
+      "destination": "/website/sales-rep-action-queue.html"
     }
   ],
   "headers": [
