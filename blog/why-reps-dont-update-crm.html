@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Reps Don't Update the CRM — and What to Do About It | GoWarm Insights</title>
+  <meta name="description" content="CRM adoption failure isn't a discipline problem. It's a design problem. Here's the research on why reps don't log, what it actually costs, and the structural fix that works better than training programmes." />
+  <link rel="stylesheet" href="/blog/style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .share-bar { max-width: 720px; margin: 40px auto 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
+    .stat-callout { background: var(--cream-2); border-left: 4px solid var(--rust); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 28px 0; }
+    .stat-callout .stat-num { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--rust); line-height: 1; margin-bottom: 6px; }
+    .stat-callout .stat-txt { font-family: var(--body-serif); font-size: 15px; color: var(--ink-2); line-height: 1.6; font-weight: 300; }
+    .stat-callout .stat-src { font-size: 11px; color: var(--ink-4); margin-top: 6px; font-style: italic; }
+    @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } }
+  </style>
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/blog/why-reps-dont-update-crm" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/blog/why-reps-dont-update-crm" />
+  <meta property="og:title" content="Why Reps Don't Update the CRM — and What to Do About It | GoWarm Insights" />
+  <meta property="og:description" content="CRM adoption failure isn't a discipline problem. It's a design problem. Here's the research on why reps don't log, what it costs, and the structural fix that works better than training programmes." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarm Insights" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="Why Reps Don't Update the CRM — and What to Do About It" />
+  <meta name="twitter:description" content="CRM adoption failure isn't a discipline problem. It's a design problem. Here's the research on why reps don't log and the structural fix that actually works." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Reps Don't Update the CRM — and What to Do About It",
+    "description": "CRM adoption failure isn't a discipline problem. It's a design problem. Here's the research on why reps don't log, what it costs, and the structural fix that works better than training programmes.",
+    "url": "https://www.gowarmcrm.com/blog/why-reps-dont-update-crm",
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "keywords": "why reps don't update CRM, CRM adoption, CRM compliance, sales rep CRM usage, CRM data quality, sales activity tracking",
+    "image": "https://www.gowarmcrm.com/og-image.png",
+    "author": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://www.gowarmcrm.com" },
+    "publisher": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://www.gowarmcrm.com", "logo": { "@type": "ImageObject", "url": "https://www.gowarmcrm.com/favicon-512x512.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.gowarmcrm.com/blog/why-reps-dont-update-crm" }
+  }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why don't sales reps update the CRM?","acceptedAnswer":{"@type":"Answer","text":"Three structural reasons: time cost (CRM data entry consumes an estimated 5.5 hours per rep per week), no perceived personal benefit (reps don't see how logging helps them close deals), and context-switching friction (the CRM is a separate system from where selling actually happens — email, calls, meetings). Training programmes address none of these root causes."}},{"@type":"Question","name":"How does poor CRM adoption affect sales performance?","acceptedAnswer":{"@type":"Answer","text":"Poor CRM adoption creates inaccurate pipeline data, which flows through to unreliable forecasts, missed deal risk signals, and managers making decisions based on what reps say rather than what the data shows. Research shows only 34% of sales organisations trust their CRM data, yet 69.9% rely on it to run pipeline reviews."}},{"@type":"Question","name":"What is the solution to CRM adoption problems?","acceptedAnswer":{"@type":"Answer","text":"The structural fix is to reduce dependency on rep-entered data by reading signals from systems reps already use — email activity, calendar events, and meeting patterns. These signals are generated automatically as deals progress, without requiring any rep action. When pipeline intelligence reads these signals directly, forecast accuracy and stall detection improve regardless of CRM logging discipline."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"GoWarm Insights","item":"https://www.gowarmcrm.com/blog"},{"@type":"ListItem","position":3,"name":"Why Reps Don't Update the CRM","item":"https://www.gowarmcrm.com/blog/why-reps-dont-update-crm"}]}</script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container">
+      <a href="/blog" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/blog#articles">Articles</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+          <li><a href="/" style="font-size:13px;color:var(--ink-4);border-left:1px solid var(--border);padding-left:16px;margin-left:4px;">← GoWarmCRM</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">CRM Health</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For VP Sales · RevOps · Sales Leaders</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">9 min read</span>
+          </div>
+          <h1 class="article-title">Why Reps Don't Update the CRM — and What to Do About It</h1>
+          <p class="article-deck">Every sales organisation faces it. Training helps briefly. Then compliance erodes. The standard diagnosis is a culture problem. The real diagnosis is a design problem — and fixing it requires understanding why the behaviour happens, not just demanding it stop.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+
+        <div class="tldr-box">
+          <div class="tldr-label">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5M8 11v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            TL;DR — 60-second read
+          </div>
+          <ul class="tldr-list">
+            <li>CRM non-compliance is structural, not cultural. Training programmes produce temporary compliance followed by erosion — consistently, across organisations of every size.</li>
+            <li>Three root causes: time cost (~5.5 hours/week), no personal benefit for the rep, and context-switching friction.</li>
+            <li>The data that matters most — email contact dates, response latency, meeting patterns — exists outside the CRM and doesn't require rep logging.</li>
+            <li>The fix is not better enforcement. It's reducing the dependency on rep-entered data by reading signals from systems reps already use.</li>
+          </ul>
+        </div>
+
+        <div class="article-body">
+
+          <p>There is a conversation that happens in almost every sales organisation, usually in the first quarter after a CRM implementation and then again every 12–18 months. It goes something like this: the data quality in the CRM has deteriorated. Stage fields are out of date. Activity logs are sparse. The forecast is unreliable because nobody trusts the underlying pipeline data. A training programme is announced. Compliance improves for 6–8 weeks. Then it drifts back to where it was before.</p>
+
+          <p>This cycle is so common that many sales leaders have accepted it as inevitable — a permanent tension between the organisation's need for data and the rep's preference for selling. The assumption underlying most approaches to fixing it is that the problem is motivational: reps know what they should do but choose not to do it, and the solution is a combination of better incentives and stronger enforcement.</p>
+
+          <p>The research does not support this assumption. CRM non-compliance is not primarily a motivation problem. It is a design problem. And understanding the distinction matters because the two problems have completely different solutions.</p>
+
+          <h2>The Three Root Causes of CRM Non-Compliance</h2>
+
+          <p>Research across sales organisations consistently identifies three structural drivers of CRM under-use, each of which operates independently of rep motivation or management pressure.</p>
+
+          <p><strong>Time cost.</strong> CRM data entry is estimated to consume between 4 and 5.5 hours per rep per week — approximately 10–14% of the working week spent on administrative input that does not directly advance any deal. For a rep under quota pressure, every hour of CRM logging competes directly with outreach, follow-up, and meeting preparation. The time cost is not imaginary. It is a real constraint, and reps optimise against it rationally.</p>
+
+          <div class="stat-callout">
+            <div class="stat-num">5.5 hrs</div>
+            <div class="stat-txt">estimated CRM data entry time per rep per week — approximately 10–14% of the working week spent on administrative input that does not directly advance any deal</div>
+            <div class="stat-src">Salesforce State of Sales Research</div>
+          </div>
+
+          <p><strong>No perceived personal benefit.</strong> The CRM is a reporting tool for management. Reps experience it as overhead that benefits someone else. There is no feedback loop in most CRM configurations where good logging hygiene makes the rep's job easier, surfaces better leads, or improves their commission. The benefit is entirely asymmetric: managers and RevOps need the data; reps pay the cost of entering it. This is not a cultural failing. It is a rational response to an incentive structure that asks reps to do work that benefits others at the expense of their own time.</p>
+
+          <p><strong>Context-switching friction.</strong> Selling happens in email, on calls, and in meetings. The CRM is a different system, in a different window, with a different interface. After every meaningful sales interaction, the rep faces a context-switch: stop what they're doing, open the CRM, find the right record, log the activity with enough detail to be useful, and then return to whatever they were doing. Each of these switches has a cognitive cost that compounds across the working day. Research on task-switching consistently shows that the friction of moving between systems is underestimated — it takes more time and more cognitive effort than the task itself appears to require.</p>
+
+          <h2>Why Training Programmes Don't Work</h2>
+
+          <p>Training programmes are the standard response to CRM non-compliance. They work — but only temporarily, and for a specific reason that explains their eventual failure.</p>
+
+          <p>Training increases salience. It reminds reps that CRM logging is expected and valued. It signals management attention to the issue. In the weeks immediately following a training programme, compliance improves because the behaviour is top of mind and management scrutiny is elevated. But salience fades. Management attention moves to other things. The underlying structural incentives — time cost, no personal benefit, context friction — reassert themselves, and behaviour reverts.</p>
+
+          <p>No amount of training addresses the fact that logging a call takes 5 minutes the rep doesn't have, produces no direct benefit for the rep, and requires switching away from the system they are actively using. These constraints exist before and after the training. The training changes awareness; it doesn't change the design.</p>
+
+          <div class="stat-callout">
+            <div class="stat-num">28%</div>
+            <div class="stat-txt">of sales reps with CRM access don't use it consistently — a figure that has remained roughly stable despite years of focus on CRM adoption across the industry</div>
+            <div class="stat-src">Cirrus Insight CRM Usage Research, 2025</div>
+          </div>
+
+          <h2>What the Missing Data Actually Costs</h2>
+
+          <p>The cost of incomplete CRM data is typically framed as a reporting problem — forecasts are less accurate, dashboards are less useful, management has less visibility. These are real costs, but they understate the actual damage.</p>
+
+          <p>The deeper cost is diagnostic failure. The signals that most reliably predict whether a deal will close — last two-way email contact, response latency trends, meeting frequency, stakeholder engagement breadth — are exactly the signals that reps are least likely to log. A rep does not log that a prospect took three days to respond to an email. They do not log that meeting frequency has dropped from weekly to fortnightly. They do not log that only one stakeholder is engaged and the economic buyer has never been on a call. These signals are not logged because they are not events with obvious logging triggers — they are patterns that emerge over time and require active observation to notice.</p>
+
+          <p>The result is that CRM data is systematically biased toward the positive. Reps log calls that went well and forget the ones that didn't. They update stage fields when they feel progress and leave them unchanged when they don't. The CRM becomes a record of the best moments of every deal, with the early warning signals of failure systematically omitted. This is why forecasts assembled from CRM data are consistently overconfident: they are built on a curated version of reality.</p>
+
+          <h2>The Signals That Matter — and Where They Actually Live</h2>
+
+          <p>The most important signals for pipeline health do not need to be logged by reps. They already exist — in systems that record them automatically, without any human input.</p>
+
+          <p>Email activity — specifically, last two-way contact date and response latency — is recorded in every email system regardless of whether anyone logs anything in the CRM. The date a prospect last replied to an email exists in the sent/received thread. The time between send and reply exists in the timestamp metadata. Whether a thread went from daily back-and-forth to one-sided rep outreach is visible in the message history.</p>
+
+          <p>Calendar data records whether meetings are being scheduled, attended, or cancelled. Whether a follow-up meeting was booked after the last call. Whether the cadence of meetings has changed over the course of the deal.</p>
+
+          <p>Meeting patterns — how many people from the prospect's organisation are engaged, whether the economic buyer has appeared on any calendar invite, whether the frequency is accelerating or decelerating — are all derivable from calendar and email metadata without a single rep logging anything.</p>
+
+          <p>These signals are more reliable than logged CRM data for two reasons. First, they are generated automatically — they cannot be selectively entered or forgotten. Second, they capture the patterns that matter most for deal health, not just the events that are easy to log.</p>
+
+          <h2>The Structural Fix: Reduce Dependency, Don't Increase Enforcement</h2>
+
+          <p>The practical implication of this analysis is not that CRM logging should be abandoned. Logged data — stage, deal value, owner, close date, key meeting notes — is still valuable context that behavioural signals cannot fully replace. The implication is that the organisation should stop treating CRM data as the primary source of pipeline intelligence and start treating it as one input among several.</p>
+
+          <p>The structural fix has two parts. The first is integrating email and calendar signal reading into the pipeline diagnostic process, so that deal health assessment does not depend on rep logging discipline. When a deal has 18 days of email silence and no follow-up meeting scheduled, that fact should surface in the manager's view regardless of what the rep has or hasn't logged. The second part is reducing CRM data entry burden — using integrations that auto-log email and calendar activity, eliminating fields that don't drive decisions, and focusing manual logging requirements on the fields that genuinely cannot be captured automatically.</p>
+
+          <p>Neither of these changes requires a training programme. They require a different architecture — one that reads the signals that already exist rather than demanding that reps create them.</p>
+
+          <div class="diagnostic-box">
+            <div class="box-label">◆ CRM Adoption Audit — Three Questions to Ask This Week</div>
+            <p><strong>Question 1:</strong> Pull your pipeline and identify the date of the last rep-logged activity on each deal. Then separately identify the date of the last inbound email from the prospect. How many deals show recent logged activity but no recent prospect response? That gap is your CRM optimism bias, visible in the data.</p>
+            <p><strong>Question 2:</strong> For your last 10 closed-lost deals, go back and look at what the CRM showed 30 days before they were marked lost. Were there signals of disengagement visible in the activity log — or did the deal look healthy right up until it was marked closed? If it looked healthy, your logging is hiding risk rather than surfacing it.</p>
+            <p><strong>Question 3:</strong> Ask three of your reps to estimate how much time they spend on CRM logging per week. If the honest answer is more than 3 hours, the data entry burden is likely already affecting their output. The fix is not to demand more — it's to make the required input smaller and the automatic capture larger.</p>
+          </div>
+
+          <div class="cta-inline">
+            The goal of a CRM is not to have complete logs — it is to have reliable pipeline intelligence. If the logs are incomplete because reps don't have time to maintain them, the answer is not more training. It is reading the signals that exist whether or not anyone logs them.
+          </div>
+
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://www.gowarmcrm.com" style="color:var(--rust)">GoWarmCRM</a> — a sales execution platform that reads pipeline signals from email, calendar, and meeting data alongside CRM fields, so your diagnostics work even when reps haven't logged. <a href="/contact" style="color:var(--rust)">Book a free pipeline walkthrough.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="/blog">← GoWarm Insights</a>
+          <a href="/blog/how-to-recover-dark-deal">Related: How to Recover a Dark Deal →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales and business leaders. Published by the team at GoWarmCRM.</p>
+        </div>
+        <div class="footer-col"><h4>Topics</h4><ul>
+          <li><a href="/blog#articles">All Articles</a></li>
+          <li><a href="/blog#articles">CRM Health</a></li>
+          <li><a href="/blog#articles">Decisions</a></li>
+          <li><a href="/blog#articles">Revenue Ops</a></li>
+          <li><a href="/blog#articles">Finance &amp; ROI</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Latest Articles</h4><ul>
+          <li><a href="/blog/why-reps-dont-update-crm">Why Reps Don't Update the CRM</a></li>
+          <li><a href="/blog/how-to-recover-dark-deal">How to Recover a Dark Deal</a></li>
+          <li><a href="/blog/pipeline-deals-going-dark">Why Your Best Deals Go Dark</a></li>
+          <li><a href="/blog/playbook-adoption-crm">The Playbook Adoption Problem</a></li>
+          <li><a href="/blog/forecast-accuracy-arr">Why Your Sales Forecast Is Unreliable</a></li>
+          <li><a href="/blog/per-user-ai-settings-crm">Per-user AI Settings in Your CRM</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Get Help</h4><ul>
+          <li><a href="/diagnostic">Free CRM Diagnostic</a></li>
+          <li><a href="/contact">Request a Consultation</a></li>
+          <li><a href="https://www.gowarmcrm.com">GoWarmCRM ↗</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GoWarmCRM. All rights reserved.</span>
+        <span>www.gowarmcrm.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

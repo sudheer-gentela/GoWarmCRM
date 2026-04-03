@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Recover a Dark Deal — The Re-Engagement Playbook for B2B Sales | GoWarm Insights</title>
+  <meta name="description" content="A deal that has gone quiet is not necessarily lost. Here's the diagnostic framework for knowing which dark deals are worth rescuing, and the re-engagement sequence that actually works — with templates." />
+  <link rel="stylesheet" href="/blog/style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .share-bar { max-width: 720px; margin: 40px auto 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
+    .stat-callout { background: var(--cream-2); border-left: 4px solid var(--rust); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 28px 0; }
+    .stat-callout .stat-num { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--rust); line-height: 1; margin-bottom: 6px; }
+    .stat-callout .stat-txt { font-family: var(--body-serif); font-size: 15px; color: var(--ink-2); line-height: 1.6; font-weight: 300; }
+    .stat-callout .stat-src { font-size: 11px; color: var(--ink-4); margin-top: 6px; font-style: italic; }
+    .template-box { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; margin: 28px 0; }
+    .template-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+    .template-subject { font-size: 13px; font-weight: 600; color: var(--ink-4); margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .template-subject span { color: var(--ink); }
+    .template-body { font-family: var(--body-serif); font-size: 15px; color: var(--ink-2); line-height: 1.8; font-weight: 300; white-space: pre-line; }
+    .template-note { font-size: 12px; color: var(--ink-4); font-style: italic; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .triage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+    .triage-card { border-radius: 8px; padding: 20px 22px; border: 1px solid var(--border); }
+    .triage-card.rescue { background: #F0FDF4; border-color: #86EFAC; }
+    .triage-card.disqualify { background: #FFF4ED; border-color: #FED7AA; }
+    .triage-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+    .triage-card.rescue h4 { color: #16A34A; }
+    .triage-card.disqualify h4 { color: var(--rust); }
+    .triage-card ul { list-style: none; }
+    .triage-card ul li { font-family: var(--body-serif); font-size: 13px; color: var(--ink-2); line-height: 1.5; font-weight: 300; padding: 5px 0; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .triage-card ul li:first-child { border-top: none; }
+    .triage-card.rescue ul li::before { content: "✓"; color: #16A34A; font-weight: 700; flex-shrink: 0; }
+    .triage-card.disqualify ul li::before { content: "✗"; color: var(--rust); font-weight: 700; flex-shrink: 0; }
+    @media (max-width: 768px) {
+      .article-title { font-size: 30px; }
+      .article-deck { font-size: 16px; }
+      .triage-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/blog/how-to-recover-dark-deal" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/blog/how-to-recover-dark-deal" />
+  <meta property="og:title" content="How to Recover a Dark Deal — The Re-Engagement Playbook for B2B Sales | GoWarm Insights" />
+  <meta property="og:description" content="A deal that has gone quiet is not necessarily lost. Here's the diagnostic framework for knowing which dark deals are worth rescuing, and the re-engagement sequence that actually works." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarm Insights" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="How to Recover a Dark Deal — The Re-Engagement Playbook" />
+  <meta name="twitter:description" content="A deal that has gone quiet is not necessarily lost. Here's the triage framework and re-engagement sequence that recovers dark deals before they become closed-lost." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Recover a Dark Deal — The Re-Engagement Playbook for B2B Sales",
+    "description": "A deal that has gone quiet is not necessarily lost. Here's the diagnostic framework for knowing which dark deals are worth rescuing, and the re-engagement sequence that actually works.",
+    "url": "https://www.gowarmcrm.com/blog/how-to-recover-dark-deal",
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "keywords": "recover dark deal, re-engage prospect, deal gone dark, pipeline recovery, stalled deal recovery, sales re-engagement",
+    "image": "https://www.gowarmcrm.com/og-image.png",
+    "author": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://www.gowarmcrm.com" },
+    "publisher": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://www.gowarmcrm.com", "logo": { "@type": "ImageObject", "url": "https://www.gowarmcrm.com/favicon-512x512.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.gowarmcrm.com/blog/how-to-recover-dark-deal" }
+  }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you re-engage a prospect that has gone dark?","acceptedAnswer":{"@type":"Answer","text":"The most effective re-engagement approach does three things: acknowledges the silence directly rather than pretending it hasn't happened, creates a specific reason to talk that isn't about buying (new information, relevant case study, industry development), and makes disqualification easy by offering the prospect a graceful exit. A 'permission to close your file' email — asking directly whether the timing has changed — consistently generates responses from prospects who have been avoiding a standard follow-up."}},{"@type":"Question","name":"When should you give up on a dark deal?","acceptedAnswer":{"@type":"Answer","text":"Give up on a dark deal when: the prospect has not responded to any contact in 45+ days despite three re-engagement attempts; the original problem they wanted to solve no longer appears to be a priority based on publicly available signals; or the champion who was your contact has left the organisation with no replacement engaged. A formally disqualified deal is more valuable than one sitting indefinitely in your forecast."}},{"@type":"Question","name":"What is the best email to send to a prospect who has gone quiet?","acceptedAnswer":{"@type":"Answer","text":"The most effective re-engagement email is short, acknowledges the silence directly, and gives the prospect an easy way to exit. Something like: 'It's been a few weeks since we last spoke — I want to check whether something has changed on your end. If the timing has shifted or this is no longer a priority, I completely understand and it would help me to know. If there's still interest, I have one specific idea that might be relevant given [recent relevant development].'"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"GoWarm Insights","item":"https://www.gowarmcrm.com/blog"},{"@type":"ListItem","position":3,"name":"How to Recover a Dark Deal","item":"https://www.gowarmcrm.com/blog/how-to-recover-dark-deal"}]}</script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container">
+      <a href="/blog" class="nav-logo">GoWarm<span>Insights</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/blog#articles">Articles</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+          <li><a href="/" style="font-size:13px;color:var(--ink-4);border-left:1px solid var(--border);padding-left:16px;margin-left:4px;">← GoWarmCRM</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">Pipeline Health</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For VP Sales · AEs · Sales Managers</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">10 min read</span>
+          </div>
+          <h1 class="article-title">How to Recover a Dark Deal — The Re-Engagement Playbook for B2B Sales</h1>
+          <p class="article-deck">A deal that has gone quiet is not automatically lost. Some dark deals are worth fighting for. Most re-engagement attempts make things worse. Here's the triage framework for knowing which is which — and the outreach sequence that actually works.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+
+        <div class="tldr-box">
+          <div class="tldr-label">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5M8 11v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            TL;DR — 60-second read
+          </div>
+          <ul class="tldr-list">
+            <li>Not all dark deals are worth rescuing. The first step is triage — distinguishing deals that went quiet for recoverable reasons from those that are genuinely dead.</li>
+            <li>The window for effective recovery is 10–21 days of silence. After 45 days without a response, recovery rates drop sharply regardless of approach.</li>
+            <li>Standard follow-ups accelerate failure. Effective recovery acknowledges the silence, creates a reason to talk, and offers a graceful exit.</li>
+            <li>A formally disqualified deal is more valuable than one sitting indefinitely in your forecast. Build a process that forces a decision either way.</li>
+          </ul>
+        </div>
+
+        <div class="article-body">
+
+          <p>Every sales pipeline has them. Deals that were progressing well — good discovery, engaged champion, proposal sent — that then went quiet. Emails go unanswered. Meetings get rescheduled and then cancelled. The rep sends a few follow-ups and hears nothing back. The deal sits in stage 3 with a pushed close date, neither advancing nor officially dead.</p>
+
+          <p>The conventional response is to keep following up until the prospect either responds or the deal gets too old to justify keeping. This approach is wrong for two reasons. First, it conflates deals that went dark for recoverable reasons with deals that are genuinely lost — treating both the same way and recovering neither well. Second, the standard follow-up template ("just checking in," "wanted to circle back," "any update on this?") actively damages the prospect relationship. It communicates that the rep has nothing new to offer and is only reaching out to satisfy their own pipeline management need.</p>
+
+          <p>Recovering dark deals requires a different approach entirely. It starts with triage — honestly assessing whether recovery is worth attempting — and then applies a specific re-engagement sequence designed to break the silence in a way that benefits the prospect, not just the rep.</p>
+
+          <h2>Step One: Triage — Is This Deal Worth Fighting For?</h2>
+
+          <p>Not every dark deal deserves rescue effort. Some deals went dark because the prospect is genuinely no longer interested, and no amount of re-engagement outreach will change that. Spending energy on these deals comes at the cost of better uses of rep time. The first discipline of dark deal recovery is honest triage.</p>
+
+          <p>Assess each dark deal against two dimensions: whether there is genuine recoverable interest, and whether the timing works. A deal that scores well on both dimensions is worth a structured rescue attempt. A deal that scores poorly on both should be formally disqualified — removing it from the forecast and freeing the rep's attention.</p>
+
+          <div class="triage-grid">
+            <div class="triage-card rescue">
+              <h4>✓ Signs a dark deal is worth rescuing</h4>
+              <ul>
+                <li>Went quiet after a specific event — a budget cycle, leadership change, or competing priority that was identified at the time</li>
+                <li>Last interaction was substantive — the prospect asked questions, provided information, or showed buying signals before going quiet</li>
+                <li>Silence is under 21 days — the window for effective recovery is narrow and still open</li>
+                <li>The original problem being solved is still likely to exist and still likely to be a priority</li>
+                <li>Champion was engaged and connected — not just politely responsive</li>
+                <li>A specific next step was agreed but never followed through on</li>
+              </ul>
+            </div>
+            <div class="triage-card disqualify">
+              <h4>✗ Signs a dark deal should be disqualified</h4>
+              <ul>
+                <li>Champion has left the organisation and no replacement contact has been identified</li>
+                <li>Silence exceeds 45 days with no response to any contact attempt</li>
+                <li>Engagement was always rep-driven — the prospect never initiated contact or showed unprompted interest</li>
+                <li>Close date has been pushed three or more times with no specific documented reason</li>
+                <li>The original problem appears to have been deprioritised — based on company news, org changes, or industry signals</li>
+                <li>Economic buyer was never directly engaged at any point in the deal</li>
+              </ul>
+            </div>
+          </div>
+
+          <p>The hardest part of triage is honesty. Reps are naturally reluctant to formally disqualify a deal they have invested time in — the sunk cost fallacy operates powerfully in sales pipelines. Managers need to create a culture where formal disqualification is understood as a skill, not a failure. A deal correctly removed from the forecast is worth more than the same deal sitting indefinitely as distortion in the pipeline data.</p>
+
+          <h2>The Recovery Window: Why Timing Matters More Than Technique</h2>
+
+          <p>Recovery attempts are most effective in the 10–21 day window after a prospect goes quiet. In this window, the deal has gone silent enough to warrant direct acknowledgement, but not so long that the prospect has mentally closed the door. The rep has a specific recent context to reference. The prospect is likely still in the same role, dealing with the same problems.</p>
+
+          <div class="stat-callout">
+            <div class="stat-num">21 days</div>
+            <div class="stat-txt">the outer boundary of the effective recovery window for most B2B dark deals. After three weeks of silence, each additional week without contact reduces recovery probability significantly — and after 45 days, most deals that could have been recovered have been lost to inertia or a competitor who stayed active</div>
+          </div>
+
+          <p>After 45 days of silence, recovery rates drop sharply. Not because the prospect is necessarily more opposed to the solution — but because momentum has been lost, the internal champion has moved on to other priorities, and a competitor who maintained contact has often filled the gap. The recovery sequence described below works best when executed within the 10–21 day window. After 45 days, the sequence still worth attempting, but the objective shifts from recovery to definitive closure — getting a clear yes or no rather than expecting a yes.</p>
+
+          <h2>Why Standard Follow-Ups Make Things Worse</h2>
+
+          <p>The standard follow-up email sent to a dark deal typically sounds like one of these: "Just checking in on the proposal I sent over." "Wanted to circle back and see if you had any questions." "Any update on timing for this?" "Following up on my last email."</p>
+
+          <p>These messages have a common failure mode: they communicate that the rep has nothing new to offer and is following up purely for their own purposes. The prospect reads them and thinks: there is nothing here that benefits me, responding will involve an awkward conversation about why I haven't moved forward, and ignoring it is easier than engaging. So they ignore it. The rep sends another one. The prospect ignores that too. The relationship deteriorates with each unanswered follow-up.</p>
+
+          <p>There is also a more subtle problem. These messages do not acknowledge the silence. They pretend the last three unanswered emails did not happen, which creates a social awkwardness that makes the prospect less likely to respond, not more. The prospect knows they have been ignoring the rep. The rep is pretending not to notice. This dynamic is uncomfortable for both parties and makes the honest conversation about deal status harder to have, not easier.</p>
+
+          <h2>The Three-Part Re-Engagement Framework</h2>
+
+          <p>Effective re-engagement after a deal goes dark does three things that standard follow-ups don't.</p>
+
+          <p><strong>It acknowledges the silence directly.</strong> Rather than pretending the gap hasn't happened, effective re-engagement names it. "It's been a few weeks since we last spoke" or "I notice we haven't connected since [specific meeting/email]" — a direct reference to the silence that removes the social awkwardness of pretending nothing has changed. This small shift makes the prospect significantly more likely to respond, because it removes their obligation to explain the silence themselves.</p>
+
+          <p><strong>It creates a reason to re-engage that benefits the prospect.</strong> The message should contain something of value that is relevant to the prospect's situation — not to the rep's need for a decision. A case study from a company in the same sector that resolved the same problem. A piece of research that is directly relevant to the challenge discussed in discovery. A question that shows the rep has been thinking about the prospect's specific situation, not just managing their pipeline. The question to ask when drafting re-engagement outreach is: if this prospect responds, what do they get? If the answer is "they have to have an awkward conversation about their decision timeline," the message is not ready.</p>
+
+          <p><strong>It makes disqualification easy.</strong> The most powerful element of effective re-engagement is the explicit permission to say no. A message that says "if the timing has shifted or this is no longer a priority, I completely understand — it would genuinely help me to know so I can plan accordingly" does something counterintuitive: it increases response rates. Prospects who have been going dark because they have bad news to deliver find it much easier to respond to a message that invites honesty than one that only makes a yes response comfortable. And a formal no — even a disappointing one — is more valuable to the rep than continued silence.</p>
+
+          <h2>The Recovery Sequence: Three Touchpoints Over Ten Days</h2>
+
+          <p>For deals in the 10–21 day silence window, a three-touchpoint sequence over ten days works better than a single re-engagement attempt. Each touchpoint has a distinct purpose and a distinct format.</p>
+
+          <div class="template-box">
+            <div class="template-label">Touchpoint 1 — Day 1: The Direct Acknowledgement</div>
+            <div class="template-subject">Subject: <span>[First name] — checking in properly</span></div>
+            <div class="template-body">Hi [First name],
+
+It's been a few weeks since we last spoke — I wanted to reach out directly rather than send another follow-up that ignores the gap.
+
+I know these decisions rarely move on the timeline they look like they will at the proposal stage. If something has shifted on your end — budget timing, a change in priorities, anything — I'd genuinely rather know than keep following up at the wrong moment.
+
+If there's still interest, I have one specific thing I wanted to share that came up since we last spoke: [one sentence of genuinely relevant new information or observation about their situation].
+
+Worth a 15-minute call this week or next?</div>
+            <div class="template-note">Why this works: it names the silence, creates a low-pressure opening, offers something of value, and asks a specific question. It does not ask "any update?" or "just checking in."</div>
+          </div>
+
+          <div class="template-box">
+            <div class="template-label">Touchpoint 2 — Day 5: The Value-Led Follow</div>
+            <div class="template-subject">Subject: <span>Something relevant to [their specific problem]</span></div>
+            <div class="template-body">Hi [First name],
+
+I came across [specific article / case study / piece of research] that directly addresses the [specific challenge] you mentioned in our last conversation.
+
+[One or two sentences summarising why it's specifically relevant to their situation — not a generic "thought you might find this interesting."]
+
+Happy to discuss what it means for your situation if it's useful.
+
+No pressure on the broader conversation — but wanted to share this regardless.</div>
+            <div class="template-note">Why this works: it delivers value independently of the deal status, demonstrates that the rep has been thinking about the prospect's specific problem, and removes the awkwardness of the decision conversation from this touchpoint entirely.</div>
+          </div>
+
+          <div class="template-box">
+            <div class="template-label">Touchpoint 3 — Day 10: The Permission-to-Close Email</div>
+            <div class="template-subject">Subject: <span>Should I close your file?</span></div>
+            <div class="template-body">Hi [First name],
+
+I've reached out a couple of times without hearing back — I want to be respectful of your time rather than keep following up.
+
+I'm going to assume the timing isn't right and close out your file on my end. If that's correct, no response needed — I'll take silence as confirmation and reach back out in a few months if that would be helpful.
+
+If I've got that wrong and there's still interest, a quick note to let me know is all it takes and I'll pick up exactly where we left off.
+
+Either way, no hard feelings — these things rarely move on the timeline they appear to at the start.</div>
+            <div class="template-note">Why this works: the subject line has unusually high open rates because it signals finality rather than another follow-up. The message makes disqualification frictionless and creates a clear, low-effort response path for a prospect who still has interest but has been avoiding the conversation. It consistently generates more replies than standard follow-ups — including both genuine re-engagements and honest closes.</div>
+          </div>
+
+          <h2>After the Recovery Attempt: What to Do With the Result</h2>
+
+          <p>Three outcomes are possible after the recovery sequence. First, the prospect responds with genuine re-engagement — they want to continue the conversation. Second, the prospect responds to confirm they're not moving forward. Third, there is no response after all three touchpoints.</p>
+
+          <p>The first outcome is straightforward: re-set the deal, confirm a specific next step with a date, and — critically — understand what caused the silence so you can manage against it going forward. The second outcome is a genuine win for pipeline hygiene: mark the deal closed-lost with the stated reason, free the rep's time, and ask whether you can return in a specified timeframe. The third outcome — no response after all three touchpoints over ten days — should result in formal disqualification. Move the deal to a separate "dormant" category with a scheduled re-engagement date three months out, and remove it from active forecast.</p>
+
+          <p>The hardest discipline in dark deal recovery is not the outreach — it's the formal closure of deals that don't respond. A pipeline full of dark deals that reps refuse to disqualify is worse than a smaller, cleaner pipeline of genuinely active opportunities. The goal is not to keep every deal alive; it is to have a forecast that actually reflects what is going to happen.</p>
+
+          <div class="diagnostic-box">
+            <div class="box-label">◆ Dark Deal Recovery Audit — Run This on Your Pipeline Today</div>
+            <p><strong>Step 1 — Identify your dark deals.</strong> Pull all opportunities where the last two-way email contact with the prospect (not the last rep outreach — the last time the prospect actually replied) is more than 10 days old. Sort by days since last prospect response. These are your dark deals in order of urgency.</p>
+            <p><strong>Step 2 — Triage each one.</strong> For each deal, spend 60 seconds on the triage framework above. Mark each as "rescue attempt" or "disqualify." Be honest. If the champion has left, if the close date has been pushed three times with no reason, if the prospect never initiated contact — disqualify. Remove the noise.</p>
+            <p><strong>Step 3 — Execute the sequence on rescue deals only.</strong> For every deal marked as a rescue attempt, send touchpoint 1 today. Schedule touchpoint 2 for day 5 and touchpoint 3 for day 10. Do not send another standard follow-up to any of these deals — if the sequence doesn't get a response, the deal gets disqualified at day 10.</p>
+            <p><strong>Step 4 — Update the forecast.</strong> Remove every deal you've disqualified from active forecast immediately. The short-term pain of a reduced pipeline number is worth it for the accuracy gain. A forecast that reflects actual deal health is more useful to every person in the organisation than one padded with deals that are not going to close.</p>
+          </div>
+
+          <div class="cta-inline">
+            The deals most worth rescuing are in the 10–21 day silence window. After that window, recovery becomes harder each week. If you have ten deals that have been quiet for more than two weeks, the best use of the next two hours is running step 1 and 2 of the diagnostic above — not sending ten more "just checking in" emails.
+          </div>
+
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://www.gowarmcrm.com" style="color:var(--rust)">GoWarmCRM</a> — a sales execution platform that detects dark deals automatically from email and calendar signals, and surfaces AI-drafted re-engagement actions before deals fall out of the recoverable window. <a href="/contact" style="color:var(--rust)">Book a free pipeline walkthrough.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="/blog/why-reps-dont-update-crm">← Related: Why Reps Don't Update the CRM</a>
+          <a href="/blog/pipeline-deals-going-dark">Related: Why Your Best Deals Go Dark →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">GoWarm<span>Insights</span></div>
+          <p class="footer-tagline">Practical intelligence for B2B sales and business leaders. Published by the team at GoWarmCRM.</p>
+        </div>
+        <div class="footer-col"><h4>Topics</h4><ul>
+          <li><a href="/blog#articles">All Articles</a></li>
+          <li><a href="/blog#articles">CRM Health</a></li>
+          <li><a href="/blog#articles">Decisions</a></li>
+          <li><a href="/blog#articles">Revenue Ops</a></li>
+          <li><a href="/blog#articles">Finance &amp; ROI</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Latest Articles</h4><ul>
+          <li><a href="/blog/how-to-recover-dark-deal">How to Recover a Dark Deal</a></li>
+          <li><a href="/blog/why-reps-dont-update-crm">Why Reps Don't Update the CRM</a></li>
+          <li><a href="/blog/pipeline-deals-going-dark">Why Your Best Deals Go Dark</a></li>
+          <li><a href="/blog/playbook-adoption-crm">The Playbook Adoption Problem</a></li>
+          <li><a href="/blog/forecast-accuracy-arr">Why Your Sales Forecast Is Unreliable</a></li>
+          <li><a href="/blog/per-user-ai-settings-crm">Per-user AI Settings in Your CRM</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Get Help</h4><ul>
+          <li><a href="/diagnostic">Free CRM Diagnostic</a></li>
+          <li><a href="/contact">Request a Consultation</a></li>
+          <li><a href="https://www.gowarmcrm.com">GoWarmCRM ↗</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 GoWarmCRM. All rights reserved.</span>
+        <span>www.gowarmcrm.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
