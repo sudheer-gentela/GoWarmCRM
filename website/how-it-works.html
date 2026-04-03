@@ -164,8 +164,21 @@
       .phase-details { grid-template-columns: 1fr; }
       .views-pane.active { grid-template-columns: 1fr; gap: 40px; }
       .ai-inner { grid-template-columns: 1fr; gap: 40px; }
-      .eco-grid { grid-template-columns: 1fr; }
+      .eco-grid { grid-template-columns: 1fr 1fr; }
       .hero-checklist { flex-direction: column; gap: 10px; }
+      .views-mockup { overflow-x: auto; }
+    }
+    @media (max-width: 600px) {
+      .eco-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .page-title { font-size: 28px; }
+      .page-title em { display: block; }
+      .phase-title { font-size: 22px; }
+      .phase-details { gap: 10px; }
+      .views-tabs { gap: 0; }
+      .views-tab { padding: 10px 12px; font-size: 12px; }
+      .ai-visual { padding: 20px; }
     }
   </style>
 </head>

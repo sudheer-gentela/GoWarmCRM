@@ -51,7 +51,18 @@
     .result-cta h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 8px; }
     .result-cta p { font-size: 14px; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
     .result-cta .btn-primary { padding: 13px 28px; font-size: 15px; }
-    @media(max-width:600px){ .diag-hero h1{font-size:30px;} .q-text{font-size:21px;} }
+    @media (max-width: 900px) {
+      .diag-progress { max-width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .diag-hero h1 { font-size: 30px; }
+      .q-text { font-size: 21px; }
+      .diag-options { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .diag-hero h1 { font-size: 24px; }
+      .q-text { font-size: 18px; }
+    }
   </style>
 
   

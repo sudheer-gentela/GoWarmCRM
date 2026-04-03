@@ -83,11 +83,23 @@
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 64px; margin-top: 40px; }
     .faq-item h4 { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
     .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    /* Compare table overflow on mobile */
+    .compare-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
     @media (max-width: 900px) {
       .sep-hero h1 { font-size: 32px; }
-      .comp-grid { grid-template-columns: 1fr; }
+      .comp-grid { grid-template-columns: 1fr 1fr; }
       .who-inner { grid-template-columns: 1fr; gap: 40px; }
       .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .comp-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .sep-hero h1 { font-size: 26px; }
+      .sep-h2 { font-size: 24px; }
+      .def-text { font-size: 18px; }
+      .faq-item h4 { font-size: 15px; }
     }
   </style>
 

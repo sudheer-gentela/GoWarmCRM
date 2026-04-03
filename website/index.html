@@ -171,6 +171,30 @@
     .blog-meta { font-size: 11px; color: var(--ink-4); border-top: 1px solid var(--border); padding-top: 10px; }
 
     /* RESPONSIVE */
+    /* ── Scenes ── */
+    .scenes-band { padding: 0; border-bottom: 1px solid var(--border); background: var(--ink); }
+    .scenes-container { padding-top: 28px !important; padding-bottom: 28px !important; }
+    .scenes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); }
+    .scene-card { padding: 24px 28px; background: var(--ink); }
+    .scene-lbl { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 10px; }
+    .scene-body { font-family: var(--body-serif); font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; font-weight: 300; margin: 0; }
+    .scenes-note { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 16px; text-align: center; font-style: italic; }
+
+    /* ── ICP ── */
+    .icp-section { padding: 56px 0; border-bottom: 1px solid var(--border); background: var(--cream-2); }
+    .icp-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .icp-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 14px; }
+    .icp-heading { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .icp-body { font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 0; }
+    .icp-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .icp-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+    .icp-card-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 10px; }
+    .icp-card-value { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ink); }
+    .icp-card-sub { font-size: 12px; color: var(--ink-4); margin-top: 4px; }
+
+    /* ── Compare table mobile ── */
+    .compare-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
     @media (max-width: 900px) {
       .hero-title { font-size: 36px; }
       .hero-stats { grid-template-columns: 1fr; }
@@ -179,6 +203,19 @@
       .how-grid, .blog-grid { grid-template-columns: 1fr; gap: 20px; }
       .int-note { display: none; }
       .ai-callout { grid-template-columns: 1fr; gap: 20px; }
+      .scenes-grid { grid-template-columns: 1fr; }
+      .icp-inner { grid-template-columns: 1fr; gap: 40px; }
+      .icp-heading { font-size: 28px; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 30px; }
+      .hero-subtitle { font-size: 16px; }
+      .hero-stats { gap: 8px; }
+      .stat-number { font-size: 30px; }
+      .icp-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .icp-heading { font-size: 24px; }
+      .manifesto-heading { font-size: 28px; }
+      .section-h2 { font-size: 26px; }
     }
   </style>
 </head>
@@ -231,23 +268,23 @@
   </section>
 
   <!-- 1b. EMOTIONAL SCENES -->
-  <section style="padding: 0; border-bottom: 1px solid var(--border); background: var(--ink);">
-    <div class="container" style="padding-top: 28px; padding-bottom: 28px;">
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08);">
-        <div style="padding: 24px 28px; background: var(--ink);">
-          <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 10px;">Deal rot</div>
-          <p style="font-family: var(--body-serif); font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; font-weight: 300; margin: 0;">A $120K deal goes quiet for 18 days. Your CRM still shows it as "In Progress." Nobody flags it. You find out in the QBR.</p>
+  <section class="scenes-band">
+    <div class="container scenes-container">
+      <div class="scenes-grid">
+        <div class="scene-card">
+          <div class="scene-lbl">Deal rot</div>
+          <p class="scene-body">A $120K deal goes quiet for 18 days. Your CRM still shows it as "In Progress." Nobody flags it. You find out in the QBR.</p>
         </div>
-        <div style="padding: 24px 28px; background: var(--ink);">
-          <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 10px;">Forecast blindness</div>
-          <p style="font-family: var(--body-serif); font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; font-weight: 300; margin: 0;">Your Q3 forecast said 72% confident. You closed at 44%. The data was in your CRM the whole time — it just never told you what it meant.</p>
+        <div class="scene-card">
+          <div class="scene-lbl">Forecast blindness</div>
+          <p class="scene-body">Your Q3 forecast said 72% confident. You closed at 44%. The data was in your CRM the whole time — it just never told you what it meant.</p>
         </div>
-        <div style="padding: 24px 28px; background: var(--ink);">
-          <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 10px;">The handoff gap</div>
-          <p style="font-family: var(--body-serif); font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; font-weight: 300; margin: 0;">Your AE promised onboarding support and a custom integration. The deal closed. CS got a Slack message. The customer churned at month 8.</p>
+        <div class="scene-card">
+          <div class="scene-lbl">The handoff gap</div>
+          <p class="scene-body">Your AE promised onboarding support and a custom integration. The deal closed. CS got a Slack message. The customer churned at month 8.</p>
         </div>
       </div>
-      <p style="font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 16px; text-align: center; font-style: italic;">These aren't edge cases. They're happening in your pipeline right now.</p>
+      <p class="scenes-note">These aren't edge cases. They're happening in your pipeline right now.</p>
     </div>
   </section>
 
@@ -306,32 +343,32 @@
   </section>
 
   <!-- 4. ICP — who it's built for -->
-  <section style="padding: 56px 0; border-bottom: 1px solid var(--border); background: var(--cream-2);">
+  <section class="icp-section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+      <div class="icp-inner">
         <div>
-          <span style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 14px;">Who it's built for</span>
-          <h2 style="font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px;">If this is your team,<br>this was built for you.</h2>
-          <p style="font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 0;">GoWarmCRM is purpose-built for B2B sales teams running multi-stage pipelines — typically SaaS, professional services, or complex field sales with deal values above $20K and sales cycles longer than 30 days. You have between 5 and 200 reps, and a VP Sales or RevOps leader who owns the pipeline.</p>
+          <span class="icp-eyebrow">Who it's built for</span>
+          <h2 class="icp-heading">If this is your team,<br>this was built for you.</h2>
+          <p class="icp-body">GoWarmCRM is purpose-built for B2B sales teams running multi-stage pipelines — typically SaaS, professional services, or complex field sales with deal values above $20K and sales cycles longer than 30 days. You have between 5 and 200 reps, and a VP Sales or RevOps leader who owns the pipeline.</p>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
-            <div style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 10px;">Team size</div>
-            <div style="font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ink);">5 – 200 reps</div>
-            <div style="font-size: 12px; color: var(--ink-4); margin-top: 4px;">with at least one dedicated manager</div>
+        <div class="icp-cards">
+          <div class="icp-card">
+            <div class="icp-card-label">Team size</div>
+            <div class="icp-card-value">5 – 200 reps</div>
+            <div class="icp-card-sub">with at least one dedicated manager</div>
           </div>
-          <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
-            <div style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 10px;">Deal profile</div>
-            <div style="font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ink);">$20K+ ACV</div>
-            <div style="font-size: 12px; color: var(--ink-4); margin-top: 4px;">multi-stage, 30+ day sales cycle</div>
+          <div class="icp-card">
+            <div class="icp-card-label">Deal profile</div>
+            <div class="icp-card-value">$20K+ ACV</div>
+            <div class="icp-card-sub">multi-stage, 30+ day sales cycle</div>
           </div>
-          <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
-            <div style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 10px;">CRM</div>
-            <div style="font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--ink); line-height: 1.3;">Salesforce, HubSpot,<br>Pipedrive, or Zoho</div>
+          <div class="icp-card">
+            <div class="icp-card-label">CRM</div>
+            <div class="icp-card-value" style="font-size:16px;line-height:1.3;">Salesforce, HubSpot,<br>Pipedrive, or Zoho</div>
           </div>
-          <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
-            <div style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 10px;">Sector</div>
-            <div style="font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--ink); line-height: 1.3;">SaaS, professional services, or complex B2B</div>
+          <div class="icp-card">
+            <div class="icp-card-label">Sector</div>
+            <div class="icp-card-value" style="font-size:16px;line-height:1.3;">SaaS, professional services, or complex B2B</div>
           </div>
         </div>
       </div>

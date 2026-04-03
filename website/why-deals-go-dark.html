@@ -87,9 +87,20 @@
     .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
     @media (max-width: 900px) {
       .wdgd-hero h1 { font-size: 32px; }
-      .signal-grid, .stages-block { grid-template-columns: 1fr; }
+      .signal-grid { grid-template-columns: 1fr; }
+      .stages-block { grid-template-columns: 1fr 1fr; }
       .system-features { grid-template-columns: 1fr; }
       .faq-grid { grid-template-columns: 1fr; }
+      .rescue-steps li { grid-template-columns: 28px 1fr; gap: 12px; }
+    }
+    @media (max-width: 600px) {
+      .stages-block { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .wdgd-hero h1 { font-size: 26px; }
+      .wdgd-h2 { font-size: 24px; }
+      .signal-num { font-size: 22px; }
+      .faq-item h4 { font-size: 15px; }
     }
   </style>
 

@@ -56,7 +56,15 @@
     .value-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
     .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
     .section-title { font-family: var(--sans); font-size: 13px; font-weight: 400; color: var(--ink-4); letter-spacing: 1.5px; text-transform: uppercase; }
-    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } .values-grid { grid-template-columns: 1fr; } .page-hero h1 { font-size: 30px; } }
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .page-hero h1 { font-size: 30px; }
+    }
+    @media (max-width: 480px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 24px; }
+    }
   </style>
 
   <script type="application/ld+json">

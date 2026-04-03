@@ -82,8 +82,20 @@
     .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
     @media (max-width: 900px) {
       .pe-hero h1 { font-size: 32px; }
-      .gap-grid, .system-grid, .metrics-row { grid-template-columns: 1fr; }
+      .gap-grid { grid-template-columns: 1fr; }
+      .system-grid { grid-template-columns: 1fr 1fr; }
+      .metrics-row { grid-template-columns: 1fr; }
       .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .system-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .pe-hero h1 { font-size: 26px; }
+      .pe-h2 { font-size: 24px; }
+      .pe-def-text { font-size: 17px; }
+      .metric-num { font-size: 28px; }
+      .faq-item h4 { font-size: 15px; }
     }
   </style>
 
