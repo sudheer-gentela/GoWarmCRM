@@ -1,46 +1,136 @@
 {
   "trailingSlash": false,
   "functions": {
-    "api/submit.js": { "maxDuration": 15 }
+    "api/submit.js": {
+      "maxDuration": 15
+    }
   },
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "blog.gowarmcrm.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.gowarmcrm.com"
+        }
+      ],
       "destination": "https://www.gowarmcrm.com/blog/:path*",
       "permanent": true
     },
-    { "source": "/v2",              "destination": "/", "permanent": true },
-    { "source": "/v2/",             "destination": "/", "permanent": true },
-    { "source": "/v2/how-it-works", "destination": "/how-it-works", "permanent": true },
-    { "source": "/v2/pricing",      "destination": "/pricing", "permanent": true },
-    { "source": "/v2/problems",     "destination": "/problems", "permanent": true },
-    { "source": "/v2/diagnostic",   "destination": "/diagnostic", "permanent": true },
-    { "source": "/v2/insights",     "destination": "/insights", "permanent": true }
+    {
+      "source": "/v2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v2/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v2/how-it-works",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/v2/pricing",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/v2/problems",
+      "destination": "/problems",
+      "permanent": true
+    },
+    {
+      "source": "/v2/diagnostic",
+      "destination": "/diagnostic",
+      "permanent": true
+    },
+    {
+      "source": "/v2/insights",
+      "destination": "/insights",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/",                    "destination": "/website/index.html" },
-    { "source": "/how-it-works",        "destination": "/website/how-it-works.html" },
-    { "source": "/pricing",             "destination": "/website/pricing.html" },
-    { "source": "/problems",            "destination": "/website/problems.html" },
-    { "source": "/about",               "destination": "/website/about.html" },
-    { "source": "/contact",             "destination": "/website/contact.html" },
-    { "source": "/diagnostic",          "destination": "/website/diagnostic.html" },
-    { "source": "/insights",            "destination": "/website/insights.html" },
-    { "source": "/platform-overview",   "destination": "/website/platform-overview.html" },
-    { "source": "/blog",                "destination": "/blog/index.html" },
-    { "source": "/blog/:path*",         "destination": "/blog/:path*.html" },
-    { "source": "/sales-execution-platform",     "destination": "/website/sales-execution-platform.html" },
-    { "source": "/why-deals-go-dark",            "destination": "/website/why-deals-go-dark.html" },
-    { "source": "/pipeline-execution",           "destination": "/website/pipeline-execution.html" }
+    {
+      "source": "/",
+      "destination": "/website/index.html"
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/website/how-it-works.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/website/pricing.html"
+    },
+    {
+      "source": "/problems",
+      "destination": "/website/problems.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/website/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/website/contact.html"
+    },
+    {
+      "source": "/diagnostic",
+      "destination": "/website/diagnostic.html"
+    },
+    {
+      "source": "/insights",
+      "destination": "/website/insights.html"
+    },
+    {
+      "source": "/platform-overview",
+      "destination": "/website/platform-overview.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/blog/:path*.html"
+    },
+    {
+      "source": "/sales-execution-platform",
+      "destination": "/website/sales-execution-platform.html"
+    },
+    {
+      "source": "/why-deals-go-dark",
+      "destination": "/website/why-deals-go-dark.html"
+    },
+    {
+      "source": "/pipeline-execution",
+      "destination": "/website/pipeline-execution.html"
+    },
+    {
+      "source": "/pipeline-data-accuracy",
+      "destination": "/website/pipeline-data-accuracy.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options",        "value": "DENY" },
-        { "key": "X-XSS-Protection",       "value": "1; mode=block" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     }
   ]

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why CRM Data Is Unreliable — And How to Build Pipeline Intelligence Without It | GoWarmCRM</title>
+  <meta name="description" content="Only 34% of sales organisations trust their CRM data. Here's why pipeline intelligence tools fail when built on CRM fields alone — and how reading email, calendar, and meeting signals fixes it." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="theme-color" content="#E8630A">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/pipeline-data-accuracy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/pipeline-data-accuracy" />
+  <meta property="og:title" content="Why CRM Data Is Unreliable — And How to Build Pipeline Intelligence Without It" />
+  <meta property="og:description" content="Only 34% of sales orgs trust their CRM data. Here's how reading email, calendar, and meeting signals gives you pipeline intelligence that doesn't depend on rep discipline." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="Why CRM Data Is Unreliable — And How to Fix It" />
+  <meta name="twitter:description" content="34% of orgs trust their CRM data. Here's the signal layer that makes pipeline intelligence work anyway." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why CRM Data Is Unreliable — And How to Build Pipeline Intelligence Without It","description":"Only 34% of sales organisations trust their CRM data. This article explains why pipeline intelligence tools fail when built on CRM fields alone, and how reading email, calendar, and meeting signals produces reliable pipeline diagnostics regardless of rep logging discipline.","url":"https://www.gowarmcrm.com/pipeline-data-accuracy","datePublished":"2026-04-01","dateModified":"2026-04-01","keywords":"CRM data accuracy, unreliable CRM data, pipeline intelligence, sales activity tracking, email signals sales, calendar data pipeline, why reps don't update CRM","image":"https://www.gowarmcrm.com/og-image.png","author":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com"},"publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com","logo":{"@type":"ImageObject","url":"https://www.gowarmcrm.com/favicon-512x512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gowarmcrm.com/pipeline-data-accuracy"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"Pipeline Data Accuracy","item":"https://www.gowarmcrm.com/pipeline-data-accuracy"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is CRM data unreliable?","acceptedAnswer":{"@type":"Answer","text":"CRM data is unreliable because it depends entirely on rep behaviour. Reps log calls inconsistently, update stage fields when they remember, and enter activity notes when they have time. Research consistently shows 28–34% of CRM activity data is incomplete or inaccurate. The problem isn't the CRM — it's that CRM accuracy is a human compliance problem, not a technology problem."}},{"@type":"Question","name":"How can you track sales activity without relying on CRM data?","acceptedAnswer":{"@type":"Answer","text":"The most reliable sales activity signals exist outside the CRM: email threads (last two-way contact, response latency, thread frequency), calendar events (meetings scheduled and attended), and meeting patterns (cadence, stakeholder involvement, engagement trend). These signals are generated automatically as deals progress — no rep logging required. A sales execution platform that reads these signals produces pipeline diagnostics that work regardless of CRM data quality."}},{"@type":"Question","name":"What are the most reliable signals for detecting a stalled deal?","acceptedAnswer":{"@type":"Answer","text":"The five most reliable stall signals are: (1) No two-way email contact in 10+ days — measurable from email activity, not CRM logs. (2) No meeting scheduled in the next 14 days — visible from calendar data. (3) Meeting frequency declining — fewer touchpoints per week than earlier in the deal. (4) Only one stakeholder engaged — champion-only contact without economic buyer involvement. (5) Close date moved more than once — visible from CRM field history."}},{"@type":"Question","name":"Does GoWarmCRM work if our CRM data is incomplete?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoWarmCRM reads from four signal sources: email activity, calendar events, meeting patterns, and CRM fields. CRM fields are one of four inputs. If a rep hasn't logged a call but has exchanged three emails this week, GoWarmCRM reads the email activity directly. The diagnostic doesn't depend on rep logging discipline."}},{"@type":"Question","name":"Why do reps not update the CRM?","acceptedAnswer":{"@type":"Answer","text":"Research identifies three primary reasons: (1) Time cost — CRM data entry is estimated to take 5.5 hours per week per rep. (2) Perceived irrelevance — reps don't see direct personal benefit from logging activity. (3) Friction — updating a CRM requires switching context from the active workflow (email, phone, meeting) to a separate system. The solution is not to demand better compliance but to read signals from the systems reps already use."}},{"@type":"Question","name":"What is the difference between CRM data and pipeline signals?","acceptedAnswer":{"@type":"Answer","text":"CRM data is what someone typed into a form. Pipeline signals are what's actually happening in the relationship between your team and a prospect or customer — visible in email threads, calendar events, meeting patterns, and communication frequency. CRM data is always incomplete. Pipeline signals are always present. The most accurate pipeline intelligence reads both."}}]}</script>
+
+  <style>
+    .pda-hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+    .pda-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .pda-hero h1 { font-family: var(--serif); font-size: 44px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; max-width: 800px; }
+    .pda-hero p { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 640px; }
+    .pda-h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 14px; }
+    .pda-body { font-family: var(--body-serif); font-size: 16px; color: var(--ink-2); line-height: 1.8; font-weight: 300; margin-bottom: 16px; max-width: 720px; }
+    .pda-body strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 15px; }
+    .pda-section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .pda-section.alt { background: var(--cream-2); }
+
+    /* Trust deficit block */
+    .trust-stat { background: var(--ink); border-radius: 10px; padding: 36px 40px; margin: 32px 0; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; }
+    .trust-num { font-family: var(--serif); font-size: 72px; font-weight: 700; color: var(--rust); line-height: 1; }
+    .trust-text h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 8px; line-height: 1.3; }
+    .trust-text p { font-family: var(--body-serif); font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.65; font-weight: 300; }
+
+    /* Why reps don't log */
+    .reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+    .reason-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px; border-top: 3px solid var(--rust); }
+    .reason-num { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--rust); margin-bottom: 10px; }
+    .reason-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .reason-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.6; font-weight: 300; }
+
+    /* Signal sources comparison */
+    .sources-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 32px; }
+    .sources-col-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .sources-col-label.crm { color: var(--ink-4); }
+    .sources-col-label.signals { color: var(--rust); }
+    .source-item { padding: 14px 0; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+    .source-item:last-child { border-bottom: none; }
+    .source-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .source-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+    .source-desc { font-family: var(--body-serif); font-size: 13px; color: var(--ink-3); line-height: 1.5; font-weight: 300; }
+    .source-caveat { font-size: 12px; color: var(--rust); font-style: italic; margin-top: 4px; }
+
+    /* Four signals grid */
+    .four-signals { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 32px; }
+    .sig-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px; }
+    .sig-card.primary { background: var(--ink); border-color: var(--ink); }
+    .sig-icon { font-size: 24px; margin-bottom: 12px; }
+    .sig-name { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .sig-card.primary .sig-name { color: #fff; }
+    .sig-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; margin-bottom: 12px; }
+    .sig-card.primary .sig-desc { color: rgba(255,255,255,0.6); }
+    .sig-examples { list-style: none; }
+    .sig-examples li { font-size: 13px; color: var(--ink-2); padding: 5px 0; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .sig-card.primary .sig-examples li { color: rgba(255,255,255,0.7); border-top-color: rgba(255,255,255,0.1); }
+    .sig-examples li::before { content: "→"; color: var(--rust); font-weight: 600; flex-shrink: 0; }
+
+    /* Worked example */
+    .example-block { background: var(--cream-2); border: 1px solid var(--border); border-radius: 10px; padding: 36px 40px; margin-top: 32px; }
+    .example-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 20px; }
+    .example-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .example-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .example-item { padding: 8px 0; border-bottom: 1px solid var(--border); font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.5; font-weight: 300; }
+    .example-item:last-child { border-bottom: none; }
+    .example-item strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 13px; }
+    .example-verdict { margin-top: 20px; padding: 16px 20px; background: var(--ink); border-radius: 6px; font-family: var(--body-serif); font-size: 15px; color: rgba(255,255,255,0.8); font-style: italic; line-height: 1.6; }
+
+    /* FAQ */
+    .pda-faq { padding: 64px 0; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 64px; margin-top: 32px; }
+    .faq-item h4 { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+
+    @media (max-width: 900px) {
+      .pda-hero h1 { font-size: 32px; }
+      .trust-stat { grid-template-columns: 1fr; gap: 16px; }
+      .trust-num { font-size: 56px; }
+      .reasons-grid { grid-template-columns: 1fr; }
+      .sources-layout { grid-template-columns: 1fr; }
+      .four-signals { grid-template-columns: 1fr; }
+      .example-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .pda-hero h1 { font-size: 26px; }
+      .pda-h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pda-hero">
+    <div class="container">
+      <span class="pda-eyebrow">Pipeline Data Accuracy</span>
+      <h1>Why CRM Data Is Unreliable — And How to Build Pipeline Intelligence Without It</h1>
+      <p>Only 34% of sales organisations trust their CRM data. Most pipeline intelligence tools are built entirely on that data. Here's why that's a structural problem — and what reading email, calendar, and meeting signals actually changes.</p>
+    </div>
+  </section>
+
+  <!-- THE TRUST DEFICIT -->
+  <section class="pda-section">
+    <div class="container">
+      <h2 class="pda-h2">The CRM trust problem is structural, not cultural</h2>
+      <p class="pda-body">Every few years a new sales leader inherits a CRM, runs a training programme on logging discipline, gets temporary compliance, and watches it erode within 90 days. The problem isn't the people. The problem is that CRM data entry is a task with high cost (time, context-switching) and low perceived personal benefit for the person doing it.</p>
+      <p class="pda-body">The result is a dataset that is systematically incomplete in the same predictable way: reps log calls they're proud of, skip the ones that went nowhere, update stages when they feel progress, and forget about deals they've mentally written off. Which means your CRM data is always biased toward optimism.</p>
+      <div class="trust-stat">
+        <div class="trust-num">34%</div>
+        <div class="trust-text">
+          <h3>of sales organisations say they trust their CRM data — yet 69.9% rely on it to run pipeline reviews</h3>
+          <p>The gap between trust and dependency is the structural problem. Executives know the data is incomplete. They use it anyway because there's nothing else. Until now.</p>
+        </div>
+      </div>
+      <p class="pda-body"><em>Source: Korn Ferry CRM Data Confidence Research</em></p>
+
+      <h2 class="pda-h2" style="margin-top:48px;">Why reps don't log — the three real reasons</h2>
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-num">01</div>
+          <div class="reason-title">Time cost</div>
+          <p class="reason-desc">CRM data entry is estimated to consume 5.5 hours per rep per week — time that doesn't directly advance a deal. For a rep under quota pressure, logging a call in the CRM is always the lower priority than making the next one.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-num">02</div>
+          <div class="reason-title">No perceived personal benefit</div>
+          <p class="reason-desc">The CRM is a reporting tool for management. Reps experience it as overhead that benefits someone else. There's no feedback loop where good CRM hygiene makes their job easier — which means compliance is purely extrinsic motivation.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-num">03</div>
+          <div class="reason-title">Context switching friction</div>
+          <p class="reason-desc">The actual work of sales happens in email, on calls, and in meetings. The CRM is a different system, often in a different window, with a different interface. Every log entry requires switching context from the active workflow to an administrative one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRM FIELDS VS REAL SIGNALS -->
+  <section class="pda-section alt">
+    <div class="container">
+      <h2 class="pda-h2">CRM fields vs real pipeline signals</h2>
+      <p class="pda-body">The fundamental issue is that CRM data is <strong>typed</strong> — someone had to decide to enter it. Pipeline signals are <strong>generated</strong> — they exist automatically as a deal progresses, regardless of rep behaviour. The most accurate pipeline intelligence reads both.</p>
+      <div class="sources-layout">
+        <div>
+          <div class="sources-col-label crm">CRM fields — typed, dependent on rep</div>
+          <div class="source-item">
+            <div class="source-icon">📝</div>
+            <div>
+              <div class="source-name">Stage field</div>
+              <p class="source-desc">Updated when the rep decides to move it. Can lag reality by days or weeks.</p>
+              <div class="source-caveat">Accuracy depends entirely on rep discipline</div>
+            </div>
+          </div>
+          <div class="source-item">
+            <div class="source-icon">📞</div>
+            <div>
+              <div class="source-name">Call logs</div>
+              <p class="source-desc">Manually entered. Research shows 28% of calls go unlogged. Good calls get logged; awkward ones often don't.</p>
+              <div class="source-caveat">Systematically biased toward optimism</div>
+            </div>
+          </div>
+          <div class="source-item">
+            <div class="source-icon">📋</div>
+            <div>
+              <div class="source-name">Activity notes</div>
+              <p class="source-desc">Written when the rep has time. Rarely written after a call that didn't go well. Often contain no useful signal about deal health.</p>
+              <div class="source-caveat">Quality and completeness vary by rep</div>
+            </div>
+          </div>
+          <div class="source-item">
+            <div class="source-icon">📅</div>
+            <div>
+              <div class="source-name">Close date</div>
+              <p class="source-desc">Set optimistically at deal creation. Moved when the manager asks about it. Rarely an accurate reflection of buyer timeline.</p>
+              <div class="source-caveat">Reflects rep optimism more than buyer reality</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="sources-col-label signals">Behavioural signals — generated automatically</div>
+          <div class="source-item">
+            <div class="source-icon">✉️</div>
+            <div>
+              <div class="source-name">Email two-way contact date</div>
+              <p class="source-desc">The last time the prospect actually replied — not the last time the rep sent something. This is the most reliable stall signal that exists. No logging required.</p>
+            </div>
+          </div>
+          <div class="source-item">
+            <div class="source-icon">⏱️</div>
+            <div>
+              <div class="source-name">Response latency trend</div>
+              <p class="source-desc">How long it takes the prospect to reply, and whether that latency is increasing. A deal going from same-day replies to three-day replies to no replies is a measurable signal — visible in email metadata.</p>
+            </div>
+          </div>
+          <div class="source-item">
+            <div class="source-icon">📅</div>
+            <div>
+              <div class="source-name">Calendar activity</div>
+              <p class="source-desc">Meetings scheduled, attended, and declined — read from calendar data. Whether the next meeting is booked. Whether meeting frequency is increasing or declining.</p>
+            </div>
+          </div>
+          <div class="source-item">
+            <div class="source-icon">👥</div>
+            <div>
+              <div class="source-name">Stakeholder breadth</div>
+              <p class="source-desc">How many contacts from the prospect's organisation are engaged. A deal with only one contact is more fragile than one with three — visible from email and calendar metadata without any logging.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUR SIGNAL SOURCES -->
+  <section class="pda-section">
+    <div class="container">
+      <h2 class="pda-h2">The four signal sources GoWarmCRM reads</h2>
+      <p class="pda-body">Reliable pipeline diagnostics require reading from all four sources. Building on CRM fields alone produces intelligence that's only as good as rep compliance. Building on behavioural signals produces intelligence that works regardless.</p>
+      <div class="four-signals">
+        <div class="sig-card primary">
+          <div class="sig-icon">✉️</div>
+          <div class="sig-name">Email activity</div>
+          <p class="sig-desc">The richest source of deal health signals — read directly from email infrastructure, not from logged calls. No rep action required.</p>
+          <ul class="sig-examples">
+            <li>Last two-way email contact date</li>
+            <li>Response latency — and whether it's increasing</li>
+            <li>Thread frequency over time</li>
+            <li>Who's sending vs who's responding</li>
+          </ul>
+        </div>
+        <div class="sig-card">
+          <div class="sig-icon">📅</div>
+          <div class="sig-name">Calendar events</div>
+          <p class="sig-desc">Meeting data as a proxy for buyer engagement — whether meetings are being scheduled, attended, and followed up on.</p>
+          <ul class="sig-examples">
+            <li>Next meeting scheduled: yes or no</li>
+            <li>Meeting frequency — weekly, fortnightly, monthly</li>
+            <li>Meetings declined or ghosted</li>
+            <li>Time since last face-to-face contact</li>
+          </ul>
+        </div>
+        <div class="sig-card">
+          <div class="sig-icon">🤝</div>
+          <div class="sig-name">Meeting patterns</div>
+          <p class="sig-desc">The trajectory of engagement — whether the relationship is deepening or cooling, and how many stakeholders are involved.</p>
+          <ul class="sig-examples">
+            <li>Stakeholder count — single contact vs multi-threaded</li>
+            <li>Meeting cadence acceleration or deceleration</li>
+            <li>Economic buyer involvement: present or absent</li>
+            <li>Engagement trend over past 30 days</li>
+          </ul>
+        </div>
+        <div class="sig-card" style="background:var(--cream-2);border-style:dashed;">
+          <div class="sig-icon">📊</div>
+          <div class="sig-name">CRM fields</div>
+          <p class="sig-desc">Stage, value, owner, close date — the traditional signals. Used as context and corroboration, not as the primary source.</p>
+          <ul class="sig-examples">
+            <li>Stage — with behavioural signals to validate it</li>
+            <li>Deal value — for priority ranking</li>
+            <li>Close date — as a deadline, not a forecast</li>
+            <li>Owner — for routing actions to the right rep</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKED EXAMPLE -->
+  <section class="pda-section alt">
+    <div class="container">
+      <h2 class="pda-h2">What this looks like in practice</h2>
+      <p class="pda-body">The same deal. Two different pictures — one from CRM fields alone, one from all four signal sources. This is the gap that costs sales teams revenue every quarter.</p>
+      <div class="example-block">
+        <div class="example-label">Worked example — Acme Corp, $120K deal, Day 18</div>
+        <div class="example-grid">
+          <div>
+            <h4>What the CRM shows</h4>
+            <div class="example-item"><strong>Stage:</strong> Proposal sent</div>
+            <div class="example-item"><strong>Close date:</strong> End of quarter</div>
+            <div class="example-item"><strong>Last activity:</strong> "Proposal follow-up call" — logged 4 days ago</div>
+            <div class="example-item"><strong>Rep assessment:</strong> "Warm — waiting on internal approval"</div>
+            <div class="example-item"><strong>Forecast:</strong> 70% confidence</div>
+          </div>
+          <div>
+            <h4>What the signals show</h4>
+            <div class="example-item"><strong>Last two-way email:</strong> 18 days ago — prospect stopped replying</div>
+            <div class="example-item"><strong>Response latency:</strong> Same day → 3 days → no reply (deteriorating)</div>
+            <div class="example-item"><strong>Next meeting:</strong> None scheduled</div>
+            <div class="example-item"><strong>Stakeholders engaged:</strong> One — champion only, no economic buyer</div>
+            <div class="example-item"><strong>Signal-based assessment:</strong> High stall risk. Champion may have gone quiet.</div>
+          </div>
+        </div>
+        <div class="example-verdict">"The rep logged a follow-up call 4 days ago. The CRM shows 70% confidence. The signals show an 18-day silence and a deteriorating response pattern. Without reading the signals, this deal looks fine. With them, it's already flagged for rescue action."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pda-faq">
+    <div class="container">
+      <h2 class="pda-h2">Common questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>Why is CRM data unreliable?</h4>
+          <p>CRM data depends entirely on rep behaviour — reps log calls inconsistently, update stages when they remember, and skip entries when under pressure. The result is a dataset that's systematically biased toward the positive and incomplete by design. It's not a technology problem; it's a human compliance problem that training programmes reliably fail to solve permanently.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How do you track sales activity without relying on CRM data?</h4>
+          <p>Email threads, calendar events, and meeting patterns are generated automatically as deals progress — no rep logging required. Last two-way email contact, response latency, meeting frequency, and stakeholder engagement are all visible from email and calendar metadata. These signals are always present and always honest — they don't reflect what reps hoped would happen, only what actually did.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What are the most reliable signals for a stalled deal?</h4>
+          <p>The five most reliable signals: no two-way email contact in 10+ days; no meeting scheduled in the next 14 days; declining meeting frequency over the last 30 days; only one stakeholder engaged with no economic buyer involvement; and close date pushed more than once. All five are visible from email and calendar data without any CRM logging.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Does GoWarmCRM work if our CRM data is incomplete?</h4>
+          <p>Yes. GoWarmCRM reads from four signal sources — email activity, calendar events, meeting patterns, and CRM fields. If a rep hasn't logged a call but has exchanged three emails and booked a follow-up meeting, GoWarmCRM reads those signals directly. The diagnostic doesn't depend on rep logging discipline to produce accurate results.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Does GoWarmCRM require access to email and calendar?</h4>
+          <p>Reading email and calendar signals requires the relevant integration to be connected. GoWarmCRM works with the same email and calendar infrastructure your team already uses — no new tools or workflow changes required. The integration is set up once at the organisation level.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How is this different from what Salesforce's Einstein or HubSpot's AI does?</h4>
+          <p>CRM-native AI tools analyse data that exists in the CRM — which means they inherit all the same incompleteness and optimism bias. GoWarmCRM reads behavioural signals from outside the CRM (email, calendar, meetings) and cross-references them with CRM fields. The result is a diagnostic that catches what reps didn't log — which is precisely the data that CRM-native tools miss.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>See GoWarmCRM read your pipeline — not just your CRM.</h2>
+          <p>Book a free 20-minute demo. We'll show you what the signal layer surfaces in your pipeline today — deals the CRM shows as healthy that email and calendar signals have already flagged as at risk.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, RevOps, and Sales Directors.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul>
+          <li><a href="/sales-execution-platform">What is a Sales Execution Platform?</a></li>
+          <li><a href="/why-deals-go-dark">Why Deals Go Dark</a></li>
+          <li><a href="/pipeline-execution">Pipeline Execution</a></li>
+          <li><a href="/pipeline-data-accuracy">Pipeline Data Accuracy</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/diagnostic">Pipeline Diagnostic</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com</span></div>
+    </div>
+  </footer>
+  <script>function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}</script>
+</body>
+</html>

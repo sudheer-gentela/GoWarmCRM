@@ -195,7 +195,23 @@
     /* ── Compare table mobile ── */
     .compare-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-    @media (max-width: 900px) {
+    /* ── Signal Sources ── */
+    .signals-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .signals-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; margin-bottom: 40px; }
+    .signals-heading { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .signals-body { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+    .signals-body:last-child { margin-bottom: 0; }
+    .signals-sources { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .signal-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+    .signal-card.highlight { background: var(--cream-2); border-style: dashed; }
+    .signal-icon { font-size: 20px; margin-bottom: 10px; }
+    .signal-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .signal-desc { font-family: var(--body-serif); font-size: 13px; color: var(--ink-3); line-height: 1.6; font-weight: 300; }
+    .signals-callout { background: var(--ink); border-radius: 8px; padding: 24px 32px; display: flex; align-items: center; gap: 24px; }
+    .signals-callout-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); white-space: nowrap; }
+    .signals-callout-text { font-family: var(--body-serif); font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; font-weight: 300; font-style: italic; }
+
+        @media (max-width: 900px) {
       .hero-title { font-size: 36px; }
       .hero-stats { grid-template-columns: 1fr; }
       .calc-inner, .manifesto-inner, .aq-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -204,6 +220,8 @@
       .int-note { display: none; }
       .ai-callout { grid-template-columns: 1fr; gap: 20px; }
       .scenes-grid { grid-template-columns: 1fr; }
+      .signals-inner { grid-template-columns: 1fr; gap: 40px; }
+      .signals-callout { flex-direction: column; gap: 12px; }
       .icp-inner { grid-template-columns: 1fr; gap: 40px; }
       .icp-heading { font-size: 28px; }
     }
@@ -213,6 +231,7 @@
       .hero-stats { gap: 8px; }
       .stat-number { font-size: 30px; }
       .icp-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .signals-sources { grid-template-columns: 1fr; }
       .icp-heading { font-size: 24px; }
       .manifesto-heading { font-size: 28px; }
       .section-h2 { font-size: 26px; }
@@ -243,7 +262,7 @@
     <div class="container">
       <span class="hero-eyebrow">Sales Execution Platform</span>
       <h1 class="hero-title">Your CRM tracks deals.<br><em>We tell your team</em><br>what to do to close them.</h1>
-      <p class="hero-subtitle">Your pipeline is leaking revenue right now. Not because your strategy is wrong — because nothing happened after the last call. GoWarmCRM surfaces exactly what needs to happen next, for every deal, every rep, every morning.</p>
+      <p class="hero-subtitle">Your pipeline is leaking revenue right now. Not because your strategy is wrong — because nothing happened after the last call. GoWarmCRM reads the signals that actually exist — emails, calendar activity, meeting patterns — not just what reps remembered to log. It surfaces exactly what needs to happen next, for every deal, every rep, every morning.</p>
       <div class="hero-cta-row">
         <a href="/diagnostic" class="btn btn-primary">Find your pipeline leaks →</a>
         <a href="/how-it-works" class="btn btn-outline">See how it works</a>
@@ -256,7 +275,7 @@
         </div>
         <div class="stat-card">
           <div class="stat-number">34%</div>
-          <div class="stat-label">of organisations trust their CRM data — yet 69.9% rely on it to run pipeline. The gap between trust and dependency is where revenue leaks.</div>
+          <div class="stat-label">of organisations trust their CRM data. GoWarmCRM reads behavioural signals from emails, calendars, and meeting patterns directly — so your diagnostics aren't limited to what reps logged.</div>
           <a class="stat-source" href="https://www.getaccept.com/blog/pipeline-visibility" target="_blank" rel="noopener">Korn Ferry CRM Data Confidence Research ↗</a>
         </div>
         <div class="stat-card">
@@ -371,6 +390,47 @@
             <div class="icp-card-value" style="font-size:16px;line-height:1.3;">SaaS, professional services, or complex B2B</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 4b. SIGNAL SOURCES -->
+  <section class="signals-section">
+    <div class="container">
+      <div class="signals-inner">
+        <div class="signals-text">
+          <span class="section-eyebrow-lbl">Where we read signals from</span>
+          <h2 class="signals-heading">Most pipeline tools read your CRM.<br>GoWarmCRM reads your pipeline.</h2>
+          <p class="signals-body">CRM fields are what someone typed. Pipeline is what's actually happening — in email threads, calendar activity, and meeting patterns. GoWarmCRM reads all four signal sources, so your diagnostics work even when reps haven't updated a field.</p>
+          <p class="signals-body">This is why executives who've written off "pipeline intelligence" tools before find GoWarmCRM different. The signal doesn't depend on rep discipline. It's already there.</p>
+        </div>
+        <div class="signals-sources">
+          <div class="signal-card">
+            <div class="signal-icon">✉️</div>
+            <div class="signal-name">Email activity</div>
+            <p class="signal-desc">Last two-way contact date, response latency, thread frequency — read directly from email. Not from a logged call that may or may not have happened.</p>
+          </div>
+          <div class="signal-card">
+            <div class="signal-icon">📅</div>
+            <div class="signal-name">Calendar events</div>
+            <p class="signal-desc">Meetings scheduled, accepted, declined, or ghosted. Whether a follow-up was booked after the last meeting. Whether the cadence is accelerating or slowing.</p>
+          </div>
+          <div class="signal-card">
+            <div class="signal-icon">🤝</div>
+            <div class="signal-name">Meeting patterns</div>
+            <p class="signal-desc">Meeting frequency over time, who's in the room (single contact or multi-stakeholder), and whether engagement is growing or fading — without anyone filling in a form.</p>
+          </div>
+          <div class="signal-card highlight">
+            <div class="signal-icon">📊</div>
+            <div class="signal-name">CRM fields</div>
+            <p class="signal-desc">Stage, deal value, owner, close date — the traditional signals. Used as one of four sources, not the only one. CRM data enriches the picture; it doesn't define it.</p>
+          </div>
+        </div>
+      </div>
+      <div class="signals-callout">
+        <span class="signals-callout-label">The result</span>
+        <p class="signals-callout-text">A nightly diagnostic that catches a $120K deal going dark after 18 days of email silence — even if the CRM still shows it as "In Progress" and the rep hasn't updated the stage.</p>
       </div>
     </div>
   </section>

@@ -108,6 +108,13 @@
       .prob-title { font-size: 17px; }
       .ba-text h2 { font-size: 26px; }
     }
+    @media (max-width: 480px) {
+      .page-title { font-size: 28px; }
+      .page-title em { display: block; }
+      .problem-card { padding: 24px 20px; }
+      .prob-title { font-size: 17px; }
+      .ba-text h2 { font-size: 26px; }
+    }
   </style>
 </head>
 <body>
@@ -175,8 +182,8 @@
           <div class="prob-stakes">Without this: 12 deals haven't had a meaningful touch in 3 weeks. Your pipeline shows them all as "In Progress."</div>
           <p class="prob-desc">Your pipeline report shows 40 open deals. But a meaningful portion haven't had real activity in weeks. Nobody can see it — because the CRM shows "In Progress" until someone manually moves it. By the time you notice, the deal is already cold.</p>
           <ul class="prob-fix">
-            <li>Nightly rules engine scores every deal by stage duration and last two-way contact</li>
-            <li>Alerts fire automatically when a deal crosses your configured risk threshold</li>
+            <li>Nightly rules engine reads email threads, calendar activity, and meeting patterns — not just CRM logs</li>
+            <li>Last two-way email contact tracked directly — alerts fire even when reps haven't updated the CRM</li>
             <li>AI drafts the re-engagement action — rep approves in one click</li>
             <li>Managers see every flagged deal without asking reps</li>
           </ul>
@@ -211,10 +218,10 @@
           <div class="prob-stakes">Without this: your forecast is assembled from rep conversations and gut feel. It's wrong by 20–35% every quarter — and nobody finds out until it's too late to act.</div>
           <p class="prob-desc">Every quarter, the forecast is manually assembled from rep updates, CRM stage values, and gut feel. It's consistently off — not because of the people, but because it has no structural data beneath it. Rep-reported confidence and actual deal activity are two different things.</p>
           <ul class="prob-fix">
-            <li>Activity signals feed forecast confidence — not rep-reported stage labels</li>
-            <li>ARR timing rules enforce structured recognition criteria</li>
-            <li>Diagnostic alerts flag deals where stage and activity are out of sync</li>
-            <li>Forecast views separate objective data from rep commentary</li>
+            <li>Email activity, calendar events, and meeting patterns feed forecast confidence — not rep-reported stage labels</li>
+            <li>Last two-way email contact and scheduled meetings are read directly — no rep logging required</li>
+            <li>Diagnostic alerts flag deals where stage says one thing and communication signals say another</li>
+            <li>ARR timing rules enforce structured recognition criteria separate from rep commentary</li>
           </ul>
           <div class="prob-stat-inline">
             <div class="prob-stat-num">Only 20%</div>

@@ -232,11 +232,11 @@
         </div>
         <div class="phase-body">
           <div class="phase-title">Diagnose every deal, contract, and prospect</div>
-          <p class="phase-desc">Rules engines run nightly across your entire pipeline. Every deal is scored by stage duration, rep activity, and last contact date. Every contract is checked against renewal timelines. Every prospect is scored against your configured hurdle criteria. Anything that breaches a threshold gets flagged — automatically, without anyone having to look.</p>
+          <p class="phase-desc">Rules engines run nightly across your entire pipeline — reading signals from emails, calendar events, and meeting patterns, not just from CRM fields. Every deal is scored by stage duration, last two-way email contact, and calendar activity. Every contract is checked against renewal timelines. Every prospect is scored against your configured hurdle criteria. Anything that breaches a threshold gets flagged automatically, whether or not a rep updated a field.</p>
           <div class="phase-details">
             <div class="phase-detail">
               <h4>Deal stall detection</h4>
-              <p>Scored by days in stage, last rep activity, and last two-way contact. Thresholds configurable per stage and deal value bracket.</p>
+              <p>Scored by days in stage, last two-way email contact, and calendar activity — read directly from email and calendar data, not from logged CRM tasks. Thresholds configurable per stage and deal value bracket.</p>
             </div>
             <div class="phase-detail">
               <h4>Contract risk monitoring</h4>
@@ -251,9 +251,14 @@
               <p>Every commitment logged at deal close. Nightly sweep monitors delivery status. Alerts fire when a commitment is approaching or past its due date.</p>
             </div>
           </div>
+          <div class="phase-detail" style="grid-column:1/-1;background:var(--ink);border-color:var(--ink);">
+              <h4 style="color:#fff;">Where GoWarmCRM reads signals from</h4>
+              <p style="color:rgba(255,255,255,0.6);">Email threads (last two-way contact, response latency) · Calendar events (meetings scheduled, frequency) · Meeting patterns (cadence, drop-off) · CRM fields (stage, value, owner) — four sources, not one. So your diagnostics work even when CRM data is incomplete.</p>
+            </div>
+          </div>
           <div class="phase-highlight">
             <div class="phase-highlight-label">What this replaces</div>
-            <div class="phase-highlight-text">The Monday morning pipeline review where a manager asks <em>"what's the latest on Acme?"</em> — and the answer is whatever the rep remembers.</div>
+            <div class="phase-highlight-text">The Monday morning pipeline review where a manager asks <em>"what's the latest on Acme?"</em> — and the answer is whatever the rep remembered to log.</div>
           </div>
         </div>
       </div>
