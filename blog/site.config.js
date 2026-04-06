@@ -620,6 +620,211 @@ const config = {
       ]
     },
 
+    // ── April 2026 expansion articles ──────────────────────────────────────────
+
+    "revenue-leak-auditors-wont-catch": {
+      slug:          "revenue-leak-auditors-wont-catch",
+      datePublished: "2026-04-06",
+      keywords:      "sales execution leakage, revenue leak, pipeline leakage finance, CFO sales pipeline, stalled deals cost",
+      navLabel:      "The revenue leak your auditors won't catch",
+      cardLabel:     "Finance · Revenue Risk",
+      cardExcerpt:   "Sales execution leakage — revenue lost when qualified deals stall due to inaction — appears in no audit, no variance report, and no board pack. Here is how to identify and quantify it.",
+      cardMeta:      "8 min read · CFOs · Finance Directors · CEOs",
+      category:      "fin",
+      roles:         "cfo ceo rvp",
+      tldr: [
+        "Sales execution leakage — revenue lost when qualified deals stall due to inaction — is not captured in any standard financial report.",
+        "Industry data consistently puts the rate of deals that stall without a structured next action at 20–30% of active pipeline.",
+        "Unlike competitive losses, execution leakage is largely recoverable — with the right action at the right time.",
+        "The financial case for an execution layer is not a sales productivity argument. It is a recoverable revenue argument."
+      ],
+      title:       "The Revenue Leak Your Auditors Won't Catch | GoWarm Insights",
+      description: "Finance teams track receivables, COGS, and burn rate. Nobody tracks how much revenue disappears between a qualified deal and a closed one. Here's what that gap looks like — and how to quantify it.",
+      label:       "Finance · Revenue Risk",
+      audience:    "CFOs · Finance Directors · CEOs",
+      readTime:    "8 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "What is sales execution leakage?", a: "Sales execution leakage is the revenue lost when qualified deals stall, go dark, or close below value — not because of product fit, pricing, or competition, but because no structured action was taken at the right time. It is distinct from standard win/loss and appears in no audit or financial report." },
+        { q: "How do you quantify pipeline leakage?", a: "The basic calculation: take your active pipeline value, apply your historical stall rate (typically 20–30%), then apply your recovery rate if structured follow-up is applied. The gap between expected and actual close value, when deals stall, is your execution leakage figure." },
+        { q: "Why doesn't finance track sales execution leakage?", a: "Because it doesn't show up as a cost — it shows up as revenue that was never recognised. The deal closes below forecast or disappears from the pipeline with no corresponding journal entry. Standard financial reporting has no mechanism to distinguish deals lost to competition from deals lost to inaction." }
+      ]
+    },
+
+    "crm-spend-win-rate": {
+      slug:          "crm-spend-win-rate",
+      datePublished: "2026-04-06",
+      keywords:      "CRM ROI win rate, CRM spend returns, CRM investment business case, sales win rate improvement, CRM execution gap",
+      navLabel:      "Why your CRM spend doesn't show up in win rate",
+      cardLabel:     "CRM ROI · Finance",
+      cardExcerpt:   "CRM spend has grown for a decade. Win rates haven't moved. The structural reason — and what the CRM investment is actually buying versus what moves win rate.",
+      cardMeta:      "9 min read · CFOs · CROs · VP Sales",
+      category:      "fin",
+      roles:         "cfo vps ceo",
+      tldr: [
+        "CRMs are systems of record. Win rate is determined by execution. The two are structurally disconnected.",
+        "More CRM spend increases the quality of your record-keeping. It does not increase the quality of your reps' daily actions.",
+        "The execution gap — between what the CRM recorded and what the rep does tomorrow — is where win rate is determined.",
+        "Closing that gap requires a different layer entirely: one that reads the CRM, diagnoses the pipeline, and surfaces what needs to happen next."
+      ],
+      title:       "Why Your CRM Spend Doesn't Show Up in Win Rate | GoWarm Insights",
+      description: "CRM spend has grown consistently for a decade. Industry win rates haven't moved in the same direction. Understanding the gap between CRM investment and sales outcome tells you exactly what the CRM is — and isn't — doing.",
+      label:       "CRM ROI · Finance",
+      audience:    "CFOs · CROs · VP Sales",
+      readTime:    "9 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "Why doesn't CRM investment improve win rates?", a: "CRMs are systems of record, not systems of action. They store what happened — calls logged, stages updated, notes entered. They do not tell reps what to do next or ensure that the right action happens at the right time. Win rate improvement requires execution, not data storage." },
+        { q: "What is the difference between a CRM and a sales execution platform?", a: "A CRM records what happened in your pipeline. A sales execution platform reads that data, runs diagnostic rules, and tells your team what to do next — surfacing stalled deals, triggering playbooks on stage changes, and producing a prioritised action queue for every rep, every day." },
+        { q: "What does CRM spend actually buy?", a: "CRM spend buys three things: a structured record of your pipeline, reporting and forecasting capability, and a platform on which automation and integrations can be built. It does not buy execution — the consistent daily action that determines whether deals close. That requires a different layer." }
+      ]
+    },
+
+    "sales-forecast-miss-cost": {
+      slug:          "sales-forecast-miss-cost",
+      datePublished: "2026-04-06",
+      keywords:      "sales forecast miss cost, forecast accuracy business impact, revenue forecast CFO, pipeline forecast board, FP&A sales forecast",
+      navLabel:      "Sales forecast miss: what it costs beyond the quarter",
+      cardLabel:     "Finance · Forecasting",
+      cardExcerpt:   "A forecast miss affects hiring decisions, capital allocation, board credibility, and CAC — for months after the quarter closes. The full accounting of a recurring miss.",
+      cardMeta:      "9 min read · CFOs · CEOs · FP&A · CROs",
+      category:      "fin",
+      roles:         "cfo ceo vps rvp",
+      tldr: [
+        "Only 24% of sales organisations achieve forecasts within 5% of actual close. 43% miss by 10% or more — every quarter.",
+        "The costs extend beyond the revenue shortfall: hiring plans, capital allocation, investor confidence, and CAC calculations are all built on the forecast number.",
+        "Most forecast inaccuracy is not a market signal. It is an execution signal — deals that were in the pipeline and should have closed but didn't because the right action wasn't taken.",
+        "Forecast accuracy improves most reliably when inputs change from rep-reported confidence to activity-signal-derived probability."
+      ],
+      title:       "Sales Forecast Miss: What It Costs the Business Beyond the Quarter | GoWarm Insights",
+      description: "A forecast miss is treated as a sales problem. The downstream costs — hiring decisions made on wrong data, investment sized to revenue that didn't arrive, board credibility spent — accrue far beyond the sales org.",
+      label:       "Finance · Forecasting",
+      audience:    "CFOs · CEOs · FP&A · CROs",
+      readTime:    "9 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "What are the real costs of a sales forecast miss?", a: "Beyond the direct revenue shortfall, a forecast miss drives: hiring against a plan built on revenue that didn't arrive; capital allocation decisions sized to overestimated pipeline; board credibility costs that affect fundraising and strategic conversations; and compounding CAC distortion where marketing investment is benchmarked against conversion rates that execution failure is quietly reducing." },
+        { q: "What causes consistent sales forecast inaccuracy?", a: "The primary cause is that most forecasts are assembled from rep-reported confidence and manager judgement rather than from objective activity signals. When the forecast number reflects what reps believe rather than what email cadence, meeting patterns, and deal progression data show, it will be consistently biased toward optimism." },
+        { q: "How do you improve sales forecast accuracy?", a: "Forecast accuracy improves when the inputs change. Reading email activity, calendar data, and meeting patterns directly — rather than relying on rep-updated stage labels and verbal confidence estimates — produces a forecast grounded in what is actually happening in each deal, not what the rep last logged." }
+      ]
+    },
+
+    "sales-rep-turnover-finance": {
+      slug:          "sales-rep-turnover-finance",
+      datePublished: "2026-04-06",
+      keywords:      "sales rep turnover cost, sales attrition finance, pipeline transition cost, AE ramp cost, sales execution retention",
+      navLabel:      "Sales rep turnover as a finance problem",
+      cardLabel:     "Finance · Sales Operations",
+      cardExcerpt:   "The fully loaded cost of rep departure — including pipeline transition leakage and opportunity cost — regularly exceeds 2.5× OTE. Most of it is untracked and preventable.",
+      cardMeta:      "9 min read · CFOs · COOs · VP Sales",
+      category:      "fin",
+      roles:         "cfo vps ceo",
+      tldr: [
+        "Industry benchmarks put the fully loaded cost of replacing an AE at 1.5–2× their annual on-target earnings — before pipeline transition losses.",
+        "Pipeline transition leakage — deals that go dark or are lost when a rep departs — is rarely modelled but is often larger than the direct replacement cost.",
+        "Execution discipline reduces transition cost: documented deals with clear stakeholder maps and next steps are transferable. Deals that lived in the rep's head are not.",
+        "The ROI case for execution infrastructure includes every personnel change, not just the current quarter's closed revenue."
+      ],
+      title:       "Sales Rep Turnover as a Finance Problem | GoWarm Insights",
+      description: "Sales rep turnover is framed as an HR and management issue. The true financial model — recruiting cost, ramp shortfall, pipeline transition leakage, and opportunity cost — makes it one of the highest-cost recurring events in a sales organisation.",
+      label:       "Finance · Sales Operations",
+      audience:    "CFOs · COOs · VP Sales · Finance Directors",
+      readTime:    "9 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "What is the true cost of a sales rep departure?", a: "The full cost has four components: direct replacement cost (recruiting fee, offer premium, ramp-period quota shortfall, onboarding time); pipeline transition leakage (the portion of the departing rep's pipeline that deteriorates during handover, typically 25–40%); opportunity cost from the ramp period (pipeline not sourced while the new rep is learning the territory); and compounding territory effects if turnover is frequent. Total cost regularly exceeds 2.5× annual OTE." },
+        { q: "What is pipeline transition leakage?", a: "Pipeline transition leakage is the revenue lost when a sales rep departs and their active pipeline deteriorates during the transition period. Deals that depended on the rep's personal relationship with the prospect may stall or be abandoned. The leakage is typically 25–40% of the departing rep's expected close value, appearing in win/loss reporting as competitive losses rather than transition failures." },
+        { q: "How does execution discipline reduce sales rep turnover cost?", a: "When deals are documented with structured stakeholder maps, engagement history, and clear next steps — rather than existing primarily in the rep's memory — the pipeline is transferable. A new rep can pick up deals in days rather than weeks, transition leakage drops significantly, and ramp time is shorter because the pipeline is already understandable." }
+      ]
+    },
+
+    "marketing-leads-disappear-pipeline": {
+      slug:          "marketing-leads-disappear-pipeline",
+      datePublished: "2026-04-06",
+      keywords:      "MQL pipeline leakage, marketing qualified lead conversion, sales execution MQL, lead handoff failure, marketing sales alignment execution",
+      navLabel:      "Why marketing qualified leads disappear in the pipeline",
+      cardLabel:     "Marketing · Pipeline",
+      cardExcerpt:   "Most MQL attrition is execution attrition — not lead quality failure. How to run the diagnostic that proves it, and what changes when execution discipline is applied to inbound.",
+      cardMeta:      "8 min read · CMOs · Demand Gen VPs · VP Sales · RevOps",
+      category:      "ops",
+      roles:         "cmo vps rvp ceo",
+      tldr: [
+        "44% of salespeople follow up on a lead only once before abandoning it. 80% of B2B conversions require five or more attempts.",
+        "Most MQL attrition is execution attrition — not lead quality failure. The same leads, with structured multi-touch follow-up, convert at measurably higher rates.",
+        "Marketing teams are measured on pipeline generated. An execution gap in sales silently reduces that metric regardless of lead quality.",
+        "The diagnostic is in the follow-up data: compare conversion rates for leads that received 1–2 attempts versus 4–5+ attempts. The gap tells you whether the problem is the leads or the execution."
+      ],
+      title:       "Why Marketing Qualified Leads Disappear in the Pipeline | GoWarm Insights",
+      description: "Marketing generates the leads. Sales loses them in the pipeline. The handoff failure between marketing and sales execution isn't a lead quality problem — it's a follow-through problem. Here's what the data shows.",
+      label:       "Marketing · Pipeline Execution",
+      audience:    "CMOs · Demand Gen VPs · VP Sales · RevOps",
+      readTime:    "8 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "Why do MQLs not convert to opportunities?", a: "The most common cause of MQL-to-opportunity conversion failure is not lead quality. It is follow-up discipline — the proportion of MQLs that receive only one outreach attempt before being marked as unresponsive. Research consistently shows that 44% of salespeople follow up only once, while 80% of deals require five or more attempts. Most MQL attrition happens in this gap." },
+        { q: "How do you distinguish a lead quality problem from a sales execution problem?", a: "The diagnostic is in the follow-up data. If MQLs that received only one or two outreach attempts before being marked unresponsive convert at similar rates to those that received five or more attempts — the problem is lead quality. If MQLs with more follow-up attempts convert significantly better — the problem is execution discipline, not the leads themselves." },
+        { q: "What is the marketing team's stake in sales execution quality?", a: "Marketing teams are measured on pipeline generated and lead volume. Both metrics are directly affected by how thoroughly sales follows up on inbound leads. A marketing team generating high-quality MQLs into a pipeline with weak execution discipline will consistently underperform on conversion metrics — not because their leads are poor, but because the execution layer is losing the leads marketing generated." }
+      ]
+    },
+
+    "execution-layer-costs-cac": {
+      slug:          "execution-layer-costs-cac",
+      datePublished: "2026-04-06",
+      keywords:      "customer acquisition cost execution, CAC sales execution, CAC inflation pipeline, sales pipeline CAC, marketing efficiency sales",
+      navLabel:      "What a broken sales execution layer costs your CAC",
+      cardLabel:     "Marketing · Unit Economics",
+      cardExcerpt:   "When execution fails, CAC inflates regardless of marketing efficiency — because the denominator shrinks. The three execution mechanisms that drive CAC up, and why fixing execution beats increasing spend.",
+      cardMeta:      "8 min read · CMOs · CFOs · Growth VPs · CEOs",
+      category:      "fin",
+      roles:         "cmo cfo ceo vps",
+      tldr: [
+        "CAC = marketing spend ÷ customers acquired. If customers acquired drops due to execution failure, CAC rises — even if every marketing efficiency metric is unchanged.",
+        "Sales execution leakage (deals that stall and are lost to inaction) silently reduces the denominator in your CAC calculation every quarter.",
+        "Improving execution efficiency is a more capital-efficient way to reduce CAC than increasing top-of-funnel spend.",
+        "Most CAC optimisation conversations focus on the numerator. The denominator — conversion rate through the sales execution layer — offers equal or greater leverage."
+      ],
+      title:       "What a Broken Sales Execution Layer Costs Your CAC | GoWarm Insights",
+      description: "CAC is calculated as marketing spend divided by customers acquired. But when sales execution is broken, the denominator shrinks — not because of lead quality, but because qualified deals stall and are lost to inaction. Here is the full CAC impact.",
+      label:       "Marketing · Unit Economics",
+      audience:    "CMOs · CFOs · Growth VPs · CEOs",
+      readTime:    "8 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "How does sales execution failure inflate CAC?", a: "CAC = marketing spend ÷ customers acquired. When sales execution fails — deals stall without re-engagement, MQLs are abandoned after one attempt, qualified opportunities are lost to inaction — the denominator shrinks. The same marketing spend produces fewer customers, and CAC rises regardless of marketing efficiency. This is execution-driven CAC inflation, and it is invisible in standard marketing analytics." },
+        { q: "Is CAC an execution metric or a marketing metric?", a: "CAC is traditionally treated as a marketing metric because it includes marketing spend. But the denominator — customers acquired — is directly affected by sales execution quality. When the execution layer fails to follow up consistently, the conversion rate drops and CAC inflates. Improving execution efficiency is often a more capital-efficient route to CAC reduction than increasing top-of-funnel marketing spend." },
+        { q: "What is execution-adjusted CAC?", a: "Execution-adjusted CAC models what CAC would be if the execution layer were functioning at its potential — with consistent multi-touch follow-up, structured deal re-engagement, and minimal abandonment. The gap between actual CAC and execution-adjusted CAC is the cost the execution layer is adding to every customer the business acquires." }
+      ]
+    },
+
+    "board-sales-execution": {
+      slug:          "board-sales-execution",
+      datePublished: "2026-04-06",
+      keywords:      "board sales execution, CEO board pipeline, sales execution strategy board, revenue predictability board, sales infrastructure board",
+      navLabel:      "What I'd tell my board about sales execution",
+      cardLabel:     "CEO · Board",
+      cardExcerpt:   "The conversation about execution infrastructure worth having before a pattern of misses makes it unavoidable — and the four metrics that give a board a real view of revenue predictability.",
+      cardMeta:      "8 min read · CEOs · Board Members · CROs · CFOs",
+      category:      "fin",
+      roles:         "ceo cfo vps",
+      tldr: [
+        "Pipeline value tells you what might close. Execution discipline tells you what will. Boards routinely track the former and rarely assess the latter.",
+        "Revenue predictability — the ability to forecast within 10% consistently — is as much an infrastructure question as a talent question.",
+        "The execution gap is the structural distance between what was planned and what reps actually did each day. Most boards have no visibility into it.",
+        "Surfacing the execution gap proactively — before a pattern of misses makes it unavoidable — is one of the highest-value conversations a CEO can lead with their board."
+      ],
+      title:       "What I'd Tell My Board About Sales Execution | GoWarm Insights",
+      description: "Boards ask about pipeline, forecast, and headcount. The deeper question — whether the organisation has a structural execution layer — rarely surfaces until after a miss. Here is the conversation worth having before that happens.",
+      label:       "CEO · Board · Strategy",
+      audience:    "CEOs · Board Members · CROs · CFOs",
+      readTime:    "8 min read",
+      schema:      "Article",
+      faqs: [
+        { q: "What should a CEO tell their board about sales execution?", a: "A CEO should bring the execution infrastructure conversation to the board proactively — before a pattern of forecast misses makes it reactive. The frame: the organisation has identified the layer that determines whether pipeline closes at its projected rate, has made a deliberate infrastructure investment to systematise it, and here are the four metrics that will track whether it is working: pipeline stall rate, playbook completion rate, rolling forecast accuracy, and handover completion rate." },
+        { q: "What is pipeline execution health and how do you measure it?", a: "Pipeline execution health is a set of leading indicators that reveal whether deals are being managed with the discipline required to close at their projected rate. Key metrics: pipeline stall rate (target below 15%), playbook completion rate (target above 70%), rolling 6-quarter forecast accuracy (target within 8-10%), and handover completion rate (target above 85%)." },
+        { q: "Why is revenue predictability a CEO-level infrastructure question?", a: "Revenue predictability that depends on individual manager coaching and rep behaviour cannot scale reliably beyond a certain team size and degrades with every personnel change. An organisation that systematises execution — nightly diagnostics, automatic playbook triggers, activity-signal-based forecasting — produces predictability that is structural rather than talent-dependent. That is a CEO-level strategic decision, not a sales ops configuration choice." }
+      ]
+    },
+
   }, // end pages
 
   // ── File map — order here determines footer "Latest Articles" order ─────────
@@ -647,6 +852,13 @@ const config = {
     // ─── NEW (April 2026) ─────────────────────────────────────────────────────
     "playbook-segmentation-smb-enterprise-geography":    "playbook-segmentation-smb-enterprise-geography.html",
     "crm-owner-capabilities":                            "crm-owner-capabilities.html",
+    "revenue-leak-auditors-wont-catch":                  "revenue-leak-auditors-wont-catch.html",
+    "crm-spend-win-rate":                                "crm-spend-win-rate.html",
+    "sales-forecast-miss-cost":                          "sales-forecast-miss-cost.html",
+    "sales-rep-turnover-finance":                        "sales-rep-turnover-finance.html",
+    "marketing-leads-disappear-pipeline":                "marketing-leads-disappear-pipeline.html",
+    "execution-layer-costs-cac":                         "execution-layer-costs-cac.html",
+    "board-sales-execution":                             "board-sales-execution.html",
     // ─── Add new articles below this line ─────────────────────────────────────
   },
 };

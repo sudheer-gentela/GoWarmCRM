@@ -137,6 +137,14 @@
     {
       "source": "/sales-rep-action-queue",
       "destination": "/website/sales-rep-action-queue.html"
+    },
+    {
+      "source": "/execution-gap",
+      "destination": "/website/execution-gap.html"
+    },
+    {
+      "source": "/what-board-sees-pipeline",
+      "destination": "/website/what-board-sees-pipeline.html"
     }
   ],
   "headers": [
