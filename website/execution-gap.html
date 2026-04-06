@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Execution Gap — GoWarmCRM</title>
+  <meta name="description" content="Your sales strategy is sound. Your team is capable. Your pipeline looks healthy. And you keep missing forecast. The execution gap explains why — and what closes it." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="theme-color" content="#E8630A">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/execution-gap" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/execution-gap" />
+  <meta property="og:title" content="The Execution Gap — GoWarmCRM" />
+  <meta property="og:description" content="Your strategy is sound. Your team is capable. You keep missing forecast. The execution gap explains why." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="The Execution Gap — GoWarmCRM" />
+  <meta name="twitter:description" content="Your strategy is sound. Your team is capable. You keep missing forecast. The execution gap explains why." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Execution Gap","description":"The execution gap is the structural distance between what a sales strategy plans and what a sales team does each day. GoWarmCRM closes it.","url":"https://www.gowarmcrm.com/execution-gap","publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"The Execution Gap","item":"https://www.gowarmcrm.com/execution-gap"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the sales execution gap?","acceptedAnswer":{"@type":"Answer","text":"The execution gap is the structural distance between a sound sales strategy and the daily actions that implement it. It exists when the right follow-up doesn't happen at the right moment, playbooks aren't triggered consistently, and deals stall not because of strategy failure but because nothing prompted the next action."}},{"@type":"Question","name":"Why do good strategies produce inconsistent results?","acceptedAnswer":{"@type":"Answer","text":"Revenue is lost in execution, not strategy. A well-designed sales motion, correctly targeted ICP, and capable team will still produce inconsistent results if there is no systematic layer ensuring consistent daily action across every deal, every rep, every week. That layer — the execution layer — is what determines whether the strategy's potential is realised."}},{"@type":"Question","name":"How does GoWarmCRM close the execution gap?","acceptedAnswer":{"@type":"Answer","text":"GoWarmCRM runs nightly diagnostic rules across every deal, contract, handover, and prospect. It reads email activity, calendar data, and meeting patterns — not just what reps logged. Every morning, each rep receives a prioritised action queue: the exact deals that need attention, why, and what to do. Managers see the full pipeline health picture without asking for updates."}}]}</script>
+
+  <style>
+    /* ── Page Hero ── */
+    .page-hero { padding: 72px 0 64px; border-bottom: 1px solid var(--border); }
+    .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .page-hero h1 { font-family: var(--serif); font-size: 48px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; max-width: 800px; }
+    .page-hero h1 em { font-style: italic; color: var(--rust); }
+    .page-hero p { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 620px; }
+    /* ── Sections ── */
+    .pg-section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    .pg-section.alt { background: var(--cream-2); }
+    .pg-section.dark { background: var(--ink); }
+    .pg-h2 { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .pg-h2 em { color: var(--rust); font-style: italic; }
+    .pg-h2.light { color: #fff; }
+    .pg-body { font-family: var(--body-serif); font-size: 17px; color: var(--ink-2); line-height: 1.8; font-weight: 300; margin-bottom: 16px; max-width: 680px; }
+    .pg-body.light { color: rgba(255,255,255,0.65); }
+    .pg-body strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 16px; }
+    /* ── Def Box ── */
+    .def-box { background: var(--ink); border-radius: 10px; padding: 32px 36px; margin-bottom: 40px; }
+    .def-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+    .def-text { font-family: var(--serif); font-size: 21px; font-weight: 400; color: #fff; line-height: 1.55; }
+    /* ── Two col ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    /* ── Cards ── */
+    .info-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px; }
+    .info-card.accent { border-top: 3px solid var(--rust); }
+    .card-icon { font-size: 22px; margin-bottom: 12px; }
+    .card-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .card-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+    .card-list { list-style: none; margin-top: 12px; }
+    .card-list li { font-size: 13px; color: var(--ink-2); padding: 5px 0; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .card-list li::before { content: "→"; color: var(--rust); font-weight: 600; flex-shrink: 0; }
+    /* ── Scenes strip ── */
+    .scenes-strip { background: var(--ink); padding: 40px 0; border-bottom: 1px solid var(--border); }
+    .scenes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); }
+    .scene-card { padding: 28px; background: var(--ink); }
+    .scene-lbl { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 10px; }
+    .scene-body { font-family: var(--body-serif); font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; font-weight: 300; margin: 0; }
+    /* ── Before/After ── */
+    .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 32px; }
+    .ba-col { background: var(--cream); padding: 28px 24px; }
+    .ba-col.after { background: #fff; }
+    .ba-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .ba-label.before { color: var(--ink-4); }
+    .ba-label.after { color: var(--rust); }
+    .ba-list { list-style: none; }
+    .ba-list li { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.5; font-weight: 300; padding: 8px 0; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+    .ba-col .ba-list li::before { content: "✗"; font-weight: 700; color: var(--ink-4); flex-shrink: 0; margin-top: 1px; }
+    .ba-col.after .ba-list li::before { content: "✓"; font-weight: 700; color: var(--rust); flex-shrink: 0; margin-top: 1px; }
+    /* ── Pull stat ── */
+    .pull-stat { background: var(--rust); border-radius: 8px; padding: 28px 32px; margin: 32px 0; }
+    .pull-num { font-family: var(--serif); font-size: 52px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
+    .pull-label { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.5; font-family: var(--body-serif); font-weight: 300; }
+    .pull-source { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 8px; font-style: italic; }
+    /* ── Persona strip ── */
+    .persona-strip { padding: 56px 0; border-bottom: 1px solid var(--border); background: var(--cream-2); }
+    .persona-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+    .persona-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+    .persona-role { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+    .persona-pain { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.6; font-weight: 300; margin-bottom: 12px; }
+    .persona-gain { font-size: 13px; font-weight: 600; color: var(--ink); border-top: 1px solid var(--border); padding-top: 10px; }
+    /* ── FAQ ── */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+    .faq-item h4 { font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .page-hero h1 { font-size: 36px; }
+      .two-col { grid-template-columns: 1fr; gap: 40px; }
+      .three-col { grid-template-columns: 1fr; }
+      .scenes-grid { grid-template-columns: 1fr; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .persona-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 28px; }
+      .persona-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;gap:8px;">
+        <svg width="20" height="20" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>
+        GoWarm<span>CRM</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/blog">Insights</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-eyebrow">The Execution Gap</span>
+      <h1>Your strategy is sound.<br>Your numbers are still off.<br><em>This is why.</em></h1>
+      <p>Revenue isn't lost at the strategy level. It's lost in the space between what was planned and what actually happened each day — which deal was followed up on, which playbook step was skipped, which at-risk account nobody caught before it went cold. That space is the execution gap. And it's not a talent problem.</p>
+    </div>
+  </section>
+
+  <!-- Emotional scenes -->
+  <div class="scenes-strip">
+    <div class="container">
+      <div class="scenes-grid">
+        <div class="scene-card">
+          <div class="scene-lbl">The strategy is right</div>
+          <p class="scene-body">Your ICP is sharp. Your messaging is clear. Your product solves a real problem. Your VP Sales is competent. The market isn't the issue. Something else is losing the deals.</p>
+        </div>
+        <div class="scene-card">
+          <div class="scene-lbl">The team is capable</div>
+          <p class="scene-body">Your reps are good people. They work hard. Some have excellent quarters. But results are inconsistent across the team — and the inconsistency doesn't trace back to talent.</p>
+        </div>
+        <div class="scene-card">
+          <div class="scene-lbl">The forecast is wrong again</div>
+          <p class="scene-body">Q3 said $4.2M committed. You closed $2.9M. The data was there the whole time — in your pipeline, in your email threads, in your calendar. Nothing surfaced it until the QBR.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Definition section -->
+  <section class="pg-section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h2 class="pg-h2">What the <em>execution gap</em> actually is</h2>
+          <p class="pg-body">The execution gap is the structural distance between what your sales process is designed to do and what your team actually does each day — not out of negligence, but because there is no system ensuring the right action happens at the right moment for every deal, every rep, every morning.</p>
+          <p class="pg-body">CRMs record what happened. They do not tell your team what needs to happen next. That silence is the gap. And it costs revenue in ways that are real, recurring, and largely invisible until the quarter closes short.</p>
+          <p class="pg-body"><strong>This is not a people problem.</strong> Reps are not lazy. Managers are not inattentive. The problem is structural: without a system that surfaces the right action at the right time, the default is inertia. Deals stall. Playbooks are skipped. Handoffs drop. Contracts renew into silence.</p>
+        </div>
+        <div>
+          <div class="def-box">
+            <div class="def-label">◆ Definition</div>
+            <p class="def-text">"The execution gap is the space between a sound sales strategy and the daily actions that implement it — filled by inertia when no system exists to surface the right next action at the right moment."</p>
+          </div>
+          <div class="pull-stat">
+            <div class="pull-num">20–30%</div>
+            <div class="pull-label">of active pipeline is stalled at any given time — not because of competition, but because nothing prompted the next action.</div>
+            <div class="pull-source">Industry benchmark, multiple sales productivity studies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where it shows up -->
+  <section class="pg-section alt">
+    <div class="container">
+      <span class="section-eyebrow">Where the gap costs revenue</span>
+      <h2 class="pg-h2">Five places the execution gap shows up</h2>
+      <p class="pg-body">The gap does not announce itself. It shows up in patterns that are easy to misattribute — to the market, to the team, to the ICP — when the real cause is the absence of a systematic execution layer.</p>
+      <div class="three-col">
+        <div class="info-card accent">
+          <div class="card-icon">📉</div>
+          <div class="card-title">Deals that go quiet</div>
+          <p class="card-desc">A $200K opportunity goes 22 days without activity. The CRM shows "In Progress." Nobody flags it until the forecast call, when it's too late to rescue it before quarter-end.</p>
+        </div>
+        <div class="info-card accent">
+          <div class="card-icon">📋</div>
+          <div class="card-title">Playbooks nobody executes</div>
+          <p class="card-desc">You invested in a sales playbook. Trained the team on it. Win rates haven't moved — because the playbook lives in a document, not in the daily workflow where deals are actually managed.</p>
+        </div>
+        <div class="info-card accent">
+          <div class="card-icon">🔮</div>
+          <div class="card-title">Forecasts built on optimism</div>
+          <p class="card-desc">Your forecast is assembled from rep conversations and manager intuition. It is consistently 20–30% higher than what closes. Every decision made using that number is built on sand.</p>
+        </div>
+        <div class="info-card accent">
+          <div class="card-icon">🤝</div>
+          <div class="card-title">Handovers that disappear</div>
+          <p class="card-desc">AE commits to onboarding support and a custom integration at close. CS gets a Slack message. Month 8: the customer churns over a promise nobody tracked.</p>
+        </div>
+        <div class="info-card accent">
+          <div class="card-icon">📄</div>
+          <div class="card-title">Renewals that slip past</div>
+          <p class="card-desc">A contract enters the renewal window. Nothing triggers. CS finds out the account is at risk when the customer calls to cancel — not 90 days earlier, when there was still time to act.</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">🔬</div>
+          <div class="card-title">Prospects nobody prioritises</div>
+          <p class="card-desc">200 prospects in various states of engagement. No scoring. No system-generated priority. SDRs work their inbox. Half the effort goes to conversations that were never going to convert.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / After -->
+  <section class="pg-section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h2 class="pg-h2">What changes when the gap is closed</h2>
+          <p class="pg-body">The execution gap is not closed by coaching more, hiring better, or running tighter deal reviews. It is closed by a systematic layer that reads your pipeline nightly, identifies every entity that needs attention, and surfaces exactly what needs to happen next — before the window for action has passed.</p>
+          <p class="pg-body">The same team, the same pipeline, the same strategy — with a consistent execution layer in place — produces materially different outcomes. Not because the inputs changed, but because the gap between strategy and action was closed.</p>
+        </div>
+        <div>
+          <div class="ba-grid">
+            <div class="ba-col">
+              <div class="ba-label before">Without the execution layer</div>
+              <ul class="ba-list">
+                <li>Deals stall silently — caught in the QBR</li>
+                <li>Reps prioritise by memory and inbox</li>
+                <li>Playbooks trained but not followed</li>
+                <li>Forecast built on rep optimism</li>
+                <li>Handover commitments disappear</li>
+                <li>Renewals surface as churn risk</li>
+                <li>Managers ask for updates constantly</li>
+              </ul>
+            </div>
+            <div class="ba-col after">
+              <div class="ba-label after">With GoWarmCRM</div>
+              <ul class="ba-list">
+                <li>Every stalled deal flagged before it's lost</li>
+                <li>Every rep gets a ranked action queue daily</li>
+                <li>Playbooks trigger automatically on stage change</li>
+                <li>Forecast grounded in activity signal data</li>
+                <li>Every handover commitment tracked to delivery</li>
+                <li>Renewal windows surfaced 90 days out</li>
+                <li>Managers see risk in real time</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Persona strip -->
+  <section class="persona-strip">
+    <div class="container">
+      <span class="section-eyebrow">Who this matters to</span>
+      <h2 class="pg-h2">The execution gap costs everyone differently</h2>
+      <div class="persona-grid">
+        <div class="persona-card">
+          <div class="persona-role">CEO</div>
+          <p class="persona-pain">You hear "timing issues" and "deals that slipped" every quarter. You're not sure if it's the strategy, the team, or something structural. It's structural.</p>
+          <div class="persona-gain">Revenue predictability is an infrastructure decision.</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role">CRO / VP Sales</div>
+          <p class="persona-pain">You know the pipeline has deals that should have closed. You can't see which ones are going quiet until it's too late to intervene. You need the signal before the miss, not after.</p>
+          <div class="persona-gain">Execution intelligence — not more pipeline reviews.</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role">CFO</div>
+          <p class="persona-pain">You approve budgets against a forecast that misses by 20–30% every quarter. Every investment decision built on that number is wrong before it's made.</p>
+          <div class="persona-gain">Forecast accuracy is a financial control question.</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role">RevOps</div>
+          <p class="persona-pain">You built the process. You configured the CRM. Win rates haven't moved. The problem isn't the process design — it's the absence of a layer that enforces it daily.</p>
+          <div class="persona-gain">Process adherence at scale, without manual enforcement.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pg-section">
+    <div class="container">
+      <h2 class="pg-h2">Common questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item"><h4>Does GoWarmCRM replace our CRM?</h4><p>No. GoWarmCRM works alongside Salesforce, HubSpot, Pipedrive, and Zoho. It adds the execution layer on top of your existing pipeline data — no migration, no rip-and-replace. Live within 1–2 weeks.</p></div>
+        <div class="faq-item"><h4>How is this different from better manager oversight?</h4><p>Manager oversight doesn't scale — it depends on individual span of attention and degrades with every team change. GoWarmCRM is systematic: the same diagnostic runs every night for every deal, regardless of who is managing it or how many deals are in the pipeline.</p></div>
+        <div class="faq-item"><h4>What does the execution layer actually do each day?</h4><p>Nightly rules engines run across every deal, contract, handover, and prospect. Email activity, calendar data, and meeting patterns are read directly. Every morning, each rep gets a prioritised action queue: exact deals, exact actions, exact context. Managers see the full picture without asking for it.</p></div>
+        <div class="faq-item"><h4>Who is GoWarmCRM built for?</h4><p>B2B sales organisations with 5–200 reps — VP Sales, CROs, RevOps leaders, and CEOs who want revenue predictability, not just pipeline visibility. SaaS, professional services, and complex B2B with deal values above $20K.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Close the execution gap in your pipeline</h2>
+          <p>Book a free 20-minute demo. We'll walk through your actual pipeline and show you what GoWarmCRM surfaces today — the deals going quiet, the playbooks not firing, the forecast risk that's already there.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, CROs, RevOps, and CEOs who want revenue predictability.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul>
+          <li><a href="/execution-gap">The Execution Gap</a></li>
+          <li><a href="/what-board-sees-pipeline">What Your Board Sees</a></li>
+          <li><a href="/sales-execution-platform">What is a Sales Execution Platform?</a></li>
+          <li><a href="/crm-execution-gap">CRM Execution Gap</a></li>
+          <li><a href="/pipeline-leakage">Pipeline Leakage</a></li>
+          <li><a href="/sales-forecast-accuracy">Forecast Accuracy</a></li>
+          <li><a href="/sales-execution-platform-for-saas">For SaaS Teams</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/diagnostic">Pipeline Diagnostic</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com</span></div>
+    </div>
+  </footer>
+
+  <script>function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}</script>
+</body>
+</html>

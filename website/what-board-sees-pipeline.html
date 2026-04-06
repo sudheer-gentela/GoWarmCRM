@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What the Board Sees in Your Pipeline — GoWarmCRM</title>
+  <meta name="description" content="Boards review pipeline every quarter. They see the number, the stage distribution, and the win rate. They rarely see the execution signal underneath — the one that predicts whether the forecast closes." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <meta name="theme-color" content="#E8630A">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/what-board-sees-pipeline" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/what-board-sees-pipeline" />
+  <meta property="og:title" content="What the Board Sees in Your Pipeline — GoWarmCRM" />
+  <meta property="og:description" content="Boards see pipeline value and win rate. They rarely see the execution signal underneath — the one that predicts whether the forecast closes." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="What the Board Sees in Your Pipeline — GoWarmCRM" />
+  <meta name="twitter:description" content="Boards see pipeline value and win rate. They rarely see the execution signal underneath — the one that predicts whether the forecast closes." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"What the Board Sees in Your Pipeline","description":"A board pipeline review surfaces value, stage distribution, and win rate. The execution signal — stall rate, playbook adherence, forecast input quality — is almost never presented. GoWarmCRM makes those metrics visible.","url":"https://www.gowarmcrm.com/what-board-sees-pipeline","publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"What the Board Sees in Your Pipeline","item":"https://www.gowarmcrm.com/what-board-sees-pipeline"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What should a board see in a pipeline review?","acceptedAnswer":{"@type":"Answer","text":"A complete board pipeline review covers: pipeline value and stage distribution, forecast accuracy trend (not just current quarter confidence), execution health metrics (stall rate, playbook completion), and handover quality as a leading indicator of expansion and retention. Most boards see only the first two. The execution metrics are the ones that predict whether the forecast number is real."}},{"@type":"Question","name":"What is pipeline execution health?","acceptedAnswer":{"@type":"Answer","text":"Pipeline execution health is a set of leading indicators that reveal whether the deals in the pipeline are being managed with the discipline required to close at their projected rate. Key metrics include: deal stall rate (% of pipeline with no activity in 14+ days), playbook completion rate, forecast input quality (activity-signal vs rep-reported), and handover completion rate for post-sale commitments."}},{"@type":"Question","name":"How does GoWarmCRM help with board pipeline reporting?","acceptedAnswer":{"@type":"Answer","text":"GoWarmCRM produces the execution metrics that standard CRM reporting cannot: pipeline stall rate, playbook completion by stage, forecast signal quality, and handover tracking. These are the metrics that a board needs to assess whether the forecast number has structural support — not just rep optimism beneath it."}}]}</script>
+
+  <style>
+    /* ── Hero ── */
+    .page-hero { padding: 72px 0 64px; border-bottom: 1px solid var(--border); }
+    .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .page-hero h1 { font-family: var(--serif); font-size: 48px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; max-width: 820px; }
+    .page-hero h1 em { font-style: italic; color: var(--rust); }
+    .page-hero p { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 620px; }
+    /* ── Sections ── */
+    .pg-section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    .pg-section.alt { background: var(--cream-2); }
+    .pg-section.dark { background: var(--ink); }
+    .pg-h2 { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .pg-h2 em { color: var(--rust); font-style: italic; }
+    .pg-h2.light { color: #fff; }
+    .pg-body { font-family: var(--body-serif); font-size: 17px; color: var(--ink-2); line-height: 1.8; font-weight: 300; margin-bottom: 16px; max-width: 680px; }
+    .pg-body.light { color: rgba(255,255,255,0.65); }
+    .pg-body strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 16px; }
+    /* ── Two col ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    /* ── Cards ── */
+    .info-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px; }
+    .info-card.accent { border-top: 3px solid var(--rust); }
+    .info-card.dark-card { background: var(--ink); border-color: var(--ink); }
+    .card-icon { font-size: 22px; margin-bottom: 12px; }
+    .card-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .dark-card .card-title { color: #fff; }
+    .card-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+    .dark-card .card-desc { color: rgba(255,255,255,0.55); }
+    /* ── What board sees table ── */
+    .board-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+    .board-table th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); padding: 0 20px 14px; border-bottom: 2px solid var(--border); }
+    .board-table th:first-child { padding-left: 0; width: 35%; }
+    .board-table th.col-sees { color: var(--ink-3); }
+    .board-table th.col-should { color: var(--rust); }
+    .board-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-family: var(--body-serif); font-size: 14px; font-weight: 300; vertical-align: top; line-height: 1.6; }
+    .board-table td:first-child { padding-left: 0; font-size: 12px; font-weight: 600; font-family: var(--sans); letter-spacing: 0.5px; color: var(--ink-4); text-transform: uppercase; }
+    .board-table td.sees-col { color: var(--ink-3); }
+    .board-table td.should-col { color: var(--ink-2); font-weight: 400; }
+    /* ── Metric scorecard ── */
+    .scorecard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 32px; }
+    .score-cell { background: #fff; padding: 24px 20px; }
+    .score-cell:nth-child(4n+1) { background: var(--cream-2); }
+    .score-metric { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+    .score-name { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .score-target { font-size: 12px; color: var(--ink-4); margin-bottom: 10px; }
+    .score-target strong { color: var(--rust); font-weight: 600; }
+    .score-desc { font-family: var(--body-serif); font-size: 13px; color: var(--ink-3); line-height: 1.6; font-weight: 300; }
+    /* ── Pull stat ── */
+    .pull-stat { background: var(--rust); border-radius: 8px; padding: 28px 32px; margin: 32px 0; }
+    .pull-num { font-family: var(--serif); font-size: 52px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
+    .pull-label { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.5; font-family: var(--body-serif); font-weight: 300; }
+    /* ── Narrative strip ── */
+    .narrative-strip { background: var(--ink); padding: 48px 0; border-bottom: 1px solid var(--border); }
+    .narrative-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .narrative-quote { font-family: var(--serif); font-size: 22px; font-weight: 400; color: #fff; line-height: 1.55; margin-bottom: 16px; font-style: italic; }
+    .narrative-attr { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; }
+    /* ── FAQ ── */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+    .faq-item h4 { font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+    /* ── Blog links ── */
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+    .related-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 22px; text-decoration: none; transition: border-color 0.15s; display: flex; flex-direction: column; }
+    .related-card:hover { border-color: var(--rust); }
+    .related-tag { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+    .related-title { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 8px; flex: 1; transition: color 0.15s; }
+    .related-card:hover .related-title { color: var(--rust); }
+    .related-meta { font-size: 12px; color: var(--ink-4); margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; }
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .page-hero h1 { font-size: 34px; }
+      .two-col { grid-template-columns: 1fr; gap: 40px; }
+      .three-col { grid-template-columns: 1fr; }
+      .scorecard { grid-template-columns: 1fr 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 26px; }
+      .board-table { display: block; overflow-x: auto; }
+      .scorecard { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV:START ═══ -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;gap:8px;">
+        <svg width="20" height="20" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>
+        GoWarm<span>CRM</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/blog">Insights</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ═══ NAV:END ═══ -->
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-eyebrow">Pipeline Governance</span>
+      <h1>What the board sees in your pipeline.<br><em>And what they should be asking about.</em></h1>
+      <p>A quarterly board pipeline review typically covers value, stage distribution, and win rate. Those are necessary inputs. They are not sufficient. The metrics that predict whether the forecast is real — execution health, stall rate, playbook adherence — are almost never in the room. Here is what changes when they are.</p>
+    </div>
+  </section>
+
+  <!-- What they see vs what matters -->
+  <section class="pg-section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="section-eyebrow">The visibility gap</span>
+          <h2 class="pg-h2">What your board reviews.<br>What actually drives the outcome.</h2>
+          <p class="pg-body">Most board pipeline reviews are structured around the same metrics: total pipeline value, stage distribution, committed versus upside, win rate versus prior period. These are well-understood. They are also all lagging indicators — they describe what the pipeline looked like when it was last updated, not whether it will close at its projected rate.</p>
+          <p class="pg-body">The leading indicators — the ones that tell you whether the number is real before the quarter ends — are execution metrics. They require a different data layer than the CRM provides, and they are almost never in a board pack.</p>
+        </div>
+        <div>
+          <table class="board-table">
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th class="col-sees">What boards typically see</th>
+                <th class="col-should">What actually predicts the outcome</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pipeline value</td>
+                <td class="sees-col">Total and stage-distributed pipeline value</td>
+                <td class="should-col">What % of that pipeline has had meaningful activity in the last 14 days</td>
+              </tr>
+              <tr>
+                <td>Forecast</td>
+                <td class="sees-col">Committed and upside confidence %</td>
+                <td class="should-col">Whether forecast inputs are activity-signal-based or rep-reported optimism</td>
+              </tr>
+              <tr>
+                <td>Win rate</td>
+                <td class="sees-col">Win rate vs prior period</td>
+                <td class="should-col">Playbook completion rate by stage — the leading indicator of win rate in 2 quarters</td>
+              </tr>
+              <tr>
+                <td>Post-sale</td>
+                <td class="sees-col">Churn rate and NRR</td>
+                <td class="should-col">Handover commitment completion rate — the leading indicator of churn at month 8</td>
+              </tr>
+              <tr>
+                <td>Team</td>
+                <td class="sees-col">Headcount and quota coverage</td>
+                <td class="should-col">Pipeline portability score — whether the pipeline survives rep turnover</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote strip -->
+  <div class="narrative-strip">
+    <div class="container">
+      <div class="narrative-inner">
+        <p class="narrative-quote">"A $12M pipeline with a 40% conversion rate does not automatically produce $4.8M. It produces somewhere between $2M and $6M — depending on whether the execution layer is functioning. That range is never in the board pack."</p>
+        <span class="narrative-attr">GoWarmCRM — The Execution Gap</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- The execution gap in board context -->
+  <section class="pg-section alt">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <div class="pull-stat">
+            <div class="pull-num">43%</div>
+            <div class="pull-label">of sales organisations miss their forecast by 10% or more — every quarter. The miss is not random. It correlates with execution quality, not with pipeline value.</div>
+          </div>
+          <div class="pull-stat" style="background: var(--ink);">
+            <div class="pull-num" style="color: var(--rust);">20–30%</div>
+            <div class="pull-label">of active pipeline is stalled at any given time — with no meaningful activity, no structured next step, and no alert to surface it before the quarter closes.</div>
+          </div>
+        </div>
+        <div>
+          <span class="section-eyebrow">Why this matters at board level</span>
+          <h2 class="pg-h2">Revenue predictability is an <em>infrastructure</em> question</h2>
+          <p class="pg-body">The board conversation about revenue predictability is typically framed as a talent question — do we have the right CRO, the right VP Sales, the right reps? Talent matters. But talent operating without a systematic execution layer will produce inconsistent results regardless of quality, because execution quality without infrastructure depends on individual span of attention.</p>
+          <p class="pg-body">An organisation that has built a systematic execution layer — where nightly diagnostics surface stalled deals, playbooks trigger automatically on stage changes, and forecast inputs come from activity signals rather than rep conversations — has a structural advantage that compounds over time. Its results are less dependent on any individual's performance, more transferable through personnel changes, and more predictable for the board to plan against.</p>
+          <p class="pg-body">That is the conversation worth having before a pattern of forecast misses makes it unavoidable. When a CEO brings execution infrastructure to the board proactively — here is what we built, here is how it works, here is what it adds to predictability — it positions the organisation differently than when the same conversation happens in a post-miss QBR.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Execution health scorecard -->
+  <section class="pg-section">
+    <div class="container">
+      <span class="section-eyebrow">What to add to your board pack</span>
+      <h2 class="pg-h2">The execution health scorecard</h2>
+      <p class="pg-body">These four metrics, tracked quarterly, give a board a materially more accurate view of revenue predictability than pipeline value and win rate alone. They are leading indicators — they tell you whether the forecast number has structural support before the quarter ends.</p>
+      <div class="scorecard">
+        <div class="score-cell">
+          <div class="score-metric">Metric 01</div>
+          <div class="score-name">Pipeline stall rate</div>
+          <div class="score-target">Target: <strong>below 15%</strong></div>
+          <p class="score-desc">Percentage of active pipeline with no meaningful activity in the last 14 days. The leading indicator of forecast risk that standard pipeline reporting cannot see. Above 20% on committed pipeline is a material warning signal.</p>
+        </div>
+        <div class="score-cell">
+          <div class="score-metric">Metric 02</div>
+          <div class="score-name">Playbook completion rate</div>
+          <div class="score-target">Target: <strong>above 70%</strong></div>
+          <p class="score-desc">Percentage of stage-appropriate playbook steps completed for in-pipeline deals. Consistent execution correlates with win rate. When completion drops, win rate typically follows within one to two quarters.</p>
+        </div>
+        <div class="score-cell">
+          <div class="score-metric">Metric 03</div>
+          <div class="score-name">Forecast accuracy (rolling 6Q)</div>
+          <div class="score-target">Target: <strong>within 8–10%</strong></div>
+          <p class="score-desc">The rolling gap between committed forecast and actual close over the last six quarters. A consistent pattern of over-forecasting reveals a structural input problem. Not a talent problem — a data source problem.</p>
+        </div>
+        <div class="score-cell">
+          <div class="score-metric">Metric 04</div>
+          <div class="score-name">Handover completion rate</div>
+          <div class="score-target">Target: <strong>above 85%</strong></div>
+          <p class="score-desc">Percentage of tracked post-sale commitments completed within 30 days of close. The leading indicator of expansion revenue and customer retention health that almost no board currently tracks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three things change -->
+  <section class="pg-section alt">
+    <div class="container">
+      <span class="section-eyebrow">What changes when execution is systematic</span>
+      <h2 class="pg-h2">Three things the board conversation looks like differently</h2>
+      <div class="three-col">
+        <div class="info-card accent">
+          <div class="card-icon">📊</div>
+          <div class="card-title">Forecast reviews become structural</div>
+          <p class="card-desc">Instead of presenting a confidence percentage and explaining the gap after the quarter, you present execution health metrics before it closes — stall rate, playbook adherence, activity signal coverage — and the board can assess forecast credibility in real time, not retrospectively.</p>
+        </div>
+        <div class="info-card accent">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">Personnel risk is addressed structurally</div>
+          <p class="card-desc">Pipeline portability — whether deals are documented well enough to survive rep turnover — becomes a metric rather than a hope. A board that sees pipeline portability scores understands the transition cost embedded in the team's current attrition rate. And they understand what reduces it.</p>
+        </div>
+        <div class="info-card accent">
+          <div class="card-icon">📈</div>
+          <div class="card-title">Investment decisions are grounded</div>
+          <p class="card-desc">Every capital allocation decision made against a revenue forecast inherits its accuracy. When the forecast is systematically inflated by execution leakage, the investments sized to it are also wrong. Execution infrastructure improves the quality of every downstream decision the board approves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pg-section">
+    <div class="container">
+      <h2 class="pg-h2">Common questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item"><h4>Can these metrics come from our existing CRM?</h4><p>Standard CRM reporting cannot produce execution health metrics because they require reading activity signals — email threads, calendar data, meeting patterns — not just CRM field values. GoWarmCRM reads all four signal sources nightly and produces the execution metrics that CRM-only reporting cannot.</p></div>
+        <div class="faq-item"><h4>Is this a board-level or ops-level tool?</h4><p>Both. GoWarmCRM is a daily operations tool for reps and managers — action queues, deal alerts, playbook execution. It also produces the execution metrics that belong in a board pack: stall rate, playbook adherence, forecast accuracy trend, handover completion. The same engine serves both audiences.</p></div>
+        <div class="faq-item"><h4>How quickly can we get these metrics running?</h4><p>Growth teams are live within 1–2 weeks. The nightly diagnostic runs from the first day of connection — producing execution health data immediately, before any rep changes their behaviour. The board metrics are visible from the first diagnostic cycle.</p></div>
+        <div class="faq-item"><h4>Does GoWarmCRM replace our CRM?</h4><p>No. GoWarmCRM works alongside Salesforce, HubSpot, Pipedrive, and Zoho. It adds the execution layer on top of your existing pipeline data — no migration required. Live within 1–2 weeks, with board-grade execution metrics from the first diagnostic run.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related reading -->
+  <section class="pg-section alt">
+    <div class="container">
+      <span class="section-eyebrow">From GoWarm Insights</span>
+      <h2 class="pg-h2">Related reading for CEOs and board members</h2>
+      <div class="related-grid">
+        <a href="/blog/board-sales-execution" class="related-card">
+          <span class="related-tag">CEO · Board</span>
+          <div class="related-title">What I'd Tell My Board About Sales Execution</div>
+          <p style="font-family:var(--body-serif);font-size:13px;color:var(--ink-3);line-height:1.6;font-weight:300;flex:1;">The conversation worth having with your board before a pattern of misses makes it unavoidable.</p>
+          <span class="related-meta">8 min read</span>
+        </a>
+        <a href="/blog/sales-forecast-miss-cost" class="related-card">
+          <span class="related-tag">CFO · CEO</span>
+          <div class="related-title">Sales Forecast Miss: What It Costs Beyond the Quarter</div>
+          <p style="font-family:var(--body-serif);font-size:13px;color:var(--ink-3);line-height:1.6;font-weight:300;flex:1;">The downstream costs of a recurring forecast miss — in hiring, capital, and board credibility.</p>
+          <span class="related-meta">9 min read</span>
+        </a>
+        <a href="/blog/revenue-leak-auditors-wont-catch" class="related-card">
+          <span class="related-tag">Finance · Revenue Risk</span>
+          <div class="related-title">The Revenue Leak Your Auditors Won't Catch</div>
+          <p style="font-family:var(--body-serif);font-size:13px;color:var(--ink-3);line-height:1.6;font-weight:300;flex:1;">How to quantify the execution leakage in your pipeline — the revenue that disappears without appearing in any financial report.</p>
+          <span class="related-meta">8 min read</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>See your pipeline's execution health today</h2>
+          <p>Book a free 20-minute demo. We'll run GoWarmCRM's nightly diagnostics against your actual pipeline and show you your stall rate, playbook completion, and forecast signal quality — the metrics that belong in your next board pack.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span class="cta-caption">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, CROs, RevOps, and CEOs who want revenue predictability.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul>
+          <li><a href="/execution-gap">The Execution Gap</a></li>
+          <li><a href="/what-board-sees-pipeline">What Your Board Sees</a></li>
+          <li><a href="/sales-execution-platform">What is a Sales Execution Platform?</a></li>
+          <li><a href="/crm-execution-gap">CRM Execution Gap</a></li>
+          <li><a href="/pipeline-leakage">Pipeline Leakage</a></li>
+          <li><a href="/sales-forecast-accuracy">Forecast Accuracy</a></li>
+          <li><a href="/sales-execution-platform-for-saas">For SaaS Teams</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/diagnostic">Pipeline Diagnostic</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com</span></div>
+    </div>
+  </footer>
+
+  <script>function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}</script>
+</body>
+</html>
