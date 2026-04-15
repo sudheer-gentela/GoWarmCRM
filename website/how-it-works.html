@@ -223,117 +223,129 @@
     <div class="container">
       <span style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:12px;">Where GoWarmCRM Fits</span>
       <h2 style="font-family:var(--serif);font-size:36px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:14px;max-width:640px;">CRM is where your data lives.<br>GoWarmCRM is where your revenue execution happens.</h2>
-      <p style="font-family:var(--body-serif);font-size:16px;color:var(--ink-3);line-height:1.7;font-weight:300;max-width:600px;margin-bottom:40px;">Your CRM is a system of record — it stores what already happened. GoWarmCRM is the Sales Execution Platform (SEP) that sits alongside it, reading signals directly from email, calendar, meetings and files, then telling your team exactly what to do next.</p>
+      <p style="font-family:var(--body-serif);font-size:16px;color:var(--ink-3);line-height:1.7;font-weight:300;max-width:600px;margin-bottom:40px;">Your CRM is a system of record — it stores what already happened. GoWarmCRM is the Sales Execution Platform (SEP) that sits alongside it, reading signals directly from email, calendar, meetings and files, then telling your team exactly what to do next based on exceptions, playbooks and rules.</p>
       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;">
-        <svg width="100%" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg" style="display:block;" role="img">
-          <title>GoWarmCRM architecture — Sources, Applications, Actions</title>
-          <desc>Data sources feed both CRM and GoWarmCRM directly. GoWarmCRM reads CRM records and pushes actions back. Outputs are rep action queue and manager review.</desc>
+        <svg width="100%" viewBox="0 0 680 580" xmlns="http://www.w3.org/2000/svg" style="display:block;" role="img">
+          <title>GoWarmCRM — Systems of Action, Systems of Record, Execution Platform, Actions to be Taken</title>
+          <desc>Four perimeter groups showing how GoWarmCRM reads signals, processes through the execution platform, and surfaces actions for reps and managers. A teal feedback loop shows rep actions creating new signals.</desc>
           <defs>
             <marker id="hw-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </marker>
           </defs>
-          <rect width="680" height="460" fill="#FAFAF8"/>
+          <rect width="680" height="580" fill="#FAFAF8"/>
           <!-- Column headers -->
-          <text x="90"  y="24" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#9B978F" letter-spacing="1.5">SOURCES</text>
-          <text x="338" y="24" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#9B978F" letter-spacing="1.5">APPLICATIONS</text>
-          <text x="578" y="24" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#9B978F" letter-spacing="1.5">ACTIONS</text>
-          <!-- Column dividers -->
-          <line x1="196" y1="32" x2="196" y2="408" stroke="#E0DDD6" stroke-width="0.5" stroke-dasharray="3 3"/>
-          <line x1="450" y1="32" x2="450" y2="408" stroke="#E0DDD6" stroke-width="0.5" stroke-dasharray="3 3"/>
+          <text x="99"  y="20" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#9B978F" letter-spacing="1">SYSTEMS OF ACTION</text>
+          <text x="327" y="20" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#9B978F" letter-spacing="1">SYSTEMS OF RECORD</text>
+          <text x="565" y="20" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="9" font-weight="600" fill="#9B978F" letter-spacing="0.5">ACTIONS TO BE TAKEN</text>
+          <!-- PERIMETER 1: SYSTEMS OF ACTION -->
+          <rect x="16" y="30" width="166" height="318" rx="10" fill="none" stroke="#1A3A5C" stroke-width="1.5"/>
           <!-- Email -->
-          <rect x="30" y="38" width="122" height="50" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
-          <rect x="46" y="50" width="18" height="13" rx="2" fill="none" stroke="#1A3A5C" stroke-width="1.2"/>
-          <path d="M46 52 L55 58 L64 52" fill="none" stroke="#1A3A5C" stroke-width="1.2" stroke-linecap="round"/>
-          <text x="91" y="63" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">Email</text>
+          <rect x="28" y="42" width="142" height="48" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
+          <rect x="42" y="53" width="18" height="13" rx="2" fill="none" stroke="#1A3A5C" stroke-width="1.2"/>
+          <path d="M42 55 L51 61 L60 55" fill="none" stroke="#1A3A5C" stroke-width="1.2" stroke-linecap="round"/>
+          <text x="103" y="66" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">Email</text>
           <!-- Calendar -->
-          <rect x="30" y="96" width="122" height="50" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
-          <rect x="46" y="106" width="18" height="17" rx="2" fill="none" stroke="#1A3A5C" stroke-width="1.2"/>
-          <line x1="46" y1="112" x2="64" y2="112" stroke="#1A3A5C" stroke-width="1.2"/>
-          <line x1="51" y1="103" x2="51" y2="109" stroke="#1A3A5C" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="59" y1="103" x2="59" y2="109" stroke="#1A3A5C" stroke-width="1.2" stroke-linecap="round"/>
-          <rect x="49" y="116" width="4" height="3" rx="0.5" fill="#E8630A"/>
-          <rect x="56" y="116" width="4" height="3" rx="0.5" fill="#E8630A"/>
-          <text x="91" y="121" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">Calendar</text>
+          <rect x="28" y="98" width="142" height="48" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
+          <rect x="42" y="108" width="18" height="17" rx="2" fill="none" stroke="#1A3A5C" stroke-width="1.2"/>
+          <line x1="42" y1="114" x2="60" y2="114" stroke="#1A3A5C" stroke-width="1.2"/>
+          <line x1="47" y1="105" x2="47" y2="111" stroke="#1A3A5C" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="55" y1="105" x2="55" y2="111" stroke="#1A3A5C" stroke-width="1.2" stroke-linecap="round"/>
+          <rect x="45" y="118" width="4" height="3" rx="0.5" fill="#E8630A"/>
+          <rect x="52" y="118" width="4" height="3" rx="0.5" fill="#E8630A"/>
+          <text x="103" y="122" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">Calendar</text>
           <!-- Meetings -->
-          <rect x="30" y="154" width="122" height="50" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
-          <rect x="46" y="165" width="13" height="11" rx="2" fill="none" stroke="#1A3A5C" stroke-width="1.2"/>
-          <path d="M59 167 L65 165 L65 176 L59 173Z" fill="none" stroke="#1A3A5C" stroke-width="1.2" stroke-linejoin="round"/>
-          <text x="91" y="179" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">Meetings</text>
+          <rect x="28" y="154" width="142" height="48" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
+          <rect x="42" y="165" width="13" height="11" rx="2" fill="none" stroke="#1A3A5C" stroke-width="1.2"/>
+          <path d="M55 167 L61 165 L61 176 L55 173Z" fill="none" stroke="#1A3A5C" stroke-width="1.2" stroke-linejoin="round"/>
+          <text x="103" y="178" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">Meetings</text>
           <!-- Drive / Files -->
-          <rect x="30" y="212" width="122" height="50" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
-          <path d="M46 232 L46 222 L52 222 L54 224 L64 224 L64 232Z" fill="none" stroke="#1A3A5C" stroke-width="1.2" stroke-linejoin="round"/>
-          <text x="91" y="237" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">Drive / Files</text>
+          <rect x="28" y="210" width="142" height="48" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
+          <path d="M42 230 L42 220 L48 220 L50 222 L60 222 L60 230Z" fill="none" stroke="#1A3A5C" stroke-width="1.2" stroke-linejoin="round"/>
+          <text x="103" y="234" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">Drive / Files</text>
           <!-- LinkedIn -->
-          <rect x="30" y="270" width="122" height="56" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
-          <rect x="46" y="281" width="16" height="16" rx="3" fill="#1A3A5C"/>
-          <text x="54" y="289" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="9" font-weight="700" fill="#fff">in</text>
-          <text x="91" y="293" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">LinkedIn</text>
-          <text x="91" y="311" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="9" fill="#9B978F">via CRM only</text>
+          <rect x="28" y="266" width="142" height="58" rx="6" fill="#FFFFFF" stroke="#E0DDD6" stroke-width="0.5"/>
+          <rect x="42" y="277" width="16" height="16" rx="3" fill="#1A3A5C"/>
+          <text x="50" y="285" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="9" font-weight="700" fill="#fff">in</text>
+          <text x="103" y="287" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="12" font-weight="500" fill="#1A1814">LinkedIn</text>
+          <text x="103" y="305" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="9" fill="#9B978F">via CRM only</text>
           <!-- Arrows: sources → CRM (dashed grey) -->
-          <path d="M152 63  L178 63  L178 108 L218 108" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#hw-arrow)"/>
-          <path d="M152 121 L178 121 L178 108 L218 108" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3"/>
-          <path d="M152 179 L178 179 L178 108 L218 108" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3"/>
-          <path d="M152 237 L178 237 L178 108 L218 108" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3"/>
-          <path d="M152 298 L178 298 L178 108 L218 108" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3"/>
-          <!-- Arrows: email/cal/meetings/files → GoWarmCRM (ember) -->
-          <path d="M152 63  L192 63  L192 278 L218 278" fill="none" stroke="#E8630A" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
-          <path d="M152 121 L192 121 L192 278 L218 278" fill="none" stroke="#E8630A" stroke-width="1.5"/>
-          <path d="M152 179 L192 179 L192 278 L218 278" fill="none" stroke="#E8630A" stroke-width="1.5"/>
-          <path d="M152 237 L192 237 L192 278 L218 278" fill="none" stroke="#E8630A" stroke-width="1.5"/>
-          <!-- CRM box -->
-          <rect x="218" y="38" width="210" height="140" rx="8" fill="#F3F1EC" stroke="#E0DDD6" stroke-width="0.5"/>
-          <text x="323" y="90" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="16" font-weight="600" fill="#1A1814">CRM</text>
-          <text x="323" y="113" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="#6B6760">Salesforce · HubSpot · Dynamics</text>
-          <text x="323" y="134" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#9B978F">System of record — stores, does not act</text>
+          <path d="M182 66  L197 66  L197 104 L218 104" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#hw-arrow)"/>
+          <path d="M182 122 L197 122 L197 104 L218 104" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3"/>
+          <path d="M182 178 L197 178 L197 104 L218 104" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3"/>
+          <path d="M182 234 L197 234 L197 104 L218 104" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3"/>
+          <path d="M182 295 L197 295 L197 104 L218 104" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- Arrows: sources → GoWarmCRM (ember) -->
+          <path d="M182 66  L200 66  L200 338 L218 338" fill="none" stroke="#E8630A" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
+          <path d="M182 122 L200 122 L200 338 L218 338" fill="none" stroke="#E8630A" stroke-width="1.5"/>
+          <path d="M182 178 L200 178 L200 338 L218 338" fill="none" stroke="#E8630A" stroke-width="1.5"/>
+          <path d="M182 234 L200 234 L200 338 L218 338" fill="none" stroke="#E8630A" stroke-width="1.5"/>
+          <!-- PERIMETER 2: SYSTEMS OF RECORD -->
+          <rect x="210" y="30" width="230" height="148" rx="10" fill="none" stroke="#9B978F" stroke-width="1.5"/>
+          <rect x="220" y="42" width="210" height="124" rx="8" fill="#F3F1EC" stroke="#E0DDD6" stroke-width="0.5"/>
+          <text x="325" y="86" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="16" font-weight="600" fill="#1A1814">CRM</text>
+          <text x="325" y="108" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="#6B6760">Salesforce · HubSpot · Dynamics</text>
+          <text x="325" y="128" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#9B978F">Stores, does not act</text>
           <!-- Bidirectional CRM ↔ GoWarmCRM -->
-          <path d="M296 196 L296 178" fill="none" stroke="#1A3A5C" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
-          <text x="216" y="185" font-family="DM Sans,system-ui,sans-serif" font-size="9" font-weight="600" fill="#1A3A5C">pushes actions</text>
-          <path d="M346 178 L346 196" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#hw-arrow)"/>
-          <text x="354" y="191" font-family="DM Sans,system-ui,sans-serif" font-size="9" fill="#9B978F">reads records</text>
-          <!-- GoWarmCRM navy block -->
-          <rect x="218" y="200" width="210" height="196" rx="8" fill="#1A3A5C"/>
-          <rect x="218" y="200" width="5"   height="196" rx="3" fill="#E8630A"/>
+          <path d="M305 178 L305 210" fill="none" stroke="#1A3A5C" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
+          <text x="218" y="192" font-family="DM Sans,system-ui,sans-serif" font-size="9" font-weight="600" fill="#1A3A5C">pushes actions</text>
+          <path d="M345 210 L345 178" fill="none" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#hw-arrow)"/>
+          <text x="352" y="196" font-family="DM Sans,system-ui,sans-serif" font-size="9" fill="#9B978F">reads records</text>
+          <!-- EXECUTION PLATFORM label -->
+          <text x="325" y="228" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#9B978F" letter-spacing="1">EXECUTION PLATFORM</text>
+          <!-- PERIMETER 3: EXECUTION PLATFORM -->
+          <rect x="210" y="240" width="230" height="222" rx="10" fill="none" stroke="#E8630A" stroke-width="1.5"/>
+          <rect x="218" y="250" width="214" height="204" rx="8" fill="#1A3A5C"/>
+          <rect x="218" y="250" width="5"   height="204" rx="3" fill="#E8630A"/>
           <!-- White logo pill -->
-          <rect x="228" y="210" width="192" height="62" rx="6" fill="#FFFFFF"/>
-          <rect x="237" y="219" width="20" height="20" rx="4" fill="#E8630A"/>
-          <path d="M247 223 C245 226 243 228 243.5 230.5 C244 232.5 245.5 234 247 234.5 C248.5 234 250 232.5 250.5 230.5 C251 228 249 226 247 223Z" fill="#FDE68A"/>
-          <text x="261" y="231" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="15" font-weight="600"><tspan fill="#1A3A5C">GoWarm</tspan><tspan fill="#E8630A">CRM</tspan></text>
-          <text x="324" y="261" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#1A3A5C">Sales Execution Platform (SEP)</text>
-          <!-- Capability rows -->
-          <rect x="228" y="282" width="192" height="28" rx="5" fill="rgba(255,255,255,0.07)"/>
-          <text x="324" y="296" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">Nightly diagnostics</text>
-          <rect x="228" y="316" width="192" height="28" rx="5" fill="rgba(255,255,255,0.07)"/>
-          <text x="324" y="330" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">Playbook execution engine</text>
-          <rect x="228" y="350" width="192" height="28" rx="5" fill="rgba(255,255,255,0.07)"/>
-          <text x="324" y="364" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">AI draft layer</text>
-          <!-- GoWarmCRM → Actions arrows (navy) -->
-          <path d="M428 258 L450 258" fill="none" stroke="#1A3A5C" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
-          <path d="M428 334 L450 334" fill="none" stroke="#1A3A5C" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
+          <rect x="228" y="260" width="196" height="58" rx="6" fill="#FFFFFF"/>
+          <rect x="237" y="269" width="20" height="20" rx="4" fill="#E8630A"/>
+          <path d="M247 273 C245 276 243 278 243.5 280.5 C244 282.5 245.5 284 247 284.5 C248.5 284 250 282.5 250.5 280.5 C251 278 249 276 247 273Z" fill="#FDE68A"/>
+          <text x="263" y="281" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="14" font-weight="600"><tspan fill="#1A3A5C">GoWarm</tspan><tspan fill="#E8630A">CRM</tspan></text>
+          <text x="325" y="308" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#1A3A5C">Sales Execution Platform (SEP)</text>
+          <rect x="228" y="326" width="196" height="24" rx="5" fill="rgba(255,255,255,0.07)"/>
+          <text x="326" y="338" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">Nightly diagnostics</text>
+          <rect x="228" y="356" width="196" height="24" rx="5" fill="rgba(255,255,255,0.07)"/>
+          <text x="326" y="368" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">Playbook execution engine</text>
+          <rect x="228" y="386" width="196" height="24" rx="5" fill="rgba(255,255,255,0.07)"/>
+          <text x="326" y="398" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.78)">AI draft layer</text>
+          <!-- L-bend arrows: GoWarmCRM → Actions -->
+          <path d="M432 352 L444 352" fill="none" stroke="#1A3A5C" stroke-width="1.5"/>
+          <path d="M444 352 L444 294 L462 294" fill="none" stroke="#1A3A5C" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
+          <path d="M444 352 L444 420 L462 420" fill="none" stroke="#1A3A5C" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
+          <!-- PERIMETER 4: ACTIONS TO BE TAKEN -->
+          <rect x="452" y="30" width="212" height="452" rx="10" fill="none" stroke="#1D9E75" stroke-width="1.5"/>
+          <text x="558" y="52" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="8" font-weight="600" fill="#0F6E56" letter-spacing="0.5">BASED ON EXCEPTIONS</text>
+          <text x="558" y="64" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="8" font-weight="600" fill="#0F6E56" letter-spacing="0.5">PLAYBOOKS · RULES</text>
           <!-- Rep action queue -->
-          <rect x="450" y="200" width="200" height="102" rx="8" fill="#FFFFFF" stroke="#E8630A" stroke-width="1"/>
-          <rect x="450" y="200" width="200" height="32" rx="8" fill="#E8630A"/>
-          <rect x="450" y="216" width="200" height="16" fill="#E8630A"/>
-          <text x="550" y="216" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" font-weight="600" fill="#fff">Rep (IC) action queue</text>
-          <text x="550" y="252" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="#3D3A34">Ranked · AI-drafted</text>
-          <text x="550" y="272" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#6B6760">Every rep · every morning</text>
-          <text x="550" y="290" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#9B978F">No CRM login required</text>
+          <rect x="464" y="264" width="188" height="110" rx="8" fill="#FFFFFF" stroke="#E8630A" stroke-width="1"/>
+          <rect x="464" y="264" width="188" height="28" rx="8" fill="#E8630A"/>
+          <rect x="464" y="278" width="188" height="14" fill="#E8630A"/>
+          <text x="558" y="278" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" font-weight="600" fill="#fff">Rep (IC) action queue</text>
+          <text x="558" y="310" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="#3D3A34">Ranked · AI-drafted</text>
+          <text x="558" y="330" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#6B6760">Every rep · every morning</text>
+          <text x="558" y="348" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#9B978F">No CRM login required</text>
           <!-- Manager review -->
-          <rect x="450" y="316" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#1A3A5C" stroke-width="1"/>
-          <rect x="450" y="316" width="200" height="32" rx="8" fill="#1A3A5C"/>
-          <rect x="450" y="332" width="200" height="16" fill="#1A3A5C"/>
-          <text x="550" y="332" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" font-weight="600" fill="#fff">Manager review</text>
-          <text x="550" y="362" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="#3D3A34">Team execution health</text>
-          <text x="550" y="380" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#6B6760">Pipeline gaps · before QBR</text>
+          <rect x="464" y="392" width="188" height="78" rx="8" fill="#FFFFFF" stroke="#1A3A5C" stroke-width="1"/>
+          <rect x="464" y="392" width="188" height="28" rx="8" fill="#1A3A5C"/>
+          <rect x="464" y="406" width="188" height="14" fill="#1A3A5C"/>
+          <text x="558" y="406" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" font-weight="600" fill="#fff">Manager review</text>
+          <text x="558" y="434" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="#3D3A34">Team execution health</text>
+          <text x="558" y="452" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#6B6760">Pipeline gaps · before QBR</text>
+          <!-- Feedback loop -->
+          <path d="M558 482 L558 510 L99 510 L99 348" fill="none" stroke="#1D9E75" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#hw-arrow)"/>
+          <rect x="256" y="502" width="202" height="18" rx="9" fill="#E1F5EE"/>
+          <text x="357" y="511" text-anchor="middle" dominant-baseline="central" font-family="DM Sans,system-ui,sans-serif" font-size="10" font-weight="600" fill="#0F6E56">Rep acts · new signal created</text>
           <!-- Legend -->
-          <line x1="30"  y1="424" x2="50"  y2="424" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#hw-arrow)"/>
-          <text x="58" y="428" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#9B978F">Stored in CRM</text>
-          <line x1="158" y1="424" x2="178" y2="424" stroke="#E8630A" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
-          <text x="186" y="428" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#E8630A" font-weight="500">Read directly by GoWarmCRM</text>
-          <line x1="368" y1="424" x2="388" y2="424" stroke="#1A3A5C" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
-          <text x="396" y="428" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#1A3A5C" font-weight="500">Actions pushed by GoWarmCRM</text>
-          <!-- Tagline -->
-          <text x="340" y="450" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="#6B6760">CRM is where your data lives. GoWarmCRM is where your revenue execution happens.</text>
+          <line x1="16"  y1="534" x2="36"  y2="534" stroke="#9B978F" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#hw-arrow)"/>
+          <text x="44" y="538" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#9B978F">Stored in CRM</text>
+          <line x1="148" y1="534" x2="168" y2="534" stroke="#E8630A" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
+          <text x="176" y="538" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#E8630A" font-weight="500">Read directly by GoWarmCRM</text>
+          <line x1="368" y1="534" x2="388" y2="534" stroke="#1A3A5C" stroke-width="1.5" marker-end="url(#hw-arrow)"/>
+          <text x="396" y="538" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#1A3A5C" font-weight="500">Actions pushed by GoWarmCRM</text>
+          <line x1="16"  y1="554" x2="36"  y2="554" stroke="#1D9E75" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#hw-arrow)"/>
+          <text x="44" y="558" font-family="DM Sans,system-ui,sans-serif" font-size="10" fill="#0F6E56" font-weight="500">Rep acts · signal created</text>
+          <text x="340" y="574" text-anchor="middle" font-family="DM Sans,system-ui,sans-serif" font-size="11" fill="#6B6760">CRM is where your data lives. GoWarmCRM is where your revenue execution happens.</text>
         </svg>
       </div>
     </div>
