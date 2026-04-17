@@ -2,14 +2,30 @@
   var html = `
 <footer class="site-footer">
   <style>
+    .footer-grid-gw {
+      display: grid;
+      grid-template-columns: 200px 120px 1fr 130px;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
     .footer-col-resources ul {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0 24px;
+      gap: 0 32px;
+    }
+    .footer-col-resources ul li a {
+      white-space: nowrap;
+    }
+    @media (max-width: 960px) {
+      .footer-grid-gw { grid-template-columns: 1fr 1fr; }
+      .footer-col-resources ul { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid-gw { grid-template-columns: 1fr; }
     }
   </style>
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-grid-gw">
       <div>
         <div class="footer-logo" style="display:flex;align-items:center;">
           <svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0">
