@@ -102,6 +102,14 @@
       "destination": "/website/platform-overview.html"
     },
     {
+      "source": "/crm-integration",
+      "destination": "/website/crm-integration.html"
+    },
+    {
+      "source": "/salesforce-integration",
+      "destination": "/website/salesforce-integration.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoWarmCRM + Your CRM — Execution Layer for Salesforce & HubSpot</title>
+  <meta name="description" content="GoWarmCRM sits on top of your CRM — reading signals nightly, firing playbooks, surfacing a ranked rep action queue. No rip-and-replace. Live in 1–2 weeks." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+  <meta name="theme-color" content="#E8630A">
+
+  <!-- SEO/AEO:START -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/crm-integration" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/crm-integration" />
+  <meta property="og:title" content="GoWarmCRM + Your CRM — The Execution Layer Your CRM Is Missing" />
+  <meta property="og:description" content="GoWarmCRM sits on top of your CRM — reading signals nightly, firing playbooks, surfacing a ranked rep action queue. No rip-and-replace. Live in 1–2 weeks." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="GoWarmCRM + Your CRM — The Execution Layer Your CRM Is Missing" />
+  <meta name="twitter:description" content="GoWarmCRM sits on top of your CRM — reading signals nightly, firing playbooks, surfacing a ranked rep action queue. No rip-and-replace. Live in 1–2 weeks." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GoWarmCRM CRM Integration","description":"GoWarmCRM connects to Salesforce, HubSpot and other CRMs via API — adding the execution layer that surfaces nightly diagnostics, playbook triggers, and ranked action queues for every rep without replacing your CRM.","url":"https://www.gowarmcrm.com/crm-integration","publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"CRM Integration","item":"https://www.gowarmcrm.com/crm-integration"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can GoWarmCRM work alongside Salesforce without a rip-and-replace?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoWarmCRM connects to Salesforce via API and adds the execution layer on top \u2014 without replacing Salesforce, migrating data, or changing your CRM structure. Salesforce remains the system of record. GoWarmCRM is the system of action that sits alongside it."}},{"@type":"Question","name":"How does GoWarmCRM detect stalled deals if reps haven't updated the CRM?","acceptedAnswer":{"@type":"Answer","text":"GoWarmCRM reads four signal sources: CRM fields, email threads (last two-way contact), calendar events (meeting cadence), and meeting patterns. Because it reads email and calendar directly, it can detect a stall even when a rep hasn't updated the CRM stage or logged any activity."}},{"@type":"Question","name":"Does GoWarmCRM require reps to change how they use their CRM?","acceptedAnswer":{"@type":"Answer","text":"No. Reps continue to use their CRM as they always have. GoWarmCRM reads from the CRM in the background and presents a separate daily action queue. There is no retraining required and no change to existing CRM workflows."}},{"@type":"Question","name":"How does GoWarmCRM fire playbook actions automatically?","acceptedAnswer":{"@type":"Answer","text":"When a deal moves to a new stage in the CRM, GoWarmCRM detects the stage change via API and triggers the configured playbook step \u2014 adding the required action to the rep's queue automatically. The rep doesn't need to look up a playbook or manually trigger a step."}},{"@type":"Question","name":"What happens to GoWarmCRM actions when a rep completes them?","acceptedAnswer":{"@type":"Answer","text":"Completed actions are written back to the CRM via API. For Salesforce, this is tracked in the GoWarm Action custom object, with an optional write-back to native Salesforce Tasks. The next nightly diagnostic run reads completion status and updates the rep's queue accordingly."}},{"@type":"Question","name":"How long does it take to integrate GoWarmCRM with Salesforce?","acceptedAnswer":{"@type":"Answer","text":"1\u20132 weeks for a live Salesforce integration. Setup involves installing the GoWarm managed package (which installs the GoWarm Action custom object), OAuth authorisation, mapping Opportunity stage names, configuring diagnostic thresholds, and seeding playbooks. No Salesforce admin reconfiguration required."}}]}</script>
+  <!-- SEO/AEO:END -->
+
+  <style>
+    /* PAGE HERO */
+    .page-hero { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .page-title { font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; max-width: 740px; }
+    .page-title em { font-style: italic; color: var(--rust); }
+    .page-subtitle { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 600px; margin-bottom: 32px; }
+    .hero-checklist { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-check { font-size: 13px; color: var(--ink-3); display: flex; gap: 8px; align-items: center; }
+    .hero-check::before { content: "✓"; color: var(--rust); font-weight: 700; }
+    .crm-logos { display: flex; gap: 10px; flex-wrap: wrap; }
+    .crm-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: #fff; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; transition: border-color 0.15s; }
+    .crm-pill:hover { border-color: var(--rust); }
+    .crm-pill .dot { width: 7px; height: 7px; border-radius: 50%; }
+    .crm-pill-status { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px; margin-left: 4px; }
+    .status-live { background: #F0FDF4; color: #16A34A; }
+    .status-soon { background: var(--cream-2); color: var(--ink-4); }
+
+    /* ARCHITECTURE */
+    .arch-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .arch-intro { max-width: 640px; margin-bottom: 48px; }
+    .arch-intro h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .arch-intro p { font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    .arch-grid { display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; align-items: center; margin-bottom: 20px; }
+    .arch-box { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+    .arch-box.highlight { border: 2px solid var(--rust); }
+    .arch-box-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 8px; }
+    .arch-box-eyebrow.rust { color: var(--rust); }
+    .arch-box-title { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .arch-box-desc { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+    .arch-box-list { list-style: none; margin-top: 10px; }
+    .arch-box-list li { font-size: 12px; color: var(--ink-4); padding: 3px 0; border-top: 1px solid var(--border); display: flex; gap: 6px; }
+    .arch-box-list li::before { content: "·"; color: var(--rust); }
+    .arch-arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+    .arch-arrow-line { width: 100%; height: 1px; background: var(--border); position: relative; }
+    .arch-arrow-line::after { content: "▶"; position: absolute; right: -5px; top: -7px; font-size: 11px; color: var(--rust); }
+    .arch-arrow-lbl { font-size: 10px; color: var(--ink-4); text-align: center; line-height: 1.4; letter-spacing: 0.5px; }
+    .arch-loop { margin-top: 12px; padding: 13px 18px; background: var(--cream-2); border: 1px solid var(--border); border-radius: 6px; font-size: 13px; color: var(--ink-3); display: flex; gap: 10px; align-items: flex-start; }
+    .arch-loop::before { content: "↺"; color: var(--rust); font-size: 16px; line-height: 1.2; flex-shrink: 0; }
+
+    /* THREE PHASES */
+    .phases-section { padding: 80px 0; border-bottom: 1px solid var(--border); background: var(--cream-2); }
+    .phases-intro { max-width: 600px; margin-bottom: 48px; }
+    .phases-intro h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .phases-intro p { font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    .phase { display: grid; grid-template-columns: 72px 1fr; border-top: 1px solid var(--border); background: #fff; }
+    .phase:last-child { border-bottom: 1px solid var(--border); }
+    .phase-num-col { padding: 28px 0; display: flex; flex-direction: column; align-items: flex-start; }
+    .phase-num { font-size: 11px; font-weight: 600; color: var(--rust); letter-spacing: 1px; text-transform: uppercase; }
+    .phase-line { flex: 1; width: 1px; background: var(--border); margin: 10px 0 0 5px; }
+    .phase-body { padding: 28px 28px 28px 0; }
+    .phase-title { font-family: var(--serif); font-size: 21px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 10px; }
+    .phase-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 600px; }
+
+    /* CRM vs SEP TABLE */
+    .compare-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .compare-intro { max-width: 600px; margin-bottom: 40px; }
+    .compare-intro h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .compare-intro p { font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    .ctable { width: 100%; border-collapse: collapse; }
+    .ctable th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-4); padding: 0 24px 14px; border-bottom: 1px solid var(--border); }
+    .ctable th:first-child { width: 28%; padding-left: 0; }
+    .ctable th.col-crm { color: var(--ink-3); }
+    .ctable th.col-gw { color: var(--rust); }
+    .ctable td { padding: 14px 24px; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; line-height: 1.55; }
+    .ctable td:first-child { padding-left: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-4); }
+    .ctable td.crm { color: var(--ink-3); }
+    .ctable td.gw { color: var(--ink); font-weight: 500; }
+
+    /* CRM CARDS */
+    .crm-cards-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .crm-cards-intro { max-width: 560px; margin-bottom: 40px; }
+    .crm-cards-intro h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .crm-cards-intro p { font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    .crm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .crm-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 26px; text-decoration: none; transition: border-color 0.15s; display: flex; flex-direction: column; }
+    .crm-card:hover { border-color: var(--rust); }
+    .crm-card.other { background: var(--cream-2); border-style: dashed; }
+    .crm-card-status { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+    .crm-card-status.live { color: #16A34A; }
+    .crm-card-status.live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #16A34A; }
+    .crm-card-status.soon { color: var(--ink-4); }
+    .crm-card-status.soon::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--border); }
+    .crm-card-title { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+    .crm-card-desc { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; flex: 1; margin-bottom: 18px; }
+    .crm-card-link { font-size: 13px; font-weight: 600; color: var(--rust); }
+    .crm-card-link::after { content: " →"; }
+    .crm-card.other .crm-card-link { color: var(--ink-3); }
+    .crm-card.other .crm-card-link::after { content: ""; }
+    .other-crm-strip { margin-top: 18px; padding: 22px 26px; background: var(--cream-2); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .other-crm-strip-text h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .other-crm-strip-text p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); font-weight: 300; }
+
+    /* FAQ */
+    .faq-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .faq-section h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 40px; max-width: 560px; }
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; padding: 20px 0; text-align: left; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; line-height: 1.4; }
+    .faq-q:hover { color: var(--rust); }
+    .faq-icon { font-size: 20px; color: var(--rust); flex-shrink: 0; line-height: 1; }
+    .faq-a { display: none; padding: 0 0 20px; }
+    .faq-a.open { display: block; }
+    .faq-a p { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 10px; }
+    .faq-a p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 900px) {
+      .page-title { font-size: 34px; }
+      .arch-grid { grid-template-columns: 1fr; }
+      .arch-arrow { display: none; }
+      .arch-box { margin-bottom: 8px; }
+      .crm-grid { grid-template-columns: 1fr; }
+      .phase { grid-template-columns: 1fr; }
+      .phase-num-col { padding: 20px 0 6px; flex-direction: row; align-items: center; gap: 10px; }
+      .phase-line { display: none; }
+      .phase-body { padding: 0 0 24px; }
+      .other-crm-strip { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .page-title { font-size: 28px; }
+      .hero-checklist { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav><ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/problems">Problems We Solve</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/blog">GoWarm Insights</a></li>
+        <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+      </ul></nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-eyebrow">CRM Integration</span>
+      <h1 class="page-title">Your CRM stores the data.<br><em>GoWarmCRM executes on it.</em></h1>
+      <p class="page-subtitle">GoWarmCRM sits on top of your existing CRM — reading signals every night, firing playbook actions, and surfacing a ranked action queue for every rep by morning. No rip-and-replace. Your CRM stays as the system of record.</p>
+      <div class="hero-checklist">
+        <span class="hero-check">Connects via CRM API — no schema changes</span>
+        <span class="hero-check">Reads nightly, writes completed actions back</span>
+        <span class="hero-check">Live within 1–2 weeks</span>
+        <span class="hero-check">No rep retraining required</span>
+      </div>
+      <div class="crm-logos">
+        <a href="/salesforce-integration" class="crm-pill"><span class="dot" style="background:#00A1E0;"></span>Salesforce<span class="crm-pill-status status-live">Live</span></a>
+        <a href="/contact?crm=hubspot" class="crm-pill"><span class="dot" style="background:#FF7A59;"></span>HubSpot<span class="crm-pill-status status-soon">Coming soon</span></a>
+        <a href="/contact" class="crm-pill"><span class="dot" style="background:var(--border);"></span>Another CRM?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE DIAGRAM -->
+  <section class="arch-section">
+    <div class="container">
+      <div class="arch-intro">
+        <span class="section-eyebrow">How it fits together</span>
+        <h2>The CRM is where your data lives.<br>GoWarmCRM is where execution happens.</h2>
+        <p>A CRM is a system of record — it captures what already happened. GoWarmCRM is the execution layer that reads those signals nightly, runs diagnostic rules, fires playbook actions, and writes completed activity back. One to store. One to create consistency in action across the team.</p>
+      </div>
+      <div class="arch-grid">
+        <div class="arch-box">
+          <div class="arch-box-eyebrow">Systems of action</div>
+          <div class="arch-box-title">Email, Calendar &amp; Meetings</div>
+          <div class="arch-box-desc">The signals that actually show deal health — not just what reps remembered to log.</div>
+          <ul class="arch-box-list">
+            <li>Last two-way email contact</li>
+            <li>Calendar meeting frequency</li>
+            <li>Meeting drop-off patterns</li>
+            <li>Response latency</li>
+          </ul>
+        </div>
+        <div class="arch-arrow">
+          <div class="arch-arrow-line"></div>
+          <div class="arch-arrow-lbl">reads<br>signals</div>
+        </div>
+        <div class="arch-box highlight">
+          <div class="arch-box-eyebrow rust">Execution platform</div>
+          <div class="arch-box-title">GoWarmCRM</div>
+          <div class="arch-box-desc">Runs diagnostic rules nightly. Fires playbooks. Surfaces ranked actions. Drafts AI suggestions.</div>
+          <ul class="arch-box-list">
+            <li>Nightly rules engines</li>
+            <li>Playbook trigger on stage change</li>
+            <li>Priority ranking by urgency + value</li>
+            <li>AI draft per action</li>
+          </ul>
+        </div>
+        <div class="arch-arrow">
+          <div class="arch-arrow-line"></div>
+          <div class="arch-arrow-lbl">ranked<br>actions</div>
+        </div>
+        <div class="arch-box">
+          <div class="arch-box-eyebrow">Actions to be taken</div>
+          <div class="arch-box-title">Rep &amp; Manager Queue</div>
+          <div class="arch-box-desc">Every rep sees 3–7 ranked actions each morning. Managers see team-level execution health.</div>
+          <ul class="arch-box-list">
+            <li>Ranked by urgency &amp; deal value</li>
+            <li>AI-drafted suggestion per action</li>
+            <li>Manager view across all reps</li>
+            <li>Playbook progress tracked</li>
+          </ul>
+        </div>
+      </div>
+      <div class="arch-loop">Rep approves and acts in GoWarmCRM → activity written back to the CRM via API → the next nightly diagnostic reads the updated signal. The loop closes automatically.</div>
+    </div>
+  </section>
+
+  <!-- THREE PHASES -->
+  <section class="phases-section">
+    <div class="container">
+      <div class="phases-intro">
+        <span class="section-eyebrow">What happens every night</span>
+        <h2>Three things run on your pipeline while your team sleeps.</h2>
+        <p>By the time your team opens their laptops, the work of triaging the pipeline is already done. No manual review. No Monday morning surprises.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-num-col"><span class="phase-num">Phase 01</span><div class="phase-line"></div></div>
+        <div class="phase-body">
+          <h3 class="phase-title">Read from your CRM — and beyond it</h3>
+          <p class="phase-desc">GoWarmCRM connects via your CRM's API and reads deal records, stage history, contract data, and activity logs. But it doesn't stop there. It also reads directly from email (last two-way contact, response latency), calendar (meetings scheduled, cadence), and meeting patterns. Four signal sources, not one — so diagnostics work accurately even when reps haven't kept CRM fields up to date.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num-col"><span class="phase-num">Phase 02</span><div class="phase-line"></div></div>
+        <div class="phase-body">
+          <h3 class="phase-title">Run diagnostic rules — build a prioritised action queue</h3>
+          <p class="phase-desc">Every deal, contract, prospect, and handover is scored against configurable thresholds — stage duration, last contact date, renewal windows, ARR timing. Breaches are flagged automatically and converted into prioritised actions in each rep's queue. Playbooks fire the moment a deal changes stage. No manual trigger required.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num-col"><span class="phase-num">Phase 03</span><div class="phase-line"></div></div>
+        <div class="phase-body">
+          <h3 class="phase-title">Write completed actions back to the CRM</h3>
+          <p class="phase-desc">When a rep completes an action in GoWarmCRM, it writes back to the CRM via API. For Salesforce, this goes to the GoWarm Action custom object — keeping your native Task object clean, while optionally also creating a Salesforce Task if your team needs it. Your CRM stays current without reps logging in separate tabs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="compare-section">
+    <div class="container">
+      <div class="compare-intro">
+        <span class="section-eyebrow">CRM vs. Sales Execution Platform</span>
+        <h2>What your CRM does. What GoWarmCRM adds.</h2>
+        <p>These are complementary tools. Your CRM handles the record layer. GoWarmCRM handles the execution layer. Together, your team always knows what happened and what to do next.</p>
+      </div>
+      <table class="ctable">
+        <thead><tr>
+          <th></th>
+          <th class="col-crm">Your CRM</th>
+          <th class="col-gw">GoWarmCRM</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Primary role</td><td class="crm">System of record — stores what happened</td><td class="gw">System of action — tells your team what to do next</td></tr>
+          <tr><td>Pipeline visibility</td><td class="crm">Reports and dashboards, manually reviewed</td><td class="gw">Nightly diagnostic run, automatically surfaced as actions</td></tr>
+          <tr><td>Stall detection</td><td class="crm">Only if a rep updates the stage or logs a task</td><td class="gw">Detected from email, calendar, and meeting signals — regardless of CRM updates</td></tr>
+          <tr><td>Playbook execution</td><td class="crm">Defined in documents, followed inconsistently</td><td class="gw">Fires automatically on stage change — next step in the rep's queue</td></tr>
+          <tr><td>Rep daily workflow</td><td class="crm">Rep decides what to work on based on memory and inbox</td><td class="gw">Ranked 3–7 action queue delivered every morning</td></tr>
+          <tr><td>Manager review</td><td class="crm">Weekly pipeline call relying on rep memory</td><td class="gw">Team-level execution health — open alerts, playbook adoption, days-at-risk</td></tr>
+          <tr><td>AI assistance</td><td class="crm">Not available natively in most platforms</td><td class="gw">AI-drafted next action on every alert — rep approves, edits, or rejects</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CRM CARDS -->
+  <section class="crm-cards-section">
+    <div class="container">
+      <div class="crm-cards-intro">
+        <span class="section-eyebrow">Integrations</span>
+        <h2>Find your CRM.</h2>
+        <p>GoWarmCRM has a live integration with Salesforce today. HubSpot is coming next. Running something else? Tell us — the integration architecture is CRM-agnostic by design.</p>
+      </div>
+      <div class="crm-grid">
+        <a href="/salesforce-integration" class="crm-card">
+          <span class="crm-card-status live">Live integration</span>
+          <div class="crm-card-title">Salesforce</div>
+          <p class="crm-card-desc">GoWarmCRM connects via Salesforce REST API. Actions are tracked in a dedicated GoWarm Action custom object — no interference with your existing Tasks, Process Builder flows, or third-party apps. Actions also surface on Salesforce Calendar. Optional Task write-back configurable.</p>
+          <span class="crm-card-link">See Salesforce integration</span>
+        </a>
+        <a href="/contact?crm=hubspot" class="crm-card">
+          <span class="crm-card-status soon">Coming soon</span>
+          <div class="crm-card-title">HubSpot</div>
+          <p class="crm-card-desc">HubSpot integration is in active development. When live, GoWarmCRM will read Deals, Contacts, and Engagements — run nightly diagnostics, fire playbooks on Deal stage change, and write completed actions back as HubSpot Engagements.</p>
+          <span class="crm-card-link" style="color:var(--ink-4);">Register interest →</span>
+        </a>
+      </div>
+      <div class="other-crm-strip">
+        <div class="other-crm-strip-text">
+          <h4>Using a different CRM?</h4>
+          <p>Microsoft Dynamics, Pipedrive, Zoho, Freshsales, Close — GoWarmCRM's architecture is CRM-agnostic. If your CRM has a REST API, an integration is technically feasible.</p>
+        </div>
+        <a href="/contact" class="btn btn-outline" style="white-space:nowrap;">Tell us your CRM →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ — questions not repeated from JSON-LD are matched; all 6 questions here are the canonical source -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>How GoWarmCRM works with your CRM.</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Does GoWarmCRM replace our CRM?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>No — and it's not designed to. Your CRM continues to be the single source of truth for all pipeline data. GoWarmCRM reads from it, processes it, and surfaces actions based on rules, playbooks, and AI-drafted content. The CRM is never displaced as the record layer. Your existing CRM investment and data stay intact.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the difference between a CRM and a Sales Execution Platform?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>A CRM is a system of record — it captures what already happened (calls logged, stages moved, notes added). It stores data well but tells your team nothing about what to do next. GoWarmCRM is a system of action — it reads signals from email, calendar, and CRM fields, then tells every rep exactly what to do that day, ranked by urgency. You need both: one to store, one to create consistency in action across the team.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What data does GoWarmCRM read from the CRM?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>GoWarmCRM reads deal records (stage, value, owner, close date), contact records, contract data, activity logs, and stage transition history. It also reads beyond the CRM — directly from email threads (last two-way contact, response latency), calendar events (meetings scheduled, cadence), and meeting patterns. This four-source approach means diagnostics are accurate even when reps haven't kept CRM fields current.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How does GoWarmCRM write completed actions back to the CRM?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>When a rep completes an action in GoWarmCRM, the activity is written back to the CRM via API. For Salesforce, completed actions are tracked in the GoWarm Action custom object — keeping the native Task object clean and free from automation interference. An optional configuration also writes a corresponding Salesforce Task to the linked Opportunity or Contact, for teams that rely on the native Activity timeline. The rep acts once; the CRM updates automatically.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will GoWarmCRM change anything in our CRM structure — stages, fields, or custom objects?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>GoWarmCRM does not modify your existing CRM schema. For Salesforce, a lightweight managed package installs the GoWarm Action custom object — a net-new object that does not touch Opportunities, Contacts, Tasks, or any existing standard object. Stage configurations are mapped in GoWarmCRM to match your existing stage names. Your CRM admin has nothing to reconfigure.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does it take to go live?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>1–2 weeks, with no rep retraining required. For Salesforce, setup involves: installing the GoWarm managed package, OAuth authorisation, mapping your stage names, configuring diagnostic thresholds, and seeding your playbooks. The nightly run starts immediately after setup and reps see their first action queue the following morning.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">My CRM isn't listed. Can GoWarmCRM still integrate?<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>GoWarmCRM's integration architecture is CRM-agnostic — it reads via API and writes activity back via API. If your CRM exposes a REST API (most modern CRMs do), an integration is technically feasible. The current live integration is Salesforce. HubSpot is in active development. If you're running Dynamics, Pipedrive, Zoho, or another platform, <a href="/contact" style="color:var(--rust);">contact us</a> — customer demand shapes the integration roadmap directly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>See what GoWarmCRM would surface in your pipeline today.</h2>
+          <p>Book a free 20-minute demo. We'll connect to your CRM setup and show you which deals would be flagged, which playbooks would have fired, and what AI would have suggested.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span style="font-size:12px;color:rgba(255,255,255,0.35);padding-left:4px;">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, RevOps, and Sales Directors.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul>
+          <li><a href="/crm-integration">CRM Integration</a></li>
+          <li><a href="/salesforce-integration">Salesforce Integration</a></li>
+          <li><a href="/execution-gap">The Execution Gap</a></li>
+          <li><a href="/sales-execution-platform-vs-crm">SEP vs CRM</a></li>
+          <li><a href="/pipeline-execution">Pipeline Execution</a></li>
+          <li><a href="/pipeline-leakage">Pipeline Leakage</a></li>
+          <li><a href="/crm-execution-gap">The CRM Execution Gap</a></li>
+          <li><a href="/sales-rep-action-queue">Sales Rep Action Queue</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+          <li><a href="/diagnostic">Pipeline Diagnostic</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}
+    function toggleFaq(btn){var a=btn.nextElementSibling;var i=btn.querySelector('.faq-icon');var o=a.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(function(x){x.classList.remove('open');x.previousElementSibling.querySelector('.faq-icon').textContent='+';});if(!o){a.classList.add('open');i.textContent='−';}}
+  </script>
+</body>
+</html>

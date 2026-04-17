@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoWarmCRM + Salesforce — Sales Execution Layer for Salesforce Teams</title>
+  <meta name="description" content="GoWarmCRM adds the execution layer Salesforce is missing — nightly diagnostics, playbook triggers, GoWarm Action custom object, Salesforce Calendar surfacing." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="theme-color" content="#E8630A">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/salesforce-integration" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/salesforce-integration" />
+  <meta property="og:title" content="GoWarmCRM + Salesforce — The Execution Layer Salesforce Is Missing" />
+  <meta property="og:description" content="GoWarmCRM reads from Salesforce nightly, fires playbooks on stage change, tracks all rep actions in a GoWarm Action custom object, and surfaces them on Salesforce Calendar." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GoWarmCRM Salesforce Integration","description":"GoWarmCRM connects to Salesforce via REST API — reading Opportunities, Contacts, and Activities nightly, firing playbooks on stage change, tracking all rep actions in a GoWarm Action custom object, and surfacing them on Salesforce Calendar. Optional Task write-back is configurable.","url":"https://www.gowarmcrm.com/salesforce-integration","publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"CRM Integration","item":"https://www.gowarmcrm.com/crm-integration"},{"@type":"ListItem","position":3,"name":"Salesforce","item":"https://www.gowarmcrm.com/salesforce-integration"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does GoWarmCRM store actions in Salesforce?","acceptedAnswer":{"@type":"Answer","text":"GoWarmCRM writes all rep actions to a dedicated GoWarm Action custom object in your Salesforce org. This keeps GoWarmCRM actions separate from native Tasks and Activities — with no interference to existing automations, Process Builder flows, or third-party apps. Task write-back is available as an optional configuration."}},{"@type":"Question","name":"How quickly does GoWarmCRM detect a stalled Opportunity in Salesforce?","acceptedAnswer":{"@type":"Answer","text":"GoWarmCRM runs nightly — so a stall is detected within 24 hours of a threshold being breached. Stall detection reads email and calendar signals directly, not just Salesforce field updates, so it works even when reps have not logged activity in Salesforce."}},{"@type":"Question","name":"Will this interfere with our existing Salesforce Tasks or automation?","acceptedAnswer":{"@type":"Answer","text":"No. GoWarmCRM writes only to its own GoWarm Action custom object. Your standard Task object, Process Builder flows, Apex triggers, and third-party integrations are entirely unaffected."}}]}</script>
+
+  <style>
+    .page-hero { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .page-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 16px; }
+    .page-title { font-family: var(--serif); font-size: 46px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; max-width: 760px; }
+    .page-title em { font-style: italic; color: var(--rust); }
+    .page-subtitle { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 600px; margin-bottom: 32px; }
+    .hero-checklist { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-check { font-size: 13px; color: var(--ink-3); display: flex; gap: 8px; align-items: center; }
+    .hero-check::before { content: "✓"; color: var(--rust); font-weight: 700; }
+    .crm-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #EBF5FB; border: 1px solid #AED6F1; border-radius: 6px; font-size: 14px; font-weight: 600; color: #1A5276; }
+    .crm-badge .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #16A34A; }
+
+    /* CONNECT */
+    .connect-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .section-intro { max-width: 640px; margin-bottom: 48px; }
+    .section-intro h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .section-intro p { font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    .connect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
+    .connect-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+    .connect-card-num { font-size: 11px; font-weight: 600; color: var(--rust); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+    .connect-card-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
+    .connect-card-desc { font-family: var(--body-serif); font-size: 13px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+
+    /* OBJECTS TABLE */
+    .objects-wrap { background: var(--cream-2); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+    .objects-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 16px; }
+    .objects-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .objects-table th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-4); padding: 0 14px 10px; border-bottom: 1px solid var(--border); }
+    .objects-table th:first-child { padding-left: 0; }
+    .objects-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; color: var(--ink-3); }
+    .objects-table td:first-child { padding-left: 0; font-weight: 600; color: var(--ink); }
+    .objects-table tr:last-child td { border-bottom: none; }
+    .mode-badge { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; white-space: nowrap; }
+    .mode-r { background: #EFF6FF; color: #2563EB; }
+    .mode-rw { background: #F0FDF4; color: #16A34A; }
+    .mode-custom { background: var(--rust-light); color: var(--rust); }
+
+    /* ACTION ARCHITECTURE */
+    .arch-section { padding: 80px 0; border-bottom: 1px solid var(--border); background: var(--cream-2); }
+    .arch-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .arch-text h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .arch-text p { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .config-callout { margin-top: 28px; background: var(--ink); border-radius: 8px; padding: 22px 24px; }
+    .config-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+    .config-title { font-family: var(--serif); font-size: 17px; font-weight: 600; color: #fff; line-height: 1.3; margin-bottom: 10px; }
+    .config-desc { font-family: var(--body-serif); font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 300; }
+    .config-row { display: flex; align-items: center; gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .toggle { width: 32px; height: 18px; border-radius: 9px; position: relative; flex-shrink: 0; }
+    .toggle.on { background: var(--rust); }
+    .toggle.off { background: rgba(255,255,255,0.15); }
+    .toggle::after { content: ''; position: absolute; width: 14px; height: 14px; border-radius: 50%; background: #fff; top: 2px; }
+    .toggle.on::after { right: 2px; }
+    .toggle.off::after { left: 2px; }
+    .toggle-lbl { font-size: 12px; color: rgba(255,255,255,0.65); }
+
+    /* FLOW DIAGRAM */
+    .action-flow { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .flow-header { background: var(--ink); padding: 12px 20px; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+    .flow-step { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-num { width: 22px; height: 22px; border-radius: 50%; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; color: #fff; }
+    .fn-read { background: #2563EB; }
+    .fn-engine { background: var(--rust); }
+    .fn-write { background: #16A34A; }
+    .fn-calendar { background: #7C3AED; }
+    .fn-optional { background: var(--ink-4); }
+    .flow-body { flex: 1; }
+    .flow-title { font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .flow-desc { font-size: 11px; color: var(--ink-3); line-height: 1.55; }
+    .flow-tags { display: flex; gap: 5px; margin-top: 5px; flex-wrap: wrap; }
+    .ftag { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px; }
+    .ftag-sf { background: #EBF5FB; color: #1A5276; }
+    .ftag-gw { background: var(--rust-light); color: var(--rust); }
+    .ftag-cal { background: #F3F0FF; color: #7C3AED; }
+    .ftag-opt { background: var(--cream-2); color: var(--ink-4); border: 1px solid var(--border); }
+
+    /* ADDS SECTION */
+    .adds-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .adds-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .adds-text h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .adds-text p { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+    .adds-list { list-style: none; }
+    .adds-list li { font-size: 14px; color: var(--ink-2); padding: 10px 0; border-top: 1px solid var(--border); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+    .adds-list li::before { content: "→"; color: var(--rust); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+    .mockup { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+    .mock-bar { background: var(--ink); padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+    .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mock-bar-title { font-size: 12px; color: rgba(255,255,255,0.4); margin: 0 auto; }
+    .mock-hdr { padding: 13px 20px 11px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .mock-hdr-title { font-family: var(--serif); font-size: 14px; font-weight: 600; color: var(--ink); }
+    .mock-badge { font-size: 10px; font-weight: 600; background: var(--rust); color: #fff; padding: 2px 8px; border-radius: 10px; }
+    .mock-item { padding: 12px 20px; border-bottom: 1px solid var(--border); }
+    .mock-item-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 4px; }
+    .mock-ind { width: 7px; height: 7px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+    .urgent { background: var(--rust); }
+    .medium { background: #F5A623; }
+    .mock-item-title { font-size: 13px; font-weight: 600; color: var(--ink); }
+    .mock-meta { font-size: 11px; color: var(--ink-4); margin-left: 17px; display: flex; gap: 5px; flex-wrap: wrap; align-items: center; }
+    .mtag { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.4px; }
+    .mtag-stall { background: var(--rust-light); color: var(--rust); }
+    .mtag-play { background: #EFF6FF; color: #2563EB; }
+    .mtag-gw { background: var(--rust-light); color: var(--rust-dark); }
+    .mtag-cal { background: #F3F0FF; color: #7C3AED; }
+    .mtag-contract { background: #FEF9C3; color: #A16207; }
+    .mock-ai { padding: 10px 20px; background: var(--cream-2); border-top: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .mock-ai-lbl { font-size: 10px; font-weight: 600; color: var(--rust); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+    .mock-ai-txt { font-size: 12px; color: var(--ink-3); flex: 1; font-style: italic; }
+    .mock-ai-btn { font-size: 11px; font-weight: 600; color: var(--ink); background: #fff; border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+    .mock-note { padding: 10px 20px; background: var(--rust-light); border-top: 1px solid #F5C6A0; font-size: 11px; color: var(--rust-dark); line-height: 1.5; }
+
+    /* COMPARE */
+    .compare-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .compare-intro { max-width: 600px; margin-bottom: 40px; }
+    .compare-intro h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .compare-intro p { font-family: var(--body-serif); font-size: 16px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+    .ctable { width: 100%; border-collapse: collapse; }
+    .ctable th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-4); padding: 0 24px 16px; border-bottom: 1px solid var(--border); }
+    .ctable th:first-child { width: 28%; padding-left: 0; }
+    .ctable th.col-sf { color: #00A1E0; }
+    .ctable th.col-gw { color: var(--rust); }
+    .ctable td { padding: 15px 24px; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; line-height: 1.55; }
+    .ctable td:first-child { padding-left: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-4); }
+    .ctable td.sf { color: var(--ink-3); }
+    .ctable td.gw { color: var(--ink); font-weight: 500; }
+
+    /* FAQ */
+    .faq-section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+    .faq-section h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 40px; max-width: 560px; }
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; padding: 20px 0; text-align: left; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; line-height: 1.4; }
+    .faq-q:hover { color: var(--rust); }
+    .faq-icon { font-size: 20px; color: var(--rust); flex-shrink: 0; }
+    .faq-a { display: none; padding: 0 0 20px; }
+    .faq-a.open { display: block; }
+    .faq-a p { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 10px; }
+    .faq-a p:last-child { margin-bottom: 0; }
+
+    .breadcrumb { padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .bc { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-4); }
+    .bc a { color: var(--ink-4); transition: color 0.15s; }
+    .bc a:hover { color: var(--rust); }
+    .bc span { color: var(--border); }
+
+    @media (max-width: 900px) {
+      .page-title { font-size: 34px; }
+      .connect-grid { grid-template-columns: 1fr; }
+      .arch-inner, .adds-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 600px) {
+      .page-title { font-size: 28px; }
+      .hero-checklist { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav><ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/problems">Problems We Solve</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/blog">GoWarm Insights</a></li>
+        <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+      </ul></nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="breadcrumb"><div class="container"><div class="bc">
+    <a href="/">Home</a><span>/</span><a href="/crm-integration">CRM Integration</a><span>/</span><span style="color:var(--ink);">Salesforce</span>
+  </div></div></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-eyebrow">Salesforce Integration</span>
+      <h1 class="page-title">GoWarmCRM + Salesforce.<br><em>The execution layer</em><br>Salesforce doesn't have.</h1>
+      <p class="page-subtitle">Salesforce stores your pipeline. GoWarmCRM executes on it. Nightly diagnostics, playbook triggers on Opportunity stage change, AI-drafted action queues — all tracked in a dedicated GoWarm Action custom object and surfaced on Salesforce Calendar. Your Tasks stay clean.</p>
+      <div class="hero-checklist">
+        <span class="hero-check">Live Salesforce integration</span>
+        <span class="hero-check">GoWarm Action custom object — no Task pollution</span>
+        <span class="hero-check">Actions surface on Salesforce Calendar</span>
+        <span class="hero-check">Optional Task write-back configurable per org</span>
+        <span class="hero-check">Live in 1–2 weeks</span>
+      </div>
+      <div class="crm-badge"><span class="live-dot"></span>Live integration — Salesforce REST API</div>
+    </div>
+  </section>
+
+  <section class="connect-section">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-eyebrow">Technical integration</span>
+        <h2>How GoWarmCRM connects to Salesforce.</h2>
+        <p>GoWarmCRM connects via the Salesforce REST API using OAuth 2.0. It reads your existing data without modification, and writes GoWarm Actions to a dedicated custom object — keeping your standard Task and Activity objects entirely untouched.</p>
+      </div>
+      <div class="connect-grid">
+        <div class="connect-card">
+          <div class="connect-card-num">Step 01 · Connect</div>
+          <div class="connect-card-title">OAuth 2.0 + lightweight managed package</div>
+          <p class="connect-card-desc">GoWarmCRM authenticates via OAuth 2.0. A lightweight managed package installs the GoWarm Action custom object and Calendar schema — the safest Salesforce-supported way to deploy custom objects. No changes to Opportunities, Contacts, Tasks, or any standard object. Works with Enterprise and Unlimited editions.</p>
+        </div>
+        <div class="connect-card">
+          <div class="connect-card-num">Step 02 · Map</div>
+          <div class="connect-card-title">Map your Opportunity stages</div>
+          <p class="connect-card-desc">Your existing Salesforce Opportunity stage names are mapped into GoWarmCRM's diagnostic and playbook configuration. No changes to Salesforce stage definitions or pipeline structure — GoWarmCRM reads and adapts to what you already have.</p>
+        </div>
+        <div class="connect-card">
+          <div class="connect-card-num">Step 03 · Run</div>
+          <div class="connect-card-title">Nightly read · GoWarm Actions written · Calendar surfaced</div>
+          <p class="connect-card-desc">GoWarmCRM reads Salesforce every night, runs diagnostics, and writes resulting actions to the GoWarm Action object. Each action surfaces on Salesforce Calendar. Playbooks also trigger immediately on Opportunity stage change — not just at night.</p>
+        </div>
+      </div>
+
+      <div class="objects-wrap">
+        <div class="objects-label">Salesforce objects GoWarmCRM reads &amp; writes</div>
+        <table class="objects-table">
+          <thead>
+            <tr>
+              <th>Object</th>
+              <th>What GoWarmCRM reads</th>
+              <th>What GoWarmCRM writes</th>
+              <th>Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Opportunity</td>
+              <td>Stage, value, close date, owner, stage history</td>
+              <td>—</td>
+              <td><span class="mode-badge mode-r">Read</span></td>
+            </tr>
+            <tr>
+              <td>Contact</td>
+              <td>Name, email, linked Opportunities</td>
+              <td>—</td>
+              <td><span class="mode-badge mode-r">Read</span></td>
+            </tr>
+            <tr>
+              <td>Account</td>
+              <td>Name, industry, linked Opportunities</td>
+              <td>—</td>
+              <td><span class="mode-badge mode-r">Read</span></td>
+            </tr>
+            <tr>
+              <td style="color:var(--rust);font-weight:700;">GoWarm Action <span style="font-size:10px;background:var(--rust-light);color:var(--rust);padding:1px 6px;border-radius:3px;letter-spacing:0.5px;text-transform:uppercase;margin-left:4px;vertical-align:middle;font-weight:600;">Custom Object</span></td>
+              <td>Completion status, rep notes, snooze state</td>
+              <td>Action title, trigger reason, priority, AI suggestion, linked Opp/Contact, due date, playbook step reference, completion state</td>
+              <td><span class="mode-badge mode-custom">Read + Write</span></td>
+            </tr>
+            <tr>
+              <td>Salesforce Calendar</td>
+              <td>Existing meetings and events (for signal context)</td>
+              <td>GoWarm Actions surfaced as calendar items — visible alongside existing meetings</td>
+              <td><span class="mode-badge mode-rw">Read + Write</span></td>
+            </tr>
+            <tr>
+              <td>Task / Activity <span style="font-size:10px;background:var(--cream-2);color:var(--ink-4);padding:1px 6px;border-radius:3px;border:1px solid var(--border);letter-spacing:0.5px;text-transform:uppercase;margin-left:4px;vertical-align:middle;font-weight:600;">Optional</span></td>
+              <td>Existing logged activities (diagnostic context)</td>
+              <td>Optional: a Salesforce Task is created when a GoWarm Action is marked complete — configurable per org, off by default</td>
+              <td><span class="mode-badge mode-r">Read</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="arch-section">
+    <div class="container">
+      <div class="arch-inner">
+        <div class="arch-text">
+          <span class="section-eyebrow">GoWarm Action object</span>
+          <h2>Why a custom object — not Salesforce Tasks.</h2>
+          <p>Salesforce Tasks were designed for manually logged activity records — calls, emails, to-dos reps create themselves. Injecting GoWarmCRM's system-generated action queue into the Task object creates immediate problems: rep task lists fill with diagnostic alerts they didn't create; existing Process Builder flows and Apex triggers may fire unexpectedly on bulk inserts; and third-party apps reading the Activity timeline see GoWarmCRM data mixed into their signal.</p>
+          <p>The GoWarm Action custom object solves all of this. It is a purpose-built schema — with fields for trigger reason, AI suggestion, priority score, linked Opportunity and Contact, playbook step reference, snooze state, and completion tracking. GoWarmCRM owns this object entirely. Your Salesforce Task object stays exactly as it is.</p>
+          <p>Every GoWarm Action is also written to Salesforce Calendar as a dated item — so reps see their action queue directly in the Salesforce calendar view they already use, alongside existing meetings and events. No new tab required. If your team also wants completed GoWarm Actions to appear in the native Activity timeline, Task write-back is available as a configurable opt-in.</p>
+          <p>When GoWarmCRM reads completion, it reads two sources: the GoWarm Action object (for explicit rep completion), and directly from email and calendar signals — so if a rep sends an email to a stalled deal without logging anything, the next nightly diagnostic detects the two-way contact and resolves the action accordingly. The system doesn't rely on rep-logged completions to stay accurate.</p>
+
+          <div class="config-callout">
+            <div class="config-label">Configuration · per org</div>
+            <div class="config-title">Task write-back and Calendar surfacing are independently configurable.</div>
+            <div class="config-desc">Default: GoWarm Actions go to the GoWarm Action object and Salesforce Calendar only. Enable Task write-back if your team's workflow relies on the native Activity timeline.</div>
+            <div class="config-row">
+              <div class="toggle off"></div>
+              <span class="toggle-lbl">Write completed GoWarm Actions to Salesforce Tasks — off by default</span>
+            </div>
+            <div class="config-row">
+              <div class="toggle on"></div>
+              <span class="toggle-lbl">Surface GoWarm Actions on Salesforce Calendar — on by default</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-flow">
+          <div class="flow-header">GoWarm Action — full data flow in Salesforce</div>
+          <div class="flow-step">
+            <div class="flow-num fn-read">1</div>
+            <div class="flow-body">
+              <div class="flow-title">GoWarmCRM reads Salesforce nightly via REST API</div>
+              <div class="flow-desc">Opportunities, Contacts, Accounts, stage history, existing Activity records — read only, no writes at this stage.</div>
+              <div class="flow-tags"><span class="ftag ftag-sf">Salesforce read</span></div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num fn-read">2</div>
+            <div class="flow-body">
+              <div class="flow-title">Reads email, calendar &amp; meeting signals directly</div>
+              <div class="flow-desc">Last two-way email contact, calendar meeting frequency, meeting drop-off — four sources combined, independent of Salesforce field updates.</div>
+              <div class="flow-tags"><span class="ftag ftag-sf">External signals</span></div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num fn-engine">3</div>
+            <div class="flow-body">
+              <div class="flow-title">Diagnostic rules fire — GoWarm Actions generated</div>
+              <div class="flow-desc">Stall thresholds, playbook triggers on stage change, renewal windows, handover commitments — each generates an action with priority, AI suggestion, and deal context.</div>
+              <div class="flow-tags"><span class="ftag ftag-gw">GoWarmCRM engine</span></div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num fn-write">4</div>
+            <div class="flow-body">
+              <div class="flow-title">GoWarm Actions written to Salesforce custom object</div>
+              <div class="flow-desc">Each action is written to the GoWarm Action custom object — linked to the relevant Opportunity and Contact. Native Task object untouched.</div>
+              <div class="flow-tags"><span class="ftag ftag-gw">GoWarm Action object</span></div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num fn-calendar">5</div>
+            <div class="flow-body">
+              <div class="flow-title">Actions surface on Salesforce Calendar</div>
+              <div class="flow-desc">Every GoWarm Action appears as a dated calendar item — visible in the rep's Salesforce Calendar view alongside existing events. No separate app login required.</div>
+              <div class="flow-tags"><span class="ftag ftag-cal">Salesforce Calendar</span></div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num fn-engine">6</div>
+            <div class="flow-body">
+              <div class="flow-title">Rep acts — from GoWarmCRM queue or calendar item</div>
+              <div class="flow-desc">Rep approves AI-drafted suggestion, logs a call, or marks the action done from either surface. Both update the GoWarm Action record.</div>
+              <div class="flow-tags"><span class="ftag ftag-gw">GoWarmCRM</span><span class="ftag ftag-cal">Calendar</span></div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num fn-write">7</div>
+            <div class="flow-body">
+              <div class="flow-title">GoWarm Action marked complete — next diagnostic updated</div>
+              <div class="flow-desc">GoWarm Action record updated. Next nightly run reads completion state plus email/calendar signals — adjusts or resolves action accordingly.</div>
+              <div class="flow-tags"><span class="ftag ftag-gw">GoWarm Action object</span></div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num fn-optional">8</div>
+            <div class="flow-body">
+              <div class="flow-title">Optional: Salesforce Task created on completion</div>
+              <div class="flow-desc">If Task write-back is enabled, a Task is also created on the linked Opportunity or Contact — keeping the native Activity timeline current for teams that rely on it.</div>
+              <div class="flow-tags"><span class="ftag ftag-opt">Optional · configurable</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="adds-section">
+    <div class="container">
+      <div class="adds-inner">
+        <div class="adds-text">
+          <span class="section-eyebrow">What GoWarmCRM adds to Salesforce</span>
+          <h2>Salesforce tells you where deals are.<br>GoWarmCRM tells your team what to do about them.</h2>
+          <p>Salesforce is exceptional at storing pipeline data. What it doesn't do is tell a rep what to do when an Opportunity has been in Proposal for 18 days and there's been no two-way email contact in two weeks. GoWarmCRM provides the diagnostic engine, the action queue, and the calendar surfacing — all writing to a clean, purpose-built schema in Salesforce.</p>
+          <ul class="adds-list">
+            <li>Stall detection from email and calendar signals — not just Opportunity stage age in Salesforce</li>
+            <li>Playbook steps fire automatically on Opportunity stage change — no rep trigger, no document to consult</li>
+            <li>AI-drafted next action on every GoWarm Action — contextual to the deal, rep approves before anything sends</li>
+            <li>Ranked 3–7 action queue each morning by urgency, deal value, and days-at-risk</li>
+            <li>All actions visible in Salesforce Calendar — reps work from their calendar without switching context</li>
+            <li>Manager view: team execution health, playbook adoption by rep, open GoWarm Actions, deals at risk</li>
+          </ul>
+        </div>
+        <div class="mockup">
+          <div class="mock-bar">
+            <div class="mock-dot" style="background:#FF5F57;"></div>
+            <div class="mock-dot" style="background:#FFBD2E;"></div>
+            <div class="mock-dot" style="background:#28CA42;"></div>
+            <span class="mock-bar-title">GoWarmCRM — Action Queue (Salesforce data)</span>
+          </div>
+          <div class="mock-hdr">
+            <span class="mock-hdr-title">Today's Actions</span>
+            <span class="mock-badge">6 actions</span>
+          </div>
+          <div class="mock-item">
+            <div class="mock-item-row"><div class="mock-ind urgent"></div><span class="mock-item-title">Acme Corp — Stage stall: 18 days in Proposal</span></div>
+            <div class="mock-meta"><span class="mtag mtag-stall">Stalled</span><span class="mtag mtag-gw">GoWarm Action</span><span class="mtag mtag-cal">On calendar</span><span style="color:var(--ink-4);">· $120K · Last email 18 days ago</span></div>
+          </div>
+          <div class="mock-ai">
+            <span class="mock-ai-lbl">AI suggests</span>
+            <span class="mock-ai-txt">"Acknowledge the silence directly. Subject: 'Should we pause this?' — ask if timing has changed..."</span>
+            <span class="mock-ai-btn">Approve →</span>
+          </div>
+          <div class="mock-item">
+            <div class="mock-item-row"><div class="mock-ind urgent"></div><span class="mock-item-title">Meridian SaaS — Playbook: Send security questionnaire</span></div>
+            <div class="mock-meta"><span class="mtag mtag-play">Playbook step</span><span class="mtag mtag-gw">GoWarm Action</span><span style="color:var(--ink-4);">· $85K · Stage moved to Procurement</span></div>
+          </div>
+          <div class="mock-item">
+            <div class="mock-item-row"><div class="mock-ind medium"></div><span class="mock-item-title">GlobalTech — Contract approaching renewal window</span></div>
+            <div class="mock-meta"><span class="mtag mtag-contract">Contract risk</span><span class="mtag mtag-gw">GoWarm Action</span><span class="mtag mtag-cal">On calendar</span><span style="color:var(--ink-4);">· $210K ARR · 47 days to renewal</span></div>
+          </div>
+          <div class="mock-note">All actions tracked in GoWarm Action custom object · Visible on Salesforce Calendar · Task write-back optional</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare-section">
+    <div class="container">
+      <div class="compare-intro">
+        <span class="section-eyebrow">Salesforce vs. GoWarmCRM</span>
+        <h2>Complementary tools — not competing ones.</h2>
+        <p>Salesforce handles what happened and stores your pipeline. GoWarmCRM handles what happens next — and surfaces it where reps already work, including the Salesforce calendar.</p>
+      </div>
+      <table class="ctable">
+        <thead><tr>
+          <th></th>
+          <th class="col-sf">Salesforce</th>
+          <th class="col-gw">GoWarmCRM</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Primary role</td><td class="sf">System of record — stores pipeline data and history</td><td class="gw">System of action — tells every rep what to do next</td></tr>
+          <tr><td>Action tracking</td><td class="sf">Native Tasks — manually created by reps; automation can cause noise if bulk-written by external tools</td><td class="gw">GoWarm Action custom object — system-generated, purpose-built schema, no interference with Task automation</td></tr>
+          <tr><td>Calendar visibility</td><td class="sf">Manual events and tasks the rep creates</td><td class="gw">GoWarm Actions automatically surface as Salesforce Calendar items — rep sees their queue without leaving Salesforce</td></tr>
+          <tr><td>Stall detection</td><td class="sf">Reports run by managers; relies on rep updating Opportunity fields</td><td class="gw">Automatic — email and calendar signals read directly, independent of Salesforce field updates</td></tr>
+          <tr><td>Playbook execution</td><td class="sf">Flow / Process Builder — internal Salesforce automations, not rep-facing queued actions</td><td class="gw">Fires on Opportunity stage change → GoWarm Action created → rep queue updated → calendar item added</td></tr>
+          <tr><td>Completion detection</td><td class="sf">Relies on rep logging a Task or updating the Opportunity</td><td class="gw">Reads GoWarm Action status and independent email/calendar signals — accurate even when reps don't log</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>Salesforce integration questions.</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Why use a custom object instead of writing to Salesforce Tasks?<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          <p>Salesforce Tasks were designed for manually logged activity records. Writing GoWarmCRM's system-generated action queue into the Task object creates three problems: rep task lists fill with diagnostic alerts they didn't create; existing Process Builder flows, Apex triggers, and automation logic may fire unexpectedly on bulk inserts; and third-party apps reading the Activity timeline get GoWarmCRM data mixed into their signal.</p>
+          <p>The GoWarm Action custom object has a purpose-built schema — trigger reason, AI suggestion, priority score, linked Opportunity and Contact, playbook step reference, snooze state, and completion tracking. GoWarmCRM owns this object entirely. Your Task object stays exactly as it is. Task write-back is available as a configurable opt-in for teams that need it.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do GoWarm Actions appear on Salesforce Calendar?<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          <p>When a GoWarm Action is created — from a diagnostic alert, a playbook trigger, or a renewal window flag — it is simultaneously written to Salesforce Calendar as a dated event linked to the rep. Reps see their GoWarmCRM action queue in the Salesforce calendar view they already use, alongside existing meetings and events, without opening a separate tab. Marking the action complete in either GoWarmCRM or directly from the calendar item updates both the GoWarm Action record and the calendar entry.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will the GoWarm Action object interfere with our existing Salesforce automations or third-party apps?<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          <p>No. The GoWarm Action custom object is net-new — it does not modify, extend, or interact with any existing standard Salesforce objects unless you explicitly enable Task write-back. Your Process Builder flows, Apex triggers, Workflow Rules, and any third-party apps operating on Opportunity, Task, Contact, or Account objects are entirely unaffected. GoWarmCRM reads from those objects but writes only to its own.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How does GoWarmCRM know an action is complete without relying on the rep logging it?<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          <p>GoWarmCRM reads completion from two sources. First, the GoWarm Action object — if the rep marks the action done in GoWarmCRM or via the Salesforce calendar item, the record is updated. Second, GoWarmCRM reads underlying signals directly from email and calendar. If a rep sends an email to a stalled deal without logging anything, the next nightly diagnostic detects the two-way email contact and resolves or adjusts the GoWarm Action accordingly. Diagnostic accuracy doesn't depend entirely on rep-logged completions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Does GoWarmCRM require a Salesforce managed package, and what does it install?<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          <p>Yes — a lightweight managed package installs the GoWarm Action custom object and the Calendar event schema into your Salesforce org. This is the Salesforce-supported mechanism for deploying custom objects, and ensures that schema upgrades can be applied without your admin making manual field changes. The package installs only what GoWarmCRM needs: the GoWarm Action object and Calendar write permissions. It does not modify any standard Salesforce objects. Works with Enterprise and Unlimited editions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does it take to go live?<span class="faq-icon">+</span></button>
+        <div class="faq-a">
+          <p>1–2 weeks. Setup involves: installing the GoWarm managed package, OAuth authorisation to your Salesforce org, mapping your Opportunity stage names into GoWarmCRM, configuring diagnostic thresholds (stall durations, deal value brackets), and seeding your playbooks. No rep training required — the action queue is self-explanatory and calendar items appear automatically. The nightly run starts the evening after setup completes, and reps see their first action queue the next morning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>See GoWarmCRM running on your Salesforce pipeline.</h2>
+          <p>Book a free 20-minute demo. We'll walk through the GoWarm Action object, how it maps to your Opportunities, and what your reps' calendar looks like on day one.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+          <a href="/contact" class="btn btn-primary">Book a Free Demo</a>
+          <span style="font-size:12px;color:rgba(255,255,255,0.35);padding-left:4px;">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></div>
+          <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, RevOps, and Sales Directors.</p>
+        </div>
+        <div class="footer-col"><h4>Platform</h4><ul>
+          <li><a href="/">Home</a></li><li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li><li><a href="/pricing">Pricing</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Integrations</h4><ul>
+          <li><a href="/crm-integration">All CRM Integrations</a></li>
+          <li><a href="/salesforce-integration" style="color:#fff;">Salesforce</a></li>
+          <li><a href="/hubspot-integration">HubSpot</a></li>
+          <li><a href="/pipedrive-integration">Pipedrive</a></li>
+          <li><a href="/zoho-integration">Zoho CRM</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Company</h4><ul>
+          <li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li><li><a href="/diagnostic">Pipeline Diagnostic</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 GoWarmCRM. All rights reserved.</span><span>gowarmcrm.com</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}
+    function toggleFaq(btn){var ans=btn.nextElementSibling;var icon=btn.querySelector('.faq-icon');var isOpen=ans.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(function(a){a.classList.remove('open');a.previousElementSibling.querySelector('.faq-icon').textContent='+';});if(!isOpen){ans.classList.add('open');icon.textContent='−';}}
+  </script>
+</body>
+</html>
