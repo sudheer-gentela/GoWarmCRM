@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Team Has a Sales Process. Why Can't I See It Being Run?</title>
+  <meta name="description" content="A defined sales process is a start. Visibility into whether your team is running it — and trusting your pipeline — is where most B2B sales orgs get stuck." />
+  <link rel="stylesheet" href="/blog/style.css" />
+  <style>
+    .article-header { padding: 64px 0 48px; border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 720px; margin: 0 auto; }
+    .article-meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .article-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); }
+    .article-meta-sep { color: var(--border); }
+    .article-meta-txt { font-size: 13px; color: var(--ink-4); }
+    .article-title { font-family: var(--serif); font-size: 42px; font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
+    .article-deck { font-family: var(--body-serif); font-size: 19px; color: var(--ink-3); font-weight: 300; line-height: 1.65; }
+    .article-content { padding: 56px 0 64px; }
+    .article-nav { padding: 40px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .article-nav a { font-size: 14px; color: var(--ink-3); }
+    .article-nav a:hover { color: var(--rust); }
+    .share-bar { max-width: 720px; margin: 40px auto 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .share-label { font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink-3); margin-right: 4px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--ink-2); text-decoration: none; transition: border-color 0.15s, background 0.15s; }
+    .share-btn:hover { border-color: var(--ink-3); background: var(--cream-2); }
+    .share-btn.linkedin { border-color: #0077b5; color: #0077b5; }
+    .share-btn.linkedin:hover { background: #e8f3fa; }
+    .share-btn.twitter { border-color: #000; color: #000; }
+    .share-btn.twitter:hover { background: #f0f0f0; }
+    .share-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .copy-confirm { font-size: 12px; color: var(--rust); margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+    .copy-confirm.show { opacity: 1; }
+    .stat-callout { background: var(--cream-2); border-left: 4px solid var(--rust); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 28px 0; }
+    .stat-callout .stat-num { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--rust); line-height: 1; margin-bottom: 6px; }
+    .stat-callout .stat-txt { font-family: var(--body-serif); font-size: 15px; color: var(--ink-2); line-height: 1.6; font-weight: 300; }
+    .stat-callout .stat-src { font-size: 11px; color: var(--ink-4); margin-top: 6px; font-style: italic; }
+    @media (max-width: 768px) { .article-title { font-size: 30px; } .article-deck { font-size: 16px; } }
+  </style>
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/blog/pipeline-process-visibility" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/blog/pipeline-process-visibility" />
+  <meta property="og:title" content="My Team Has a Sales Process. Why Can't I See It Being Run?" />
+  <meta property="og:description" content="A defined sales process is a start. Visibility into whether your team is running it — and trusting your pipeline — is where most B2B sales orgs get stuck." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarm Insights" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="My Team Has a Sales Process. Why Can't I See It Being Run?" />
+  <meta name="twitter:description" content="A defined sales process is a start. Visibility into whether your team is running it — and trusting your pipeline — is where most B2B sales orgs get stuck." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "My Team Has a Sales Process. Why Can't I See It Being Run?",
+    "description": "A defined sales process is a start. Getting visibility into whether your team is actually running it — and trusting your pipeline data — requires a different layer of infrastructure.",
+    "url": "https://www.gowarmcrm.com/blog/pipeline-process-visibility",
+    "datePublished": "2026-04-18",
+    "dateModified": "2026-04-18",
+    "keywords": "sales process visibility, pipeline accuracy, sales execution, B2B sales management, CRM pipeline trust, sales playbook adoption",
+    "image": "https://www.gowarmcrm.com/og-image.png",
+    "author": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://www.gowarmcrm.com" },
+    "publisher": { "@type": "Organization", "name": "GoWarmCRM", "url": "https://www.gowarmcrm.com", "logo": { "@type": "ImageObject", "url": "https://www.gowarmcrm.com/favicon-512x512.png" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.gowarmcrm.com/blog/pipeline-process-visibility" }
+  }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"GoWarm Insights","item":"https://www.gowarmcrm.com/blog"},{"@type":"ListItem","position":3,"name":"Pipeline Process Visibility","item":"https://www.gowarmcrm.com/blog/pipeline-process-visibility"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why can\'t I see if my sales team is following the process?","acceptedAnswer":{"@type":"Answer","text":"CRM data alone cannot verify process execution — it tells you what reps chose to log, which is systematically optimistic. Real process visibility requires reading email, calendar, and meeting signals directly to detect stalls and execution gaps independently of rep self-reporting."}}, {"@type":"Question","name":"How do I know if my pipeline data is accurate?","acceptedAnswer":{"@type":"Answer","text":"Run a post-mortem on your last five closed-lost deals and check what the CRM showed 30 days before loss. If most looked healthy, your pipeline carries optimism bias. The fix is reading email and calendar signals — last two-way contact, response latency, meeting cadence — as a second opinion on every deal."}}, {"@type":"Question","name":"What is the difference between process adherence and pipeline accuracy?","acceptedAnswer":{"@type":"Answer","text":"Process adherence is whether reps are executing the defined steps at each stage. Pipeline accuracy is whether deals you believe are progressing are actually progressing. Both require signal reading beyond CRM fields — the first from playbook tracking, the second from email and calendar engagement patterns."}}]}</script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container">
+      <div style="display:flex;align-items:center;"><a href="/blog" class="nav-logo">GoWarm<span>Insights</span></a><a href="/" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;margin-left:14px;padding-left:14px;border-left:1px solid var(--border);"><span style="width:20px;height:20px;border-radius:4px;background:#E8630A;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="11" height="13" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg></span><span style="font-family:var(--serif);font-size:13px;font-weight:700;color:var(--ink);letter-spacing:-0.2px;">GoWarm<span style="color:var(--rust);">CRM</span></span></a></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/blog#articles">Articles</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-inner">
+          <div class="article-meta-row">
+            <span class="article-label">Sales Execution</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">For VP Sales · CRO · RevOps</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-meta-txt">10 min read</span>
+          </div>
+          <h1 class="article-title">My Team Has a Sales Process. Why Can't I See It Being Run?</h1>
+          <p class="article-deck">Defining a sales process is the easier half of the problem. Getting reliable visibility into whether your team is actually executing it — and trusting what your pipeline tells you — is where most B2B sales organisations get stuck. Here is how to think about it.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <div class="container">
+
+        <div class="tldr-box">
+          <div class="tldr-label">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:14px;height:14px;flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3.5M8 11v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            TL;DR — 60-second read
+          </div>
+          <ul class="tldr-list">
+            <li>Having a defined process and having visibility into its execution are two separate problems. Most B2B sales organisations solve the first and struggle with the second.</li>
+            <li>CRM data alone cannot tell you whether your process is being run — it tells you what reps chose to log, which is systematically optimistic.</li>
+            <li>Pipeline accuracy requires reading signals reps don't log: email contact patterns, calendar activity, meeting cadence — the behavioural data that exists regardless of CRM hygiene.</li>
+            <li>The right approach layers three things: a process that is wired into daily rep workflow, a diagnostic engine that reads real-world signals, and a manager view that surfaces exceptions before they become surprises.</li>
+            <li>No single tool solves all of this. The best outcomes come from being deliberate about what each layer is supposed to do.</li>
+          </ul>
+        </div>
+
+        <div class="article-body">
+
+          <p>There is a version of this problem that almost every VP Sales or CRO reaches at some point, usually around 18 months into running a team of meaningful size. The sales process is documented. It has been trained on. There is a CRM with defined stages and fields. And yet, when you look at the pipeline on a Tuesday morning, you are not sure you trust what you are seeing. Deals move through stages faster than you would expect, then stall. The forecast says 68% confident; you have a nagging feeling it should be lower. When you ask managers what is happening in specific deals, the answers are often vague — because the managers are also relying on what reps told them in last week's 1:1.</p>
+
+          <p>This is not a CRM problem, a training problem, or a management problem in isolation. It is a visibility architecture problem. And solving it requires being precise about what you are actually trying to see.</p>
+
+          <h2>What "visibility into your process" actually means</h2>
+
+          <p>When sales leaders say they want visibility into whether their process is being run, they typically mean three distinct things — which require three different types of data to answer.</p>
+
+          <p>The first is <strong>stage adherence</strong>: are deals moving through stages in the right sequence, with the right activities completed at each stage before progressing? This is the most basic level of process visibility, and it is the one that CRMs are nominally designed to provide. In practice, it breaks down because stage progression is controlled by reps, who advance stages when they feel positive about a deal — not necessarily when the defined criteria have been met.</p>
+
+          <p>The second is <strong>activity execution</strong>: are reps actually doing the things the process requires at each stage? Are they sending the documents they are supposed to send? Having the discovery calls at the depth they are supposed to have them? Involving the right stakeholders before moving to proposal? This level of visibility is almost entirely absent in most CRM deployments, because it requires either rep self-reporting (unreliable) or direct signal reading from communication systems.</p>
+
+          <p>The third is <strong>deal health</strong>: independent of what reps are doing, is the prospect actually engaged? Is there two-way communication happening? Are meetings being scheduled and attended? Is the deal progressing at a rate consistent with historical patterns for deals of this type and size? This level of visibility requires reading signals that no rep will ever log, because they emerge from patterns over time rather than discrete loggable events.</p>
+
+          <p>Most organisations have partial visibility into stage adherence, almost no visibility into activity execution, and very little visibility into deal health as a signal distinct from what reps report. This is the gap that makes pipeline untrustworthy.</p>
+
+          <h2>Why CRM data alone cannot solve this</h2>
+
+          <p>The instinct when faced with a pipeline accuracy problem is to invest in CRM hygiene — better enforcement of data entry standards, mandatory fields, manager review gates before stage advancement. These measures are not wrong, but they address a narrower problem than the one you actually have.</p>
+
+          <p>CRM data is structurally biassed toward optimism. Reps enter data when they feel good about a deal and defer it when they don't. Stage fields get advanced when reps feel momentum, not necessarily when exit criteria are met. Activity logs reflect the calls and emails that went well; the silence that follows an unanswered email is not a loggable event in most CRM configurations. The result is a pipeline that systematically overstates health and understates risk — not because reps are dishonest, but because the logging system asks them to describe their own performance.</p>
+
+          <div class="stat-callout">
+            <div class="stat-num">67%</div>
+            <div class="stat-txt">of B2B sales forecasts miss by more than 10% — consistently, across organisations with mature CRM deployments and defined sales processes</div>
+            <div class="stat-src">Gartner Sales Research, 2024</div>
+          </div>
+
+          <p>The deeper issue is that the signals most predictive of deal outcomes are not events — they are patterns. The fact that a prospect took five days to respond instead of one day is not something a rep logs. The fact that meeting frequency has dropped from weekly to fortnightly is not something a rep logs. The fact that only one stakeholder has appeared on any call and the economic buyer has never been in the room is not something a rep logs. These patterns are exactly the early warning signals of deal risk, and they are almost entirely absent from CRM data.</p>
+
+          <h2>The three layers of a reliable visibility architecture</h2>
+
+          <p>Getting genuine visibility into process execution and pipeline health requires thinking in layers, each with a distinct job. The organisations that do this well are usually deliberate about what each layer is supposed to solve — and realistic about what it cannot.</p>
+
+          <p><strong>Layer one: process embedded in workflow.</strong> The most reliable indicator that a process step has been completed is not a field update in the CRM — it is a system event that happens automatically when the step is taken. Email sent to the prospect after a discovery call. Security questionnaire attached to a message. Follow-up meeting booked before the call ends. Where possible, the process should be structured so that completion of key steps generates a traceable signal in communication systems, rather than relying on the rep to go back to the CRM and log that they did it. This is partly a process design question and partly a tooling question — but it starts with acknowledging that voluntary logging is not a reliable mechanism for process verification.</p>
+
+          <p><strong>Layer two: signal reading independent of rep logging.</strong> Email and calendar data provides a real-time view of deal engagement that is entirely independent of what reps choose to log. Last two-way contact date, response latency trends, meeting frequency and cadence, stakeholder breadth — all of these are derivable from email and calendar metadata without any rep action. Integrating these signals into pipeline diagnostics gives you a second opinion on every deal: one that reflects actual prospect behaviour rather than rep perception.</p>
+
+          <p>The practical value of this layer is not just accuracy — it is early detection. A deal where email response latency has doubled over three weeks is showing a risk signal two to three weeks before a rep is likely to acknowledge the deal is stalling. That lead time is the difference between an intervention that works and a post-mortem at the quarterly review.</p>
+
+          <p><strong>Layer three: a manager view that surfaces exceptions, not reports.</strong> The weekly pipeline review in most organisations is a status reporting exercise — managers asking reps what is happening, reps providing a narrative that is anchored in recent interactions. This format is expensive in time and low in accuracy, because it depends entirely on rep recall and framing.</p>
+
+          <p>The alternative is a manager view that surfaces exceptions automatically — deals that are deviating from expected progression, reps whose activity patterns suggest problems before they hit a forecast miss, accounts where engagement has dropped below a threshold. When managers already know which deals need attention before the meeting starts, the conversation shifts from status reporting to strategic problem-solving. That shift is what separates good pipeline management from box-ticking.</p>
+
+          <h2>What good looks like in practice</h2>
+
+          <p>A useful test for whether your current visibility architecture is working is to ask three questions about any deal that has recently been lost or stalled unexpectedly.</p>
+
+          <p>First: when did the first signal of risk appear, and when did your organisation first became aware of it? If the gap is more than two weeks, your diagnostic layer is lagging. Second: what was the last logged CRM activity before the deal stalled, and what did the email and calendar data show at the same time? If the CRM activity looked healthy but the email and calendar data showed declining engagement, your CRM is hiding risk rather than surfacing it. Third: what action did your process specify should have been taken at the point the risk first appeared, and was that action taken? If the process specified an action but there is no evidence it was taken, your process is not embedded in workflow — it exists as documentation that reps can and do ignore under pressure.</p>
+
+          <p>The answers to these three questions usually tell you exactly where the visibility gap is, and which layer of your architecture needs attention first.</p>
+
+          <h2>How tooling fits into this</h2>
+
+          <p>There is no shortage of tools that claim to solve pipeline visibility. Revenue intelligence platforms, conversation intelligence tools, CRM overlay products, forecasting software — the category is crowded and the claims are large. It is worth being precise about what each category actually addresses.</p>
+
+          <p>Conversation intelligence tools (Gong, Chorus, and their equivalents) primarily address activity execution visibility at the call level — they tell you what happened in meetings, how reps are handling objections, where discovery is shallow. They are strong on call quality and weak on deal progression patterns.</p>
+
+          <p>Forecasting overlays (Clari, Bowtie, and similar) primarily address pipeline confidence scoring — they apply statistical models to CRM and activity data to produce probability-weighted forecasts. They are only as good as the underlying data quality, which means they inherit the optimism bias of CRM data unless they integrate external signal sources.</p>
+
+          <p>Sales execution platforms address the workflow layer — they wire process steps into daily rep queues, fire playbook triggers on stage changes, and surface a ranked action queue so that process adherence becomes the default rather than a conscious choice. The best implementations also read email and calendar signals to provide deal health diagnostics independent of logged data.</p>
+
+          <p>The honest answer for most organisations is that full visibility requires some combination of these layers. The mistake is expecting any single tool to solve all three. Start by being clear about which layer is causing the most damage to your pipeline accuracy — process adherence, activity execution, or deal health signal quality — and address that layer first.</p>
+
+          <div class="diagnostic-box">
+            <div class="box-label">◆ Three audit questions to run this week</div>
+            <p><strong>Question 1: The post-mortem test.</strong> Take your last five closed-lost deals. Go back in your CRM and identify what the pipeline showed 30 days before they were marked lost. Did they look healthy? If more than three of the five looked healthy in the CRM while clearly deteriorating in reality, your signal layer is not working.</p>
+            <p><strong>Question 2: The lag test.</strong> For any deal that stalled or was lost in the last quarter, identify the date of the first real risk signal — dropping email response rates, cancelled meeting, no reply to a follow-up — and compare it to the date your team first flagged it as a concern. The gap is your detection lag. If it is more than 10 business days, you are systematically late.</p>
+            <p><strong>Question 3: The process adherence test.</strong> Pick five active deals. For each one, ask the rep to walk you through exactly which process steps have been completed at the current stage. Then check whether there is any evidence in email, calendar, or CRM that those steps actually occurred. Discrepancy is your baseline measure of process adherence.</p>
+          </div>
+
+          <div class="cta-inline">
+            The goal of pipeline visibility is not a cleaner CRM. It is an accurate, early read on which deals need attention and why — before the weekly review, before the quarter closes, before the loss becomes a post-mortem.
+          </div>
+
+        </div>
+
+        <div class="share-bar">
+          <span class="share-label">Share</span>
+          <a class="share-btn linkedin" id="share-linkedin" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="share-btn twitter" id="share-twitter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <button class="share-btn copy" onclick="copyLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy link
+            <span class="copy-confirm" id="copy-confirm">Copied!</span>
+          </button>
+        </div>
+
+        <div class="author-bio-box">
+          This article was produced by the team at <a href="https://www.gowarmcrm.com" style="color:var(--rust)">GoWarmCRM</a> — a sales execution platform that reads pipeline signals from email, calendar, and meeting data alongside CRM fields, surfaces a prioritised action queue for every rep, and gives managers a real-time view of process adherence across the team. <a href="/contact" style="color:var(--rust)">Book a free pipeline walkthrough.</a>
+        </div>
+
+        <div class="article-nav">
+          <a href="/blog">← GoWarm Insights</a>
+          <a href="/blog/why-reps-dont-update-crm">Related: Why Reps Don't Update the CRM →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    function toggleMobileNav() {
+      const links = document.querySelector('.nav-links');
+      const isVisible = links.style.display === 'flex';
+      links.style.display = isVisible ? 'none' : 'flex';
+      if (!isVisible) { Object.assign(links.style, { flexDirection:'column', position:'absolute', top:'60px', left:'0', right:'0', background:'var(--cream)', padding:'16px 20px', borderBottom:'1px solid var(--border)', zIndex:'99' }); }
+    }
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var li = document.getElementById('share-linkedin');
+      var tw = document.getElementById('share-twitter');
+      if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+    })();
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var c = document.getElementById('copy-confirm');
+        c.classList.add('show');
+        setTimeout(function(){ c.classList.remove('show'); }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
