@@ -164,6 +164,46 @@
     {
       "source": "/what-board-sees-pipeline",
       "destination": "/website/what-board-sees-pipeline.html"
+    },
+    {
+      "source": "/index.md",
+      "destination": "/markdown/index.md"
+    },
+    {
+      "source": "/how-it-works.md",
+      "destination": "/markdown/how-it-works.md"
+    },
+    {
+      "source": "/pricing.md",
+      "destination": "/markdown/pricing.md"
+    },
+    {
+      "source": "/problems.md",
+      "destination": "/markdown/problems.md"
+    },
+    {
+      "source": "/execution-gap.md",
+      "destination": "/markdown/execution-gap.md"
+    },
+    {
+      "source": "/platform-overview.md",
+      "destination": "/markdown/platform-overview.md"
+    },
+    {
+      "source": "/crm-integration.md",
+      "destination": "/markdown/crm-integration.md"
+    },
+    {
+      "source": "/salesforce-integration.md",
+      "destination": "/markdown/salesforce-integration.md"
+    },
+    {
+      "source": "/about.md",
+      "destination": "/markdown/about.md"
+    },
+    {
+      "source": "/contact.md",
+      "destination": "/markdown/contact.md"
     }
   ],
   "headers": [
@@ -181,6 +221,28 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Link",
+          "value": "<https://www.gowarmcrm.com/sitemap.xml>; rel=\"sitemap\", <https://www.gowarmcrm.com/llms.txt>; rel=\"llms-txt\""
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
         }
       ]
     }
