@@ -224,7 +224,7 @@
         },
         {
           "key": "Link",
-          "value": "<https://www.gowarmcrm.com/sitemap.xml>; rel=\"sitemap\", <https://www.gowarmcrm.com/llms.txt>; rel=\"llms-txt\""
+          "value": "<https://www.gowarmcrm.com/sitemap.xml>; rel=\"sitemap\", <https://www.gowarmcrm.com/index.md>; rel=\"alternate\"; type=\"text/markdown\", <https://www.gowarmcrm.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
         }
       ]
     },
