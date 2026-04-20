@@ -18,5 +18,6 @@ GoWarmCRM is built for B2B sales teams running multi-stage pipelines (typically 
 
 ## Optional
 - [Blog: GoWarm Insights](https://www.gowarmcrm.com/blog): 36+ articles on pipeline execution, forecasting, playbook adoption, build-vs-buy decisions
+- [GoWarm Skills (early access)](https://www.gowarmcrm.com/skills): Playbook plays as AI-drafted, rep-approved actions; built on the open Agent Skills standard
 - [About](https://www.gowarmcrm.com/about.md)
 - [Contact / Book a Demo](https://www.gowarmcrm.com/contact.md)

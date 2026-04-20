@@ -166,6 +166,10 @@
       "destination": "/website/what-board-sees-pipeline.html"
     },
     {
+      "source": "/skills",
+      "destination": "/website/skills.html"
+    },
+    {
       "source": "/index.md",
       "destination": "/markdown/index.md"
     },
@@ -243,6 +247,19 @@
         {
           "key": "Content-Type",
           "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/agent-skills/index.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
         }
       ]
     }

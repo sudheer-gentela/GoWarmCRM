@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoWarm Skills — Your Playbook, Executable | GoWarmCRM</title>
+  <meta name="description" content="Every play in your GoWarm playbook becomes an AI-drafted action your reps can approve in one click. Built on the open Anthropic Skills standard. Currently in early access." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+  <meta name="theme-color" content="#E8630A">
+
+  <!-- SEO/AEO:START -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.gowarmcrm.com/skills" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gowarmcrm.com/skills" />
+  <meta property="og:title" content="GoWarm Skills — Your Playbook, Executable" />
+  <meta property="og:description" content="Every play in your GoWarm playbook becomes an AI-drafted action your reps can approve in one click. Built on the open Anthropic Skills standard." />
+  <meta property="og:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="GoWarm Skills — Your Playbook, Executable" />
+  <meta name="twitter:description" content="Every play in your GoWarm playbook becomes an AI-drafted action your reps can approve in one click." />
+  <meta name="twitter:image" content="https://www.gowarmcrm.com/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GoWarm Skills","description":"GoWarm Skills turns every play in your sales playbook into an AI-drafted action that reps approve in one click. Built on the open Anthropic Skills standard.","url":"https://www.gowarmcrm.com/skills","publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://www.gowarmcrm.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are GoWarm Skills?","acceptedAnswer":{"@type":"Answer","text":"GoWarm Skills are AI-executable versions of the plays in your sales playbook. Each play — Discovery Call Prep, Stall Recovery, Renewal Outreach, Handover Confirmation — becomes a skill the platform runs against the live deal context, drafting the next action for the rep to approve."}},{"@type":"Question","name":"How is this different from generic AI sales tools?","acceptedAnswer":{"@type":"Answer","text":"Generic AI sales tools draft emails from prompts. GoWarm Skills draft actions from your playbook. The difference is that your playbook already encodes what good looks like at each stage — the skill enforces that, instead of asking the rep to remember it."}},{"@type":"Question","name":"Is this an open standard?","acceptedAnswer":{"@type":"Answer","text":"Yes. GoWarm Skills are built on the open Agent Skills format originally developed by Anthropic and published at agentskills.io. Skills are portable folders of YAML and Markdown that any compatible agent can run. We publish ours at /.well-known/agent-skills/index.json so external agents can discover them."}},{"@type":"Question","name":"Can we author our own skills?","acceptedAnswer":{"@type":"Answer","text":"Yes. The whole point. Your playbook is yours; your skills should be too. The skill authoring UI is in active development and will ship with general availability."}},{"@type":"Question","name":"When is this available?","acceptedAnswer":{"@type":"Answer","text":"GoWarm Skills is currently in early access with selected design partners. Join the waitlist to be considered for the next cohort."}}]}</script>
+  <!-- SEO/AEO:END -->
+
+  <style>
+    /* HERO */
+    .hero { padding: 72px 0 56px; border-bottom: 1px solid var(--border); }
+    .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 20px; display: block; }
+    .hero-eyebrow .pill {
+      display: inline-block; margin-left: 10px; padding: 3px 10px;
+      background: var(--rust); color: #fff; border-radius: 999px;
+      font-size: 10px; letter-spacing: 1px;
+    }
+    .hero-title { font-family: var(--serif); font-size: 50px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 22px; max-width: 760px; }
+    .hero-title em { font-style: italic; color: var(--rust); }
+    .hero-subtitle { font-size: 19px; line-height: 1.6; color: var(--ink-soft); max-width: 680px; margin-bottom: 34px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* SECTION SHELL */
+    .section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; display: block; }
+    .section-title { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--ink); line-height: 1.2; letter-spacing: -0.3px; margin-bottom: 20px; max-width: 720px; }
+    .section-lead { font-size: 18px; line-height: 1.65; color: var(--ink-soft); max-width: 720px; margin-bottom: 36px; }
+
+    /* CODE BLOCK STYLED */
+    .code-card {
+      background: #11253D; color: #E5E7EB; border-radius: 12px;
+      padding: 22px 24px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px; line-height: 1.65; overflow-x: auto;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 12px 32px -16px rgba(26,58,92,0.35);
+    }
+    .code-card .c-comment { color: #94A3B8; }
+    .code-card .c-key { color: #F5A623; }
+    .code-card .c-string { color: #A7F3D0; }
+    .code-card .c-marker { color: #FDBA74; }
+
+    /* SKILL CARDS GRID */
+    .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; margin-top: 30px; }
+    .skill-card {
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 22px 22px 20px; background: #fff;
+      display: flex; flex-direction: column;
+    }
+    .skill-card-name {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px; color: var(--rust); margin-bottom: 8px;
+    }
+    .skill-card-title { font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
+    .skill-card-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+    /* COMPARE TABLE */
+    .compare-tbl { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 14px; background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .compare-tbl th, .compare-tbl td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .compare-tbl th { font-weight: 600; background: #FBF6F1; color: var(--ink); font-size: 13px; letter-spacing: 0.3px; }
+    .compare-tbl tr:last-child td { border-bottom: none; }
+    .compare-tbl td:first-child { font-weight: 500; color: var(--ink); width: 28%; }
+
+    /* TIMELINE */
+    .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 28px; }
+    .timeline-item { padding: 22px 20px; border: 1px solid var(--border); border-radius: 10px; background: #FBF6F1; }
+    .timeline-status { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 10px; }
+    .timeline-status.shipping { color: #047857; }
+    .timeline-status.next { color: #B45309; }
+    .timeline-title { font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 8px; }
+    .timeline-body { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+
+    /* CTA */
+    .cta-band {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 14px;
+      padding: 44px 40px;
+      margin-top: 56px;
+      display: flex; flex-direction: column; gap: 18px; align-items: flex-start;
+    }
+    .cta-band h3 { font-family: var(--serif); font-size: 28px; line-height: 1.2; max-width: 600px; }
+    .cta-band p { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.78); max-width: 600px; }
+    .cta-band .btn-primary { background: var(--rust); color: #fff; }
+    .cta-band .btn-primary:hover { background: #d35309; }
+    .cta-band-note { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 4px; }
+
+    @media (max-width: 720px) {
+      .hero-title { font-size: 36px; }
+      .section-title { font-size: 28px; }
+      .cta-band { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">GoWarm Skills <span class="pill">Early access</span></span>
+      <h1 class="hero-title">Your playbook,<br><em>executable</em>.</h1>
+      <p class="hero-subtitle">Every play in your GoWarm playbook — Discovery Call Prep, Stall Recovery, Renewal Outreach, Handover Confirmation — becomes an AI-drafted action your reps approve in one click. Built on the open Agent Skills standard. Authoring is yours, not ours.</p>
+      <div class="hero-ctas">
+        <a href="/contact" class="btn-primary">Request early access</a>
+        <a href="#how-it-works" class="btn-secondary">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section">
+    <div class="container">
+      <span class="section-eyebrow">The problem with playbooks today</span>
+      <h2 class="section-title">You wrote the playbook. Six months later, no one's running it.</h2>
+      <p class="section-lead">Every sales org has a playbook. Stage-gates, qualification frameworks, follow-up cadences, handover checklists. The playbook itself is rarely the problem — adherence is. Reps don't open documents at the moment they need them. Managers can't audit what didn't happen. The playbook becomes a training artifact, not an operating system.</p>
+      <p class="section-lead">GoWarm Skills closes that gap by making each play <em>executable</em>. The skill watches for its trigger condition (a stage transition, a stalled deal, a meeting just ended), reads the live deal context, and drafts the next action the play prescribes. The rep approves, edits, or skips. The play actually runs.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works" style="background: #FBF6F1;">
+    <div class="container">
+      <span class="section-eyebrow">How a skill works</span>
+      <h2 class="section-title">A folder. Markdown. YAML. That's it.</h2>
+      <p class="section-lead">A GoWarm Skill is a directory with a single <code>SKILL.md</code> file plus optional templates and reference data. The format follows the open <a href="https://agentskills.io" rel="noopener">Agent Skills standard</a>, originally developed by Anthropic. Portable, version-controlled, readable by humans and agents.</p>
+
+      <div class="code-card">
+<span class="c-comment">skills/discovery-call-prep/SKILL.md</span>
+
+<span class="c-marker">---</span>
+<span class="c-key">name:</span> <span class="c-string">discovery-call-prep</span>
+<span class="c-key">description:</span> <span class="c-string">Generates pre-call preparation: a brief,</span>
+  <span class="c-string">a talk track, two follow-up email variants, and a recommended</span>
+  <span class="c-string">next play. Use whenever a deal enters the discovery_call stage</span>
+  <span class="c-string">or a meeting is scheduled within 24 hours.</span>
+<span class="c-marker">---</span>
+
+<span class="c-comment"># Discovery Call Prep</span>
+
+You are executing the Discovery Call Prep play from the
+GoWarm Sales module. Turn the deal payload into four
+deliverables the rep can act on immediately.
+
+<span class="c-comment">## Required inputs</span>
+- prospect, account, deal, interaction_history, meddpicc
+
+<span class="c-comment">## Output</span>
+- prep_brief
+- talk_track (with discovery questions)
+- follow_up_email_strong
+- follow_up_email_weak
+- recommended_next_play
+      </div>
+
+      <p class="section-lead" style="margin-top:32px;">When the trigger condition fires, GoWarm runs the skill against the live deal context and surfaces the output in the rep's action queue. The rep sees the brief, scans the talk track, and picks one of the email drafts — all before opening their inbox.</p>
+    </div>
+  </section>
+
+  <!-- WHAT'S DIFFERENT -->
+  <section class="section">
+    <div class="container">
+      <span class="section-eyebrow">What makes this different</span>
+      <h2 class="section-title">Generic AI drafts emails. Skills run plays.</h2>
+      <p class="section-lead">There are dozens of "AI for sales" tools. Almost all of them draft email or summarize a call. None of them know your playbook. GoWarm Skills are different because the playbook itself is the input.</p>
+
+      <table class="compare-tbl">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Generic AI sales tools</th>
+            <th>GoWarm Skills</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trigger</td>
+            <td>Rep prompts the tool</td>
+            <td>Stage transition, stall threshold, signal change — automatic</td>
+          </tr>
+          <tr>
+            <td>Knowledge source</td>
+            <td>Generic best practices from training data</td>
+            <td>Your playbook, your stages, your qualification framework</td>
+          </tr>
+          <tr>
+            <td>Output</td>
+            <td>An email draft</td>
+            <td>Whatever the play prescribes — brief, talk track, email, next play, internal task</td>
+          </tr>
+          <tr>
+            <td>Authoring</td>
+            <td>Vendor controls the prompts</td>
+            <td>You author and version-control your own skills</td>
+          </tr>
+          <tr>
+            <td>Portability</td>
+            <td>Locked to vendor</td>
+            <td>Open Agent Skills format — runs in any compatible agent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SKILLS LIBRARY PREVIEW -->
+  <section class="section" style="background: #FBF6F1;">
+    <div class="container">
+      <span class="section-eyebrow">Shipping with</span>
+      <h2 class="section-title">A starter library mapped to the GoWarm playbook.</h2>
+      <p class="section-lead">Early access ships with a curated set of skills covering the highest-leverage moments in a B2B sales cycle. Each skill is a real, runnable play from the GoWarm canonical playbook — and a starting point for you to fork and customize.</p>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <div class="skill-card-name">discovery-call-prep</div>
+          <div class="skill-card-title">Discovery Call Prep</div>
+          <div class="skill-card-desc">Generates a pre-call brief, talk track with discovery questions, two follow-up email variants (strong and weak signal), and a recommended next play.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-name">stall-recovery</div>
+          <div class="skill-card-title">Stall Recovery</div>
+          <div class="skill-card-desc">Triggered when a deal goes 14+ days without two-way contact. Drafts a pattern-interrupt email tuned to the deal's last known objection or stage.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-name">handover-confirmation</div>
+          <div class="skill-card-title">Handover Confirmation</div>
+          <div class="skill-card-desc">Fires at deal close. Captures the AE's verbal commitments and creates tracked tasks for the CSM with delivery deadlines.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-name">renewal-outreach</div>
+          <div class="skill-card-title">Renewal Outreach</div>
+          <div class="skill-card-desc">Fires 90 days before contract end. Reads usage and engagement signals, drafts a renewal-positioning email tuned to the account's health score.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-name">qualification-deep-dive</div>
+          <div class="skill-card-title">Qualification Deep-Dive</div>
+          <div class="skill-card-desc">Triggered at SAL stage. Reviews MEDDPICC completeness and drafts the specific discovery questions needed to close the qualification gaps.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-name">multi-thread-prompt</div>
+          <div class="skill-card-title">Multi-Thread Prompt</div>
+          <div class="skill-card-desc">Fires when a deal over $50K has only one engaged contact for 21+ days. Drafts an outreach to a second stakeholder, identified from interaction patterns.</div>
+        </div>
+      </div>
+
+      <p class="section-lead" style="margin-top:36px;">Plus a skill authoring UI for forking, customizing, and version-controlling your own. Your playbook is yours — your skills should be too.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE / OPEN STANDARD -->
+  <section class="section">
+    <div class="container">
+      <span class="section-eyebrow">Roadmap</span>
+      <h2 class="section-title">Where we are. Where we're going.</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-status shipping">Shipping now</div>
+          <div class="timeline-title">Public skills index</div>
+          <div class="timeline-body">External agents can discover GoWarm skills at <code>/.well-known/agent-skills/index.json</code>. Three public skills cover pricing, integrations, and execution-gap assessment.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-status next">Early access</div>
+          <div class="timeline-title">Internal skill runner</div>
+          <div class="timeline-body">Skills run inside GoWarm against live deal context. Discovery Call Prep is the reference implementation. Six-skill starter library ships with the first cohort.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-status">Next</div>
+          <div class="timeline-title">Skill authoring UI</div>
+          <div class="timeline-body">Visual editor for forking, customizing, and version-controlling your own skills. YAML is great for engineers; not for VPs of Sales.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-status">Next</div>
+          <div class="timeline-title">Skill marketplace</div>
+          <div class="timeline-body">Share skills across teams and orgs. Industry-vertical libraries: SaaS, professional services, manufacturing, financial services.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="border-bottom: none;">
+    <div class="container">
+      <div class="cta-band">
+        <h3>Early access is selective. Tell us about your playbook.</h3>
+        <p>We're working with a small number of design partners who already have a written playbook and want it operationalized. If that's you, we'd like to hear about it.</p>
+        <a href="/contact" class="btn-primary">Request early access</a>
+        <div class="cta-band-note">No marketing nurture sequence. A real conversation about your playbook.</div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="/website/footer.js"></script>
+
+</body>
+</html>
