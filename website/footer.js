@@ -43,6 +43,8 @@
           <li><a href="/">Home</a></li>
           <li><a href="/how-it-works">How It Works</a></li>
           <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/for-vp-sales">For VP Sales</a></li>
+          <li><a href="/for-ceo">For CEOs</a></li>
           <li><a href="/pricing">Pricing</a></li>
         </ul>
       </div>

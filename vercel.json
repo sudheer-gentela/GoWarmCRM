@@ -170,6 +170,14 @@
       "destination": "/website/skills.html"
     },
     {
+      "source": "/for-vp-sales",
+      "destination": "/website/for-vp-sales.html"
+    },
+    {
+      "source": "/for-ceo",
+      "destination": "/website/for-ceo.html"
+    },
+    {
       "source": "/index.md",
       "destination": "/markdown/index.md"
     },
@@ -208,6 +216,14 @@
     {
       "source": "/contact.md",
       "destination": "/markdown/contact.md"
+    },
+    {
+      "source": "/for-vp-sales.md",
+      "destination": "/markdown/for-vp-sales.md"
+    },
+    {
+      "source": "/for-ceo.md",
+      "destination": "/markdown/for-ceo.md"
     }
   ],
   "headers": [

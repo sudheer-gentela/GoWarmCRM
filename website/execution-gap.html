@@ -84,8 +84,9 @@
     .pull-source { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 8px; font-style: italic; }
     /* ── Persona strip ── */
     .persona-strip { padding: 56px 0; border-bottom: 1px solid var(--border); background: var(--cream-2); }
-    .persona-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+    .persona-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 32px; }
     .persona-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 22px; }
+    a.persona-card:hover { border-color: var(--rust); }
     .persona-role { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
     .persona-pain { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.6; font-weight: 300; margin-bottom: 12px; }
     .persona-gain { font-size: 13px; font-weight: 600; color: var(--ink); border-top: 1px solid var(--border); padding-top: 10px; }
@@ -94,6 +95,9 @@
     .faq-item h4 { font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
     .faq-item p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
     /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .persona-grid { grid-template-columns: repeat(3, 1fr); }
+    }
     @media (max-width: 900px) {
       .page-hero h1 { font-size: 36px; }
       .two-col { grid-template-columns: 1fr; gap: 40px; }
@@ -276,16 +280,21 @@
       <span class="section-eyebrow">Who this matters to</span>
       <h2 class="pg-h2">The execution gap costs everyone differently</h2>
       <div class="persona-grid">
-        <div class="persona-card">
+        <a href="/for-ceo" class="persona-card" style="display:block;text-decoration:none;color:inherit;transition:border-color 0.15s;">
           <div class="persona-role">CEO</div>
-          <p class="persona-pain">You hear "timing issues" and "deals that slipped" every quarter. You're not sure if it's the strategy, the team, or something structural. It's structural.</p>
-          <div class="persona-gain">Revenue predictability is an infrastructure decision.</div>
-        </div>
-        <div class="persona-card">
-          <div class="persona-role">CRO / VP Sales</div>
-          <p class="persona-pain">You know the pipeline has deals that should have closed. You can't see which ones are going quiet until it's too late to intervene. You need the signal before the miss, not after.</p>
-          <div class="persona-gain">Execution intelligence — not more pipeline reviews.</div>
-        </div>
+          <p class="persona-pain">You hear "timing issues" and "deals that slipped" every quarter. You're not sure if it's the strategy, the team, or something structural. It's structural — and depending on one VP Sales to interpret it is the actual risk.</p>
+          <div class="persona-gain">Revenue predictability is an infrastructure decision. →</div>
+        </a>
+        <a href="/for-ceo" class="persona-card" style="display:block;text-decoration:none;color:inherit;transition:border-color 0.15s;">
+          <div class="persona-role">CRO</div>
+          <p class="persona-pain">You own the full revenue loop — new, expand, retain. Stalled new-business deals, silent renewal risk, and unacted-on expansion signals all trace back to the same missing layer. You need execution visibility across all three motions, not just one.</p>
+          <div class="persona-gain">One execution layer across new, expand, and retain.</div>
+        </a>
+        <a href="/for-vp-sales" class="persona-card" style="display:block;text-decoration:none;color:inherit;transition:border-color 0.15s;">
+          <div class="persona-role">VP Sales</div>
+          <p class="persona-pain">You know the pipeline has deals that should have closed. You can't see which ones are going quiet until it's too late to intervene. Your forecast is a judgement call dressed up in a spreadsheet. You need the signal before the miss, not after.</p>
+          <div class="persona-gain">Forecast accuracy, rescued deals, faster ramp. →</div>
+        </a>
         <div class="persona-card">
           <div class="persona-role">CFO</div>
           <p class="persona-pain">You approve budgets against a forecast that misses by 20–30% every quarter. Every investment decision built on that number is wrong before it's made.</p>

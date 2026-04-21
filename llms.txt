@@ -12,6 +12,10 @@ GoWarmCRM is built for B2B sales teams running multi-stage pipelines (typically 
 - [Execution Gap](https://www.gowarmcrm.com/execution-gap.md): Why CRMs track but don't execute, and the structural fix
 - [Platform Overview](https://www.gowarmcrm.com/platform-overview.md): All five modules — Prospecting, Sales, CLM, Service, Handover
 
+## By buyer persona
+- [For VP Sales](https://www.gowarmcrm.com/for-vp-sales.md): Forecast accuracy, rescued deals, new-AE ramp, tool consolidation at next renewal — what a VP Sales can defend to the CEO, CFO, and board
+- [For CEOs](https://www.gowarmcrm.com/for-ceo.md): Revenue predictability as infrastructure, VP Sales dependency reduction, investor-grade metrics (CAC payback, NDR, quota attainment), board narrative shift
+
 ## Integrations
 - [CRM Integration](https://www.gowarmcrm.com/crm-integration.md): Salesforce, HubSpot, Pipedrive, Zoho, Dynamics
 - [Salesforce Integration](https://www.gowarmcrm.com/salesforce-integration.md): Adapter pattern, deterministic ID-based sync, write-back
