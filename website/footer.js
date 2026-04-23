@@ -65,6 +65,7 @@
           <li><a href="/crm-execution-gap">The CRM Execution Gap</a></li>
           <li><a href="/sales-rep-action-queue">Sales Rep Action Queue</a></li>
           <li><a href="/sales-execution-platform-for-saas">For SaaS Teams</a></li>
+          <li><a href="/ai-shift">The AI Shift in B2B Selling</a></li>
         </ul>
       </div>
       <div class="footer-col">

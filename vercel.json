@@ -178,6 +178,10 @@
       "destination": "/website/for-ceo.html"
     },
     {
+      "source": "/ai-shift",
+      "destination": "/website/ai-shift.html"
+    },
+    {
       "source": "/index.md",
       "destination": "/markdown/index.md"
     },
@@ -224,6 +228,10 @@
     {
       "source": "/for-ceo.md",
       "destination": "/markdown/for-ceo.md"
+    },
+    {
+      "source": "/ai-shift.md",
+      "destination": "/markdown/ai-shift.md"
     }
   ],
   "headers": [
