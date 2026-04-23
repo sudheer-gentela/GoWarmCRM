@@ -32,7 +32,13 @@
   <!-- ── Persona pages ── -->
   <url><loc>https://www.gowarmcrm.com/for-vp-sales</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.gowarmcrm.com/for-ceo</loc><lastmod>2026-04-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- ── The AI Shift in B2B Selling — five-part series ── -->
   <url><loc>https://www.gowarmcrm.com/ai-shift</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/ai-shift/product-companies</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/ai-shift/services-companies</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/ai-shift/marketing-sales-motions</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/ai-shift/relationship-selling</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- ── Blog index ── -->
   <url><loc>https://www.gowarmcrm.com/blog</loc><lastmod>2026-04-18</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>

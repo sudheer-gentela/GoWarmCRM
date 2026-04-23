@@ -182,6 +182,22 @@
       "destination": "/website/ai-shift.html"
     },
     {
+      "source": "/ai-shift/product-companies",
+      "destination": "/website/ai-shift/product-companies.html"
+    },
+    {
+      "source": "/ai-shift/services-companies",
+      "destination": "/website/ai-shift/services-companies.html"
+    },
+    {
+      "source": "/ai-shift/marketing-sales-motions",
+      "destination": "/website/ai-shift/marketing-sales-motions.html"
+    },
+    {
+      "source": "/ai-shift/relationship-selling",
+      "destination": "/website/ai-shift/relationship-selling.html"
+    },
+    {
       "source": "/index.md",
       "destination": "/markdown/index.md"
     },
@@ -232,6 +248,22 @@
     {
       "source": "/ai-shift.md",
       "destination": "/markdown/ai-shift.md"
+    },
+    {
+      "source": "/ai-shift/product-companies.md",
+      "destination": "/markdown/ai-shift/product-companies.md"
+    },
+    {
+      "source": "/ai-shift/services-companies.md",
+      "destination": "/markdown/ai-shift/services-companies.md"
+    },
+    {
+      "source": "/ai-shift/marketing-sales-motions.md",
+      "destination": "/markdown/ai-shift/marketing-sales-motions.md"
+    },
+    {
+      "source": "/ai-shift/relationship-selling.md",
+      "destination": "/markdown/ai-shift/relationship-selling.md"
     }
   ],
   "headers": [

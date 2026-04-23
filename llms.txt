@@ -15,7 +15,13 @@ GoWarmCRM is built for B2B sales teams running multi-stage pipelines (typically 
 ## By buyer persona
 - [For VP Sales](https://www.gowarmcrm.com/for-vp-sales.md): Forecast accuracy, rescued deals, new-AE ramp, tool consolidation at next renewal — what a VP Sales can defend to the CEO, CFO, and board
 - [For CEOs](https://www.gowarmcrm.com/for-ceo.md): Revenue predictability as infrastructure, VP Sales dependency reduction, investor-grade metrics (CAC payback, NDR, quota attainment), board narrative shift
-- [The AI Shift in Services Selling](https://www.gowarmcrm.com/ai-shift.md): A thesis for CEOs of 500+ person IT services firms on why relationships alone are no longer enough, why information asymmetry has collapsed, and why speed with precision is the new sales advantage
+
+## The AI Shift in B2B Selling — five-part thesis
+- [Part 1 · The pillar](https://www.gowarmcrm.com/ai-shift.md): The generic thesis for B2B CEOs on why information asymmetry has collapsed, why search never broke the old motion but LLMs did, what the buyer now arrives with, the two things a seller can still uniquely provide, and why the operational response diverges sharply for product and services companies
+- [Part 2 · What shifted for product companies](https://www.gowarmcrm.com/ai-shift/product-companies.md): The CEO-level paranoia — will someone deliver my product lighter, AI-enabled, faster? CRM as the canary for broader SaaS disruption, what compliance-as-a-service would do to incumbent moats, and the stickiness-versus-new-product decision that defines the next three years
+- [Part 3 · What shifted for services companies](https://www.gowarmcrm.com/ai-shift/services-companies.md): The positioning crisis — people, projects, or outcomes. Why outcome-based pricing is becoming the new floor for growth-stage services firms, and why four operational shifts (account instrumentation, senior-in-delivery, continuous account farming, underwriter-sellers) have to happen in sequence, with pricing last
+- [Part 4 · Marketing, sales and distribution in the AI era](https://www.gowarmcrm.com/ai-shift/marketing-sales-motions.md): The operational response — SEO fracturing into AEO, cold email past saturation, paid acquisition economics inverted, and the LLM-ready web as table stakes — with an eight-item audit for whether the firm's first-touch surface is LLM-readable
+- [Part 5 · Relationship selling in the AI era — the synthesis](https://www.gowarmcrm.com/ai-shift/relationship-selling.md): Why relationship selling is not dead but being reborn, why the buyer's scarce resource has moved from information to attention, why the best sellers have always done this motion but only now can it scale, and what the integrated picture across product, services, and marketing commits the firm to on Monday morning
 
 ## Integrations
 - [CRM Integration](https://www.gowarmcrm.com/crm-integration.md): Salesforce, HubSpot, Pipedrive, Zoho, Dynamics
