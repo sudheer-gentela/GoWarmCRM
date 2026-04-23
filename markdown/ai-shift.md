@@ -8,10 +8,10 @@ Published: April 22, 2026 · GoWarmCRM · Part 1 of 5
 
 ## TL;DR — the argument in four bullets
 
-- Search returned a menu; LLMs return an opinion. The buyer now arrives at the first call with a synthesized point of view they half-trust as their own — and the relationship that used to shape that view no longer does.
-- What remains for the seller is the **two things the LLM cannot do**: know what just happened inside this specific account, and act on that knowledge with precision before the buying window closes.
-- The thesis is shared across B2B; the operational response diverges sharply by category. Four companion articles take each one — product, services, marketing, and the rebirth of relationship selling itself.
-- *The transition window is open and narrowing.* Firms that absorb the new model now pull ahead on retention, velocity, and CAC. Firms that defer accumulate operational debt they cannot unwind.
+- For thirty years, B2B selling monetised **information asymmetry** — senior sellers were the synthesis shortcut across a market too opaque for buyers to decode alone. That job is now done by the buyer's LLM, for free.
+- The buyer arrives at the first call with a reasoned point of view they half-trust as their own. Search never did this because search returned a menu. *LLMs hand the buyer an opinion* — before any seller is in the room.
+- What remains for the seller is the **two things the LLM cannot do**: know what just happened inside this specific account, and act on that knowledge with precision before the buying window closes. *Speed without precision is spam; precision without speed is a postmortem.*
+- The thesis is shared across B2B; the operational response diverges sharply by category. Four companion articles take each one — product, services, marketing, and the rebirth of relationship selling itself. **The transition window is open and narrowing.**
 
 ## The argument in one paragraph
 
