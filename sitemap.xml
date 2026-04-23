@@ -1,103 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/is-your-crm-a-crud-app</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/are-your-sales-playbooks-working</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/crm-rebuild-or-recommit</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/crm-integration-complexity</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/revops-stack-crm-foundation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/crm-implementation-guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/lead-generation-discovery-meetings</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/crm-roi-cfo-questions</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/crm-roi-cro-response</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/forecast-accuracy-arr</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/sales-team-task-tracking</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/discovery-call-dropoff</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/account-research-module-build-vs-buy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/pricing-approval-workflow-crm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/pipeline-deals-going-dark</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/per-user-ai-settings-crm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/playbook-adoption-crm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/playbook-segmentation-smb-enterprise-geography</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.gowarmcrm.com/blog/crm-owner-capabilities</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- ── Homepage ── -->
+  <url><loc>https://www.gowarmcrm.com/</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+
+  <!-- ── Core website pages ── -->
+  <url><loc>https://www.gowarmcrm.com/about</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.gowarmcrm.com/contact</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.gowarmcrm.com/pricing</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/how-it-works</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/diagnostic</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/skills</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.gowarmcrm.com/problems</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/insights</loc><lastmod>2026-04-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- ── Persona pages ── -->
+  <url><loc>https://www.gowarmcrm.com/for-ceo</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/for-vp-sales</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- ── Solution / SEO pages ── -->
+  <url><loc>https://www.gowarmcrm.com/sales-execution-platform</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/sales-execution-platform-for-saas</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/sales-execution-platform-vs-crm</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/sales-forecast-accuracy</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/sales-rep-action-queue</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/pipeline-data-accuracy</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/pipeline-execution</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/pipeline-leakage</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/execution-gap</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/crm-execution-gap</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/crm-integration</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/salesforce-integration</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/what-board-sees-pipeline</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/why-deals-go-dark</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ── AI Shift hub and sub-pages ── -->
+  <url><loc>https://www.gowarmcrm.com/ai-shift</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/ai-shift/marketing-sales-motions</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/ai-shift/product-companies</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/ai-shift/relationship-selling</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/ai-shift/services-companies</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ── Blog index ── -->
+  <url><loc>https://www.gowarmcrm.com/blog</loc><lastmod>2026-04-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- ── Blog articles — April 2026 (newest) ── -->
+  <url><loc>https://www.gowarmcrm.com/blog/pipeline-process-visibility</loc><lastmod>2026-04-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/ae-ramp-time-early-signals</loc><lastmod>2026-04-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/seller-buyer-document-visibility</loc><lastmod>2026-04-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/land-expand-account-expansion</loc><lastmod>2026-04-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/ae-promoted-to-sales-manager</loc><lastmod>2026-04-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ── Blog articles — April 2026 ── -->
+  <url><loc>https://www.gowarmcrm.com/blog/revenue-leak-auditors-wont-catch</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/crm-spend-win-rate</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/sales-forecast-miss-cost</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/sales-rep-turnover-finance</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/marketing-leads-disappear-pipeline</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/execution-layer-costs-cac</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/board-sales-execution</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ── Blog articles — April 2026 (earlier batch) ── -->
+  <url><loc>https://www.gowarmcrm.com/blog/how-to-recover-dark-deal</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/why-reps-dont-update-crm</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/the-win-rate-lie</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/first-90-days-vp-sales</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/how-many-deals-should-ae-carry</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/why-crm-stages-dont-mean-what-you-think</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/pipeline-review-that-actually-works</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/how-to-build-sales-playbook-reps-follow</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/what-forecast-tells-your-board</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/real-cost-sales-rep-turnover</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ── Blog articles — existing ── -->
+  <url><loc>https://www.gowarmcrm.com/blog/is-your-crm-a-crud-app</loc><lastmod>2025-10-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/crm-implementation-guide</loc><lastmod>2025-10-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/lead-generation-discovery-meetings</loc><lastmod>2025-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/crm-roi-cfo-questions</loc><lastmod>2025-10-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/revops-stack-crm-foundation</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/crm-roi-cro-response</loc><lastmod>2025-11-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/pipeline-deals-going-dark</loc><lastmod>2025-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/discovery-call-dropoff</loc><lastmod>2025-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/account-research-module-build-vs-buy</loc><lastmod>2025-11-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/sales-team-task-tracking</loc><lastmod>2025-11-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/are-your-sales-playbooks-working</loc><lastmod>2025-11-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/playbook-adoption-crm</loc><lastmod>2025-11-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/crm-integration-complexity</loc><lastmod>2025-11-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/forecast-accuracy-arr</loc><lastmod>2025-12-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/crm-owner-capabilities</loc><lastmod>2025-12-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/playbook-segmentation-smb-enterprise-geography</loc><lastmod>2025-12-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/crm-rebuild-or-recommit</loc><lastmod>2025-12-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/pricing-approval-workflow-crm</loc><lastmod>2025-12-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.gowarmcrm.com/blog/per-user-ai-settings-crm</loc><lastmod>2025-12-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
 </urlset>
