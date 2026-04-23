@@ -6,14 +6,12 @@ Published: April 22, 2026 · GoWarmCRM · Part 2 of 5
 
 ---
 
-## TL;DR — the argument in six bullets
+## TL;DR — the argument in four bullets
 
-- Every B2B product CEO is now carrying **three questions**: will someone deliver my product lighter and AI-enabled; do I invest in new features or in stickiness; and what became table stakes in my category that I am not shipping yet.
-- What is happening to **CRM** is the preview — four structural cracks (10–15% feature utilization, admin-gated configuration, generalized data models, per-seat pricing) compounding into quiet category disruption.
-- LLMs collapsed the build-vs-buy math. A mid-market firm can now build a custom version of the 10–15% of features they actually use in six to ten weeks. It does not need to be as good as Salesforce. It only needs to be *theirs*.
-- The quiet threat to the remaining moat is **compliance-as-a-service**. If a third party productizes SOC 2 / ISO / HIPAA posture, incumbents discover how much of their enterprise retention was regulatory drag, not moat.
-- The real CEO decision is not features-vs-retention. It is which of three stickiness sources — *proprietary data, integration depth, workflow embedding* — the next three quarters of investment is actually deepening.
-- Speed with precision, for product companies, shows up as **retention**. The single highest-leverage capability to build now is the operational ability to see, in real time, what is happening inside the accounts already paying you.
+- Every product CEO is now carrying **three questions**: is someone about to deliver my product lighter and AI-enabled; do I invest in new features or in stickiness; what became table stakes I am not shipping yet.
+- LLMs collapsed build-vs-buy math. Mid-market firms can now build a custom version of the **10–15% of features they actually use** in six to ten weeks — and the quiet threat to the remaining moat is *compliance-as-a-service*.
+- The real decision is not features-vs-retention. It is which of three stickiness sources — **proprietary data, integration depth, workflow embedding** — the next three quarters of investment is actually deepening.
+- Speed with precision, for product companies, shows up as *retention*. The highest-leverage capability to build now is seeing, in real time, what is happening inside the accounts already paying you.
 
 ## The three questions every product CEO is now asking
 

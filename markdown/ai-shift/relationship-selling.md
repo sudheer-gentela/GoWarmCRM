@@ -6,14 +6,12 @@ Published: April 22, 2026 · GoWarmCRM · Part 5 of 5
 
 ---
 
-## TL;DR — the argument in six bullets
+## TL;DR — the argument in four bullets
 
-- *"Relationships don't matter anymore"* is the wrong conclusion from the right premise. The **synthesis function** of relationships has been commoditised. The specificity function and the signal function have not.
-- The buyer's scarce resource has inverted from **information to attention**. In the old world, the relationship bridged an information gap. In the new world, it bridges an attention gap — structurally harder, more valuable.
-- The best sellers have always done the high-signal motion. What has changed is that **it can finally scale**. Instrumentation is the operational substrate that lets the median seller operate at a level that used to require the top quintile.
-- Instrumentation also *removes* from the seller's job the parts that were always low-value — generic cadence, templated sequences, QBR prep no customer reads. The result is fewer sellers, each more highly paid, each producing more revenue per headcount.
-- Product stickiness, services outcomes, LLM-ready marketing, and reborn relationship selling are **not four separate initiatives**. They are four expressions of one operational commitment — to run go-to-market as an instrumented operating system, not a trust-based function.
-- The Monday-morning decision is upstream of tool choice. It is a CEO-level commitment. The firms that make it now take disproportionate share in the transition window. The firms that defer will spend three years explaining what a competitor half their size quietly took.
+- *"Relationships don't matter anymore"* is the wrong conclusion from the right premise. The **synthesis function** of relationships has been commoditised. The specificity and signal functions have not.
+- The buyer's scarce resource has inverted from **information to attention**. In the old world, relationships bridged an information gap. In the new world, they bridge an attention gap — structurally harder, more valuable.
+- The best sellers have always done the high-signal motion. What has changed is that **it can finally scale** — instrumentation is the substrate that lets the median seller operate at a level that used to require the top quintile.
+- Product stickiness, services outcomes, LLM-ready marketing, and reborn relationship selling are *one* operational commitment: running go-to-market as an instrumented operating system, not a trust-based function. The Monday-morning decision is upstream of tool choice. **It is a CEO decision.**
 
 ## The claim that is wrong
 

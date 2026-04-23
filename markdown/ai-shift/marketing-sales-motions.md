@@ -6,14 +6,12 @@ Published: April 22, 2026 · GoWarmCRM · Part 4 of 5
 
 ---
 
-## TL;DR — the argument in six bullets
+## TL;DR — the argument in four bullets
 
-- Four channel shifts are happening at once, and **compounding**: SEO is fracturing into AEO, cold email is past its structural saturation point, paid acquisition economics have quietly inverted, and the LLM-ready web is now table stakes most firms have not shipped.
-- The optimization target has moved from click-through-rate to **citation rate inside LLM responses**. Firms running 2021-era SEO strategies are optimizing for a behavior their buyers have increasingly stopped performing.
-- Volume cold email is done. What replaces it is *signal-based precision outreach* — few messages, each tied to a specific and timely fact, each carrying human judgment. The economics invert: expensive per message, cheap per converted conversation.
-- In paid, cost-per-click is holding or falling while **cost-per-qualified-conversation is rising**. The gap is where firms lose marketing efficiency without being able to point at the line item.
-- The firm's web surface is now a *training corpus for the buyer's LLM-mediated evaluation*, not a destination for humans. Most B2B sites were built for the wrong reader.
-- An **eight-item audit** — semantic HTML, plain pricing, llms.txt, answer-shaped content, named positioning, verifiable attribution, ungated docs, stable canonicals — is the difference between being in the LLM's answer and being adjacent to it.
+- Four channel shifts are **compounding**: SEO fracturing into AEO, cold email past saturation, paid acquisition economics inverted, and the LLM-ready web as table stakes.
+- The optimization target has moved from click-through-rate to **citation rate inside LLM responses**. Volume cold email is done; signal-based precision outreach — few messages, real facts, human judgment — replaces it.
+- In paid, cost-per-click is holding while **cost-per-qualified-conversation is rising**. The gap is where firms lose efficiency without being able to name the line item.
+- The firm's web surface is now a *training corpus* for the buyer's LLM, not a destination for humans. An **eight-item audit** (semantic HTML, plain pricing, llms.txt, answer-shaped content, named positioning, verifiable attribution, ungated docs, stable canonicals) is the difference between being in the answer and being adjacent to it.
 
 ## Four channel shifts, compounding
 
