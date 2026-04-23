@@ -104,6 +104,16 @@
     .series-hub-link a { color: var(--rust); text-decoration: none; font-weight: 600; }
     .series-hub-link a:hover { text-decoration: underline; }
 
+    .tldr-section { padding: 40px 0; background: var(--cream-2); border-bottom: 1px solid var(--border); }
+    .tldr-block { max-width: 900px; background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--rust); border-radius: 8px; padding: 28px 36px; }
+    .tldr-label { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+    .tldr-block ul { list-style: none; padding: 0; margin: 0; }
+    .tldr-block li { font-family: var(--body-serif); font-size: 15.5px; color: var(--ink-2); line-height: 1.7; font-weight: 300; padding: 7px 0 7px 22px; position: relative; }
+    .tldr-block li::before { content: "\25B8"; color: var(--rust); position: absolute; left: 0; top: 7px; font-size: 11px; }
+    .tldr-block li strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 14.5px; }
+    .tldr-block li em { color: var(--ink); font-style: italic; }
+    @media (max-width: 900px) { .tldr-block { padding: 22px 24px; } .tldr-block li { font-size: 14.5px; } }
+
     @media (max-width: 900px) {
       .page-hero h1 { font-size: 34px; }
       .thesis-block { padding: 28px 24px; }
@@ -153,6 +163,22 @@
       <h1>Relationship selling <em>is not dead.</em><br>It is being reborn.</h1>
       <p class="hero-lede">The argument of this series has been building toward one closing claim: the seller who gets reborn first wins the next decade. The specific function relationships used to serve — synthesis across an opaque information landscape — has been commoditized and is gone. But relationships were always doing more than one thing, and the other things relationships do have become structurally more valuable, not less. The signal-to-noise ratio in the buyer's inbox has inverted. Instrumentation has become cheap enough that what used to be a heroic exception carried by a few senior individuals can now become the firm's operating default. This is the synthesis piece — the one that pulls product, services, marketing, and selling into a single coherent picture.</p>
       <div class="hero-meta">GoWarmCRM <span>·</span> Written for B2B CEOs and sales leaders <span>·</span> 14 min read</div>
+    </div>
+  </section>
+
+  <section class="tldr-section">
+    <div class="container">
+      <div class="tldr-block">
+        <div class="tldr-label">TL;DR &mdash; the argument in six bullets</div>
+        <ul>
+          <li><em>&ldquo;Relationships don&rsquo;t matter anymore&rdquo;</em> is the wrong conclusion from the right premise. The <strong>synthesis function</strong> of relationships has been commoditised. The specificity function and the signal function have not.</li>
+          <li>The buyer&rsquo;s scarce resource has inverted from <strong>information to attention</strong>. In the old world, the relationship bridged an information gap. In the new world, it bridges an attention gap &mdash; structurally harder, more valuable.</li>
+          <li>The best sellers have always done the high-signal motion. What has changed is that <strong>it can finally scale</strong>. Instrumentation is the operational substrate that lets the median seller operate at a level that used to require the top quintile.</li>
+          <li>Instrumentation also <em>removes</em> from the seller&rsquo;s job the parts that were always low-value &mdash; generic cadence, templated sequences, QBR prep no customer reads. The result is fewer sellers, each more highly paid, each producing more revenue per headcount.</li>
+          <li>Product stickiness, services outcomes, LLM-ready marketing, and reborn relationship selling are <strong>not four separate initiatives</strong>. They are four expressions of one operational commitment &mdash; to run go-to-market as an instrumented operating system, not a trust-based function.</li>
+          <li>The Monday-morning decision is upstream of tool choice. It is a CEO-level commitment. The firms that make it now take disproportionate share in the transition window. The firms that defer will spend three years explaining what a competitor half their size quietly took.</li>
+        </ul>
+      </div>
     </div>
   </section>
 

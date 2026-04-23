@@ -102,6 +102,16 @@
     .series-hub-link a { color: var(--rust); text-decoration: none; font-weight: 600; }
     .series-hub-link a:hover { text-decoration: underline; }
 
+    .tldr-section { padding: 40px 0; background: var(--cream-2); border-bottom: 1px solid var(--border); }
+    .tldr-block { max-width: 900px; background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--rust); border-radius: 8px; padding: 28px 36px; }
+    .tldr-label { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+    .tldr-block ul { list-style: none; padding: 0; margin: 0; }
+    .tldr-block li { font-family: var(--body-serif); font-size: 15.5px; color: var(--ink-2); line-height: 1.7; font-weight: 300; padding: 7px 0 7px 22px; position: relative; }
+    .tldr-block li::before { content: "\25B8"; color: var(--rust); position: absolute; left: 0; top: 7px; font-size: 11px; }
+    .tldr-block li strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 14.5px; }
+    .tldr-block li em { color: var(--ink); font-style: italic; }
+    @media (max-width: 900px) { .tldr-block { padding: 22px 24px; } .tldr-block li { font-size: 14.5px; } }
+
     @media (max-width: 900px) {
       .page-hero h1 { font-size: 34px; }
       .thesis-block { padding: 28px 24px; }
@@ -151,6 +161,22 @@
       <h1>What shifted for <em>product companies.</em></h1>
       <p class="hero-lede">The paranoia every B2B product CEO is now carrying, and mostly not naming out loud: will someone deliver my product lighter, AI-enabled, faster — and do I need to invest in new product, or in making sure the customers I already have never leave? This is the operational question the AI shift forces, with the CRM category as the canary.</p>
       <div class="hero-meta">GoWarmCRM <span>·</span> Written for CEOs of B2B product companies <span>·</span> 13 min read</div>
+    </div>
+  </section>
+
+  <section class="tldr-section">
+    <div class="container">
+      <div class="tldr-block">
+        <div class="tldr-label">TL;DR &mdash; the argument in six bullets</div>
+        <ul>
+          <li>Every B2B product CEO is now carrying <strong>three questions</strong>: will someone deliver my product lighter and AI-enabled; do I invest in new features or in stickiness; and what became table stakes in my category that I am not shipping yet.</li>
+          <li>What is happening to <strong>CRM</strong> is the preview &mdash; four structural cracks (10&ndash;15% feature utilization, admin-gated configuration, generalized data models, per-seat pricing) compounding into quiet category disruption.</li>
+          <li>LLMs collapsed the build-vs-buy math. A mid-market firm can now build a custom version of the 10&ndash;15% of features they actually use in six to ten weeks. It does not need to be as good as Salesforce. It only needs to be <em>theirs</em>.</li>
+          <li>The quiet threat to the remaining moat is <strong>compliance-as-a-service</strong>. If a third party productizes SOC 2 / ISO / HIPAA posture, incumbents discover how much of their enterprise retention was regulatory drag, not moat.</li>
+          <li>The real CEO decision is not features-vs-retention. It is which of three stickiness sources &mdash; <em>proprietary data, integration depth, workflow embedding</em> &mdash; the next three quarters of investment is actually deepening.</li>
+          <li>Speed with precision, for product companies, shows up as <strong>retention</strong>. The single highest-leverage capability to build now is the operational ability to see, in real time, what is happening inside the accounts already paying you.</li>
+        </ul>
+      </div>
     </div>
   </section>
 

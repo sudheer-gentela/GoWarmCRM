@@ -106,6 +106,16 @@
     .series-hub-link a { color: var(--rust); text-decoration: none; font-weight: 600; }
     .series-hub-link a:hover { text-decoration: underline; }
 
+    .tldr-section { padding: 40px 0; background: var(--cream-2); border-bottom: 1px solid var(--border); }
+    .tldr-block { max-width: 900px; background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--rust); border-radius: 8px; padding: 28px 36px; }
+    .tldr-label { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+    .tldr-block ul { list-style: none; padding: 0; margin: 0; }
+    .tldr-block li { font-family: var(--body-serif); font-size: 15.5px; color: var(--ink-2); line-height: 1.7; font-weight: 300; padding: 7px 0 7px 22px; position: relative; }
+    .tldr-block li::before { content: "\25B8"; color: var(--rust); position: absolute; left: 0; top: 7px; font-size: 11px; }
+    .tldr-block li strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 14.5px; }
+    .tldr-block li em { color: var(--ink); font-style: italic; }
+    @media (max-width: 900px) { .tldr-block { padding: 22px 24px; } .tldr-block li { font-size: 14.5px; } }
+
     @media (max-width: 900px) {
       .page-hero h1 { font-size: 34px; }
       .thesis-block { padding: 28px 24px; }
@@ -155,6 +165,22 @@
       <h1>What shifted for <em>services companies.</em></h1>
       <p class="hero-lede">The question most services firms have never had to answer cleanly — <em>are you selling people, projects, or outcomes?</em> — is the question the AI shift is now forcing. Buyers arrive with an LLM-synthesized view of what the work should cost, how long it should take, and which deliverables should be table stakes. Outcome pricing is becoming the new floor for growth-stage firms. The trap is treating it as a pricing decision instead of what it actually is: the last of four operational shifts, and the one that only works after the first three are in place.</p>
       <div class="hero-meta">GoWarmCRM <span>·</span> Written for CEOs and managing partners of B2B services firms <span>·</span> 13 min read</div>
+    </div>
+  </section>
+
+  <section class="tldr-section">
+    <div class="container">
+      <div class="tldr-block">
+        <div class="tldr-label">TL;DR &mdash; the argument in six bullets</div>
+        <ul>
+          <li>Most services firms have never answered cleanly: <strong>are you selling people, projects, or outcomes?</strong> The buyer&rsquo;s LLM is now forcing the answer, and attacking each mode differently.</li>
+          <li><strong>Outcome-based pricing is becoming the new floor, not the new ceiling.</strong> The LLM has very little to attack when the firm is pricing against a specific, accountable business outcome tied to the client&rsquo;s P&amp;L.</li>
+          <li>The trap most firms walk into is treating outcome pricing as a <em>pricing decision</em>. It is not. It is the last move in a four-part operational rebuild &mdash; and it only works after the first three are in place.</li>
+          <li>The sequence matters: <strong>account instrumentation &rarr; senior-in-delivery &rarr; continuous account farming &rarr; underwriter-sellers</strong>. Each shift creates the preconditions for the next. Skipping a step does not compress the timeline; it guarantees the later shifts fail.</li>
+          <li>Why do most firms get the sequence wrong? <em>Visibility.</em> Pricing is the most visible shift &mdash; it ships with a press release. Instrumentation is the least visible and the longest-compounding. CEOs under quarterly pressure almost always reverse the order.</li>
+          <li>Speed with precision, for services firms, shows up as <strong>account-level signal response</strong> &mdash; catching stakeholder changes, funded initiatives, scope drift, and competitor activity in days, not quarters.</li>
+        </ul>
+      </div>
     </div>
   </section>
 

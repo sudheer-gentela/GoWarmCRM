@@ -88,6 +88,16 @@
     .closing-q-lbl { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
     .closing-q-text { font-family: var(--serif); font-size: 22px; color: var(--ink); font-weight: 500; line-height: 1.4; letter-spacing: -0.2px; }
 
+    .tldr-section { padding: 40px 0; background: var(--cream-2); border-bottom: 1px solid var(--border); }
+    .tldr-block { max-width: 900px; background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--rust); border-radius: 8px; padding: 28px 36px; }
+    .tldr-label { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+    .tldr-block ul { list-style: none; padding: 0; margin: 0; }
+    .tldr-block li { font-family: var(--body-serif); font-size: 15.5px; color: var(--ink-2); line-height: 1.7; font-weight: 300; padding: 7px 0 7px 22px; position: relative; }
+    .tldr-block li::before { content: "\25B8"; color: var(--rust); position: absolute; left: 0; top: 7px; font-size: 11px; }
+    .tldr-block li strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 14.5px; }
+    .tldr-block li em { color: var(--ink); font-style: italic; }
+    @media (max-width: 900px) { .tldr-block { padding: 22px 24px; } .tldr-block li { font-size: 14.5px; } }
+
     @media (max-width: 900px) {
       .page-hero h1 { font-size: 34px; }
       .thesis-block { padding: 28px 24px; }
@@ -136,6 +146,22 @@
       <h1>The AI shift just rewrote the rules of <em>B2B selling</em>.<br>Most firms haven't noticed yet.</h1>
       <p class="hero-lede">Relationships carried B2B for thirty years. They are no longer enough. Not because relationships stopped mattering — but because the specific thing relationships used to provide has been quietly commoditised by a technology sitting on every buyer's laptop. This is the pillar of a five-part thesis on what changed, what replaces it, and what that demands of any CEO — product or services — still running the old motion.</p>
       <div class="hero-meta">GoWarmCRM <span>·</span> Written for B2B CEOs and founders <span>·</span> 12 min read</div>
+    </div>
+  </section>
+
+  <section class="tldr-section">
+    <div class="container">
+      <div class="tldr-block">
+        <div class="tldr-label">TL;DR &mdash; the argument in six bullets</div>
+        <ul>
+          <li>For thirty years, B2B selling monetised <strong>information asymmetry</strong> &mdash; the trusted seller was the synthesis shortcut across a market too opaque for the buyer to decode alone.</li>
+          <li>Search never broke that motion because search returned a menu. <em>LLMs</em> broke it because LLMs hand the buyer a reasoned opinion, dialogically, in minutes &mdash; before any seller is in the room.</li>
+          <li>The buyer now arrives at the first call with a point of view they half-trust as their own. The relationship still opens the door; it no longer shapes the view.</li>
+          <li>What remains for the seller is the <strong>two things the LLM cannot do</strong>: know what just happened inside this specific account, and act on that knowledge with precision, at speed, before the buying window closes.</li>
+          <li>The generic thesis is shared across B2B. The operational response diverges sharply &mdash; by category. The four companion articles take each one: product companies, services companies, marketing motions, and the rebirth of relationship selling itself.</li>
+          <li><em>The transition window is open and narrowing.</em> Firms that absorb the new model now pull ahead on retention, velocity, and CAC. Firms that defer accumulate operational debt they cannot unwind.</li>
+        </ul>
+      </div>
     </div>
   </section>
 

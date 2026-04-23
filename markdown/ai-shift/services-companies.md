@@ -6,6 +6,15 @@ Published: April 22, 2026 · GoWarmCRM · Part 3 of 5
 
 ---
 
+## TL;DR — the argument in six bullets
+
+- Most services firms have never answered cleanly: **are you selling people, projects, or outcomes?** The buyer's LLM is now forcing the answer, and attacking each mode differently.
+- **Outcome-based pricing is becoming the new floor, not the new ceiling.** The LLM has very little to attack when the firm is pricing against a specific, accountable business outcome tied to the client's P&L.
+- The trap most firms walk into is treating outcome pricing as a *pricing decision*. It is not. It is the last move in a four-part operational rebuild — and it only works after the first three are in place.
+- The sequence matters: **account instrumentation → senior-in-delivery → continuous account farming → underwriter-sellers**. Each shift creates the preconditions for the next. Skipping a step does not compress the timeline; it guarantees the later shifts fail.
+- Why do most firms get the sequence wrong? *Visibility.* Pricing is the most visible shift — it ships with a press release. Instrumentation is the least visible and the longest-compounding. CEOs under quarterly pressure almost always reverse the order.
+- Speed with precision, for services firms, shows up as **account-level signal response** — catching stakeholder changes, funded initiatives, scope drift, and competitor activity in days, not quarters.
+
 ## The positioning crisis
 
 If you run a B2B services firm at any scale — consulting, systems integration, managed services, professional services, implementation partnerships, specialized advisory — the first hard question the AI shift puts to you is one you've probably avoided answering cleanly for most of your firm's life. **What, precisely, are you selling?**

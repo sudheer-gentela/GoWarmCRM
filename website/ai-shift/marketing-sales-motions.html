@@ -108,6 +108,16 @@
     .series-hub-link a { color: var(--rust); text-decoration: none; font-weight: 600; }
     .series-hub-link a:hover { text-decoration: underline; }
 
+    .tldr-section { padding: 40px 0; background: var(--cream-2); border-bottom: 1px solid var(--border); }
+    .tldr-block { max-width: 900px; background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--rust); border-radius: 8px; padding: 28px 36px; }
+    .tldr-label { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+    .tldr-block ul { list-style: none; padding: 0; margin: 0; }
+    .tldr-block li { font-family: var(--body-serif); font-size: 15.5px; color: var(--ink-2); line-height: 1.7; font-weight: 300; padding: 7px 0 7px 22px; position: relative; }
+    .tldr-block li::before { content: "\25B8"; color: var(--rust); position: absolute; left: 0; top: 7px; font-size: 11px; }
+    .tldr-block li strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 14.5px; }
+    .tldr-block li em { color: var(--ink); font-style: italic; }
+    @media (max-width: 900px) { .tldr-block { padding: 22px 24px; } .tldr-block li { font-size: 14.5px; } }
+
     @media (max-width: 900px) {
       .page-hero h1 { font-size: 34px; }
       .thesis-block { padding: 28px 24px; }
@@ -157,6 +167,22 @@
       <h1>Marketing, sales and distribution <em>in the AI era.</em></h1>
       <p class="hero-lede">Four channel motions are shifting at once, and compounding. Search is fracturing into answer-engine optimization. Cold email is past its structural saturation point. Paid acquisition economics have quietly inverted — the click-to-conversation cost is rising faster than the click cost, in the gap where most firms lose efficiency without knowing why. And the LLM-ready web — the surface the buyer's LLM now reads on the firm's behalf — has become table stakes most firms have not shipped. This is the operational companion to the thesis: what, specifically, is changing in the channels that put the buyer on the first call.</p>
       <div class="hero-meta">GoWarmCRM <span>·</span> Written for CEOs and marketing leaders of B2B firms <span>·</span> 13 min read</div>
+    </div>
+  </section>
+
+  <section class="tldr-section">
+    <div class="container">
+      <div class="tldr-block">
+        <div class="tldr-label">TL;DR &mdash; the argument in six bullets</div>
+        <ul>
+          <li>Four channel shifts are happening at once, and <strong>compounding</strong>: SEO is fracturing into AEO, cold email is past its structural saturation point, paid acquisition economics have quietly inverted, and the LLM-ready web is now table stakes most firms have not shipped.</li>
+          <li>The optimization target has moved from click-through-rate to <strong>citation rate inside LLM responses</strong>. Firms running 2021-era SEO strategies are optimizing for a behavior their buyers have increasingly stopped performing.</li>
+          <li>Volume cold email is done. What replaces it is <em>signal-based precision outreach</em> &mdash; few messages, each tied to a specific and timely fact, each carrying human judgment. The economics invert: expensive per message, cheap per converted conversation.</li>
+          <li>In paid, cost-per-click is holding or falling while <strong>cost-per-qualified-conversation is rising</strong>. The gap is where firms lose marketing efficiency without being able to point at the line item.</li>
+          <li>The firm&rsquo;s web surface is now a <em>training corpus for the buyer&rsquo;s LLM-mediated evaluation</em>, not a destination for humans. Most B2B sites were built for the wrong reader.</li>
+          <li>An <strong>eight-item audit</strong> &mdash; semantic HTML, plain pricing, llms.txt, answer-shaped content, named positioning, verifiable attribution, ungated docs, stable canonicals &mdash; is the difference between being in the LLM&rsquo;s answer and being adjacent to it.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
