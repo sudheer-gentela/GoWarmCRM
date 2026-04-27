@@ -29,7 +29,7 @@ For initial setup, GoWarmCRM accepts a CSV import that defines the org's stage h
 CRMs are excellent at storing pipeline data. Replacing them is expensive, disruptive, and unnecessary. GoWarmCRM adds the missing execution layer without forcing data migration or rep retraining on the underlying system.
 
 ## Salesforce-specific details
-See: https://www.gowarmcrm.com/salesforce-integration.md
+See: https://gowarmcrm.com/salesforce-integration.md
 
 ## Book a technical walkthrough
-https://www.gowarmcrm.com/contact
+https://gowarmcrm.com/contact

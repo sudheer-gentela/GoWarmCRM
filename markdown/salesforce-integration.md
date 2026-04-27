@@ -47,4 +47,4 @@ The `field_map` is a per-org JSON configuration that maps Salesforce field API n
 - Fully version-controlled and auditable
 
 ## Get a technical walkthrough
-https://www.gowarmcrm.com/contact
+https://gowarmcrm.com/contact

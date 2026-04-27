@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.gowarmcrm.com/blog/sitemap.xml
+Sitemap: https://gowarmcrm.com/blog/sitemap.xml

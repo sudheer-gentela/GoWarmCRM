@@ -40,4 +40,4 @@ Disallow: /
 User-agent: Meta-ExternalAgent
 Disallow: /
 
-Sitemap: https://www.gowarmcrm.com/sitemap.xml
+Sitemap: https://gowarmcrm.com/sitemap.xml

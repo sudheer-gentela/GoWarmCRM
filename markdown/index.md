@@ -4,8 +4,8 @@
 
 Your pipeline is leaking revenue right now. Not because your strategy is wrong — because nothing happened after the last call. GoWarmCRM reads the signals that actually exist — emails, calendar activity, meeting patterns — not just what reps remembered to log. It surfaces exactly what needs to happen next, for every deal, every rep, every morning.
 
-- **Find your pipeline leaks**: https://www.gowarmcrm.com/diagnostic
-- **See how it works**: https://www.gowarmcrm.com/how-it-works
+- **Find your pipeline leaks**: https://gowarmcrm.com/diagnostic
+- **See how it works**: https://gowarmcrm.com/how-it-works
 
 ## The numbers behind the problem
 
@@ -71,4 +71,4 @@ Most pipeline tools read your CRM. GoWarmCRM reads your pipeline.
 
 ## Book a demo
 
-Free 20-minute demo. We walk through your actual setup and show you exactly what GoWarmCRM would surface in your pipeline today. https://www.gowarmcrm.com/contact
+Free 20-minute demo. We walk through your actual setup and show you exactly what GoWarmCRM would surface in your pipeline today. https://gowarmcrm.com/contact

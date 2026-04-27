@@ -86,9 +86,9 @@ If the honest answer is "only the VP Sales knows" — that is the dependency GoW
 
 ## Related reading
 
-- The Execution Gap: https://www.gowarmcrm.com/execution-gap.md
-- For VP Sales: https://www.gowarmcrm.com/for-vp-sales.md
-- How GoWarmCRM works: https://www.gowarmcrm.com/how-it-works.md
-- Blog — What the forecast tells your board: https://www.gowarmcrm.com/blog/what-forecast-tells-your-board
-- Blog — Board sales execution: https://www.gowarmcrm.com/blog/board-sales-execution
-- Book a founder conversation: https://www.gowarmcrm.com/contact.md
+- The Execution Gap: https://gowarmcrm.com/execution-gap.md
+- For VP Sales: https://gowarmcrm.com/for-vp-sales.md
+- How GoWarmCRM works: https://gowarmcrm.com/how-it-works.md
+- Blog — What the forecast tells your board: https://gowarmcrm.com/blog/what-forecast-tells-your-board
+- Blog — Board sales execution: https://gowarmcrm.com/blog/board-sales-execution
+- Book a founder conversation: https://gowarmcrm.com/contact.md

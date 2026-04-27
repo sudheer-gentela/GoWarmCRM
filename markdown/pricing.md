@@ -28,7 +28,7 @@ The build-vs-buy comparison for execution layers typically breaks down as follow
 - **License a competitor codebase**: $400K–$600K plus customization
 - **GoWarmCRM SaaS**: $90K–$180K depending on tier
 
-See the build-vs-buy article series on the blog for the full breakdown: https://www.gowarmcrm.com/blog
+See the build-vs-buy article series on the blog for the full breakdown: https://gowarmcrm.com/blog
 
 ## Get current pricing
-Live tier pricing and the interactive cost calculator are available at https://www.gowarmcrm.com/pricing
+Live tier pricing and the interactive cost calculator are available at https://gowarmcrm.com/pricing

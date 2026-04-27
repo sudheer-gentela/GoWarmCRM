@@ -242,7 +242,7 @@ async function sendAutoReply(data) {
   if (!transport) return false;
 
   const isSubscribe = data.formType === "subscribe";
-  const domain = process.env.SITE_URL || "https://www.gowarmcrm.com/blog";
+  const domain = process.env.SITE_URL || "https://gowarmcrm.com/blog";
 
   try {
     await transport.sendMail({
@@ -255,11 +255,11 @@ async function sendAutoReply(data) {
             <h2>You're in.</h2>
             <p>Thanks for subscribing. New articles land in your inbox as they're published.</p>
             <ul style="font-family:Arial,sans-serif;font-size:14px">
-              <li><a href="https://www.gowarmcrm.com/blog/is-your-crm-a-crud-app" style="color:#C4420A">Are you using Salesforce as a CRUD app?</a></li>
-              <li><a href="https://www.gowarmcrm.com/blog/are-your-sales-playbooks-working" style="color:#C4420A">Are your playbooks working?</a></li>
-              <li><a href="https://www.gowarmcrm.com/blog/crm-rebuild-or-recommit" style="color:#C4420A">Should you rebuild or recommit?</a></li>
+              <li><a href="https://gowarmcrm.com/blog/is-your-crm-a-crud-app" style="color:#C4420A">Are you using Salesforce as a CRUD app?</a></li>
+              <li><a href="https://gowarmcrm.com/blog/are-your-sales-playbooks-working" style="color:#C4420A">Are your playbooks working?</a></li>
+              <li><a href="https://gowarmcrm.com/blog/crm-rebuild-or-recommit" style="color:#C4420A">Should you rebuild or recommit?</a></li>
             </ul>
-            <p style="color:#888;font-size:13px">— The GoWarmCRM team<br><a href="https://www.gowarmcrm.com" style="color:#C4420A">gowarmcrm.com</a></p>
+            <p style="color:#888;font-size:13px">— The GoWarmCRM team<br><a href="https://gowarmcrm.com" style="color:#C4420A">gowarmcrm.com</a></p>
            </div>`
         : `<div style="font-family:Georgia,serif;max-width:560px;line-height:1.8;color:#1A1814">
             <p style="font-size:15px;color:#9B978F;margin:0 0 24px">GoWarmCRM · Demo Confirmation</p>
@@ -274,14 +274,14 @@ async function sendAutoReply(data) {
             </div>
             <p style="font-size:14px;color:#9B978F;margin:0 0 8px;font-family:Arial,sans-serif">In the meantime, these might be worth a read:</p>
             <ul style="font-family:Arial,sans-serif;font-size:14px;color:#3D3A34;padding-left:20px;margin:0 0 28px">
-              <li style="margin-bottom:8px"><a href="https://www.gowarmcrm.com/blog/pipeline-deals-going-dark" style="color:#C4420A;text-decoration:none">Why your best deals go dark — and how to catch them</a></li>
-              <li style="margin-bottom:8px"><a href="https://www.gowarmcrm.com/blog/are-your-sales-playbooks-working" style="color:#C4420A;text-decoration:none">Are your sales playbooks actually working?</a></li>
-              <li style="margin-bottom:8px"><a href="https://www.gowarmcrm.com/blog/per-user-ai-settings-crm" style="color:#C4420A;text-decoration:none">Per-user AI settings: why one prompt doesn't fit your whole team</a></li>
+              <li style="margin-bottom:8px"><a href="https://gowarmcrm.com/blog/pipeline-deals-going-dark" style="color:#C4420A;text-decoration:none">Why your best deals go dark — and how to catch them</a></li>
+              <li style="margin-bottom:8px"><a href="https://gowarmcrm.com/blog/are-your-sales-playbooks-working" style="color:#C4420A;text-decoration:none">Are your sales playbooks actually working?</a></li>
+              <li style="margin-bottom:8px"><a href="https://gowarmcrm.com/blog/per-user-ai-settings-crm" style="color:#C4420A;text-decoration:none">Per-user AI settings: why one prompt doesn't fit your whole team</a></li>
             </ul>
             <p style="font-size:15px;color:#3D3A34;margin:0 0 4px">See you on the call.</p>
             <p style="font-size:15px;color:#3D3A34;margin:0 0 32px">— The GoWarmCRM team</p>
             <p style="font-size:12px;color:#9B978F;font-family:Arial,sans-serif;border-top:1px solid #E0DDD6;padding-top:16px;margin:0">
-              <a href="https://www.gowarmcrm.com" style="color:#C4420A;text-decoration:none">gowarmcrm.com</a> &nbsp;·&nbsp;
+              <a href="https://gowarmcrm.com" style="color:#C4420A;text-decoration:none">gowarmcrm.com</a> &nbsp;·&nbsp;
               Questions? <a href="mailto:demo@gowarmcrm.com" style="color:#C4420A;text-decoration:none">demo@gowarmcrm.com</a>
             </p>
            </div>`,

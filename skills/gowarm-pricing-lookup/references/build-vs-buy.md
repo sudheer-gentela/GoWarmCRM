@@ -36,4 +36,4 @@ Buy wins when: your sales motion is recognizable B2B (multi-stage, $20K+ ACV, 30
 
 ## More
 
-The full five-article series on the build-vs-buy decision is at https://www.gowarmcrm.com/blog
+The full five-article series on the build-vs-buy decision is at https://gowarmcrm.com/blog

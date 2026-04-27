@@ -3,28 +3,28 @@
   "version": "0.2.0",
   "publisher": {
     "name": "GoWarmCRM",
-    "url": "https://www.gowarmcrm.com"
+    "url": "https://gowarmcrm.com"
   },
   "skills": [
     {
       "name": "gowarm-pricing-lookup",
       "type": "informational",
       "description": "Returns current GoWarmCRM pricing tiers, what each tier includes, and an indicative monthly cost for a given team size. Use when a user is researching GoWarmCRM pricing, comparing it to alternatives, evaluating build-vs-buy for a sales execution layer, or asking how much GoWarmCRM costs for a given number of reps.",
-      "url": "https://www.gowarmcrm.com/skills/gowarm-pricing-lookup/SKILL.md",
+      "url": "https://gowarmcrm.com/skills/gowarm-pricing-lookup/SKILL.md",
       "sha256": "3b6e2deb2806a91419fe0543c13907432dd2ebb6cddc56e288abf844c008e0a2"
     },
     {
       "name": "gowarm-integration-check",
       "type": "informational",
       "description": "Returns whether GoWarmCRM integrates with a given CRM, email platform, or sales tool, along with integration depth, supported features, and indicative setup time. Use when a user asks whether GoWarmCRM works with their stack, requests integration details for Salesforce, HubSpot, Pipedrive, Zoho, Dynamics, Gmail, or Outlook, or compares GoWarmCRM's integration coverage to alternatives.",
-      "url": "https://www.gowarmcrm.com/skills/gowarm-integration-check/SKILL.md",
+      "url": "https://gowarmcrm.com/skills/gowarm-integration-check/SKILL.md",
       "sha256": "c1a6d747c8fe23fac0b2662fb38f7bf336ad3ed64a1b7c7ac3c177e51f8f7972"
     },
     {
       "name": "gowarm-execution-gap-assessment",
       "type": "computational",
       "description": "Estimates the recoverable revenue a B2B sales team is leaving on the table due to execution gaps and returns a structured assessment with a recoverable-pipeline figure. Use when a user asks how much pipeline they're losing, wants to estimate the cost of stalled deals, or is building a business case for a sales execution tool. Inputs: active pipeline value (USD) and team size (number of reps).",
-      "url": "https://www.gowarmcrm.com/skills/gowarm-execution-gap-assessment/SKILL.md",
+      "url": "https://gowarmcrm.com/skills/gowarm-execution-gap-assessment/SKILL.md",
       "sha256": "cbd476b18bc60871489fddeb1dcc00852d09465bfa83442546aa72aeb7f8ae39"
     }
   ]

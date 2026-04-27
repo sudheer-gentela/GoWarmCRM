@@ -37,6 +37,6 @@ Captures every commitment made during the sales cycle (custom integrations, onbo
 - Adapter pattern for CRM integrations with bidirectional sync
 
 ## Related
-- How it works: https://www.gowarmcrm.com/how-it-works.md
-- CRM integrations: https://www.gowarmcrm.com/crm-integration.md
-- Pricing: https://www.gowarmcrm.com/pricing.md
+- How it works: https://gowarmcrm.com/how-it-works.md
+- CRM integrations: https://gowarmcrm.com/crm-integration.md
+- Pricing: https://gowarmcrm.com/pricing.md

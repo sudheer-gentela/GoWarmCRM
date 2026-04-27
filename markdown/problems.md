@@ -36,4 +36,4 @@ GoWarmCRM produces a pre-review report that surfaces every stalled, at-risk, and
 None of these are people problems. They're signal problems. Without a system that surfaces the right action at the right moment, the default is inertia.
 
 ## Book a demo
-https://www.gowarmcrm.com/contact
+https://gowarmcrm.com/contact

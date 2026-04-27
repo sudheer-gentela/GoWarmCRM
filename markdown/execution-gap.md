@@ -36,5 +36,5 @@ An execution layer sits on top of the CRM and does four things:
 This is the category GoWarmCRM is built for. Every B2B sales team will eventually need an execution layer. The teams that get there first will win disproportionately.
 
 ## Related reading
-- Pipeline articles: https://www.gowarmcrm.com/blog
-- How GoWarmCRM works: https://www.gowarmcrm.com/how-it-works.md
+- Pipeline articles: https://gowarmcrm.com/blog
+- How GoWarmCRM works: https://gowarmcrm.com/how-it-works.md

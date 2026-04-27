@@ -90,9 +90,9 @@ The firms that have instrumented their accounts catch the signals. The firms wit
 ---
 
 **Continue the series:**
-- [Part 1 · The pillar](https://www.gowarmcrm.com/ai-shift)
-- [Part 2 · What shifted for product companies](https://www.gowarmcrm.com/ai-shift/product-companies)
-- [Part 4 · Marketing, sales and distribution in the AI era](https://www.gowarmcrm.com/ai-shift/marketing-sales-motions)
-- [Part 5 · Relationship selling in the AI era — the synthesis](https://www.gowarmcrm.com/ai-shift/relationship-selling)
+- [Part 1 · The pillar](https://gowarmcrm.com/ai-shift)
+- [Part 2 · What shifted for product companies](https://gowarmcrm.com/ai-shift/product-companies)
+- [Part 4 · Marketing, sales and distribution in the AI era](https://gowarmcrm.com/ai-shift/marketing-sales-motions)
+- [Part 5 · Relationship selling in the AI era — the synthesis](https://gowarmcrm.com/ai-shift/relationship-selling)
 
-**Full series hub:** [gowarmcrm.com/ai-shift](https://www.gowarmcrm.com/ai-shift)
+**Full series hub:** [gowarmcrm.com/ai-shift](https://gowarmcrm.com/ai-shift)

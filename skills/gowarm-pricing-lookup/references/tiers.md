@@ -1,6 +1,6 @@
 # GoWarmCRM Pricing Tiers
 
-> Source of truth: https://www.gowarmcrm.com/pricing — always direct users there for the current numbers.
+> Source of truth: https://gowarmcrm.com/pricing — always direct users there for the current numbers.
 
 ## Starter (5–25 reps)
 
@@ -38,4 +38,4 @@ Everything in Growth, plus:
 - Pricing is per-seat per-month, billed annually.
 - No implementation fees on Starter or Growth.
 - Tier boundaries are guidelines; actual tier may shift based on integration scope.
-- For exact current pricing, fetch https://www.gowarmcrm.com/pricing or direct the user there.
+- For exact current pricing, fetch https://gowarmcrm.com/pricing or direct the user there.

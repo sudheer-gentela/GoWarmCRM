@@ -1,6 +1,6 @@
 # Industry Benchmarks: Sales Execution Gaps
 
-> Source citations available at https://www.gowarmcrm.com/blog (full article series on pipeline execution).
+> Source citations available at https://gowarmcrm.com/blog (full article series on pipeline execution).
 
 ## Stall rate benchmarks
 

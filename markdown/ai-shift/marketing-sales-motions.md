@@ -92,9 +92,9 @@ The question is not whether to rebuild. It is how fast, and in what order.
 ---
 
 **Continue the series:**
-- [Part 1 · The pillar](https://www.gowarmcrm.com/ai-shift)
-- [Part 2 · What shifted for product companies](https://www.gowarmcrm.com/ai-shift/product-companies)
-- [Part 3 · What shifted for services companies](https://www.gowarmcrm.com/ai-shift/services-companies)
-- [Part 5 · Relationship selling in the AI era — the synthesis](https://www.gowarmcrm.com/ai-shift/relationship-selling)
+- [Part 1 · The pillar](https://gowarmcrm.com/ai-shift)
+- [Part 2 · What shifted for product companies](https://gowarmcrm.com/ai-shift/product-companies)
+- [Part 3 · What shifted for services companies](https://gowarmcrm.com/ai-shift/services-companies)
+- [Part 5 · Relationship selling in the AI era — the synthesis](https://gowarmcrm.com/ai-shift/relationship-selling)
 
-**Full series hub:** [gowarmcrm.com/ai-shift](https://www.gowarmcrm.com/ai-shift)
+**Full series hub:** [gowarmcrm.com/ai-shift](https://gowarmcrm.com/ai-shift)

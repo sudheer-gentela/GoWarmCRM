@@ -16,4 +16,4 @@ We don't replace your CRM. We don't ask reps to log more data. We read signals f
 
 ## Get in touch
 
-Book a demo: https://www.gowarmcrm.com/contact
+Book a demo: https://gowarmcrm.com/contact

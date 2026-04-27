@@ -17,6 +17,6 @@
 
 ## Book
 
-https://www.gowarmcrm.com/contact
+https://gowarmcrm.com/contact
 
 Free · 20 minutes · No obligation

@@ -11,21 +11,10 @@
       "has": [
         {
           "type": "host",
-          "value": "gowarmcrm.com"
-        }
-      ],
-      "destination": "https://www.gowarmcrm.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
           "value": "blog.gowarmcrm.com"
         }
       ],
-      "destination": "https://www.gowarmcrm.com/blog/:path*",
+      "destination": "https://gowarmcrm.com/blog/:path*",
       "permanent": true
     },
     {
@@ -284,7 +273,7 @@
         },
         {
           "key": "Link",
-          "value": "<https://www.gowarmcrm.com/sitemap.xml>; rel=\"sitemap\", <https://www.gowarmcrm.com/index.md>; rel=\"alternate\"; type=\"text/markdown\", <https://www.gowarmcrm.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+          "value": "<https://gowarmcrm.com/sitemap.xml>; rel=\"sitemap\", <https://gowarmcrm.com/index.md>; rel=\"alternate\"; type=\"text/markdown\", <https://gowarmcrm.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
         }
       ]
     },

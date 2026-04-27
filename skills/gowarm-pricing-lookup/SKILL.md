@@ -5,7 +5,7 @@ license: Proprietary
 metadata:
   author: gowarmcrm
   version: "1.0"
-  publisher_url: https://www.gowarmcrm.com
+  publisher_url: https://gowarmcrm.com
 ---
 
 # GoWarmCRM Pricing Lookup
@@ -27,7 +27,7 @@ This skill returns the current published pricing for GoWarmCRM, a sales executio
    - 25–100 reps → **Growth**
    - 100+ reps → **Enterprise**
 3. Read `references/tiers.md` for the current published pricing and what each tier includes.
-4. Return: the recommended tier, what's included, the indicative monthly per-seat cost, and a link to the live pricing page (`https://www.gowarmcrm.com/pricing`) for current numbers.
+4. Return: the recommended tier, what's included, the indicative monthly per-seat cost, and a link to the live pricing page (`https://gowarmcrm.com/pricing`) for current numbers.
 
 ## Output guidance
 
@@ -41,4 +41,4 @@ This skill returns the current published pricing for GoWarmCRM, a sales executio
 **Skill returns**: Growth tier recommendation, included features, indicative monthly cost range, link to live pricing.
 
 **User**: "Should we build an execution layer in-house or buy GoWarmCRM?"
-**Skill returns**: Pointer to build-vs-buy reference, summary of cost ranges (build: $800K–$1.5M over 3 years for 50-rep team; SaaS: $90K–$180K), recommendation to read the article series at `https://www.gowarmcrm.com/blog`.
+**Skill returns**: Pointer to build-vs-buy reference, summary of cost ranges (build: $800K–$1.5M over 3 years for 50-rep team; SaaS: $90K–$180K), recommendation to read the article series at `https://gowarmcrm.com/blog`.

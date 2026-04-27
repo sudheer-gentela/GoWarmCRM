@@ -26,8 +26,8 @@
 
 const config = {
   // ── Brand & site ──────────────────────────────────────────────────────────
-  SITE_URL:         "https://www.gowarmcrm.com/blog",
-  PRODUCT_URL:      "https://www.gowarmcrm.com",
+  SITE_URL:         "https://gowarmcrm.com/blog",
+  PRODUCT_URL:      "https://gowarmcrm.com",
   BRAND_PUBLICATION:"GoWarm Insights",
   BRAND_COMPANY:    "GoWarmCRM",
   BRAND_TAGLINE:    "Practical intelligence for B2B sales and business leaders.",
@@ -35,7 +35,7 @@ const config = {
   TWITTER_HANDLE:   "@gowarmcrm",
 
   // ── Organisation identity (used in Article + Organization schemas) ────────
-  BRAND_LOGO_URL:   "https://www.gowarmcrm.com/favicon-512x512.png",
+  BRAND_LOGO_URL:   "https://gowarmcrm.com/favicon-512x512.png",
   ORG_SOCIAL: [
     "https://twitter.com/gowarmcrm",
     "https://www.linkedin.com/company/gowarmcrm"

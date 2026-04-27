@@ -1,6 +1,6 @@
 # GoWarmCRM Integrations Reference
 
-> Live source: https://www.gowarmcrm.com/crm-integration
+> Live source: https://gowarmcrm.com/crm-integration
 
 ## CRM integrations
 
@@ -11,7 +11,7 @@
 - **Phase 2 (in development)**: entity_custom_fields write path, stage mapping UI, CSV hierarchy import
 - **Phase 3 (scoped)**: GoWarm_Action__c SF write-back as child records of Opportunities
 - **Indicative setup**: 1–2 weeks for standard schemas
-- **Detail page**: https://www.gowarmcrm.com/salesforce-integration
+- **Detail page**: https://gowarmcrm.com/salesforce-integration
 
 ### HubSpot — In development
 - **Status**: Adapter built using same orchestrator pattern as Salesforce, in customer pilots
@@ -45,4 +45,4 @@
 
 - The "execution layer" thesis depends on reading email/calendar signals directly, not just CRM fields. Emphasize that point when relevant.
 - For any tool not listed, the answer is "not currently supported, recommend contacting sales for feasibility."
-- Always provide the live integrations page link so the user can verify current status: https://www.gowarmcrm.com/crm-integration
+- Always provide the live integrations page link so the user can verify current status: https://gowarmcrm.com/crm-integration

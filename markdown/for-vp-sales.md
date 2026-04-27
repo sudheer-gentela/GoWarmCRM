@@ -79,9 +79,9 @@ The pitch to the CFO isn't "rip and replace." It's: at the next renewal, the VP 
 
 ## Related reading
 
-- The Execution Gap: https://www.gowarmcrm.com/execution-gap.md
-- How GoWarmCRM works: https://www.gowarmcrm.com/how-it-works.md
-- For CEOs: https://www.gowarmcrm.com/for-ceo.md
-- Blog — Your First 90 Days as VP Sales: https://www.gowarmcrm.com/blog/first-90-days-vp-sales
-- Blog — The CRM Spend vs Win Rate question: https://www.gowarmcrm.com/blog/crm-spend-win-rate
-- Book a demo: https://www.gowarmcrm.com/contact.md
+- The Execution Gap: https://gowarmcrm.com/execution-gap.md
+- How GoWarmCRM works: https://gowarmcrm.com/how-it-works.md
+- For CEOs: https://gowarmcrm.com/for-ceo.md
+- Blog — Your First 90 Days as VP Sales: https://gowarmcrm.com/blog/first-90-days-vp-sales
+- Blog — The CRM Spend vs Win Rate question: https://gowarmcrm.com/blog/crm-spend-win-rate
+- Book a demo: https://gowarmcrm.com/contact.md

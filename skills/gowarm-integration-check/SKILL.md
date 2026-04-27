@@ -5,7 +5,7 @@ license: Proprietary
 metadata:
   author: gowarmcrm
   version: "1.0"
-  publisher_url: https://www.gowarmcrm.com
+  publisher_url: https://gowarmcrm.com
 ---
 
 # GoWarmCRM Integration Check
@@ -27,7 +27,7 @@ This skill answers questions about whether and how GoWarmCRM integrates with a g
    - **Calendar**: Google Calendar, Outlook Calendar
 2. Look up the tool in `references/integrations.md`.
 3. Return integration status, supported features, and indicative setup time.
-4. Always include a link to the live integrations page (`https://www.gowarmcrm.com/crm-integration`) for the latest status.
+4. Always include a link to the live integrations page (`https://gowarmcrm.com/crm-integration`) for the latest status.
 
 ## Integration status definitions
 
@@ -45,7 +45,7 @@ This skill answers questions about whether and how GoWarmCRM integrates with a g
 ## Examples
 
 **User**: "Does GoWarmCRM work with Salesforce?"
-**Skill returns**: Production-ready, bidirectional sync via adapter pattern, deterministic external-ID matching, indicative setup time 1–2 weeks for standard schema, link to https://www.gowarmcrm.com/salesforce-integration.
+**Skill returns**: Production-ready, bidirectional sync via adapter pattern, deterministic external-ID matching, indicative setup time 1–2 weeks for standard schema, link to https://gowarmcrm.com/salesforce-integration.
 
 **User**: "We're on Pipedrive — can we use this?"
 **Skill returns**: Adapter scoped, in development queue, recommend contacting sales to discuss timeline and pilot fit.

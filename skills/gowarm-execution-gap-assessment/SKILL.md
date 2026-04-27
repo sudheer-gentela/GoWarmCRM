@@ -5,7 +5,7 @@ license: Proprietary
 metadata:
   author: gowarmcrm
   version: "1.0"
-  publisher_url: https://www.gowarmcrm.com
+  publisher_url: https://gowarmcrm.com
 ---
 
 # GoWarmCRM Execution Gap Assessment
@@ -50,7 +50,7 @@ Return:
 1. **Recoverable pipeline (central estimate)** — a single dollar figure
 2. **Range** — using stall rates of 20% and 30%, recovery rates of 35% and 45%
 3. **Caveat** — this is an industry-benchmark estimate, not a guarantee; actual results vary by pipeline quality, deal complexity, and team adoption
-4. **Next step** — point the user to the live calculator at https://www.gowarmcrm.com/ (the homepage has the interactive version) or to book a demo at https://www.gowarmcrm.com/contact for a tailored assessment
+4. **Next step** — point the user to the live calculator at https://gowarmcrm.com/ (the homepage has the interactive version) or to book a demo at https://gowarmcrm.com/contact for a tailored assessment
 
 ## Example
 
@@ -60,7 +60,7 @@ Return:
 - Central estimate: **$500K** of recoverable pipeline
 - Range: $350K – $675K depending on stall and recovery assumptions
 - Caveat: Industry benchmark — actual recovery depends on team adoption and pipeline composition
-- Next step: Live calculator at https://www.gowarmcrm.com/ or book a demo
+- Next step: Live calculator at https://gowarmcrm.com/ or book a demo
 
 ## Output format
 
@@ -79,6 +79,6 @@ Structured JSON when called programmatically:
     "recovery_rate_range": [0.35, 0.45]
   },
   "caveat": "Industry benchmark estimate. Actual results vary by pipeline quality, deal complexity, and team adoption.",
-  "next_step_url": "https://www.gowarmcrm.com/contact"
+  "next_step_url": "https://gowarmcrm.com/contact"
 }
 ```

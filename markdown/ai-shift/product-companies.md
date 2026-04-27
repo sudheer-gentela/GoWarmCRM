@@ -85,9 +85,9 @@ The retention fight of the next three years will be won by the firms that caught
 ---
 
 **Continue the series:**
-- [Part 1 · The pillar](https://www.gowarmcrm.com/ai-shift)
-- [Part 3 · What shifted for services companies](https://www.gowarmcrm.com/ai-shift/services-companies)
-- [Part 4 · Marketing, sales and distribution in the AI era](https://www.gowarmcrm.com/ai-shift/marketing-sales-motions)
-- [Part 5 · Relationship selling in the AI era — the synthesis](https://www.gowarmcrm.com/ai-shift/relationship-selling)
+- [Part 1 · The pillar](https://gowarmcrm.com/ai-shift)
+- [Part 3 · What shifted for services companies](https://gowarmcrm.com/ai-shift/services-companies)
+- [Part 4 · Marketing, sales and distribution in the AI era](https://gowarmcrm.com/ai-shift/marketing-sales-motions)
+- [Part 5 · Relationship selling in the AI era — the synthesis](https://gowarmcrm.com/ai-shift/relationship-selling)
 
-**Full series hub:** [gowarmcrm.com/ai-shift](https://www.gowarmcrm.com/ai-shift)
+**Full series hub:** [gowarmcrm.com/ai-shift](https://gowarmcrm.com/ai-shift)
