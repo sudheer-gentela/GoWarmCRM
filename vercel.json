@@ -11,6 +11,17 @@
       "has": [
         {
           "type": "host",
+          "value": "www.gowarmcrm.com"
+        }
+      ],
+      "destination": "https://gowarmcrm.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
           "value": "blog.gowarmcrm.com"
         }
       ],
