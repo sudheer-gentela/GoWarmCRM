@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Install the GoWarmCRM LinkedIn Extension</title>
   <meta name="description" content="Step-by-step install guide for the GoWarmCRM Chrome extension that logs LinkedIn interactions directly to your CRM." />
+  <!-- Unlisted: this page is reached only via a direct link (the
+       extension's update banner). Keep it out of search indexes. -->
+  <meta name="robots" content="noindex, nofollow" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -152,12 +155,19 @@
     </header>
 
     <!-- ── Download CTA ─────────────────────────────────────────── -->
+    <!-- No version number is hardcoded anywhere on this page. The
+         version is fetched live from the backend on load (see script
+         at the bottom). If that fetch fails, the version line stays
+         hidden rather than showing a stale number — an honest blank
+         beats a confident wrong answer. The download link always
+         points at the STABLE -latest.zip name, so it never needs
+         editing; only the file behind it changes per release. -->
     <div class="download">
       <div class="download-title">Step 0 — Download</div>
-      <div class="download-version" id="version-line">
-        Latest version: <strong id="latest-version">v1.7.3</strong>
+      <div class="download-version" id="version-line" style="display:none;">
+        Latest version: <strong id="latest-version"></strong>
       </div>
-      <a class="btn" href="/downloads/gowarm-linkedin-ext-latest.zip" id="download-link">
+      <a class="btn" href="/downloads/gowarm-linkedin-ext-latest.zip" id="download-link" download>
         <span class="btn-icon">↓</span>
         Download the extension (.zip)
       </a>
@@ -171,10 +181,11 @@
       <div class="step-body">
         <h3>Unzip the file</h3>
         <p>
-          Find the downloaded <code>gowarm-linkedin-ext-v1.7.3.zip</code>
-          in your Downloads folder and unzip it. You'll end up with a
-          folder called <code>gowarm-linkedin-ext</code> — remember where
-          it is, you'll point Chrome at it in a moment.
+          Find the downloaded
+          <code>gowarm-linkedin-ext-latest.zip</code> in your Downloads
+          folder and unzip it. You'll end up with a folder called
+          <code>gowarm-linkedin-ext</code> — remember where it is, you'll
+          point Chrome at it in a moment.
         </p>
         <div class="note">
           <strong>Don't move or delete the folder after installing.</strong>
@@ -308,26 +319,42 @@
   </div>
 
   <!--
-    Optional: if you serve a small /api/extension/version endpoint
-    (which the extension itself polls), this snippet keeps the headline
-    version string on the page in sync with what the endpoint returns.
-    Safe to leave in — silently does nothing if the endpoint is down.
+    Version sync. The backend's /api/extension/version endpoint is the
+    SINGLE SOURCE OF TRUTH for the version number. This page hardcodes
+    no version anywhere — it fetches it here on load.
+
+    Behaviour:
+      • Success  -> reveal the "Latest version: vX.Y.Z" line.
+      • Failure  -> leave that line hidden. The page never shows a
+                    stale or guessed version. The download button still
+                    works regardless (it points at the stable
+                    -latest.zip), so a failed version fetch never blocks
+                    anyone from installing.
+
+    The download link is intentionally NOT rewritten from the endpoint's
+    download_url — it always points at /downloads/gowarm-linkedin-ext-
+    latest.zip, the stable name. That keeps the install flow working even
+    if the endpoint is down, and means the link never needs maintenance.
   -->
   <script>
-    (async function syncVersionLine() {
+    (async function syncVersion() {
+      const versionLine = document.getElementById('version-line');
+      const versionText = document.getElementById('latest-version');
       try {
-        const res = await fetch('https://api.gowarmcrm.com/api/extension/version');
-        if (!res.ok) return;
+        const res = await fetch(
+          'https://api.gowarmcrm.com/api/extension/version',
+          { cache: 'no-store' }
+        );
+        if (!res.ok) return;                 // leave version line hidden
         const data = await res.json();
-        if (!data?.latest) return;
-        const el = document.getElementById('latest-version');
-        if (el) el.textContent = 'v' + data.latest;
-        // Also update download href if the endpoint provides a versioned URL.
-        if (data?.download_url) {
-          const link = document.getElementById('download-link');
-          if (link) link.href = data.download_url;
-        }
-      } catch (_) { /* silent */ }
+        if (!data || !data.latest) return;   // leave version line hidden
+
+        if (versionText) versionText.textContent = 'v' + data.latest;
+        if (versionLine) versionLine.style.display = '';   // reveal it
+      } catch (_) {
+        // Network/endpoint failure — the version line stays hidden.
+        // An honest blank is better than a confident wrong number.
+      }
     })();
   </script>
 </body>
