@@ -110,6 +110,10 @@
       "destination": "/website/salesforce-integration.html"
     },
     {
+      "source": "/install-extension",
+      "destination": "/website/install-extension.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },
