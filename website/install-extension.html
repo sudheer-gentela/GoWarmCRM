@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install the GoWarmCRM LinkedIn Extension</title>
+  <meta name="description" content="Step-by-step install guide for the GoWarmCRM Chrome extension that logs LinkedIn interactions directly to your CRM." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+      font-size: 16px; line-height: 1.6;
+      color: #1A3A5C;            /* Navy — primary GoWarm body color */
+      background: #fff;
+    }
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    header { margin-bottom: 40px; }
+    .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+    .brand-mark {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: #E8630A;       /* Ember — GoWarm primary */
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 14px;
+    }
+    .brand-name { font-size: 18px; font-weight: 700; color: #1A3A5C; }
+    h1 {
+      font-size: 32px; line-height: 1.25; font-weight: 700;
+      color: #1A3A5C; margin-bottom: 12px;
+    }
+    .lede { font-size: 17px; color: #475569; max-width: 580px; }
+
+    /* ── Download CTA ───────────────────────────────────────────── */
+    .download {
+      margin: 32px 0 48px;
+      padding: 24px;
+      background: linear-gradient(180deg, #FFF7ED 0%, #FFEDD5 100%);
+      border: 1px solid #FED7AA; border-radius: 12px;
+    }
+    .download-title {
+      font-size: 13px; font-weight: 700; color: #9A3412;
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
+    }
+    .download-version {
+      font-size: 14px; color: #7C2D12; margin-bottom: 16px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: 8px;
+      background: #E8630A; color: #fff;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: #C2410C; }
+    .btn-icon { font-size: 16px; line-height: 1; }
+
+    /* ── Steps ──────────────────────────────────────────────────── */
+    h2 {
+      font-size: 22px; font-weight: 700; color: #1A3A5C;
+      margin: 56px 0 20px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .step:last-of-type { border-bottom: none; }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #1A3A5C; color: #fff;
+      font-size: 15px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-body h3 {
+      font-size: 17px; font-weight: 600; color: #1A3A5C;
+      margin-bottom: 6px;
+    }
+    .step-body p { color: #475569; margin-bottom: 10px; }
+    .step-body p:last-child { margin-bottom: 0; }
+    code, kbd {
+      background: #F1F5F9; color: #1A3A5C;
+      padding: 2px 6px; border-radius: 4px;
+      font-family: 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 13.5px;
+    }
+    kbd { border: 1px solid #CBD5E1; box-shadow: inset 0 -1px 0 #CBD5E1; }
+
+    /* Inline highlighted note inside a step. */
+    .note {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: #F0F9FF; border-left: 3px solid #38BDF8;
+      border-radius: 0 6px 6px 0;
+      font-size: 14px; color: #075985;
+    }
+    .note strong { color: #0C4A6E; }
+
+    /* ── Updating section (separate, lower) ─────────────────────── */
+    .updating {
+      margin-top: 56px; padding: 24px;
+      background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px;
+    }
+    .updating h2 { margin: 0 0 12px; font-size: 18px; }
+    .updating p { color: #475569; font-size: 15px; }
+    .updating ol { margin: 12px 0 0 20px; color: #475569; }
+    .updating li { margin-bottom: 4px; }
+
+    /* ── Troubleshooting ────────────────────────────────────────── */
+    details {
+      border-top: 1px solid #E2E8F0;
+      padding: 14px 0;
+    }
+    details:last-child { border-bottom: 1px solid #E2E8F0; }
+    summary {
+      cursor: pointer; font-weight: 600; color: #1A3A5C;
+      list-style: none; padding-right: 24px; position: relative;
+    }
+    summary::after {
+      content: '+'; position: absolute; right: 4px; top: -2px;
+      font-size: 20px; color: #94A3B8; font-weight: 400;
+    }
+    details[open] summary::after { content: '−'; }
+    details > div { padding-top: 10px; color: #475569; font-size: 15px; }
+    details code { font-size: 13px; }
+
+    footer {
+      margin-top: 64px; padding-top: 24px;
+      border-top: 1px solid #E2E8F0;
+      text-align: center; color: #94A3B8; font-size: 13px;
+    }
+    footer a { color: #E8630A; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="brand">
+        <span class="brand-mark">GW</span>
+        <span class="brand-name">GoWarmCRM</span>
+      </div>
+      <h1>Install the LinkedIn extension</h1>
+      <p class="lede">
+        Log connection requests, messages, and replies directly to your
+        CRM without leaving LinkedIn. Setup takes about a minute.
+      </p>
+    </header>
+
+    <!-- ── Download CTA ─────────────────────────────────────────── -->
+    <div class="download">
+      <div class="download-title">Step 0 — Download</div>
+      <div class="download-version" id="version-line">
+        Latest version: <strong id="latest-version">v1.7.3</strong>
+      </div>
+      <a class="btn" href="/downloads/gowarm-linkedin-ext-latest.zip" id="download-link">
+        <span class="btn-icon">↓</span>
+        Download the extension (.zip)
+      </a>
+    </div>
+
+    <!-- ── Steps ────────────────────────────────────────────────── -->
+    <h2>Install in 4 steps</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Unzip the file</h3>
+        <p>
+          Find the downloaded <code>gowarm-linkedin-ext-v1.7.3.zip</code>
+          in your Downloads folder and unzip it. You'll end up with a
+          folder called <code>gowarm-linkedin-ext</code> — remember where
+          it is, you'll point Chrome at it in a moment.
+        </p>
+        <div class="note">
+          <strong>Don't move or delete the folder after installing.</strong>
+          Chrome keeps a live reference to wherever you unzipped it. If
+          the folder disappears, the extension stops working.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Open Chrome's extensions page</h3>
+        <p>
+          In Chrome, type <code>chrome://extensions</code> into the address
+          bar and press <kbd>Enter</kbd>. You can also reach it via
+          <strong>Menu → Extensions → Manage Extensions</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Turn on Developer mode</h3>
+        <p>
+          In the top-right corner of the extensions page, flip the
+          <strong>Developer mode</strong> toggle on. Three new buttons
+          appear at the top of the page.
+        </p>
+        <div class="note">
+          Chrome will show a small "Developer mode is on" reminder each
+          time it restarts. That's normal — it just means the browser is
+          running an extension that wasn't installed through the Chrome
+          Web Store.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Load the extension</h3>
+        <p>
+          Click <strong>Load unpacked</strong>, then select the
+          <code>gowarm-linkedin-ext</code> folder you unzipped in step 1
+          (the one with <code>manifest.json</code> inside).
+        </p>
+        <p>
+          The GoWarmCRM card will appear on the extensions page. Pin the
+          icon to your toolbar for easy access: click the puzzle-piece
+          icon at the top of Chrome, then the pin next to GoWarmCRM.
+        </p>
+      </div>
+    </div>
+
+    <h2>Sign in</h2>
+    <p style="color:#475569; margin-bottom: 16px;">
+      Open
+      <a href="https://app.gowarmcrm.com" style="color:#E8630A; font-weight:600;">app.gowarmcrm.com</a>
+      and sign in to your account. The extension picks up your session
+      automatically — there's no token to copy or API key to configure.
+    </p>
+    <p style="color:#475569;">
+      Visit any LinkedIn profile (<code>linkedin.com/in/&lt;name&gt;</code>)
+      and the GoWarm panel will appear on the right.
+    </p>
+
+    <!-- ── Updating ─────────────────────────────────────────────── -->
+    <div class="updating">
+      <h2>Updating to a new version</h2>
+      <p>
+        When a new version is available, the extension popup shows a
+        banner. To update:
+      </p>
+      <ol>
+        <li>Download the new zip from this page.</li>
+        <li>Unzip it and <strong>replace</strong> the old <code>gowarm-linkedin-ext</code> folder with the new one (use the same location).</li>
+        <li>Go to <code>chrome://extensions</code> and click the refresh icon on the GoWarmCRM card.</li>
+      </ol>
+      <p style="margin-top: 14px; font-size: 13.5px; color: #64748b;">
+        Your sign-in stays — you don't have to log in again.
+      </p>
+    </div>
+
+    <!-- ── Troubleshooting ──────────────────────────────────────── -->
+    <h2>Troubleshooting</h2>
+
+    <details>
+      <summary>The panel doesn't appear on a LinkedIn profile</summary>
+      <div>
+        Make sure you're on a profile URL — <code>linkedin.com/in/&lt;name&gt;</code> — and not the LinkedIn feed, search, or messaging pages. Refresh the page. If it's still missing, check that the extension is enabled at <code>chrome://extensions</code>.
+      </div>
+    </details>
+
+    <details>
+      <summary>The popup says "Not connected"</summary>
+      <div>
+        Open <a href="https://app.gowarmcrm.com" target="_blank">app.gowarmcrm.com</a> in another tab and sign in. Then click the extension icon again — it should switch to "Connected" within a few seconds.
+      </div>
+    </details>
+
+    <details>
+      <summary>A prospect exists in GoWarmCRM but the panel says "Not in your CRM"</summary>
+      <div>
+        The extension matches by LinkedIn URL. Open the prospect in GoWarmCRM and make sure the <code>LinkedIn URL</code> field is set to the full profile URL (<code>https://www.linkedin.com/in/&lt;name&gt;</code>). Watch for trailing slashes or query strings.
+      </div>
+    </details>
+
+    <details>
+      <summary>Chrome says the folder is missing or the extension failed to load</summary>
+      <div>
+        Chrome keeps a path reference to wherever you unzipped the folder. If you moved or deleted it, re-unzip the latest download in a stable location (e.g. <code>~/Documents/gowarm-linkedin-ext/</code>), then load it again from <code>chrome://extensions → Load unpacked</code>.
+      </div>
+    </details>
+
+    <details>
+      <summary>I need to share a diagnostic with support</summary>
+      <div>
+        Open any LinkedIn profile, press <kbd>F12</kbd> to open Chrome DevTools, switch to the <strong>Console</strong> tab, and run:
+        <pre style="background:#F1F5F9;padding:10px;border-radius:6px;margin-top:8px;font-size:13px;overflow-x:auto;">copy(JSON.stringify(await __gowarmCaptureDebug(), null, 2))</pre>
+        That copies a diagnostic snapshot to your clipboard. Paste it into your support message.
+      </div>
+    </details>
+
+    <footer>
+      Questions? Email
+      <a href="mailto:support@gowarmcrm.com">support@gowarmcrm.com</a>
+    </footer>
+
+  </div>
+
+  <!--
+    Optional: if you serve a small /api/extension/version endpoint
+    (which the extension itself polls), this snippet keeps the headline
+    version string on the page in sync with what the endpoint returns.
+    Safe to leave in — silently does nothing if the endpoint is down.
+  -->
+  <script>
+    (async function syncVersionLine() {
+      try {
+        const res = await fetch('https://api.gowarmcrm.com/api/extension/version');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!data?.latest) return;
+        const el = document.getElementById('latest-version');
+        if (el) el.textContent = 'v' + data.latest;
+        // Also update download href if the endpoint provides a versioned URL.
+        if (data?.download_url) {
+          const link = document.getElementById('download-link');
+          if (link) link.href = data.download_url;
+        }
+      } catch (_) { /* silent */ }
+    })();
+  </script>
+</body>
+</html>
