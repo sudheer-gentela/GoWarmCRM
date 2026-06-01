@@ -201,14 +201,14 @@
       "source": "/ai-shift/relationship-selling",
       "destination": "/website/ai-shift/relationship-selling.html"
     },
-
-    { "source": "/privacy", 
-      "destination": "/website/privacy.html" 
+    {
+      "source": "/privacy",
+      "destination": "/website/privacy.html"
     },
-
-    { "source": "/terms", 
-      "destination": "/website/terms.html" 
-    }
+    {
+      "source": "/terms",
+      "destination": "/website/terms.html"
+    },
     {
       "source": "/index.md",
       "destination": "/markdown/index.md"
