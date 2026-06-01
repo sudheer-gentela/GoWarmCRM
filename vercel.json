@@ -210,6 +210,14 @@
       "destination": "/website/terms.html"
     },
     {
+      "source": "/msa",
+      "destination": "/website/msa.html"
+    },
+    {
+      "source": "/dpa",
+      "destination": "/website/dpa.html"
+    },
+    {
       "source": "/index.md",
       "destination": "/markdown/index.md"
     },
