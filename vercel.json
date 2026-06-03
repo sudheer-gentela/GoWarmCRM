@@ -29,6 +29,28 @@
       "permanent": true
     },
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "gowarm.ai"
+        }
+      ],
+      "destination": "https://gowarmcrm.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.gowarm.ai"
+        }
+      ],
+      "destination": "https://gowarmcrm.com/",
+      "permanent": true
+    },
+    {
       "source": "/v2",
       "destination": "/",
       "permanent": true
