@@ -88,6 +88,18 @@
   ],
   "rewrites": [
     {
+      "source": "/mcp",
+      "destination": "https://api.gowarmcrm.com/mcp"
+    },
+    {
+      "source": "/.well-known/oauth-protected-resource",
+      "destination": "https://api.gowarmcrm.com/.well-known/oauth-protected-resource"
+    },
+    {
+      "source": "/.well-known/oauth-authorization-server",
+      "destination": "https://api.gowarmcrm.com/.well-known/oauth-authorization-server"
+    },
+    {
       "source": "/",
       "destination": "/website/index.html"
     },
@@ -367,6 +379,23 @@
         {
           "key": "Content-Type",
           "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/mcp/server-card.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         },
         {
           "key": "Cache-Control",
