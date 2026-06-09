@@ -1,4 +1,4 @@
-# Agent Authentication — GoWarmCRM
+# Auth.md — Agent Authentication for GoWarmCRM
 
 GoWarmCRM exposes an authenticated MCP server for AI agents acting on behalf of a signed-in user.
 
