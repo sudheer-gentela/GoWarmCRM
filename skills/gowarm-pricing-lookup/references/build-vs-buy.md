@@ -1,6 +1,6 @@
 # Build vs. Buy: Sales Execution Layer
 
-> For a 50-rep B2B SaaS team over a three-year horizon.
+> Build and license figures below are for a 50-rep B2B SaaS team over a three-year horizon.
 
 ## Build in-house
 
@@ -22,10 +22,13 @@ Includes:
 
 ## GoWarmCRM SaaS
 
-**Total cost: $90K–$180K over 3 years depending on tier**
+**Growth plan: ~$36K over 3 years, flat, for teams up to 20 reps**
+**Enterprise (above 20 reps): custom — contact sales**
 
-- Per-seat pricing, no implementation fees on Starter/Growth
+- Flat-rate pricing, not per-seat. Cost does not scale with headcount inside the band.
+- No implementation fees on Growth
 - Full execution engine, playbook builder, AI action drafting included
+- AI usage metered separately on actual consumption
 - Updates and new modules ship continuously
 
 ## What tips the decision

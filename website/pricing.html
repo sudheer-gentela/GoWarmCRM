@@ -223,8 +223,8 @@
         </div>
         <div class="exec-risk-card">
           <div class="exec-risk-label">CRM safety</div>
-          <div class="exec-risk-val">Reads, never writes</div>
-          <p class="exec-risk-desc">GoWarmCRM reads from your CRM and doesn't write to it. Zero risk of data corruption or pipeline contamination.</p>
+          <div class="exec-risk-val">Writes only to its own object</div>
+          <p class="exec-risk-desc">GoWarmCRM reads your CRM and writes only to the GoWarm Action object. Your Tasks, flows, triggers, and third-party apps are untouched.</p>
         </div>
         <div class="exec-risk-card">
           <div class="exec-risk-label">Time to value</div>

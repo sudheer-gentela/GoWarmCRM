@@ -9,5 +9,10 @@
   },
   "engines": {
     "node": "20.x"
+  },
+  "scripts": {
+    "build:skills-index": "node scripts/build-skills-index.js",
+    "check:skills-index": "node scripts/build-skills-index.js --check",
+    "build": "npm run build:skills-index"
   }
 }

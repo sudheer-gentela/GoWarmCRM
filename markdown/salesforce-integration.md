@@ -22,6 +22,9 @@ All sync uses deterministic external-ID matching against a designated Salesforce
 - External-ID-based deterministic matching
 - field_map-driven field resolution per org
 - Configurable sync cadence (default hourly)
+- `GoWarm_Action__c` write-back — every action queue item logged as a child record of the parent Opportunity
+- Optional native Task write-back, configurable per org
+- Calendar surfacing — GoWarm Actions appear as dated items in Salesforce Calendar
 
 ### Phase 2 (in development)
 - Entity custom fields write path (e.g., `GoWarm_Health_Score__c`, `GoWarm_Last_Signal__c`)
@@ -29,14 +32,18 @@ All sync uses deterministic external-ID matching against a designated Salesforce
 - CSV hierarchy import for initial org setup
 
 ### Phase 3 (scoped)
-- `GoWarm_Action__c` SF write-back — every action queue item logged as a child record of the parent Opportunity
 - HubSpot adapter (parallel implementation using the same orchestrator)
+
+## Install path
+
+GoWarmCRM ships a lightweight managed package that installs the `GoWarm_Action__c` custom object and the Calendar event schema. It is distributed as a private install link, not an AppExchange listing. It creates no changes to standard objects.
 
 ## Salesforce permissions required
 
 GoWarmCRM requires a connected app with:
 - Read on Account, Contact, Opportunity, Task, Event, User
-- Write on the designated custom fields and `GoWarm_Action__c` (Phase 2/3)
+- Write on `GoWarm_Action__c` (and on native Task, only if Task write-back is enabled)
+- Write on the designated custom fields (required only once the Phase 2 custom-field write path is enabled)
 - API-only login user (no UI access required)
 
 ## Field mapping
