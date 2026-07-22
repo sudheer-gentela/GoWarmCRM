@@ -1,0 +1,28 @@
+name: Skills index
+
+# Fails if .well-known/agent-skills/index.json is out of sync with the
+# SKILL.md files on disk. Runs only when either side changes, so it costs
+# nothing on ordinary content commits.
+
+on:
+  push:
+    paths:
+      - 'skills/**'
+      - '.well-known/agent-skills/index.json'
+      - 'scripts/build-skills-index.js'
+  pull_request:
+    paths:
+      - 'skills/**'
+      - '.well-known/agent-skills/index.json'
+      - 'scripts/build-skills-index.js'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      # No install step: the script uses only Node builtins.
+      - run: npm run check:skills-index
