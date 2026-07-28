@@ -340,7 +340,7 @@ ${latestSix}
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© ${year} ${cfg.BRAND_COMPANY}. All rights reserved.</span>
+        <span>© ${year} ${cfg.BRAND_LEGAL}. All rights reserved.</span>
         <span>${domain}</span>
       </div>
     </div>

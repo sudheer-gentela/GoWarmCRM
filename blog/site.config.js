@@ -30,6 +30,7 @@ const config = {
   PRODUCT_URL:      "https://gowarmcrm.com",
   BRAND_PUBLICATION:"GoWarm Insights",
   BRAND_COMPANY:    "GoWarmCRM",
+  BRAND_LEGAL:      "DeepConnect Technologies Inc. and GW DeepConnect Technologies Private Limited",
   BRAND_TAGLINE:    "Practical intelligence for B2B sales and business leaders.",
   OG_IMAGE:         "/blog/og-image.png",
   TWITTER_HANDLE:   "@gowarmcrm",
