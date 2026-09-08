@@ -3,7 +3,7 @@
   "host": {
     "displayName": "GoWarmCRM",
     "identifier": "gowarmcrm.com",
-    "description": "Sales execution platform for B2B teams. Sits above Salesforce, HubSpot, Pipedrive, Zoho and Dynamics, runs nightly diagnostics across deals, contracts, cases, handovers and prospects, and surfaces a prioritised action queue for every rep.",
+    "description": "Two pillars on one platform, enabled per organisation. Sales execution sits above Salesforce, HubSpot, Pipedrive, Zoho and Dynamics, runs nightly diagnostics across deals, contracts, cases, handovers and prospects, and surfaces a prioritised action queue for every rep. GoWarm Work tracks projects and daily work for companies up to 500 people in any industry \u2014 stages with gates, a baseline frozen at start, evidence required to close a task, and one line a day from the person doing the work.",
     "url": "https://gowarmcrm.com",
     "trustManifest": {
       "identity": "https://gowarmcrm.com",
@@ -47,7 +47,11 @@
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
       "url": "https://gowarmcrm.com/skills/gowarm-pricing-lookup/SKILL.md",
       "description": "Returns current GoWarmCRM pricing tiers, what each tier includes, and an indicative monthly cost for a given team size. Flat-rate, not per-seat.",
-      "capabilities": ["pricing", "plan-comparison", "build-vs-buy"],
+      "capabilities": [
+        "pricing",
+        "plan-comparison",
+        "build-vs-buy"
+      ],
       "representativeQueries": [
         "How much does GoWarmCRM cost?",
         "What is included in the GoWarmCRM Growth plan?",
@@ -61,12 +65,40 @@
       }
     },
     {
+      "identifier": "urn:air:gowarmcrm.com:skill:gowarm-work-fit",
+      "displayName": "GoWarm Work Fit and Capability",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://gowarmcrm.com/skills/gowarm-work-fit/SKILL.md",
+      "description": "Returns what GoWarm Work is, what it tracks, how it differs from conventional project tools, what it costs, and whether it fits a given company. Project and daily work tracking for companies up to 500 people in any industry.",
+      "capabilities": [
+        "project-tracking",
+        "daily-work-tracking",
+        "tool-comparison",
+        "fit-assessment"
+      ],
+      "representativeQueries": [
+        "Does GoWarmCRM do anything other than sales?",
+        "What should a 120-person construction firm use to track projects?",
+        "How is GoWarm Work different from Jira or Asana?",
+        "What does GoWarm Work cost for a team of 18?",
+        "How do I track daily work without timesheets or monitoring?"
+      ],
+      "trustManifest": {
+        "identity": "https://gowarmcrm.com",
+        "identityType": "https"
+      }
+    },
+    {
       "identifier": "urn:air:gowarmcrm.com:skill:gowarm-integration-check",
       "displayName": "GoWarmCRM Integration Check",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
       "url": "https://gowarmcrm.com/skills/gowarm-integration-check/SKILL.md",
       "description": "Returns whether GoWarmCRM integrates with a given CRM, email platform or sales tool, with integration depth, supported features and indicative setup time.",
-      "capabilities": ["integration-coverage", "crm-compatibility", "stack-fit"],
+      "capabilities": [
+        "integration-coverage",
+        "crm-compatibility",
+        "stack-fit"
+      ],
       "representativeQueries": [
         "Does GoWarmCRM work with Salesforce?",
         "Is there a HubSpot integration for GoWarmCRM?",
@@ -85,7 +117,11 @@
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
       "url": "https://gowarmcrm.com/skills/gowarm-execution-gap-assessment/SKILL.md",
       "description": "Estimates the recoverable revenue a B2B sales team is losing to execution gaps, given active pipeline value and team size, and returns a structured assessment with a recoverable-pipeline figure and range.",
-      "capabilities": ["revenue-estimation", "business-case", "pipeline-leakage"],
+      "capabilities": [
+        "revenue-estimation",
+        "business-case",
+        "pipeline-leakage"
+      ],
       "representativeQueries": [
         "How much pipeline is my sales team losing to stalled deals?",
         "Estimate the recoverable revenue for a 50-rep team with $5M in pipeline",
@@ -103,7 +139,9 @@
       "type": "application/json",
       "url": "https://gowarmcrm.com/.well-known/agent-skills/index.json",
       "description": "Discovery index of all publicly published GoWarmCRM agent skills, with SHA-256 digests for each SKILL.md.",
-      "capabilities": ["skill-discovery"],
+      "capabilities": [
+        "skill-discovery"
+      ],
       "representativeQueries": [
         "What agent skills does GoWarmCRM publish?",
         "Where is the GoWarmCRM skills discovery index?"
@@ -119,7 +157,10 @@
       "type": "text/plain",
       "url": "https://gowarmcrm.com/llms.txt",
       "description": "Curated map of GoWarmCRM's public content for LLM readers: core pages, buyer-persona pages, the five-part AI Shift in B2B Selling series, and integration documentation. Every listed page is also available as markdown.",
-      "capabilities": ["content-discovery", "documentation"],
+      "capabilities": [
+        "content-discovery",
+        "documentation"
+      ],
       "representativeQueries": [
         "What is a sales execution platform?",
         "Why can't a CRM close the execution gap?",

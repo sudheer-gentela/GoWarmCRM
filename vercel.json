@@ -148,6 +148,14 @@
       "destination": "/website/platform-overview.html"
     },
     {
+      "source": "/work",
+      "destination": "/website/work.html"
+    },
+    {
+      "source": "/why-you-stopped-knowing",
+      "destination": "/website/why-you-stopped-knowing.html"
+    },
+    {
       "source": "/crm-integration",
       "destination": "/website/crm-integration.html"
     },
@@ -286,6 +294,14 @@
     {
       "source": "/platform-overview.md",
       "destination": "/markdown/platform-overview.md"
+    },
+    {
+      "source": "/work.md",
+      "destination": "/markdown/work.md"
+    },
+    {
+      "source": "/why-you-stopped-knowing.md",
+      "destination": "/markdown/why-you-stopped-knowing.md"
     },
     {
       "source": "/crm-integration.md",
