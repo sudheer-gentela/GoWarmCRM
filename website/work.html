@@ -19,13 +19,13 @@
   <meta property="og:url" content="https://gowarmcrm.com/work" />
   <meta property="og:title" content="GoWarm Work — Project and Daily Work Tracking" />
   <meta property="og:description" content="Project and daily work tracking for companies up to 500 people. The record of work is a byproduct of doing it, not a second job." />
-  <meta property="og:image" content="https://gowarmcrm.com/og-image-work.png" />
+  <meta property="og:image" content="https://gowarmcrm.com/website/screens/og-image-work.png" />
   <meta property="og:site_name" content="GoWarmCRM" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@gowarmcrm" />
   <meta name="twitter:title" content="GoWarm Work — Project and Daily Work Tracking" />
   <meta name="twitter:description" content="Project and daily work tracking for companies up to 500 people. The record of work is a byproduct of doing it, not a second job." />
-  <meta name="twitter:image" content="https://gowarmcrm.com/og-image-work.png" />
+  <meta name="twitter:image" content="https://gowarmcrm.com/website/screens/og-image-work.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GoWarm Work — Project and Daily Work Tracking","description":"GoWarm Work is the project and daily work tracking half of the GoWarmCRM platform, built for companies up to 500 people in any industry.","url":"https://gowarmcrm.com/work","publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://gowarmcrm.com"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GoWarm Work","applicationCategory":"BusinessApplication","applicationSubCategory":"Project Management Software","operatingSystem":"Web","url":"https://gowarmcrm.com/work","description":"GoWarm Work tracks projects and daily work for companies up to 500 people. Projects carry stages, dependencies, a frozen baseline and evidence; daily work is logged once by the person doing it and appears against the project, the person and the manager rollup.","featureList":["Project stages with gating","Task dependencies with cycle detection","Frozen baseline and plan-versus-actual drift","Evidence required to close a task","Timeboxed and standing work as separate modes","Daily work logged once against a project task","Controlled activity vocabulary with a manager merge queue","Logging measured against working days, not generated tasks","Bill of Quantities with an append-only spend ledger","Manager rollup and per-person timeline"],"offers":[{"@type":"Offer","name":"Work","price":"999","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":"999","priceCurrency":"USD","billingDuration":"P1M"},"description":"Up to 25 users. Projects and daily work, full manager surface, Bill of Quantities, conversation attachment, onboarding session."},{"@type":"Offer","name":"Work Enterprise","description":"Above 25 users. Custom pricing, single sign-on, custom onboarding and migration, priority support and SLA."}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is GoWarm Work?","acceptedAnswer":{"@type":"Answer","text":"GoWarm Work is the project and daily work tracking half of the GoWarmCRM platform. Projects carry stages, task dependencies, a frozen baseline and required evidence. Daily work is a short line written once by the person doing the work, which then appears on their own day, against the project task, and in their manager's rollup. It is built for companies up to 500 people in any industry, not only software."}},{"@type":"Question","name":"Do we need the sales modules to use GoWarm Work?","acceptedAnswer":{"@type":"Answer","text":"No. Modules are enabled per organisation. An organisation can run projects and daily work with every sales module switched off, and turn them on later without migrating anything."}},{"@type":"Question","name":"How is this different from Jira, Asana or Microsoft Project?","acceptedAnswer":{"@type":"Answer","text":"Those tools assume someone maintains them: a project office, a scrum master, an admin. GoWarm Work assumes nobody does. Discipline is structural rather than cultural — a task cannot close without evidence, a stage cannot open until its gate is met, the plan is frozen at start so drift is measurable, and a person writes one line a day rather than updating several systems. It also models work that never finishes, which most project tools cannot express without a permanently open ticket."}},{"@type":"Question","name":"What does GoWarm Work cost?","acceptedAnswer":{"@type":"Answer","text":"999 US dollars per month for up to 25 users. Above 25 users, pricing is custom. Pricing is by organisation rather than per seat, so adding a person mid-month does not change the invoice until you cross the tier."}},{"@type":"Question","name":"Which industries is GoWarm Work built for?","acceptedAnswer":{"@type":"Answer","text":"Any industry that runs projects and has people whose work is not visible from a dashboard. It is in use across construction and interiors, engineering and manufacturing services, IT services and agencies, professional services, and internal functions such as data, marketing and delivery. Bill of Quantities tracking, standing work and evidence requirements exist because the first users were not software teams."}},{"@type":"Question","name":"Does daily work tracking mean surveillance?","acceptedAnswer":{"@type":"Answer","text":"No. There is no timer, no screenshot, no activity monitor and no idle detection. A person writes one line about what they did on a piece of work. The measure a manager sees is whether work was logged on a working day, not how many hours were filled."}}]}</script>
@@ -100,8 +100,8 @@
     /* SCREENS */
     .gw-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
     .gw-shot figure { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .gw-shot .shot-frame { aspect-ratio: 16 / 10; background: var(--cream-3); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
-    .gw-shot .shot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+    .gw-shot .shot-frame { aspect-ratio: 1920 / 870; background: var(--cream-3); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
+    .gw-shot .shot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
     .gw-shot .shot-pending { text-align: center; padding: 20px; }
     .gw-shot .shot-pending code { font-size: 12px; color: var(--ink-3); background: #fff; border: 1px solid var(--border); border-radius: 4px; padding: 5px 9px; display: inline-block; }
     .gw-shot .shot-pending span { display: block; font-size: 12px; color: var(--ink-4); margin-top: 10px; }
@@ -469,8 +469,7 @@
         <div class="gw-shot">
           <figure>
             <div class="shot-frame">
-              <!-- REPLACE: <img src="/website/screens/work-myday.png" alt="My day in GoWarm Work: a person's work items for today with a short description written against each" /> -->
-              <div class="shot-pending"><code>/website/screens/work-myday.png</code><span>Screenshot slot · My day</span></div>
+              <img src="/website/screens/work-myday.png" alt="My day in GoWarm Work: a person's work items for today with a short description written against each" loading="lazy" width="1920" height="870" />
             </div>
             <figcaption>
               <b>My day</b>
@@ -482,8 +481,7 @@
         <div class="gw-shot">
           <figure>
             <div class="shot-frame">
-              <!-- REPLACE: <img src="/website/screens/work-people.png" alt="The People screen: each team member's logging record beside their open and overdue project tasks" /> -->
-              <div class="shot-pending"><code>/website/screens/work-people.png</code><span>Screenshot slot · People</span></div>
+              <img src="/website/screens/work-people.png" alt="The People screen: each team member's logging record beside their open and overdue project tasks" loading="lazy" width="1920" height="870" />
             </div>
             <figcaption>
               <b>People</b>
@@ -495,12 +493,11 @@
         <div class="gw-shot">
           <figure>
             <div class="shot-frame">
-              <!-- REPLACE: <img src="/website/screens/work-stages.png" alt="Project stage view showing stages, gates, dependencies and drift against the frozen baseline" /> -->
-              <div class="shot-pending"><code>/website/screens/work-stages.png</code><span>Screenshot slot · Project stages</span></div>
+              <img src="/website/screens/work-people-detail.png" alt="A person expanded on the People screen, showing each day's entries against the project task and activity type" loading="lazy" width="1920" height="870" />
             </div>
             <figcaption>
-              <b>Project stages</b>
-              <span>Stages, gates and dependencies, with each task's current date shown against the baseline it was frozen at. Drift is visible as a difference, not as a colour someone chose.</span>
+              <b>A person's week</b>
+              <span>Expand anyone and every entry they wrote is there, against the task and the project it belongs to. Written once by them, read here without asking.</span>
             </figcaption>
           </figure>
         </div>
@@ -508,8 +505,7 @@
         <div class="gw-shot">
           <figure>
             <div class="shot-frame">
-              <!-- REPLACE: <img src="/website/screens/work-boq.png" alt="Bill of Quantities view with planned quantities, incremental progress entries and approved variations listed separately" /> -->
-              <div class="shot-pending"><code>/website/screens/work-boq.png</code><span>Screenshot slot · Bill of Quantities</span></div>
+              <img src="/website/screens/work-boq.png" alt="Bill of Quantities view with planned quantities, incremental progress entries and approved variations listed separately" loading="lazy" width="1920" height="870" />
             </div>
             <figcaption>
               <b>Bill of Quantities</b>
