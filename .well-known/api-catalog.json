@@ -1,0 +1,63 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://gowarmcrm.com/mcp",
+      "service-desc": [
+        {
+          "href": "https://gowarmcrm.com/.well-known/mcp/server-card.json",
+          "type": "application/mcp-server-card+json",
+          "title": "GoWarmCRM MCP server card"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://gowarmcrm.com/auth.md",
+          "type": "text/markdown",
+          "title": "Agent authentication and MCP usage guide"
+        },
+        {
+          "href": "https://gowarmcrm.com/platform-overview.md",
+          "type": "text/markdown",
+          "title": "GoWarmCRM platform overview"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://gowarmcrm.com/.well-known/oauth-protected-resource/mcp",
+          "type": "application/json",
+          "title": "OAuth 2.0 Protected Resource Metadata (RFC 9728)"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://gowarmcrm.com/health",
+          "type": "application/json",
+          "title": "Service health"
+        }
+      ],
+      "author": [
+        {
+          "href": "https://gowarmcrm.com/contact",
+          "title": "GoWarmCRM"
+        }
+      ]
+    },
+    {
+      "anchor": "https://gowarmcrm.com/.well-known/agent-skills/index.json",
+      "service-desc": [
+        {
+          "href": "https://gowarmcrm.com/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "GoWarmCRM Agent Skills discovery index"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://gowarmcrm.com/skills",
+          "type": "text/html",
+          "title": "GoWarm Skills"
+        }
+      ]
+    }
+  ]
+}

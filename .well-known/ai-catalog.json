@@ -1,0 +1,135 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "GoWarmCRM",
+    "identifier": "gowarmcrm.com",
+    "description": "Sales execution platform for B2B teams. Sits above Salesforce, HubSpot, Pipedrive, Zoho and Dynamics, runs nightly diagnostics across deals, contracts, cases, handovers and prospects, and surfaces a prioritised action queue for every rep.",
+    "url": "https://gowarmcrm.com",
+    "trustManifest": {
+      "identity": "https://gowarmcrm.com",
+      "identityType": "https"
+    }
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:gowarmcrm.com:server:gowarmcrm-mcp",
+      "displayName": "GoWarmCRM MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://gowarmcrm.com/.well-known/mcp/server-card.json",
+      "description": "Authenticated MCP server (streamable HTTP) that lets an agent read a signed-in GoWarmCRM user's prioritised action queue, prospecting campaigns and outreach sequences. Requires an OAuth 2.1 access token audience-bound to https://gowarmcrm.com/mcp.",
+      "capabilities": [
+        "sales-action-queue",
+        "pipeline-execution",
+        "prospecting-campaigns",
+        "outreach-sequences",
+        "crm-augmentation"
+      ],
+      "representativeQueries": [
+        "What should I work on next in my sales pipeline today?",
+        "Show me my prioritised rep action queue",
+        "Which of my prospecting campaigns are running and how are they performing?",
+        "List the outreach sequences available to my sales org",
+        "Which deals in my pipeline have gone quiet?"
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "protectedResourceMetadata": "https://gowarmcrm.com/.well-known/oauth-protected-resource/mcp",
+        "documentation": "https://gowarmcrm.com/auth.md"
+      },
+      "trustManifest": {
+        "identity": "https://gowarmcrm.com",
+        "identityType": "https"
+      }
+    },
+    {
+      "identifier": "urn:air:gowarmcrm.com:skill:gowarm-pricing-lookup",
+      "displayName": "GoWarmCRM Pricing Lookup",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://gowarmcrm.com/skills/gowarm-pricing-lookup/SKILL.md",
+      "description": "Returns current GoWarmCRM pricing tiers, what each tier includes, and an indicative monthly cost for a given team size. Flat-rate, not per-seat.",
+      "capabilities": ["pricing", "plan-comparison", "build-vs-buy"],
+      "representativeQueries": [
+        "How much does GoWarmCRM cost?",
+        "What is included in the GoWarmCRM Growth plan?",
+        "Is GoWarmCRM priced per seat or flat rate?",
+        "What would GoWarmCRM cost for a 15-rep sales team?",
+        "Should we build a sales execution layer in-house or buy GoWarmCRM?"
+      ],
+      "trustManifest": {
+        "identity": "https://gowarmcrm.com",
+        "identityType": "https"
+      }
+    },
+    {
+      "identifier": "urn:air:gowarmcrm.com:skill:gowarm-integration-check",
+      "displayName": "GoWarmCRM Integration Check",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://gowarmcrm.com/skills/gowarm-integration-check/SKILL.md",
+      "description": "Returns whether GoWarmCRM integrates with a given CRM, email platform or sales tool, with integration depth, supported features and indicative setup time.",
+      "capabilities": ["integration-coverage", "crm-compatibility", "stack-fit"],
+      "representativeQueries": [
+        "Does GoWarmCRM work with Salesforce?",
+        "Is there a HubSpot integration for GoWarmCRM?",
+        "Which CRMs does GoWarmCRM support?",
+        "Can GoWarmCRM read signals from Outlook and Gmail?",
+        "How long does a GoWarmCRM Salesforce integration take to set up?"
+      ],
+      "trustManifest": {
+        "identity": "https://gowarmcrm.com",
+        "identityType": "https"
+      }
+    },
+    {
+      "identifier": "urn:air:gowarmcrm.com:skill:gowarm-execution-gap-assessment",
+      "displayName": "GoWarmCRM Execution Gap Assessment",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://gowarmcrm.com/skills/gowarm-execution-gap-assessment/SKILL.md",
+      "description": "Estimates the recoverable revenue a B2B sales team is losing to execution gaps, given active pipeline value and team size, and returns a structured assessment with a recoverable-pipeline figure and range.",
+      "capabilities": ["revenue-estimation", "business-case", "pipeline-leakage"],
+      "representativeQueries": [
+        "How much pipeline is my sales team losing to stalled deals?",
+        "Estimate the recoverable revenue for a 50-rep team with $5M in pipeline",
+        "Help me build a business case for a sales execution platform",
+        "What is the cost of playbook abandonment on my pipeline?"
+      ],
+      "trustManifest": {
+        "identity": "https://gowarmcrm.com",
+        "identityType": "https"
+      }
+    },
+    {
+      "identifier": "urn:air:gowarmcrm.com:index:agent-skills",
+      "displayName": "GoWarmCRM Agent Skills Index",
+      "type": "application/json",
+      "url": "https://gowarmcrm.com/.well-known/agent-skills/index.json",
+      "description": "Discovery index of all publicly published GoWarmCRM agent skills, with SHA-256 digests for each SKILL.md.",
+      "capabilities": ["skill-discovery"],
+      "representativeQueries": [
+        "What agent skills does GoWarmCRM publish?",
+        "Where is the GoWarmCRM skills discovery index?"
+      ],
+      "trustManifest": {
+        "identity": "https://gowarmcrm.com",
+        "identityType": "https"
+      }
+    },
+    {
+      "identifier": "urn:air:gowarmcrm.com:content:llms-txt",
+      "displayName": "GoWarmCRM Content Map (llms.txt)",
+      "type": "text/plain",
+      "url": "https://gowarmcrm.com/llms.txt",
+      "description": "Curated map of GoWarmCRM's public content for LLM readers: core pages, buyer-persona pages, the five-part AI Shift in B2B Selling series, and integration documentation. Every listed page is also available as markdown.",
+      "capabilities": ["content-discovery", "documentation"],
+      "representativeQueries": [
+        "What is a sales execution platform?",
+        "Why can't a CRM close the execution gap?",
+        "Where can I read GoWarmCRM's documentation as markdown?",
+        "What does GoWarmCRM publish about AI's effect on B2B selling?"
+      ],
+      "trustManifest": {
+        "identity": "https://gowarmcrm.com",
+        "identityType": "https"
+      }
+    }
+  ]
+}

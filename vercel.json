@@ -88,6 +88,18 @@
   ],
   "rewrites": [
     {
+      "source": "/.well-known/api-catalog",
+      "destination": "/.well-known/api-catalog.json"
+    },
+    {
+      "source": "/.well-known/oauth-protected-resource/mcp",
+      "destination": "https://api.gowarmcrm.com/.well-known/oauth-protected-resource/mcp"
+    },
+    {
+      "source": "/health",
+      "destination": "https://api.gowarmcrm.com/health"
+    },
+    {
       "source": "/mcp",
       "destination": "https://api.gowarmcrm.com/mcp"
     },
@@ -338,7 +350,7 @@
         },
         {
           "key": "Link",
-          "value": "<https://gowarmcrm.com/sitemap.xml>; rel=\"sitemap\", <https://gowarmcrm.com/index.md>; rel=\"alternate\"; type=\"text/markdown\", <https://gowarmcrm.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+          "value": "<https://gowarmcrm.com/sitemap.xml>; rel=\"sitemap\", <https://gowarmcrm.com/index.md>; rel=\"alternate\"; type=\"text/markdown\", <https://gowarmcrm.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://gowarmcrm.com/.well-known/api-catalog>; rel=\"api-catalog\", <https://gowarmcrm.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\""
         }
       ]
     },
@@ -400,6 +412,88 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/api-catalog",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/linkset+json; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/api-catalog.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/linkset+json; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/ai-catalog.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/oauth-protected-resource",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/oauth-protected-resource/mcp",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/auth.md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     }

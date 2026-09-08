@@ -401,5 +401,6 @@
     function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}
     function toggleFaq(btn){var a=btn.nextElementSibling;var i=btn.querySelector('.faq-icon');var o=a.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(function(x){x.classList.remove('open');x.previousElementSibling.querySelector('.faq-icon').textContent='+';});if(!o){a.classList.add('open');i.textContent='−';}}
   </script>
+  <script src="/website/webmcp.js" defer></script>
 </body>
 </html>
