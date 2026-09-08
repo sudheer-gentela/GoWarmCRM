@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoWarm Work — Project and Daily Work Tracking</title>
+  <meta name="description" content="GoWarm Work is project and daily work tracking for companies up to 500 people. Built so the record of work is a byproduct of doing it, not a second job." />
+  <link rel="stylesheet" href="/website/style-main.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+  <meta name="theme-color" content="#E8630A">
+
+  <!-- SEO/AEO:START -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gowarmcrm.com/work" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gowarmcrm.com/work" />
+  <meta property="og:title" content="GoWarm Work — Project and Daily Work Tracking" />
+  <meta property="og:description" content="Project and daily work tracking for companies up to 500 people. The record of work is a byproduct of doing it, not a second job." />
+  <meta property="og:image" content="https://gowarmcrm.com/og-image-work.png" />
+  <meta property="og:site_name" content="GoWarmCRM" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gowarmcrm" />
+  <meta name="twitter:title" content="GoWarm Work — Project and Daily Work Tracking" />
+  <meta name="twitter:description" content="Project and daily work tracking for companies up to 500 people. The record of work is a byproduct of doing it, not a second job." />
+  <meta name="twitter:image" content="https://gowarmcrm.com/og-image-work.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GoWarm Work — Project and Daily Work Tracking","description":"GoWarm Work is the project and daily work tracking half of the GoWarmCRM platform, built for companies up to 500 people in any industry.","url":"https://gowarmcrm.com/work","publisher":{"@type":"Organization","name":"GoWarmCRM","url":"https://gowarmcrm.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GoWarm Work","applicationCategory":"BusinessApplication","applicationSubCategory":"Project Management Software","operatingSystem":"Web","url":"https://gowarmcrm.com/work","description":"GoWarm Work tracks projects and daily work for companies up to 500 people. Projects carry stages, dependencies, a frozen baseline and evidence; daily work is logged once by the person doing it and appears against the project, the person and the manager rollup.","featureList":["Project stages with gating","Task dependencies with cycle detection","Frozen baseline and plan-versus-actual drift","Evidence required to close a task","Timeboxed and standing work as separate modes","Daily work logged once against a project task","Controlled activity vocabulary with a manager merge queue","Logging measured against working days, not generated tasks","Bill of Quantities with an append-only spend ledger","Manager rollup and per-person timeline"],"offers":[{"@type":"Offer","name":"Work","price":"999","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":"999","priceCurrency":"USD","billingDuration":"P1M"},"description":"Up to 25 users. Projects and daily work, full manager surface, Bill of Quantities, conversation attachment, onboarding session."},{"@type":"Offer","name":"Work Enterprise","description":"Above 25 users. Custom pricing, single sign-on, custom onboarding and migration, priority support and SLA."}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is GoWarm Work?","acceptedAnswer":{"@type":"Answer","text":"GoWarm Work is the project and daily work tracking half of the GoWarmCRM platform. Projects carry stages, task dependencies, a frozen baseline and required evidence. Daily work is a short line written once by the person doing the work, which then appears on their own day, against the project task, and in their manager's rollup. It is built for companies up to 500 people in any industry, not only software."}},{"@type":"Question","name":"Do we need the sales modules to use GoWarm Work?","acceptedAnswer":{"@type":"Answer","text":"No. Modules are enabled per organisation. An organisation can run projects and daily work with every sales module switched off, and turn them on later without migrating anything."}},{"@type":"Question","name":"How is this different from Jira, Asana or Microsoft Project?","acceptedAnswer":{"@type":"Answer","text":"Those tools assume someone maintains them: a project office, a scrum master, an admin. GoWarm Work assumes nobody does. Discipline is structural rather than cultural — a task cannot close without evidence, a stage cannot open until its gate is met, the plan is frozen at start so drift is measurable, and a person writes one line a day rather than updating several systems. It also models work that never finishes, which most project tools cannot express without a permanently open ticket."}},{"@type":"Question","name":"What does GoWarm Work cost?","acceptedAnswer":{"@type":"Answer","text":"999 US dollars per month for up to 25 users. Above 25 users, pricing is custom. Pricing is by organisation rather than per seat, so adding a person mid-month does not change the invoice until you cross the tier."}},{"@type":"Question","name":"Which industries is GoWarm Work built for?","acceptedAnswer":{"@type":"Answer","text":"Any industry that runs projects and has people whose work is not visible from a dashboard. It is in use across construction and interiors, engineering and manufacturing services, IT services and agencies, professional services, and internal functions such as data, marketing and delivery. Bill of Quantities tracking, standing work and evidence requirements exist because the first users were not software teams."}},{"@type":"Question","name":"Does daily work tracking mean surveillance?","acceptedAnswer":{"@type":"Answer","text":"No. There is no timer, no screenshot, no activity monitor and no idle detection. A person writes one line about what they did on a piece of work. The measure a manager sees is whether work was logged on a working day, not how many hours were filled."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gowarmcrm.com/"},{"@type":"ListItem","position":2,"name":"GoWarm Work","item":"https://gowarmcrm.com/work"}]}</script>
+  <!-- SEO/AEO:END -->
+
+  <style>
+    /* HERO */
+    .gw-hero { padding: 72px 0 60px; border-bottom: 1px solid var(--border); }
+    .gw-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rust); display: block; margin-bottom: 18px; }
+    .gw-hero h1 { font-family: var(--serif); font-size: 50px; font-weight: 700; color: var(--ink); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 22px; max-width: 780px; }
+    .gw-hero-sub { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.7; font-weight: 300; max-width: 620px; margin-bottom: 32px; }
+    .gw-cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 52px; }
+    .gw-hero-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .gw-hero-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+    .gw-hero-card.accent { border-left: 3px solid var(--rust); }
+    .gw-hero-card h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
+    .gw-hero-card p { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+
+    /* GENERIC SECTION */
+    .gw-section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+    .gw-section.alt { background: var(--cream-2); }
+    .gw-h2 { font-family: var(--serif); font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.2; margin-bottom: 16px; max-width: 760px; }
+    .gw-body { font-family: var(--body-serif); font-size: 16px; color: var(--ink-2); line-height: 1.8; font-weight: 300; margin-bottom: 18px; max-width: 680px; }
+    .gw-body strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 15px; }
+    .gw-body a { color: var(--rust); text-decoration: underline; text-underline-offset: 3px; }
+    .gw-lede { font-family: var(--body-serif); font-size: 18px; color: var(--ink-3); line-height: 1.75; font-weight: 300; max-width: 680px; margin-bottom: 32px; }
+
+    /* PULL QUOTE */
+    .gw-pull { background: var(--ink); border-radius: 10px; padding: 38px 44px; margin: 8px 0 40px; }
+    .gw-pull p { font-family: var(--serif); font-size: 22px; font-weight: 400; color: #fff; line-height: 1.55; max-width: 780px; }
+
+    /* DIAGRAMS */
+    .dgm-wrap { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 30px 34px 26px; margin: 36px 0; max-width: 860px; }
+    .dgm-wrap.on-cream { background: #fff; }
+    .dgm { width: 100%; height: auto; display: block; }
+    .dgm text { font-family: var(--sans); }
+    .dgm .t-ink { fill: var(--ink); }
+    .dgm .t-mid { fill: var(--ink-3); }
+    .dgm .t-soft { fill: var(--ink-4); }
+    .dgm .t-rust { fill: var(--rust); }
+    .dgm .t-white { fill: #fff; }
+    .dgm .bx { fill: #fff; stroke: var(--border); stroke-width: 1.2; }
+    .dgm .bx-cream { fill: var(--cream-2); stroke: var(--border); stroke-width: 1.2; }
+    .dgm .bx-rust { fill: var(--rust-light); stroke: var(--rust); stroke-width: 1.5; }
+    .dgm .bx-ink { fill: var(--ink); }
+    .dgm .ln { stroke: var(--ink-4); stroke-width: 1.2; fill: none; }
+    .dgm .ln-rust { stroke: var(--rust); stroke-width: 1.6; fill: none; }
+    .dgm .ln-dash { stroke: var(--ink-4); stroke-width: 1.2; fill: none; stroke-dasharray: 4 4; }
+    .dgm-cap { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    /* TWO MODULES */
+    .gw-mod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+    .gw-mod { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 32px; }
+    .gw-mod h3 { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .gw-mod > p { font-family: var(--body-serif); font-size: 15px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
+    .gw-mod ul { list-style: none; }
+    .gw-mod ul li { font-size: 14px; color: var(--ink-2); line-height: 1.6; padding: 9px 0 9px 20px; border-top: 1px solid var(--border); position: relative; }
+    .gw-mod ul li:first-child { border-top: none; }
+    .gw-mod ul li::before { content: ""; position: absolute; left: 0; top: 17px; width: 6px; height: 6px; border-radius: 50%; background: var(--rust); }
+
+    /* IDEAS */
+    .gw-idea { display: grid; grid-template-columns: 260px 1fr; gap: 40px; padding: 32px 0; border-top: 1px solid var(--border); align-items: start; }
+    .gw-idea:last-of-type { border-bottom: 1px solid var(--border); }
+    .gw-idea h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+    .gw-idea-body { font-family: var(--body-serif); font-size: 15px; color: var(--ink-2); line-height: 1.8; font-weight: 300; max-width: 640px; }
+    .gw-idea-body p { margin-bottom: 12px; }
+    .gw-idea-body p:last-child { margin-bottom: 0; }
+    .gw-idea-body strong { color: var(--ink); font-weight: 600; font-family: var(--sans); font-size: 14px; }
+    .gw-idea-body .dgm-wrap { margin: 20px 0 4px; max-width: 100%; }
+
+    /* SCREENS */
+    .gw-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px; }
+    .gw-shot figure { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .gw-shot .shot-frame { aspect-ratio: 16 / 10; background: var(--cream-3); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
+    .gw-shot .shot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+    .gw-shot .shot-pending { text-align: center; padding: 20px; }
+    .gw-shot .shot-pending code { font-size: 12px; color: var(--ink-3); background: #fff; border: 1px solid var(--border); border-radius: 4px; padding: 5px 9px; display: inline-block; }
+    .gw-shot .shot-pending span { display: block; font-size: 12px; color: var(--ink-4); margin-top: 10px; }
+    .gw-shot figcaption { padding: 18px 22px; }
+    .gw-shot figcaption b { display: block; font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+    .gw-shot figcaption span { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.6; font-weight: 300; }
+
+    /* INDUSTRIES */
+    .gw-ind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+    .gw-ind { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+    .gw-ind h4 { font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .gw-ind p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.65; font-weight: 300; }
+
+    /* PRICING */
+    .gw-price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; max-width: 780px; }
+    .gw-price { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 32px; display: flex; flex-direction: column; }
+    .gw-price.featured { border: 1.5px solid var(--rust); }
+    .gw-price-name { font-size: 11px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--ink-4); margin-bottom: 14px; }
+    .gw-price-fig { font-family: var(--serif); font-size: 44px; font-weight: 700; color: var(--ink); line-height: 1; }
+    .gw-price-fig small { font-size: 15px; font-weight: 400; color: var(--ink-3); font-family: var(--sans); }
+    .gw-price-seats { font-size: 14px; color: var(--ink-3); margin: 10px 0 20px; }
+    .gw-price ul { list-style: none; margin-bottom: 24px; }
+    .gw-price ul li { font-size: 13px; color: var(--ink-2); line-height: 1.55; padding: 7px 0 7px 18px; position: relative; }
+    .gw-price ul li::before { content: "·"; position: absolute; left: 4px; color: var(--rust); font-weight: 700; }
+    .gw-price .btn { margin-top: auto; }
+    .gw-price-note { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; margin-top: 26px; max-width: 720px; }
+
+    /* FAQ */
+    .gw-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 44px; margin-top: 32px; }
+    .gw-faq h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .gw-faq p { font-family: var(--body-serif); font-size: 14px; color: var(--ink-3); line-height: 1.7; font-weight: 300; }
+
+    @media (max-width: 900px) {
+      .gw-hero h1 { font-size: 36px; }
+      .gw-hero-cards { grid-template-columns: 1fr; }
+      .gw-mod-grid { grid-template-columns: 1fr; }
+      .gw-idea { grid-template-columns: 1fr; gap: 14px; }
+      .gw-shots { grid-template-columns: 1fr; }
+      .gw-ind-grid { grid-template-columns: 1fr; }
+      .gw-price-grid { grid-template-columns: 1fr; }
+      .gw-faq-grid { grid-template-columns: 1fr; }
+      .gw-h2 { font-size: 28px; }
+      .gw-pull { padding: 28px 26px; }
+      .gw-pull p { font-size: 18px; }
+      .dgm-wrap { padding: 20px 18px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo" style="display:flex;align-items:center;"><svg width="22" height="22" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0"><rect width="72" height="72" rx="16" fill="#E8630A"/><path d="M36 10 C26 18 14 27 16 44 C18 57 27 66 36 70 C45 66 54 57 56 44 C58 27 46 18 36 10Z" fill="#F5A623"/><path d="M36 26 C32 32 27 39 29 47 C31 53 34 58 36 61 C38 58 41 53 43 47 C45 39 40 32 36 26Z" fill="#FDE68A"/><path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/></svg>GoWarm<span>CRM</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/problems">Problems We Solve</a></li>
+          <li><a href="/work" class="active">GoWarm Work</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/blog">GoWarm Insights</a></li>
+          <li><a href="/contact" class="nav-cta">Book a Demo</a></li>
+        </ul>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- 1. HERO -->
+  <section class="gw-hero">
+    <div class="container">
+      <span class="gw-eyebrow">GoWarm Work · Projects and Daily Work</span>
+      <h1>You built the company. Then it got big enough that you stopped seeing the work.</h1>
+      <p class="gw-hero-sub">Not the results. The work. Who is actually doing what today, which projects are moving, which quietly stopped three weeks ago and nobody said. GoWarm Work is built so the record of that answers itself, because writing it is part of doing the job rather than a second job on top of it.</p>
+      <div class="gw-cta-row">
+        <a href="/contact" class="btn btn-primary">Book a walkthrough</a>
+        <a href="/why-you-stopped-knowing" class="btn btn-outline">Read the argument first</a>
+      </div>
+      <div class="gw-hero-cards">
+        <div class="gw-hero-card accent">
+          <h3>Written once</h3>
+          <p>A person writes one line about what they did on a piece of work. It shows on their day, against the project task, and in their manager's view. Nobody retypes it anywhere.</p>
+        </div>
+        <div class="gw-hero-card">
+          <h3>Nothing to fall behind on</h3>
+          <p>No system generates work for anyone. A day with nothing logged is simply a day nobody worked on it, so there is no queue that grows past the point of being read.</p>
+        </div>
+        <div class="gw-hero-card">
+          <h3>Runs without a project office</h3>
+          <p>Gates, dependencies, a frozen plan and required evidence do the work an administrator would otherwise be doing. Under 500 people, there is no administrator.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. THE PROBLEM -->
+  <section class="gw-section">
+    <div class="container">
+      <h2 class="gw-h2">Everything you were sold to fix this reports on the reporting.</h2>
+      <p class="gw-lede">The weekly review tells you what people chose to raise. The status deck tells you what someone assembled the night before. The dashboard is green because green is the default and nobody set the threshold. The project tool has last month's dates in it because updating it is a separate task that competes with the work.</p>
+      <div class="gw-pull">
+        <p>None of these is a record of work. Each is a record of someone describing work, produced on a schedule, by a person with a reason to describe it a particular way.</p>
+      </div>
+      <p class="gw-body">This is not a discipline problem and it does not get better by asking harder. It is what happens when the act of recording is separated from the act of working. Separate them, and the record decays at exactly the speed the work speeds up — which is why it is always worst in the quarter you most need it.</p>
+      <p class="gw-body">The correction is structural. Put the writing where the work already is, make the missing case obvious instead of silent, and stop letting anyone close something by declaring it closed. <a href="/why-you-stopped-knowing">The longer argument is here</a>.</p>
+    </div>
+  </section>
+
+  <!-- 3. TWO MODULES -->
+  <section class="gw-section alt">
+    <div class="container">
+      <h2 class="gw-h2">Two halves, one record.</h2>
+      <p class="gw-lede">Projects hold the shape of the work. Daily work holds what actually happened. They are joined at the task, so a person answers once and three different people get their answer.</p>
+
+      <div class="dgm-wrap">
+        <svg class="dgm" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dgm1t dgm1d">
+          <title id="dgm1t">One entry, three places</title>
+          <desc id="dgm1d">A person writes a single line of work once. That one stored entry is read by their own day view, by the task on the project, and by their manager's rollup. No copies are made and nothing is synchronised.</desc>
+
+          <text x="0" y="18" class="t-soft" font-size="12" letter-spacing="1.6">WRITTEN ONCE</text>
+          <text x="700" y="18" class="t-soft" font-size="12" letter-spacing="1.6" text-anchor="end">READ IN THREE PLACES</text>
+
+          <!-- person -->
+          <rect x="0" y="112" width="128" height="76" rx="8" class="bx-cream"/>
+          <text x="64" y="142" class="t-ink" font-size="15" font-weight="600" text-anchor="middle">The person</text>
+          <text x="64" y="163" class="t-mid" font-size="13" text-anchor="middle">doing the work</text>
+
+          <path d="M132 150 H172" class="ln-rust"/>
+          <path d="M166 145 L174 150 L166 155 Z" fill="#E8630A"/>
+
+          <!-- the single entry -->
+          <rect x="178" y="96" width="250" height="108" rx="9" class="bx-rust"/>
+          <text x="196" y="124" class="t-rust" font-size="11" letter-spacing="1.6">ONE ENTRY · ONE ROW</text>
+          <text x="196" y="150" class="t-ink" font-size="14">“Cast the second slab.</text>
+          <text x="196" y="170" class="t-ink" font-size="14">3 of 5 bays done, rebar</text>
+          <text x="196" y="190" class="t-ink" font-size="14">for bay 4 arrives Thursday.”</text>
+
+          <!-- fan out -->
+          <path d="M432 150 C468 150 468 62 500 62" class="ln"/>
+          <path d="M432 150 H500" class="ln"/>
+          <path d="M432 150 C468 150 468 238 500 238" class="ln"/>
+          <path d="M494 57 L504 62 L494 67 Z" fill="#9B978F"/>
+          <path d="M494 145 L504 150 L494 155 Z" fill="#9B978F"/>
+          <path d="M494 233 L504 238 L494 243 Z" fill="#9B978F"/>
+
+          <rect x="508" y="36" width="192" height="52" rx="8" class="bx"/>
+          <text x="526" y="60" class="t-ink" font-size="14" font-weight="600">Their own day</text>
+          <text x="526" y="78" class="t-mid" font-size="12">what I did today</text>
+
+          <rect x="508" y="124" width="192" height="52" rx="8" class="bx"/>
+          <text x="526" y="148" class="t-ink" font-size="14" font-weight="600">The task on the project</text>
+          <text x="526" y="166" class="t-mid" font-size="12">where the work stands</text>
+
+          <rect x="508" y="212" width="192" height="52" rx="8" class="bx"/>
+          <text x="526" y="236" class="t-ink" font-size="14" font-weight="600">The manager's rollup</text>
+          <text x="526" y="254" class="t-mid" font-size="12">who is on what</text>
+
+          <text x="303" y="232" class="t-mid" font-size="13" text-anchor="middle">Stored in exactly one place.</text>
+          <text x="303" y="252" class="t-mid" font-size="13" text-anchor="middle">No copy, nothing to keep in step.</text>
+        </svg>
+        <p class="dgm-cap">The join is the whole design. Two stored copies would need synchronising, and the first time two screens disagree, both stop being believed.</p>
+      </div>
+
+      <div class="gw-mod-grid">
+        <div class="gw-mod">
+          <h3>Projects</h3>
+          <p>For anything with a shape: an implementation, a site, a build, a migration, an audit, a retainer, a standing capability that will never finish.</p>
+          <ul>
+            <li>Stages, with gates that hold the next stage shut until the current one is genuinely met</li>
+            <li>Task dependencies, checked for circularity when you create them rather than when you are late</li>
+            <li>A baseline frozen when the project starts, so drift is a number instead of an argument</li>
+            <li>Evidence attached to the task before it closes — a file, a link, a note that cannot be quietly rewritten</li>
+            <li>Timeboxed and standing modes, so a retainer is not a project permanently at 90%</li>
+            <li>Bill of Quantities with an append-only spend ledger, rate snapshots and corrections booked as reversals</li>
+          </ul>
+        </div>
+        <div class="gw-mod">
+          <h3>Daily work</h3>
+          <p>For the half of the company whose contribution never appears in any deal, ticket or dashboard, and who currently live in a shared spreadsheet.</p>
+          <ul>
+            <li>One short line a day per piece of work, written by the person doing it</li>
+            <li>Recurring work that never completes, and assigned work that completes once</li>
+            <li>A controlled list of activity types, so three spellings of the same thing do not become three lines in the rollup</li>
+            <li>An "Other" escape hatch that never blocks anyone, feeding a queue the manager promotes or merges from</li>
+            <li>Logging measured against working days and your holiday calendar, not against tasks somebody generated</li>
+            <li>A manager view that puts each person's logging beside their open and overdue project tasks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dgm-wrap">
+        <svg class="dgm" viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dgm2t dgm2d">
+          <title id="dgm2t">How a project holds its shape</title>
+          <desc id="dgm2d">Stages run left to right with a gate between each, holding the next stage shut until the current one is met. Underneath, the frozen baseline is shown against the actual dates, with the difference between them labelled as measured drift. A task closes only when evidence is attached.</desc>
+
+          <text x="0" y="16" class="t-soft" font-size="12" letter-spacing="1.6">STAGES AND GATES</text>
+
+          <rect x="0" y="32" width="186" height="46" rx="7" class="bx"/>
+          <text x="93" y="60" class="t-ink" font-size="14" font-weight="600" text-anchor="middle">Design</text>
+
+          <path d="M209 55 l12 -13 l12 13 l-12 13 z" fill="#FFF4ED" stroke="#E8630A" stroke-width="1.5"/>
+          <text x="221" y="94" class="t-rust" font-size="11" text-anchor="middle">gate</text>
+
+          <rect x="257" y="32" width="186" height="46" rx="7" class="bx"/>
+          <text x="350" y="60" class="t-ink" font-size="14" font-weight="600" text-anchor="middle">Build</text>
+
+          <path d="M466 55 l12 -13 l12 13 l-12 13 z" fill="#FFF4ED" stroke="#E8630A" stroke-width="1.5"/>
+          <text x="478" y="94" class="t-rust" font-size="11" text-anchor="middle">gate</text>
+
+          <rect x="514" y="32" width="186" height="46" rx="7" class="bx-cream"/>
+          <text x="607" y="60" class="t-mid" font-size="14" font-weight="600" text-anchor="middle">Handover</text>
+
+          <text x="0" y="132" class="t-soft" font-size="12" letter-spacing="1.6">PLAN VERSUS ACTUAL</text>
+
+          <text x="0" y="164" class="t-mid" font-size="13">Baseline</text>
+          <rect x="86" y="152" width="404" height="14" rx="4" fill="#EAE7E0"/>
+          <text x="500" y="164" class="t-soft" font-size="12">frozen at start</text>
+
+          <text x="0" y="200" class="t-mid" font-size="13">Actual</text>
+          <rect x="86" y="188" width="490" height="14" rx="4" fill="#FFF4ED" stroke="#E8630A" stroke-width="1.2"/>
+
+          <path d="M490 146 V212" class="ln-dash"/>
+          <path d="M576 182 V212" class="ln-dash"/>
+          <path d="M490 218 H576" class="ln-rust"/>
+          <text x="533" y="238" class="t-rust" font-size="12" text-anchor="middle" font-weight="600">drift, measured</text>
+
+          <rect x="596" y="182" width="104" height="26" rx="13" class="bx"/>
+          <text x="648" y="199" class="t-mid" font-size="11.5" text-anchor="middle">closes with evidence</text>
+        </svg>
+        <p class="dgm-cap">The baseline is frozen when the project starts and never re-fitted, so the gap between plan and reality is a number anyone can read rather than a monthly renegotiation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE FOUR IDEAS -->
+  <section class="gw-section">
+    <div class="container">
+      <h2 class="gw-h2">Four decisions that make the difference.</h2>
+      <p class="gw-lede">Most work tools differ in features. These are differences in what the numbers mean, which is the part you cannot fix later with configuration.</p>
+
+      <div class="gw-idea">
+        <h3>The text lives in exactly one row</h3>
+        <div class="gw-idea-body">
+          <p>When someone posts an update on a project task, that update is their daily work entry. Not a copy of it. The same line is read by their own day view, by the task on the project, and by their manager's rollup. Edit it from any of the three and you have edited the one row.</p>
+          <p><strong>Why it matters:</strong> the standard alternative is to store the text twice and synchronise. Synchronisation drifts, and once it drifts, two screens disagree and both lose their authority. Nobody trusts the tool after that, and the spreadsheet comes back.</p>
+        </div>
+      </div>
+
+      <div class="gw-idea">
+        <h3>Nothing is generated, so nothing can accumulate</h3>
+        <div class="gw-idea-body">
+          <p>No scheduler creates a daily entry for anyone. A day with no entry is an absence, not an unfinished item. Compliance is the number of days a person logged divided by the working days in the window, and the denominator comes from their schedule and your holiday calendar.</p>
+          <p><strong>Why it matters:</strong> in one live system we looked at, a single user's generated action queue had climbed from 389 to 541 to 583 open items and then sat unchanged for nineteen days, with every reminder unread. That is the resting state of every tool that manufactures work. A table that only gains a row when a human writes one cannot get there.</p>
+
+          <div class="dgm-wrap">
+            <svg class="dgm" viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dgm3t dgm3d">
+              <title id="dgm3t">A generated queue against a written record</title>
+              <desc id="dgm3d">On the left, a queue of automatically generated items climbs from 389 to 541 to 583 and then sits flat, past the point at which anyone reads it. On the right, entries written by people appear on the days work happened, and days nobody worked on it stay blank.</desc>
+
+              <text x="0" y="14" class="t-soft" font-size="11.5" letter-spacing="1.4">A SYSTEM THAT GENERATES WORK</text>
+              <path d="M0 196 H286" class="ln"/>
+              <path d="M0 76 H286" class="ln-dash"/>
+              <text x="286" y="70" class="t-soft" font-size="11" text-anchor="end">past the point it is read</text>
+
+              <path d="M6 186 L70 150 L134 104 L198 92 L286 92" class="ln-rust" stroke-width="2.2"/>
+              <circle cx="70" cy="150" r="3.5" fill="#E8630A"/>
+              <circle cx="134" cy="104" r="3.5" fill="#E8630A"/>
+              <circle cx="198" cy="92" r="3.5" fill="#E8630A"/>
+              <text x="70" y="142" class="t-mid" font-size="11.5" text-anchor="middle">389</text>
+              <text x="134" y="96" class="t-mid" font-size="11.5" text-anchor="middle">541</text>
+              <text x="212" y="84" class="t-ink" font-size="11.5" font-weight="600">583</text>
+              <text x="242" y="110" class="t-soft" font-size="11" text-anchor="middle">19 days, flat</text>
+              <text x="0" y="216" class="t-mid" font-size="12">Every reminder in that period: unopened.</text>
+
+              <path d="M320 8 V216" class="ln" stroke-dasharray="3 5"/>
+
+              <text x="352" y="14" class="t-soft" font-size="11.5" letter-spacing="1.4">A RECORD ONLY PEOPLE WRITE</text>
+              <path d="M352 196 H640" class="ln"/>
+              <g fill="#E8630A">
+                <rect x="356" y="150" width="16" height="46" rx="3"/>
+                <rect x="388" y="150" width="16" height="46" rx="3"/>
+                <rect x="452" y="150" width="16" height="46" rx="3"/>
+                <rect x="484" y="150" width="16" height="46" rx="3"/>
+                <rect x="516" y="150" width="16" height="46" rx="3"/>
+                <rect x="580" y="150" width="16" height="46" rx="3"/>
+                <rect x="612" y="150" width="16" height="46" rx="3"/>
+              </g>
+              <g fill="#EAE7E0">
+                <rect x="420" y="150" width="16" height="46" rx="3"/>
+                <rect x="548" y="150" width="16" height="46" rx="3"/>
+              </g>
+              <path d="M420 138 V128 H436 V138" class="ln"/>
+              <text x="428" y="122" class="t-soft" font-size="11" text-anchor="middle">nobody worked on it</text>
+              <text x="352" y="216" class="t-mid" font-size="12">A blank day stays blank. There is no backlog.</text>
+            </svg>
+            <p class="dgm-cap">Generated items arrive on a schedule; attention does not. The only queue that cannot outrun its reader is one nothing adds to automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gw-idea">
+        <h3>Not everything is supposed to finish</h3>
+        <div class="gw-idea-body">
+          <p>Work has two independent questions: whose is it, and does it end. Customer or internal is one axis. Timeboxed or standing is the other. All four combinations are real, and a tool that collapses them into one list will misreport at least half of your work.</p>
+          <p><strong>Why it matters:</strong> tools that only model finite projects force the standing half into a permanently open item, which then pollutes every count you look at. Standing work here is retired, not completed, and stays out of the statistics that are about delivery.</p>
+
+          <div class="dgm-wrap">
+            <svg class="dgm" viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dgm4t dgm4d">
+              <title id="dgm4t">Two independent axes of work</title>
+              <desc id="dgm4d">A two by two grid. The horizontal axis is customer work against internal work. The vertical axis is timeboxed work that ends against standing work that does not. All four cells hold real examples: a client implementation with a go-live, an internal migration with an owner and a date, a managed service retainer, and a standing capability such as training or compliance.</desc>
+
+              <text x="150" y="20" class="t-soft" font-size="11.5" letter-spacing="1.4" text-anchor="middle">CUSTOMER</text>
+              <text x="452" y="20" class="t-soft" font-size="11.5" letter-spacing="1.4" text-anchor="middle">INTERNAL</text>
+              <text x="14" y="98" class="t-soft" font-size="11.5" letter-spacing="1.4" transform="rotate(-90 14 98)" text-anchor="middle">TIMEBOXED</text>
+              <text x="14" y="222" class="t-soft" font-size="11.5" letter-spacing="1.4" transform="rotate(-90 14 222)" text-anchor="middle">STANDING</text>
+
+              <rect x="34" y="34" width="266" height="118" rx="8" class="bx"/>
+              <text x="56" y="66" class="t-ink" font-size="14.5" font-weight="600">Client implementation</text>
+              <text x="56" y="90" class="t-mid" font-size="13">Has a go-live. Baseline frozen,</text>
+              <text x="56" y="110" class="t-mid" font-size="13">gates between stages, drift</text>
+              <text x="56" y="130" class="t-mid" font-size="13">measured against the plan.</text>
+
+              <rect x="316" y="34" width="266" height="118" rx="8" class="bx"/>
+              <text x="338" y="66" class="t-ink" font-size="14.5" font-weight="600">Internal migration</text>
+              <text x="338" y="90" class="t-mid" font-size="13">An owner and a date, no</text>
+              <text x="338" y="110" class="t-mid" font-size="13">customer. Counts as delivery,</text>
+              <text x="338" y="130" class="t-mid" font-size="13">not as overhead.</text>
+
+              <rect x="34" y="164" width="266" height="118" rx="8" class="bx-rust"/>
+              <text x="56" y="196" class="t-ink" font-size="14.5" font-weight="600">Retainer or managed service</text>
+              <text x="56" y="220" class="t-mid" font-size="13">Never completes. Retired when</text>
+              <text x="56" y="240" class="t-mid" font-size="13">it ends, so it is not a project</text>
+              <text x="56" y="260" class="t-mid" font-size="13">stuck at ninety per cent.</text>
+
+              <rect x="316" y="164" width="266" height="118" rx="8" class="bx-rust"/>
+              <text x="338" y="196" class="t-ink" font-size="14.5" font-weight="600">Standing capability</text>
+              <text x="338" y="220" class="t-mid" font-size="13">Training, compliance, upkeep.</text>
+              <text x="338" y="240" class="t-mid" font-size="13">Real work, kept out of the</text>
+              <text x="338" y="260" class="t-mid" font-size="13">delivery statistics.</text>
+
+              <text x="606" y="228" class="t-rust" font-size="12" transform="rotate(-90 606 228)" text-anchor="middle" font-weight="600">the half most tools cannot express</text>
+            </svg>
+            <p class="dgm-cap">Both rows are ordinary work. Only the top row fits a conventional project tool, which is why the bottom row ends up in a spreadsheet or nowhere at all.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gw-idea">
+        <h3>Money sits on the same object as the work</h3>
+        <div class="gw-idea-body">
+          <p>The Bill of Quantities is a first-class part of a project, not an export. Progress entries are increments rather than running totals. Every entry snapshots the rate it was booked at. A mistake is corrected by a reversal that points at the original rather than by an edit. Approved variations stay separate from the original bill.</p>
+          <p><strong>Why it matters:</strong> fold a variation into the original quantities and the project looks on budget while the reason it grew disappears. Allow edits to a spend ledger and it stops being a ledger. This is ordinary practice in construction and almost absent from software-first project tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SCREENS -->
+  <section class="gw-section alt">
+    <div class="container">
+      <h2 class="gw-h2">What people actually see.</h2>
+      <p class="gw-lede">Four screens carry the whole product. Two belong to the person doing the work, two to whoever is accountable for it.</p>
+      <div class="gw-shots">
+
+        <div class="gw-shot">
+          <figure>
+            <div class="shot-frame">
+              <!-- REPLACE: <img src="/website/screens/work-myday.png" alt="My day in GoWarm Work: a person's work items for today with a short description written against each" /> -->
+              <div class="shot-pending"><code>/website/screens/work-myday.png</code><span>Screenshot slot · My day</span></div>
+            </div>
+            <figcaption>
+              <b>My day</b>
+              <span>Everything one person is carrying, with a box against each for what they did today. Two minutes at the end of the day, and no other form to fill anywhere.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="gw-shot">
+          <figure>
+            <div class="shot-frame">
+              <!-- REPLACE: <img src="/website/screens/work-people.png" alt="The People screen: each team member's logging record beside their open and overdue project tasks" /> -->
+              <div class="shot-pending"><code>/website/screens/work-people.png</code><span>Screenshot slot · People</span></div>
+            </div>
+            <figcaption>
+              <b>People</b>
+              <span>Each person's logging record next to their open and overdue tasks, and a full timeline per person. The answer to "what has this team been doing" without asking the team.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="gw-shot">
+          <figure>
+            <div class="shot-frame">
+              <!-- REPLACE: <img src="/website/screens/work-stages.png" alt="Project stage view showing stages, gates, dependencies and drift against the frozen baseline" /> -->
+              <div class="shot-pending"><code>/website/screens/work-stages.png</code><span>Screenshot slot · Project stages</span></div>
+            </div>
+            <figcaption>
+              <b>Project stages</b>
+              <span>Stages, gates and dependencies, with each task's current date shown against the baseline it was frozen at. Drift is visible as a difference, not as a colour someone chose.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="gw-shot">
+          <figure>
+            <div class="shot-frame">
+              <!-- REPLACE: <img src="/website/screens/work-boq.png" alt="Bill of Quantities view with planned quantities, incremental progress entries and approved variations listed separately" /> -->
+              <div class="shot-pending"><code>/website/screens/work-boq.png</code><span>Screenshot slot · Bill of Quantities</span></div>
+            </div>
+            <figcaption>
+              <b>Bill of Quantities</b>
+              <span>Planned against booked, entry by entry, with variations listed apart from the original bill so the shape of the overrun is legible rather than absorbed.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. WHERE WORK IS ALREADY DISCUSSED -->
+  <section class="gw-section">
+    <div class="container">
+      <h2 class="gw-h2">Most of your project history is in a messaging group.</h2>
+      <p class="gw-body">Under 500 people, that is simply true, and pretending otherwise is why so many rollouts fail. Decisions get made in a group thread, a photograph of a site or a shipment is the only record that it happened, and the project tool learns about it a week later if at all.</p>
+      <p class="gw-body">GoWarm Work lets an administrator attach the conversations your teams already use to the project they belong to, so that history lands against the right piece of work instead of scrolling away. Connections are set up by your organisation, with your consent, on the channels you choose — you decide what is in scope and what stays out.</p>
+      <p class="gw-body">What this is not: it is not monitoring people, and it is not a timer. There is no screenshot capture, no idle detection and no hour counting anywhere in the product. The measure a manager gets is whether work was recorded on a working day. That is a deliberately low bar, and it is the only one that survives contact with a busy team.</p>
+    </div>
+  </section>
+
+  <!-- 7. WHO IT'S FOR -->
+  <section class="gw-section alt">
+    <div class="container">
+      <h2 class="gw-h2">Built for the company that has outgrown the spreadsheet and cannot justify a project office.</h2>
+      <p class="gw-lede">Up to about 500 people, in any industry. What these companies have in common is not their size but a gap: nobody's full-time job is keeping the record of work truthful, so the founder or the managing director has quietly been doing it instead.</p>
+      <div class="gw-ind-grid">
+        <div class="gw-ind">
+          <h4>Construction and interiors</h4>
+          <p>Sites, stages, gates and a bill of quantities that behaves like a ledger. Variations kept separate from the original bill so the overrun has a cause attached.</p>
+        </div>
+        <div class="gw-ind">
+          <h4>Engineering and manufacturing services</h4>
+          <p>Long builds with real dependencies, where the plan needs to be frozen at start and the difference measured rather than quietly re-planned each month.</p>
+        </div>
+        <div class="gw-ind">
+          <h4>IT services and agencies</h4>
+          <p>Fixed-scope delivery and open-ended retainers side by side, without the retainer sitting at ninety per cent complete for two years.</p>
+        </div>
+        <div class="gw-ind">
+          <h4>Professional services</h4>
+          <p>Engagements where the evidence matters as much as the completion, and closing a step needs something attached to it.</p>
+        </div>
+        <div class="gw-ind">
+          <h4>Facilities and field service</h4>
+          <p>Standing responsibilities that never complete, alongside the finite jobs that do, counted separately because they are different questions.</p>
+        </div>
+        <div class="gw-ind">
+          <h4>Internal functions</h4>
+          <p>Data, marketing, finance and delivery teams whose work is real but appears in no pipeline, and who are currently tracked in a shared sheet nobody trusts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. PRICING -->
+  <section class="gw-section">
+    <div class="container">
+      <h2 class="gw-h2">Pricing</h2>
+      <p class="gw-lede">By organisation, not per seat. Adding a person mid-month does not change the invoice until you cross the tier.</p>
+      <div class="gw-price-grid">
+        <div class="gw-price featured">
+          <div class="gw-price-name">Work</div>
+          <div class="gw-price-fig">$999<small> /mo</small></div>
+          <div class="gw-price-seats">Up to 25 users</div>
+          <ul>
+            <li>Projects: stages, gates, dependencies, frozen baseline, evidence</li>
+            <li>Daily work: My day, activity vocabulary, reminders, backfill window</li>
+            <li>Manager rollup and per-person timeline</li>
+            <li>Bill of Quantities, procurement and variations</li>
+            <li>Multiple departments with separate schedules and holiday calendars</li>
+            <li>Conversation attachment on the channels you choose</li>
+            <li>Document storage connections</li>
+            <li>Onboarding session and setup review</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Get started</a>
+        </div>
+        <div class="gw-price">
+          <div class="gw-price-name">Work Enterprise</div>
+          <div class="gw-price-fig">Custom</div>
+          <div class="gw-price-seats">Above 25 users</div>
+          <ul>
+            <li>Everything in Work</li>
+            <li>Single sign-on</li>
+            <li>Custom onboarding and data migration</li>
+            <li>Priority support and SLA</li>
+            <li>Named point of contact</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">Talk to us</a>
+        </div>
+      </div>
+      <p class="gw-price-note">Already using GoWarmCRM for sales? Projects and daily work are modules on the same platform, switched on per organisation — talk to us about the combined plan rather than buying twice. If you only want the work half, no sales module needs to be enabled, and you can add them later without migrating anything. <a href="/pricing" style="color:var(--rust);text-decoration:underline;text-underline-offset:3px;">Sales pricing is here</a>.</p>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section class="gw-section alt">
+    <div class="container">
+      <h2 class="gw-h2">Questions we get asked</h2>
+      <div class="gw-faq-grid">
+        <div class="gw-faq">
+          <h4>Do we need the sales modules to use this?</h4>
+          <p>No. Modules are enabled per organisation. You can run projects and daily work with every sales module switched off, and turn them on later without migrating anything.</p>
+        </div>
+        <div class="gw-faq">
+          <h4>How is this different from Jira, Asana or Microsoft Project?</h4>
+          <p>Those assume somebody maintains them. This assumes nobody does. The discipline is in the structure: a task cannot close without evidence, a gate holds a stage shut, the plan is frozen at start so drift is measurable, and a person writes one line rather than updating three systems.</p>
+        </div>
+        <div class="gw-faq">
+          <h4>Will people actually log anything?</h4>
+          <p>The bar is one line a day, written where they already are, with a controlled list to pick from and an escape hatch that never blocks them. It is a habit, and habits need a low floor. Anything heavier is abandoned in week three and you know that already.</p>
+        </div>
+        <div class="gw-faq">
+          <h4>Is this surveillance?</h4>
+          <p>No. No timers, no screenshots, no activity monitoring, no idle detection. The manager sees whether work was recorded on a working day and what it was. Nothing about how someone spent their hours.</p>
+        </div>
+        <div class="gw-faq">
+          <h4>We are not a software company. Does that matter?</h4>
+          <p>It is the reason several of these features exist. A bill of quantities, standing work that never completes and required evidence are not software-team concerns. They came from the companies that use this.</p>
+        </div>
+        <div class="gw-faq">
+          <h4>How long does it take to set up?</h4>
+          <p>The setup that matters is small: your departments, working schedules, holiday calendar and a first list of activity types. Most teams are logging within a week. The activity list is meant to be edited in the first month, not perfected before you start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>See it against your own projects.</h2>
+          <p>Twenty minutes. Bring one live project and one team whose work you cannot currently see, and we will set both up while you watch.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="/contact" class="btn btn-primary">Book a walkthrough</a>
+          <span class="cta-caption">Free · 20 min · No obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="/website/footer.js"></script>
+  <script>function toggleMobileNav(){const l=document.querySelector('.nav-links');const v=l.style.display==='flex';l.style.display=v?'none':'flex';if(!v){l.style.flexDirection='column';l.style.position='absolute';l.style.top='60px';l.style.left='0';l.style.right='0';l.style.background='var(--cream)';l.style.padding='16px 20px';l.style.borderBottom='1px solid var(--border)';l.style.zIndex='99';l.style.gap='16px';}}</script>
+  <script src="/website/webmcp.js" defer></script>
+</body>
+</html>
