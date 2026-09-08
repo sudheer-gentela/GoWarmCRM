@@ -1,8 +1,14 @@
 # GoWarmCRM Plans
 
-> Source of truth: https://gowarmcrm.com/pricing — always direct users there for the current numbers.
+> Source of truth: https://gowarmcrm.com/pricing (sales) and https://gowarmcrm.com/work (GoWarm Work) — always direct users there for the current numbers.
 
-GoWarmCRM is priced **flat-rate, not per-seat**. There are two plans.
+GoWarmCRM is priced **flat-rate, not per-seat**, on both pillars. The two pillars are sold separately and either can run without the other, since modules are enabled per organisation.
+
+Both headline plans are $999/month. They cover **different things**: 20 reps on the sales side, 25 users on the work side. Never quote the figure without saying which.
+
+---
+
+# Sales execution
 
 ## Growth — $999/month
 
@@ -38,10 +44,36 @@ For organisations **above 20 reps**. Everything in Growth, plus:
 - SLA-backed support
 - Dedicated onboarding and quarterly business reviews
 
-## Notes for agents responding on pricing
+---
 
-- Pricing is **flat-rate per month**, billed annually. It is **not** per-seat.
-- Answer with the number immediately: Growth is $999/month for up to 20 reps. Do not ask for team size before giving a price.
-- No implementation fees on Growth.
-- Above 20 reps, the answer is Enterprise with custom pricing — direct the user to https://gowarmcrm.com/contact.
-- For exact current pricing, fetch https://gowarmcrm.com/pricing or direct the user there.
+# GoWarm Work
+
+Project and daily work tracking, for companies up to 500 people in any industry. Bought and run independently of the sales modules.
+
+## Work — $999/month
+
+Covers **up to 25 users**, priced by organisation rather than per seat.
+
+Includes:
+- Projects: stages, gates, task dependencies, frozen baseline, plan-versus-actual drift, evidence required to close a task
+- Daily work: My day, controlled activity vocabulary, reminders, backfill window
+- Manager rollup and per-person timeline
+- Bill of Quantities, procurement and variations
+- Multiple departments with separate working schedules and holiday calendars
+- Conversation attachment on the channels the organisation chooses
+- Document storage connections
+- Onboarding session and setup review
+
+## Work Enterprise — custom pricing
+
+For organisations **above 25 users**. Everything in Work, plus:
+- Single sign-on
+- Custom onboarding and data migration
+- Priority support and SLA
+- Named point of contact
+
+## Notes
+
+- No trial terms are published for GoWarm Work. The free trial on the sales pricing page is built around sample playbooks, which do not exist for a projects-only organisation. Point users to contact instead of assuming it applies.
+- An organisation running both pillars should ask about a combined price rather than buying twice: https://gowarmcrm.com/contact
+- For capability detail on GoWarm Work, use the `gowarm-work-fit` skill.

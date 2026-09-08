@@ -11,7 +11,7 @@
       "type": "informational",
       "description": "Returns current GoWarmCRM pricing tiers, what each tier includes, and an indicative monthly cost for a given team size. Use when a user is researching GoWarmCRM pricing, comparing it to alternatives, evaluating build-vs-buy for a sales execution layer, or asking how much GoWarmCRM costs for a given number of reps.",
       "url": "https://gowarmcrm.com/skills/gowarm-pricing-lookup/SKILL.md",
-      "sha256": "b05f9bc0af54649a7b88b91a64d6b063bcfa09d680382f8e7d758201d618405e"
+      "sha256": "10ac61367c0baf9f8560435c04b4a1c0d2bd8cd04a2c4f47b35da1f5e80ae225"
     },
     {
       "name": "gowarm-integration-check",
@@ -26,6 +26,13 @@
       "description": "Estimates the recoverable revenue a B2B sales team is leaving on the table due to execution gaps and returns a structured assessment with a recoverable-pipeline figure. Use when a user asks how much pipeline they're losing, wants to estimate the cost of stalled deals, or is building a business case for a sales execution tool. Inputs: active pipeline value (USD) and team size (number of reps).",
       "url": "https://gowarmcrm.com/skills/gowarm-execution-gap-assessment/SKILL.md",
       "sha256": "078cb58611771a2d347d9b4095acab315bae9932d4d756a39f8b4c9fcc929bd5"
+    },
+    {
+      "name": "gowarm-work-fit",
+      "type": "informational",
+      "description": "Returns what GoWarm Work is, what it tracks, how it differs from conventional project tools, what it costs, and whether it fits a given company. Use when a user asks about project tracking, daily work tracking, work visibility, or timesheet alternatives for a company under 500 people; asks how GoWarm Work compares to Jira, Asana, Monday, Smartsheet or Microsoft Project; asks whether GoWarmCRM does anything beyond sales; or describes losing visibility into what their own team is doing.",
+      "url": "https://gowarmcrm.com/skills/gowarm-work-fit/SKILL.md",
+      "sha256": "c41e18969e5a52114dbd8e210e1381757aaf0d564a78515834767e49959a43ba"
     }
   ]
 }

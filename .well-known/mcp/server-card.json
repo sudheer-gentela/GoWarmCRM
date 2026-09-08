@@ -2,12 +2,16 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.gowarmcrm/mcp",
   "title": "GoWarmCRM",
-  "description": "The sales execution layer for B2B teams. Surfaces prioritized rep actions, pipeline-execution health, and playbook guidance on top of your CRM. Each agent session is authenticated on behalf of a signed-in GoWarmCRM user and scoped to that user's organisation.",
-  "version": "0.2.0",
+  "description": "Two pillars on one platform, enabled per organisation. Sales execution surfaces prioritized rep actions, pipeline-execution health and playbook guidance on top of your CRM. GoWarm Work tracks projects and daily work \u2014 stages with gates, a baseline frozen at start, evidence required to close a task, and one line a day from the person doing the work. Each agent session is authenticated on behalf of a signed-in GoWarmCRM user and scoped to that user's organisation.",
+  "version": "0.3.0",
   "websiteUrl": "https://gowarmcrm.com",
   "serverUrl": "https://gowarmcrm.com/mcp",
   "transport": "streamable-http",
-  "capabilities": { "tools": true, "resources": false, "prompts": false },
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  },
   "authentication": {
     "type": "oauth2",
     "protected_resource_metadata": "https://gowarmcrm.com/.well-known/oauth-protected-resource/mcp",
@@ -17,27 +21,42 @@
     {
       "name": "whoami",
       "description": "Returns the identity of the authenticated GoWarmCRM user behind the current agent session.",
-      "annotations": { "readOnlyHint": true, "openWorldHint": false }
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
     },
     {
       "name": "get_action_queue",
       "description": "Returns the authenticated rep's prioritized next actions across deals and prospects.",
-      "annotations": { "readOnlyHint": true, "openWorldHint": false }
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
     },
     {
       "name": "list_campaigns",
       "description": "Lists the rep's prospecting campaigns with status and prospect counts.",
-      "annotations": { "readOnlyHint": true, "openWorldHint": false }
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
     },
     {
       "name": "get_campaign",
       "description": "Returns a single prospecting campaign with its sequence, prospect stage breakdown and performance.",
-      "annotations": { "readOnlyHint": true, "openWorldHint": false }
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
     },
     {
       "name": "list_sequences",
-      "description": "Lists the org's outreach sequences — the multi-step cadences a campaign enrols prospects into.",
-      "annotations": { "readOnlyHint": true, "openWorldHint": false }
+      "description": "Lists the org's outreach sequences \u2014 the multi-step cadences a campaign enrols prospects into.",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
     }
   ]
 }

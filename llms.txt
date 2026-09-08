@@ -2,7 +2,7 @@
 
 > The execution application for your GTM team. GoWarmCRM sits on top of Salesforce, HubSpot, Pipedrive, and other CRMs to operationalize sales playbooks, surface deal actions, and close the gap between defined process and rep behavior. It reads behavioral signals from email, calendar, and meeting patterns — not just what reps logged — to tell teams what to do next on every deal, every morning.
 
-GoWarmCRM is built for B2B sales teams running multi-stage pipelines (typically SaaS, professional services, or complex field sales) with deal values above $20K, sales cycles longer than 30 days, and 5–200 reps. Primary buyers are CROs, VPs of Sales, and RevOps leaders.
+GoWarmCRM has two pillars on one platform, enabled per organisation. **Sales execution** is built for B2B sales teams running multi-stage pipelines (typically SaaS, professional services, or complex field sales) with deal values above $20K, sales cycles longer than 30 days, and 5–200 reps; primary buyers are CROs, VPs of Sales, and RevOps leaders. **GoWarm Work** is project and daily work tracking for companies up to 500 people in any industry — construction, manufacturing, services, agencies, professional firms — where nobody's full-time job is keeping the record of work truthful; primary buyers are founders, CEOs and managing directors. Either pillar can run without the other.
 
 ## Core pages
 - [Homepage](https://gowarmcrm.com/index.md): Category overview, the execution gap, who it's for
@@ -11,6 +11,10 @@ GoWarmCRM is built for B2B sales teams running multi-stage pipelines (typically 
 - [Pricing](https://gowarmcrm.com/pricing.md): Tiers, what's included, comparison vs. building in-house
 - [Execution Gap](https://gowarmcrm.com/execution-gap.md): Why CRMs track but don't execute, and the structural fix
 - [Platform Overview](https://gowarmcrm.com/platform-overview.md): All five modules — Prospecting, Sales, CLM, Service, Handover
+
+## GoWarm Work — projects and daily work
+- [GoWarm Work](https://gowarmcrm.com/work.md): The projects and daily work pillar — stages with gates, task dependencies, a baseline frozen at start, evidence required to close, Bill of Quantities with an append-only spend ledger, timeboxed versus standing work, and daily work written once by the person doing it and read by their own day, the project task and the manager rollup. Pricing: $999/month up to 25 users, custom above that
+- [Why you stopped knowing what's happening in your own company](https://gowarmcrm.com/why-you-stopped-knowing.md): The argument — why status decks, weekly reviews, dashboards and project tools all report on the reporting rather than the work, why tools that generate work accumulate past the point of being read, and the three properties a record has to have to be worth trusting
 
 ## By buyer persona
 - [For VP Sales](https://gowarmcrm.com/for-vp-sales.md): Forecast accuracy, rescued deals, new-AE ramp, tool consolidation at next renewal — what a VP Sales can defend to the CEO, CFO, and board

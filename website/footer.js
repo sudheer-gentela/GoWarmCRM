@@ -4,7 +4,7 @@
   <style>
     .footer-grid-gw {
       display: grid;
-      grid-template-columns: 200px 120px 1fr 130px;
+      grid-template-columns: 200px 120px 1fr 150px 120px;
       gap: 32px;
       margin-bottom: 48px;
     }
@@ -15,6 +15,9 @@
     }
     .footer-col-resources ul li a {
       white-space: nowrap;
+    }
+    @media (max-width: 1100px) {
+      .footer-grid-gw { grid-template-columns: 200px 1fr 150px 120px; }
     }
     @media (max-width: 960px) {
       .footer-grid-gw { grid-template-columns: 1fr 1fr; }
@@ -35,7 +38,7 @@
             <path d="M23 47 L27 59 L32 50 L36 57 L40 50 L45 59 L49 47" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.95"/>
           </svg>GoWarm<span>CRM</span>
         </div>
-        <p class="footer-tagline">The sales execution platform your CRM is missing. Built for VP Sales, RevOps, and Sales Directors.</p>
+        <p class="footer-tagline">The execution layer your systems of record are missing — for the pipeline, and for the work that follows it.</p>
       </div>
       <div class="footer-col">
         <h4>Platform</h4>
@@ -66,6 +69,15 @@
           <li><a href="/sales-rep-action-queue">Sales Rep Action Queue</a></li>
           <li><a href="/sales-execution-platform-for-saas">For SaaS Teams</a></li>
           <li><a href="/ai-shift">The AI Shift in B2B Selling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>GoWarm Work</h4>
+        <ul>
+          <li><a href="/work">Projects &amp; Daily Work</a></li>
+          <li><a href="/why-you-stopped-knowing">Why You Stopped Knowing</a></li>
+          <li><a href="/platform-overview">Platform Modules</a></li>
+          <li><a href="/contact?src=work">Book a Walkthrough</a></li>
         </ul>
       </div>
       <div class="footer-col">
